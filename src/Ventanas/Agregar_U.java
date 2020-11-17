@@ -75,10 +75,6 @@ public class Agregar_U extends javax.swing.JFrame
 
         jLabel7.setText("Contraseña");
 
-        jPasswordField1.setText("jPasswordField1");
-
-        jPasswordField2.setText("jPasswordField2");
-
         jLabel8.setText("Repetir");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
