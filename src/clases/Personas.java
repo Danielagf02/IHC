@@ -7,7 +7,7 @@ package clases;
 public class Personas extends Tipo_Usuario
 {
 
-    int id;
+    private int id;
     private int clasificacion;
     private float sueldo;
     private String nombre;
@@ -145,6 +145,22 @@ public class Personas extends Tipo_Usuario
     public void setEstatus(boolean estatus)
     {
         this.estatus = estatus;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
     }
     
 }
