@@ -9,10 +9,10 @@ public class Informes
     private int folio;
     private int id_Ventas;
     private String dia;
-    private int producto_Mas;
-    private int producto_Menos;
-    private int marca_Mas;
-    private int marca_Menos;
+    private int producto_Mas; //Estos no serian los nombres de las marcas ?? Por lo tanto serian String?
+    private int producto_Menos;//
+    private int marca_Mas;//
+    private int marca_Menos;// Esas
     private float ganancias;
     private float perdidas;
 

@@ -20,9 +20,7 @@ public class Personas extends Tipo_Usuario
     {
     }
 
-    public Personas(int id_TU, String usuario, String contrasenia,
-            int id, int clasificacion, float sueldo, String nombre,
-            String apellidoP, String apellidoM, String sexo, boolean estatus)
+    public Personas(int id_TU, String usuario, String contrasenia,  int id, int clasificacion, float sueldo, String nombre,  String apellidoP, String apellidoM, String sexo, boolean estatus)
     {
         super(id_TU, usuario, contrasenia);
         this.id = id;

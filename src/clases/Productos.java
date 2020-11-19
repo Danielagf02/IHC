@@ -4,6 +4,10 @@ package clases;
  *
  * @author Kevin
  */
+
+//aqui hace falta la clase de verificar segun tu diagrama :v
+//
+//
 public class Productos
 {
     private int id;
