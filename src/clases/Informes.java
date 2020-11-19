@@ -9,7 +9,7 @@ public class Informes
     private int folio;
     private int id_Ventas;
     private String dia;
-    private int producto_Mas; //Estos no serian los nombres de las marcas ?? Por lo tanto serian String?
+    private int producto_Mas; //Estos no serian los nombres de las marcas ?? Por lo tanto serian String?:  No porque guardamos id no nombres
     private int producto_Menos;//
     private int marca_Mas;//
     private int marca_Menos;// Esas
