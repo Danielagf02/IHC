@@ -4,15 +4,16 @@ package clases;
  *
  * @author Kevin
  */
-
 //aqui hace falta la clase de verificar segun tu diagrama :v
 //
 //
 public class Productos
 {
+
     private int id;
     private int codigo;
     private int id_Proveedor;
+    private int ventas;
     private String nombre;
     private String descripcion;
     private float precio_Venta;
@@ -23,10 +24,11 @@ public class Productos
     {
     }
 
-    public Productos(int id, int codigo, String nombre, String descripcion, float precio_Venta, float precio_Compra, boolean perecedero)
+    public Productos(int id, int codigo, int ventas, String nombre, String descripcion, float precio_Venta, float precio_Compra, boolean perecedero)
     {
         this.id = id;
         this.codigo = codigo;
+        this.ventas = ventas;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio_Venta = precio_Venta;
@@ -64,6 +66,22 @@ public class Productos
     public void setCodigo(int codigo)
     {
         this.codigo = codigo;
+    }
+
+    /**
+     * @return the ventas
+     */
+    public int getVentas()
+    {
+        return ventas;
+    }
+
+    /**
+     * @param ventas the ventas to set
+     */
+    public void setVentas(int ventas)
+    {
+        this.ventas = ventas;
     }
 
     /**
@@ -161,7 +179,7 @@ public class Productos
     {
         this.perecedero = perecedero;
     }
-    
+
     public void BuscarPro(int id)
     {
         this.id_Proveedor = id;
@@ -171,5 +189,5 @@ public class Productos
     {
 
     }
-    
+
 }
