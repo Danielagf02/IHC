@@ -7,6 +7,7 @@ package Interfaces;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import cjb.ci.Validaciones;
 
 /**
  *
@@ -33,84 +34,52 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     private void initComponents()
     {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        TNombre4 = new javax.swing.JTextField();
-        TNombre12 = new javax.swing.JTextField();
+        sexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        TNombre = new javax.swing.JTextField();
-        TNombre1 = new javax.swing.JTextField();
-        TNombre2 = new javax.swing.JTextField();
-        TNombre3 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        TNombre5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        TNombre6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        TNombre7 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        TNombre8 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        TNombre9 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        TNombre10 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        TNombre11 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        TNombre13 = new javax.swing.JTextField();
-        TNombre14 = new javax.swing.JTextField();
-
-        jCheckBox1.setText("jCheckBox1");
-
-        TNombre4.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre4ActionPerformed(evt);
-            }
-        });
-        TNombre4.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre4KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre4KeyTyped(evt);
-            }
-        });
-
-        TNombre12.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre12ActionPerformed(evt);
-            }
-        });
-        TNombre12.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre12KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre12KeyTyped(evt);
-            }
-        });
+        jLabel9 = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnCurp = new javax.swing.JButton();
+        btnFoto = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        nombre = new javax.swing.JTextField();
+        aPaterno = new javax.swing.JTextField();
+        aMaterno = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        edad = new javax.swing.JTextField();
+        curp = new javax.swing.JTextField();
+        mujer = new javax.swing.JRadioButton();
+        hombre = new javax.swing.JRadioButton();
+        grado = new javax.swing.JTextField();
+        grupo = new javax.swing.JTextField();
+        telefono = new javax.swing.JTextField();
+        nombreM = new javax.swing.JTextField();
+        nombreP = new javax.swing.JTextField();
+        folio = new javax.swing.JTextField();
+        correo = new javax.swing.JTextField();
+        contraseña = new javax.swing.JPasswordField();
+        dia = new javax.swing.JTextField();
+        mes = new javax.swing.JTextField();
+        año = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro");
@@ -125,7 +94,31 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         jLabel2.setText("Nombre:");
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setText("Apellidos:");
+        jLabel3.setText("Apellido Paterno:");
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel16.setText("Apellido Meterno:");
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel11.setText("Fecha de naciemiento :");
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel17.setText("Edad:");
+
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel13.setText("CURP:");
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel10.setText("Sexo:");
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel7.setText("Grado:");
+
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel12.setText("Grupo:");
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel8.setText("Teléfono:");
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Nombre de la madre:");
@@ -136,333 +129,304 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Folio de alumno:");
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 255));
-        jButton1.setText("Registrase");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        TNombre.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombreActionPerformed(evt);
-            }
-        });
-        TNombre.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombreKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombreKeyTyped(evt);
-            }
-        });
-
-        TNombre1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre1ActionPerformed(evt);
-            }
-        });
-        TNombre1.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre1KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre1KeyTyped(evt);
-            }
-        });
-
-        TNombre2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre2ActionPerformed(evt);
-            }
-        });
-        TNombre2.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre2KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre2KeyTyped(evt);
-            }
-        });
-
-        TNombre3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre3ActionPerformed(evt);
-            }
-        });
-        TNombre3.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre3KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre3KeyTyped(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("Grado:");
-
-        TNombre5.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre5ActionPerformed(evt);
-            }
-        });
-        TNombre5.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre5KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre5KeyTyped(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel8.setText("Teléfono:");
-
-        TNombre6.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre6ActionPerformed(evt);
-            }
-        });
-        TNombre6.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre6KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre6KeyTyped(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel9.setText("Foto");
-
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setText("Obtener CURP");
-        jButton3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel10.setText("Sexo:");
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel11.setText("Fecha de naciemiento :");
-
-        TNombre7.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre7ActionPerformed(evt);
-            }
-        });
-        TNombre7.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre7KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre7KeyTyped(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setText("Grupo:");
-
-        TNombre8.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre8ActionPerformed(evt);
-            }
-        });
-        TNombre8.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre8KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre8KeyTyped(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel13.setText("CURP:");
-
-        TNombre9.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre9ActionPerformed(evt);
-            }
-        });
-        TNombre9.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre9KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre9KeyTyped(evt);
-            }
-        });
-
-        jButton4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 204, 0));
-        jButton4.setText("Adjuntar");
-
-        TNombre10.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre10ActionPerformed(evt);
-            }
-        });
-        TNombre10.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre10KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre10KeyTyped(evt);
-            }
-        });
-
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
-        jButton8.setToolTipText("Salir");
-        jButton8.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        TNombre11.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                TNombre11ActionPerformed(evt);
-            }
-        });
-        TNombre11.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre11KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre11KeyTyped(evt);
-            }
-        });
-
         jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel14.setText("Correo:");
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setText("Contraseña:");
 
-        TNombre13.addActionListener(new java.awt.event.ActionListener()
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setText("Foto");
+
+        btnRegistrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(0, 153, 255));
+        btnRegistrar.setText("Registrase");
+        btnRegistrar.setEnabled(false);
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                TNombre13ActionPerformed(evt);
-            }
-        });
-        TNombre13.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
-                TNombre13KeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                TNombre13KeyTyped(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
-        TNombre14.addActionListener(new java.awt.event.ActionListener()
+        btnCancelar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                TNombre14ActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
-        TNombre14.addKeyListener(new java.awt.event.KeyAdapter()
+
+        btnCurp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCurp.setText("Obtener CURP");
+        btnCurp.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCurpActionPerformed(evt);
+            }
+        });
+
+        btnFoto.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnFoto.setForeground(new java.awt.Color(204, 204, 0));
+        btnFoto.setText("Adjuntar");
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
+        btnSalir.setToolTipText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        nombre.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                TNombre14KeyPressed(evt);
+                nombreKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                TNombre14KeyTyped(evt);
+                nombreKeyTyped(evt);
+            }
+        });
+
+        aPaterno.setEnabled(false);
+        aPaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                aPaternoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                aPaternoKeyTyped(evt);
+            }
+        });
+
+        aMaterno.setEnabled(false);
+        aMaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                aMaternoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                aMaternoKeyTyped(evt);
+            }
+        });
+
+        jLabel18.setText("Dia");
+
+        jLabel19.setText("Mes");
+
+        jLabel20.setText("Año");
+
+        edad.setEnabled(false);
+        edad.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                edadKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                edadKeyTyped(evt);
+            }
+        });
+
+        curp.setEnabled(false);
+        curp.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                curpKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                curpKeyTyped(evt);
+            }
+        });
+
+        sexo.add(mujer);
+        mujer.setText("Mujer");
+        mujer.setEnabled(false);
+        mujer.addChangeListener(new javax.swing.event.ChangeListener()
+        {
+            public void stateChanged(javax.swing.event.ChangeEvent evt)
+            {
+                mujerStateChanged(evt);
+            }
+        });
+
+        sexo.add(hombre);
+        hombre.setText("Hombre");
+        hombre.setEnabled(false);
+        hombre.addChangeListener(new javax.swing.event.ChangeListener()
+        {
+            public void stateChanged(javax.swing.event.ChangeEvent evt)
+            {
+                hombreStateChanged(evt);
+            }
+        });
+
+        grado.setEnabled(false);
+        grado.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                gradoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                gradoKeyTyped(evt);
+            }
+        });
+
+        grupo.setEnabled(false);
+        grupo.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                grupoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                grupoKeyTyped(evt);
+            }
+        });
+
+        telefono.setEnabled(false);
+        telefono.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                telefonoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                telefonoKeyTyped(evt);
+            }
+        });
+
+        nombreM.setEnabled(false);
+        nombreM.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                nombreMKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                nombreMKeyTyped(evt);
+            }
+        });
+
+        nombreP.setEnabled(false);
+        nombreP.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                nombrePKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                nombrePKeyTyped(evt);
+            }
+        });
+
+        folio.setEnabled(false);
+        folio.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                folioKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                folioKeyTyped(evt);
+            }
+        });
+
+        correo.setEnabled(false);
+        correo.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                correoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                correoKeyTyped(evt);
+            }
+        });
+
+        contraseña.setEnabled(false);
+        contraseña.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                contraseñaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                contraseñaKeyTyped(evt);
+            }
+        });
+
+        dia.setEnabled(false);
+        dia.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                diaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                diaKeyTyped(evt);
+            }
+        });
+
+        mes.setEnabled(false);
+        mes.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                mesKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                mesKeyTyped(evt);
+            }
+        });
+
+        año.setEnabled(false);
+        año.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                añoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                añoKeyTyped(evt);
             }
         });
 
@@ -470,82 +434,110 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel7))
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TNombre6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TNombre10, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TNombre13, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TNombre14, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(TNombre9, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(TNombre7, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TNombre8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(8, 8, 8))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel13))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TNombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TNombre11, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
-                .addGap(87, 87, 87))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(66, 66, 66)
-                        .addComponent(jButton1)
-                        .addGap(155, 155, 155)
-                        .addComponent(jButton8))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnCancelar)
+                                .addGap(66, 66, 66)
+                                .addComponent(btnRegistrar)
+                                .addGap(155, 155, 155)
+                                .addComponent(btnSalir))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRegresar)
+                                .addGap(140, 140, 140)
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel15)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel13)
+                                                .addGap(9, 9, 9))
+                                            .addComponent(jLabel10))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(curp, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnCurp))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(mujer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(grado))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(hombre)
+                                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(folio, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(contraseña, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(479, 479, 479)
+                                        .addComponent(jLabel9)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(aMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(247, 247, 247))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(aPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(249, 249, 249))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel18)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(jLabel19)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel20)))
+                                .addGap(202, 202, 202))))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(505, Short.MAX_VALUE)
-                    .addComponent(jButton4)
+                    .addComponent(btnFoto)
                     .addGap(34, 34, 34)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -555,82 +547,87 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton8)
+                        .addComponent(btnSalir)
                         .addGap(32, 32, 32))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jButton5))
+                            .addComponent(btnRegresar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel9))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(TNombre5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(35, 35, 35)
+                            .addComponent(jLabel2)
+                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel3)
+                            .addComponent(aPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(aMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(TNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jButton3))
-                                .addGap(35, 35, 35))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TNombre11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)))
+                            .addComponent(jLabel17)
+                            .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(btnCurp)
+                            .addComponent(curp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(TNombre9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
+                            .addComponent(mujer)
+                            .addComponent(hombre))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(TNombre7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12)
-                            .addComponent(TNombre8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(grado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(TNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
+                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(TNombre6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(TNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(TNombre10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
+                            .addComponent(folio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(TNombre13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(TNombre14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                            .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
+                            .addComponent(btnCancelar)
+                            .addComponent(btnRegistrar))
                         .addGap(20, 20, 20))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(163, 163, 163)
-                    .addComponent(jButton4)
+                    .addComponent(btnFoto)
                     .addContainerGap(477, Short.MAX_VALUE)))
         );
 
@@ -639,9 +636,9 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -651,177 +648,25 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TNombreActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombreActionPerformed
-    {//GEN-HEADEREND:event_TNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombreActionPerformed
-
-    private void TNombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombreKeyPressed
-    {//GEN-HEADEREND:event_TNombreKeyPressed
-
-    }//GEN-LAST:event_TNombreKeyPressed
-
-    private void TNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombreKeyTyped
-    {//GEN-HEADEREND:event_TNombreKeyTyped
-
-    }//GEN-LAST:event_TNombreKeyTyped
-
-    private void TNombre1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre1ActionPerformed
-    {//GEN-HEADEREND:event_TNombre1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre1ActionPerformed
-
-    private void TNombre1KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre1KeyPressed
-    {//GEN-HEADEREND:event_TNombre1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre1KeyPressed
-
-    private void TNombre1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre1KeyTyped
-    {//GEN-HEADEREND:event_TNombre1KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre1KeyTyped
-
-    private void TNombre2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre2ActionPerformed
-    {//GEN-HEADEREND:event_TNombre2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre2ActionPerformed
-
-    private void TNombre2KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre2KeyPressed
-    {//GEN-HEADEREND:event_TNombre2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre2KeyPressed
-
-    private void TNombre2KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre2KeyTyped
-    {//GEN-HEADEREND:event_TNombre2KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre2KeyTyped
-
-    private void TNombre3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre3ActionPerformed
-    {//GEN-HEADEREND:event_TNombre3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre3ActionPerformed
-
-    private void TNombre3KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre3KeyPressed
-    {//GEN-HEADEREND:event_TNombre3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre3KeyPressed
-
-    private void TNombre3KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre3KeyTyped
-    {//GEN-HEADEREND:event_TNombre3KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre3KeyTyped
-
-    private void TNombre4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre4ActionPerformed
-    {//GEN-HEADEREND:event_TNombre4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre4ActionPerformed
-
-    private void TNombre4KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre4KeyPressed
-    {//GEN-HEADEREND:event_TNombre4KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre4KeyPressed
-
-    private void TNombre4KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre4KeyTyped
-    {//GEN-HEADEREND:event_TNombre4KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre4KeyTyped
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
+    {//GEN-HEADEREND:event_btnRegistrarActionPerformed
         new Principal().setVisible(true);
        this.setVisible(false);
-       try{
+       /*try{
        
        }catch(Exception e){
-               }
-            
-       
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+           System.out.println("No se que pase jajaja");
+               }*/
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    private void TNombre5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre5ActionPerformed
-    {//GEN-HEADEREND:event_TNombre5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre5ActionPerformed
-
-    private void TNombre5KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre5KeyPressed
-    {//GEN-HEADEREND:event_TNombre5KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre5KeyPressed
-
-    private void TNombre5KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre5KeyTyped
-    {//GEN-HEADEREND:event_TNombre5KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre5KeyTyped
-
-    private void TNombre6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre6ActionPerformed
-    {//GEN-HEADEREND:event_TNombre6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre6ActionPerformed
-
-    private void TNombre6KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre6KeyPressed
-    {//GEN-HEADEREND:event_TNombre6KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre6KeyPressed
-
-    private void TNombre6KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre6KeyTyped
-    {//GEN-HEADEREND:event_TNombre6KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre6KeyTyped
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
+    {//GEN-HEADEREND:event_btnCancelarActionPerformed
         new ControlEscolar().setVisible(true);
        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void TNombre7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre7ActionPerformed
-    {//GEN-HEADEREND:event_TNombre7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre7ActionPerformed
-
-    private void TNombre7KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre7KeyPressed
-    {//GEN-HEADEREND:event_TNombre7KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre7KeyPressed
-
-    private void TNombre7KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre7KeyTyped
-    {//GEN-HEADEREND:event_TNombre7KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre7KeyTyped
-
-    private void TNombre8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre8ActionPerformed
-    {//GEN-HEADEREND:event_TNombre8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre8ActionPerformed
-
-    private void TNombre8KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre8KeyPressed
-    {//GEN-HEADEREND:event_TNombre8KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre8KeyPressed
-
-    private void TNombre8KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre8KeyTyped
-    {//GEN-HEADEREND:event_TNombre8KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre8KeyTyped
-
-    private void TNombre9ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre9ActionPerformed
-    {//GEN-HEADEREND:event_TNombre9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre9ActionPerformed
-
-    private void TNombre9KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre9KeyPressed
-    {//GEN-HEADEREND:event_TNombre9KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre9KeyPressed
-
-    private void TNombre9KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre9KeyTyped
-    {//GEN-HEADEREND:event_TNombre9KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre9KeyTyped
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
+    private void btnCurpActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCurpActionPerformed
+    {//GEN-HEADEREND:event_btnCurpActionPerformed
         if (java.awt.Desktop.isDesktopSupported())
         {
             java.awt.Desktop desktop= java.awt.Desktop.getDesktop();
@@ -834,97 +679,296 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                 } catch (URISyntaxException | IOException ex)
                 {
                 }
-                
             }
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCurpActionPerformed
 
-    private void TNombre10ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre10ActionPerformed
-    {//GEN-HEADEREND:event_TNombre10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre10ActionPerformed
-
-    private void TNombre10KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre10KeyPressed
-    {//GEN-HEADEREND:event_TNombre10KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre10KeyPressed
-
-    private void TNombre10KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre10KeyTyped
-    {//GEN-HEADEREND:event_TNombre10KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre10KeyTyped
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5ActionPerformed
-    {//GEN-HEADEREND:event_jButton5ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
         new ControlEscolar().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton8ActionPerformed
-    {//GEN-HEADEREND:event_jButton8ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
+    {//GEN-HEADEREND:event_btnSalirActionPerformed
         new MensajeSalida().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void TNombre11ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre11ActionPerformed
-    {//GEN-HEADEREND:event_TNombre11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre11ActionPerformed
+    private void nombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreKeyPressed
+    {//GEN-HEADEREND:event_nombreKeyPressed
+        if (nombre.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, aPaterno);
+        } 
+    }//GEN-LAST:event_nombreKeyPressed
 
-    private void TNombre11KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre11KeyPressed
-    {//GEN-HEADEREND:event_TNombre11KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre11KeyPressed
+    private void nombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreKeyTyped
+    {//GEN-HEADEREND:event_nombreKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_nombreKeyTyped
 
-    private void TNombre11KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre11KeyTyped
-    {//GEN-HEADEREND:event_TNombre11KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre11KeyTyped
+    private void aPaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aPaternoKeyPressed
+    {//GEN-HEADEREND:event_aPaternoKeyPressed
+        if (aPaterno.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, aMaterno);
+        }
+    }//GEN-LAST:event_aPaternoKeyPressed
 
-    private void TNombre12ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre12ActionPerformed
-    {//GEN-HEADEREND:event_TNombre12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre12ActionPerformed
+    private void aPaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aPaternoKeyTyped
+    {//GEN-HEADEREND:event_aPaternoKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_aPaternoKeyTyped
 
-    private void TNombre12KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre12KeyPressed
-    {//GEN-HEADEREND:event_TNombre12KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre12KeyPressed
+    private void aMaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aMaternoKeyPressed
+    {//GEN-HEADEREND:event_aMaternoKeyPressed
+        if (aMaterno.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, dia);
+        }
+    }//GEN-LAST:event_aMaternoKeyPressed
 
-    private void TNombre12KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre12KeyTyped
-    {//GEN-HEADEREND:event_TNombre12KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre12KeyTyped
+    private void aMaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aMaternoKeyTyped
+    {//GEN-HEADEREND:event_aMaternoKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_aMaternoKeyTyped
 
-    private void TNombre13ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre13ActionPerformed
-    {//GEN-HEADEREND:event_TNombre13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre13ActionPerformed
+    private void diaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_diaKeyPressed
+    {//GEN-HEADEREND:event_diaKeyPressed
+        if (dia.getText().isEmpty() != true) 
+        {
+            Validaciones.enter(this, evt, mes);
+        }
+    }//GEN-LAST:event_diaKeyPressed
 
-    private void TNombre13KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre13KeyPressed
-    {//GEN-HEADEREND:event_TNombre13KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre13KeyPressed
+    private void diaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_diaKeyTyped
+    {//GEN-HEADEREND:event_diaKeyTyped
+        if (dia.getText().length() == 2) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_diaKeyTyped
 
-    private void TNombre13KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre13KeyTyped
-    {//GEN-HEADEREND:event_TNombre13KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre13KeyTyped
+    private void mesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_mesKeyPressed
+    {//GEN-HEADEREND:event_mesKeyPressed
+        if (mes.getText().isEmpty() != true) 
+        {
+            Validaciones.enter(this, evt, año);
+        }
+    }//GEN-LAST:event_mesKeyPressed
 
-    private void TNombre14ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombre14ActionPerformed
-    {//GEN-HEADEREND:event_TNombre14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre14ActionPerformed
+    private void mesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_mesKeyTyped
+    {//GEN-HEADEREND:event_mesKeyTyped
+        if (mes.getText().length() == 2) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_mesKeyTyped
 
-    private void TNombre14KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre14KeyPressed
-    {//GEN-HEADEREND:event_TNombre14KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre14KeyPressed
+    private void añoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_añoKeyPressed
+    {//GEN-HEADEREND:event_añoKeyPressed
+        if (año.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, edad);
+        }
+    }//GEN-LAST:event_añoKeyPressed
 
-    private void TNombre14KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TNombre14KeyTyped
-    {//GEN-HEADEREND:event_TNombre14KeyTyped
+    private void añoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_añoKeyTyped
+    {//GEN-HEADEREND:event_añoKeyTyped
+        if (año.getText().length() != 4 ) {
+            Validaciones.validaEntero(evt);
+        } else {
+            evt.consume();
+        }
+    }//GEN-LAST:event_añoKeyTyped
+
+    private void edadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_edadKeyPressed
+    {//GEN-HEADEREND:event_edadKeyPressed
+        if (edad.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, btnCurp);
+            Validaciones.enter(this, evt, curp);
+        }
+    }//GEN-LAST:event_edadKeyPressed
+
+    private void edadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_edadKeyTyped
+    {//GEN-HEADEREND:event_edadKeyTyped
+        if (edad.getText().length() == 2) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_edadKeyTyped
+
+    private void curpKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_curpKeyPressed
+    {//GEN-HEADEREND:event_curpKeyPressed
+        if (curp.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, mujer);
+            Validaciones.enter(this, evt, hombre);
+            
+            hombre.setEnabled(true);
+            mujer.setEnabled(true);
+        }
+    }//GEN-LAST:event_curpKeyPressed
+
+    private void curpKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_curpKeyTyped
+    {//GEN-HEADEREND:event_curpKeyTyped
+        char c= evt.getKeyChar();
+        if (Character.isLowerCase(c))
+        {
+            String cad=(""+c).toUpperCase();
+            c=cad.charAt(0);
+            evt.setKeyChar(c);
+        }
+             
+        if (curp.getText().length() == 18) {
+            evt.consume();
+        } else {
+            Validaciones.validaAlfanumerico(evt);
+        }
+    }//GEN-LAST:event_curpKeyTyped
+
+    private void mujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_mujerStateChanged
+    {//GEN-HEADEREND:event_mujerStateChanged
+        if (mujer.isSelected())
+        {
+            String sexo = "Mujer";
+        }
+        grado.setEnabled(true);
+    }//GEN-LAST:event_mujerStateChanged
+
+    private void hombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_hombreStateChanged
+    {//GEN-HEADEREND:event_hombreStateChanged
+        if (hombre.isSelected())
+        {
+            String sexo = "Mujer";
+        }
+        grado.setEnabled(true);
+    }//GEN-LAST:event_hombreStateChanged
+
+    private void gradoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_gradoKeyPressed
+    {//GEN-HEADEREND:event_gradoKeyPressed
+        if (grado.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, grupo);
+        }
+    }//GEN-LAST:event_gradoKeyPressed
+
+    private void gradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_gradoKeyTyped
+    {//GEN-HEADEREND:event_gradoKeyTyped
+        if (grado.getText().length() == 1 ) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_gradoKeyTyped
+
+    private void grupoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_grupoKeyPressed
+    {//GEN-HEADEREND:event_grupoKeyPressed
+        if (grupo.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, telefono);
+        }
+    }//GEN-LAST:event_grupoKeyPressed
+
+    private void grupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_grupoKeyTyped
+    {//GEN-HEADEREND:event_grupoKeyTyped
+        if (grupo.getText().length() == 1 ) {
+            evt.consume();
+        } else {
+            Validaciones.validaAlfabeticos(evt);
+        }
+    }//GEN-LAST:event_grupoKeyTyped
+
+    private void telefonoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_telefonoKeyPressed
+    {//GEN-HEADEREND:event_telefonoKeyPressed
+        if (telefono.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, nombreM);
+        }
+    }//GEN-LAST:event_telefonoKeyPressed
+
+    private void telefonoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_telefonoKeyTyped
+    {//GEN-HEADEREND:event_telefonoKeyTyped
+        if (telefono.getText().length() == 10 ) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_telefonoKeyTyped
+
+    private void nombreMKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreMKeyPressed
+    {//GEN-HEADEREND:event_nombreMKeyPressed
+        if (nombreM.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, nombreP);
+        }
+    }//GEN-LAST:event_nombreMKeyPressed
+
+    private void nombreMKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreMKeyTyped
+    {//GEN-HEADEREND:event_nombreMKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_nombreMKeyTyped
+
+    private void nombrePKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombrePKeyPressed
+    {//GEN-HEADEREND:event_nombrePKeyPressed
+        if (nombreP.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, folio);
+        }
+    }//GEN-LAST:event_nombrePKeyPressed
+
+    private void nombrePKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombrePKeyTyped
+    {//GEN-HEADEREND:event_nombrePKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_nombrePKeyTyped
+
+    private void folioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_folioKeyPressed
+    {//GEN-HEADEREND:event_folioKeyPressed
+        if (folio.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, correo);
+        }
+    }//GEN-LAST:event_folioKeyPressed
+
+    private void folioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_folioKeyTyped
+    {//GEN-HEADEREND:event_folioKeyTyped
+        if (folio.getText().length() == 7 ) {
+            evt.consume();
+        } else {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_folioKeyTyped
+
+    private void correoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_correoKeyPressed
+    {//GEN-HEADEREND:event_correoKeyPressed
+        if (folio.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, contraseña);
+        }
+    }//GEN-LAST:event_correoKeyPressed
+
+    private void correoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_correoKeyTyped
+    {//GEN-HEADEREND:event_correoKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_TNombre14KeyTyped
+    }//GEN-LAST:event_correoKeyTyped
+
+    private void contraseñaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_contraseñaKeyPressed
+    {//GEN-HEADEREND:event_contraseñaKeyPressed
+        if (contraseña.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, btnRegistrar);
+        }
+    }//GEN-LAST:event_contraseñaKeyPressed
+
+    private void contraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_contraseñaKeyTyped
+    {//GEN-HEADEREND:event_contraseñaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseñaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -975,28 +1019,24 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TNombre;
-    private javax.swing.JTextField TNombre1;
-    private javax.swing.JTextField TNombre10;
-    private javax.swing.JTextField TNombre11;
-    private javax.swing.JTextField TNombre12;
-    private javax.swing.JTextField TNombre13;
-    private javax.swing.JTextField TNombre14;
-    private javax.swing.JTextField TNombre2;
-    private javax.swing.JTextField TNombre3;
-    private javax.swing.JTextField TNombre4;
-    private javax.swing.JTextField TNombre5;
-    private javax.swing.JTextField TNombre6;
-    private javax.swing.JTextField TNombre7;
-    private javax.swing.JTextField TNombre8;
-    private javax.swing.JTextField TNombre9;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JTextField aMaterno;
+    private javax.swing.JTextField aPaterno;
+    private javax.swing.JTextField año;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCurp;
+    private javax.swing.JButton btnFoto;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JPasswordField contraseña;
+    private javax.swing.JTextField correo;
+    private javax.swing.JTextField curp;
+    private javax.swing.JTextField dia;
+    private javax.swing.JTextField edad;
+    private javax.swing.JTextField folio;
+    private javax.swing.JTextField grado;
+    private javax.swing.JTextField grupo;
+    private javax.swing.JRadioButton hombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1004,7 +1044,12 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1013,5 +1058,12 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField mes;
+    private javax.swing.JRadioButton mujer;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JTextField nombreM;
+    private javax.swing.JTextField nombreP;
+    private javax.swing.ButtonGroup sexo;
+    private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }
