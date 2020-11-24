@@ -175,7 +175,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnFoto.setForeground(new java.awt.Color(204, 204, 0));
         btnFoto.setText("Adjuntar");
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -185,7 +185,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         });
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
         btnSalir.setToolTipText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener()
         {

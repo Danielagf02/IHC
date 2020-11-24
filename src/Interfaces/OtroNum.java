@@ -56,7 +56,7 @@ public class OtroNum extends javax.swing.JFrame
         jButton1.setForeground(new java.awt.Color(51, 153, 255));
         jButton1.setText("Enviar");
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)

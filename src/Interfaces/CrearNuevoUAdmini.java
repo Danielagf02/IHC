@@ -62,7 +62,7 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setText("Nueva contraseña:");
 
-        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
 
         jTextField1.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         jTextField1.setText("Ingrese nuevo correo");
@@ -78,7 +78,7 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
         jButton2.setForeground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Cancelar ");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/proyecto.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/proyecto.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
