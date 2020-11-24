@@ -6,6 +6,8 @@ package Interno;
  */
 public class Admin
 {
+    
+    //soy admin xdxdx
     private String usuario;
     private String contraseña;
 
