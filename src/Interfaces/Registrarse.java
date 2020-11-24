@@ -455,6 +455,7 @@ public class Registrarse extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TNombreActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_TNombreActionPerformed
