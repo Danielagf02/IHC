@@ -59,27 +59,27 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnFoto = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        nombre = new javax.swing.JTextField();
-        aPaterno = new javax.swing.JTextField();
-        aMaterno = new javax.swing.JTextField();
+        tfNombre = new javax.swing.JTextField();
+        tfAPaterno = new javax.swing.JTextField();
+        tfAMaterno = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        edad = new javax.swing.JTextField();
-        curp = new javax.swing.JTextField();
-        mujer = new javax.swing.JRadioButton();
-        hombre = new javax.swing.JRadioButton();
-        grado = new javax.swing.JTextField();
-        grupo = new javax.swing.JTextField();
-        telefono = new javax.swing.JTextField();
-        nombreM = new javax.swing.JTextField();
-        nombreP = new javax.swing.JTextField();
-        folio = new javax.swing.JTextField();
-        correo = new javax.swing.JTextField();
-        contraseña = new javax.swing.JPasswordField();
-        dia = new javax.swing.JTextField();
-        mes = new javax.swing.JTextField();
-        año = new javax.swing.JTextField();
+        tfEdad = new javax.swing.JTextField();
+        tfCurp = new javax.swing.JTextField();
+        jrbMujer = new javax.swing.JRadioButton();
+        jrbHombre = new javax.swing.JRadioButton();
+        tfGrado = new javax.swing.JTextField();
+        tfGrupo = new javax.swing.JTextField();
+        tfTel = new javax.swing.JTextField();
+        tfNombreM = new javax.swing.JTextField();
+        tfNombreP = new javax.swing.JTextField();
+        tfFolio = new javax.swing.JTextField();
+        tfCorreo = new javax.swing.JTextField();
+        tfContraseña = new javax.swing.JPasswordField();
+        tfDia = new javax.swing.JTextField();
+        tfMes = new javax.swing.JTextField();
+        tfAño = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro");
@@ -195,41 +195,41 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             }
         });
 
-        nombre.addKeyListener(new java.awt.event.KeyAdapter()
+        tfNombre.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                nombreKeyPressed(evt);
+                tfNombreKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                nombreKeyTyped(evt);
+                tfNombreKeyTyped(evt);
             }
         });
 
-        aPaterno.setEnabled(false);
-        aPaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        tfAPaterno.setEnabled(false);
+        tfAPaterno.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                aPaternoKeyPressed(evt);
+                tfAPaternoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                aPaternoKeyTyped(evt);
+                tfAPaternoKeyTyped(evt);
             }
         });
 
-        aMaterno.setEnabled(false);
-        aMaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        tfAMaterno.setEnabled(false);
+        tfAMaterno.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                aMaternoKeyPressed(evt);
+                tfAMaternoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                aMaternoKeyTyped(evt);
+                tfAMaternoKeyTyped(evt);
             }
         });
 
@@ -239,194 +239,194 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
         jLabel20.setText("Año");
 
-        edad.setEnabled(false);
-        edad.addKeyListener(new java.awt.event.KeyAdapter()
+        tfEdad.setEnabled(false);
+        tfEdad.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                edadKeyPressed(evt);
+                tfEdadKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                edadKeyTyped(evt);
+                tfEdadKeyTyped(evt);
             }
         });
 
-        curp.setEnabled(false);
-        curp.addKeyListener(new java.awt.event.KeyAdapter()
+        tfCurp.setEnabled(false);
+        tfCurp.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                curpKeyPressed(evt);
+                tfCurpKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                curpKeyTyped(evt);
+                tfCurpKeyTyped(evt);
             }
         });
 
-        sexo.add(mujer);
-        mujer.setText("Mujer");
-        mujer.setEnabled(false);
-        mujer.addChangeListener(new javax.swing.event.ChangeListener()
+        sexo.add(jrbMujer);
+        jrbMujer.setText("Mujer");
+        jrbMujer.setEnabled(false);
+        jrbMujer.addChangeListener(new javax.swing.event.ChangeListener()
         {
             public void stateChanged(javax.swing.event.ChangeEvent evt)
             {
-                mujerStateChanged(evt);
+                jrbMujerStateChanged(evt);
             }
         });
 
-        sexo.add(hombre);
-        hombre.setText("Hombre");
-        hombre.setEnabled(false);
-        hombre.addChangeListener(new javax.swing.event.ChangeListener()
+        sexo.add(jrbHombre);
+        jrbHombre.setText("Hombre");
+        jrbHombre.setEnabled(false);
+        jrbHombre.addChangeListener(new javax.swing.event.ChangeListener()
         {
             public void stateChanged(javax.swing.event.ChangeEvent evt)
             {
-                hombreStateChanged(evt);
+                jrbHombreStateChanged(evt);
             }
         });
 
-        grado.setEnabled(false);
-        grado.addKeyListener(new java.awt.event.KeyAdapter()
+        tfGrado.setEnabled(false);
+        tfGrado.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                gradoKeyPressed(evt);
+                tfGradoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                gradoKeyTyped(evt);
+                tfGradoKeyTyped(evt);
             }
         });
 
-        grupo.setEnabled(false);
-        grupo.addKeyListener(new java.awt.event.KeyAdapter()
+        tfGrupo.setEnabled(false);
+        tfGrupo.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                grupoKeyPressed(evt);
+                tfGrupoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                grupoKeyTyped(evt);
+                tfGrupoKeyTyped(evt);
             }
         });
 
-        telefono.setEnabled(false);
-        telefono.addKeyListener(new java.awt.event.KeyAdapter()
+        tfTel.setEnabled(false);
+        tfTel.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                telefonoKeyPressed(evt);
+                tfTelKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                telefonoKeyTyped(evt);
+                tfTelKeyTyped(evt);
             }
         });
 
-        nombreM.setEnabled(false);
-        nombreM.addKeyListener(new java.awt.event.KeyAdapter()
+        tfNombreM.setEnabled(false);
+        tfNombreM.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                nombreMKeyPressed(evt);
+                tfNombreMKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                nombreMKeyTyped(evt);
+                tfNombreMKeyTyped(evt);
             }
         });
 
-        nombreP.setEnabled(false);
-        nombreP.addKeyListener(new java.awt.event.KeyAdapter()
+        tfNombreP.setEnabled(false);
+        tfNombreP.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                nombrePKeyPressed(evt);
+                tfNombrePKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                nombrePKeyTyped(evt);
+                tfNombrePKeyTyped(evt);
             }
         });
 
-        folio.setEnabled(false);
-        folio.addKeyListener(new java.awt.event.KeyAdapter()
+        tfFolio.setEnabled(false);
+        tfFolio.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                folioKeyPressed(evt);
+                tfFolioKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                folioKeyTyped(evt);
+                tfFolioKeyTyped(evt);
             }
         });
 
-        correo.setEnabled(false);
-        correo.addKeyListener(new java.awt.event.KeyAdapter()
+        tfCorreo.setEnabled(false);
+        tfCorreo.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                correoKeyPressed(evt);
+                tfCorreoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                correoKeyTyped(evt);
+                tfCorreoKeyTyped(evt);
             }
         });
 
-        contraseña.setEnabled(false);
-        contraseña.addKeyListener(new java.awt.event.KeyAdapter()
+        tfContraseña.setEnabled(false);
+        tfContraseña.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                contraseñaKeyPressed(evt);
+                tfContraseñaKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                contraseñaKeyTyped(evt);
+                tfContraseñaKeyTyped(evt);
             }
         });
 
-        dia.setEnabled(false);
-        dia.addKeyListener(new java.awt.event.KeyAdapter()
+        tfDia.setEnabled(false);
+        tfDia.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                diaKeyPressed(evt);
+                tfDiaKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                diaKeyTyped(evt);
+                tfDiaKeyTyped(evt);
             }
         });
 
-        mes.setEnabled(false);
-        mes.addKeyListener(new java.awt.event.KeyAdapter()
+        tfMes.setEnabled(false);
+        tfMes.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                mesKeyPressed(evt);
+                tfMesKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                mesKeyTyped(evt);
+                tfMesKeyTyped(evt);
             }
         });
 
-        año.setEnabled(false);
-        año.addKeyListener(new java.awt.event.KeyAdapter()
+        tfAño.setEnabled(false);
+        tfAño.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                añoKeyPressed(evt);
+                tfAñoKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                añoKeyTyped(evt);
+                tfAñoKeyTyped(evt);
             }
         });
 
@@ -473,32 +473,32 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(curp, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tfCurp, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(btnCurp))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(mujer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(grado))
+                                                    .addComponent(jrbMujer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(tfGrado))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(hombre)
+                                                    .addComponent(jrbHombre)
                                                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(nombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(nombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(folio, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(tfGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(contraseña, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
+                                                .addComponent(tfContraseña, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(tfCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(479, 479, 479)
                                         .addComponent(jLabel9)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(aMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfAMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(247, 247, 247))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,23 +509,23 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                                             .addComponent(jLabel3))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(aPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfAPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(249, 249, 249))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfDia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfMes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addComponent(jLabel18)
@@ -556,24 +556,24 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel3)
-                            .addComponent(aPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfAPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(aMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfAMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(jLabel17)
-                            .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(2, 2, 2)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
@@ -583,42 +583,42 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(btnCurp)
-                            .addComponent(curp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfCurp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(mujer)
-                            .addComponent(hombre))
+                            .addComponent(jrbMujer)
+                            .addComponent(jrbHombre))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jLabel12)
-                            .addComponent(grado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(grupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(nombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(nombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(folio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCancelar)
@@ -658,6 +658,10 @@ public class RegistrarAlumnos extends javax.swing.JFrame
        }catch(Exception e){
            System.out.println("No se que pase jajaja");
                }*/
+       String nombre = tfNombre.getText();
+       String apellidoP = tfAPaterno.getText();
+       String apellidoM = tfAMaterno.getText();
+       String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
@@ -696,128 +700,128 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void nombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreKeyPressed
-    {//GEN-HEADEREND:event_nombreKeyPressed
-        if (nombre.getText().isEmpty() != true)
+    private void tfNombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyPressed
+    {//GEN-HEADEREND:event_tfNombreKeyPressed
+        if (tfNombre.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, aPaterno);
+            Validaciones.enter(this, evt, tfAPaterno);
         } 
-    }//GEN-LAST:event_nombreKeyPressed
+    }//GEN-LAST:event_tfNombreKeyPressed
 
-    private void nombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreKeyTyped
-    {//GEN-HEADEREND:event_nombreKeyTyped
+    private void tfNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyTyped
+    {//GEN-HEADEREND:event_tfNombreKeyTyped
         Validaciones.validaAlfabeticos(evt);
-    }//GEN-LAST:event_nombreKeyTyped
+    }//GEN-LAST:event_tfNombreKeyTyped
 
-    private void aPaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aPaternoKeyPressed
-    {//GEN-HEADEREND:event_aPaternoKeyPressed
-        if (aPaterno.getText().isEmpty() != true)
+    private void tfAPaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAPaternoKeyPressed
+    {//GEN-HEADEREND:event_tfAPaternoKeyPressed
+        if (tfAPaterno.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, aMaterno);
+            Validaciones.enter(this, evt, tfAMaterno);
         }
-    }//GEN-LAST:event_aPaternoKeyPressed
+    }//GEN-LAST:event_tfAPaternoKeyPressed
 
-    private void aPaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aPaternoKeyTyped
-    {//GEN-HEADEREND:event_aPaternoKeyTyped
+    private void tfAPaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAPaternoKeyTyped
+    {//GEN-HEADEREND:event_tfAPaternoKeyTyped
         Validaciones.validaAlfabeticos(evt);
-    }//GEN-LAST:event_aPaternoKeyTyped
+    }//GEN-LAST:event_tfAPaternoKeyTyped
 
-    private void aMaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aMaternoKeyPressed
-    {//GEN-HEADEREND:event_aMaternoKeyPressed
-        if (aMaterno.getText().isEmpty() != true)
+    private void tfAMaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAMaternoKeyPressed
+    {//GEN-HEADEREND:event_tfAMaternoKeyPressed
+        if (tfAMaterno.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, dia);
+            Validaciones.enter(this, evt, tfDia);
         }
-    }//GEN-LAST:event_aMaternoKeyPressed
+    }//GEN-LAST:event_tfAMaternoKeyPressed
 
-    private void aMaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_aMaternoKeyTyped
-    {//GEN-HEADEREND:event_aMaternoKeyTyped
+    private void tfAMaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAMaternoKeyTyped
+    {//GEN-HEADEREND:event_tfAMaternoKeyTyped
         Validaciones.validaAlfabeticos(evt);
-    }//GEN-LAST:event_aMaternoKeyTyped
+    }//GEN-LAST:event_tfAMaternoKeyTyped
 
-    private void diaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_diaKeyPressed
-    {//GEN-HEADEREND:event_diaKeyPressed
-        if (dia.getText().isEmpty() != true) 
+    private void tfDiaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyPressed
+    {//GEN-HEADEREND:event_tfDiaKeyPressed
+        if (tfDia.getText().isEmpty() != true) 
         {
-            Validaciones.enter(this, evt, mes);
+            Validaciones.enter(this, evt, tfMes);
         }
-    }//GEN-LAST:event_diaKeyPressed
+    }//GEN-LAST:event_tfDiaKeyPressed
 
-    private void diaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_diaKeyTyped
-    {//GEN-HEADEREND:event_diaKeyTyped
-        if (dia.getText().length() == 2) {
+    private void tfDiaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyTyped
+    {//GEN-HEADEREND:event_tfDiaKeyTyped
+        if (tfDia.getText().length() == 2) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_diaKeyTyped
+    }//GEN-LAST:event_tfDiaKeyTyped
 
-    private void mesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_mesKeyPressed
-    {//GEN-HEADEREND:event_mesKeyPressed
-        if (mes.getText().isEmpty() != true) 
+    private void tfMesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyPressed
+    {//GEN-HEADEREND:event_tfMesKeyPressed
+        if (tfMes.getText().isEmpty() != true) 
         {
-            Validaciones.enter(this, evt, año);
+            Validaciones.enter(this, evt, tfAño);
         }
-    }//GEN-LAST:event_mesKeyPressed
+    }//GEN-LAST:event_tfMesKeyPressed
 
-    private void mesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_mesKeyTyped
-    {//GEN-HEADEREND:event_mesKeyTyped
-        if (mes.getText().length() == 2) {
+    private void tfMesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyTyped
+    {//GEN-HEADEREND:event_tfMesKeyTyped
+        if (tfMes.getText().length() == 2) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_mesKeyTyped
+    }//GEN-LAST:event_tfMesKeyTyped
 
-    private void añoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_añoKeyPressed
-    {//GEN-HEADEREND:event_añoKeyPressed
-        if (año.getText().isEmpty() != true)
+    private void tfAñoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyPressed
+    {//GEN-HEADEREND:event_tfAñoKeyPressed
+        if (tfAño.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, edad);
+            Validaciones.enter(this, evt, tfEdad);
         }
-    }//GEN-LAST:event_añoKeyPressed
+    }//GEN-LAST:event_tfAñoKeyPressed
 
-    private void añoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_añoKeyTyped
-    {//GEN-HEADEREND:event_añoKeyTyped
-        if (año.getText().length() != 4 ) {
+    private void tfAñoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyTyped
+    {//GEN-HEADEREND:event_tfAñoKeyTyped
+        if (tfAño.getText().length() != 4 ) {
             Validaciones.validaEntero(evt);
         } else {
             evt.consume();
         }
-    }//GEN-LAST:event_añoKeyTyped
+    }//GEN-LAST:event_tfAñoKeyTyped
 
-    private void edadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_edadKeyPressed
-    {//GEN-HEADEREND:event_edadKeyPressed
-        if (edad.getText().isEmpty() != true)
+    private void tfEdadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyPressed
+    {//GEN-HEADEREND:event_tfEdadKeyPressed
+        if (tfEdad.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, btnCurp);
-            Validaciones.enter(this, evt, curp);
+            Validaciones.enter(this, evt, tfCurp);
         }
-    }//GEN-LAST:event_edadKeyPressed
+    }//GEN-LAST:event_tfEdadKeyPressed
 
-    private void edadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_edadKeyTyped
-    {//GEN-HEADEREND:event_edadKeyTyped
-        if (edad.getText().length() == 2) {
+    private void tfEdadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyTyped
+    {//GEN-HEADEREND:event_tfEdadKeyTyped
+        if (tfEdad.getText().length() == 2) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_edadKeyTyped
+    }//GEN-LAST:event_tfEdadKeyTyped
 
-    private void curpKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_curpKeyPressed
-    {//GEN-HEADEREND:event_curpKeyPressed
-        if (curp.getText().isEmpty() != true)
+    private void tfCurpKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCurpKeyPressed
+    {//GEN-HEADEREND:event_tfCurpKeyPressed
+        if (tfCurp.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, mujer);
-            Validaciones.enter(this, evt, hombre);
+            Validaciones.enter(this, evt, jrbMujer);
+            Validaciones.enter(this, evt, jrbHombre);
             
-            hombre.setEnabled(true);
-            mujer.setEnabled(true);
+            jrbHombre.setEnabled(true);
+            jrbMujer.setEnabled(true);
         }
-    }//GEN-LAST:event_curpKeyPressed
+    }//GEN-LAST:event_tfCurpKeyPressed
 
-    private void curpKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_curpKeyTyped
-    {//GEN-HEADEREND:event_curpKeyTyped
+    private void tfCurpKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCurpKeyTyped
+    {//GEN-HEADEREND:event_tfCurpKeyTyped
         char c= evt.getKeyChar();
         if (Character.isLowerCase(c))
         {
@@ -826,150 +830,150 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             evt.setKeyChar(c);
         }
              
-        if (curp.getText().length() == 18) {
+        if (tfCurp.getText().length() == 18) {
             evt.consume();
         } else {
             Validaciones.validaAlfanumerico(evt);
         }
-    }//GEN-LAST:event_curpKeyTyped
+    }//GEN-LAST:event_tfCurpKeyTyped
 
-    private void mujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_mujerStateChanged
-    {//GEN-HEADEREND:event_mujerStateChanged
-        if (mujer.isSelected())
+    private void jrbMujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_jrbMujerStateChanged
+    {//GEN-HEADEREND:event_jrbMujerStateChanged
+        if (jrbMujer.isSelected())
         {
             String sexo = "Mujer";
         }
-        grado.setEnabled(true);
-    }//GEN-LAST:event_mujerStateChanged
+        tfGrado.setEnabled(true);
+    }//GEN-LAST:event_jrbMujerStateChanged
 
-    private void hombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_hombreStateChanged
-    {//GEN-HEADEREND:event_hombreStateChanged
-        if (hombre.isSelected())
+    private void jrbHombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_jrbHombreStateChanged
+    {//GEN-HEADEREND:event_jrbHombreStateChanged
+        if (jrbHombre.isSelected())
         {
             String sexo = "Mujer";
         }
-        grado.setEnabled(true);
-    }//GEN-LAST:event_hombreStateChanged
+        tfGrado.setEnabled(true);
+    }//GEN-LAST:event_jrbHombreStateChanged
 
-    private void gradoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_gradoKeyPressed
-    {//GEN-HEADEREND:event_gradoKeyPressed
-        if (grado.getText().isEmpty() != true)
+    private void tfGradoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyPressed
+    {//GEN-HEADEREND:event_tfGradoKeyPressed
+        if (tfGrado.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, grupo);
+            Validaciones.enter(this, evt, tfGrupo);
         }
-    }//GEN-LAST:event_gradoKeyPressed
+    }//GEN-LAST:event_tfGradoKeyPressed
 
-    private void gradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_gradoKeyTyped
-    {//GEN-HEADEREND:event_gradoKeyTyped
-        if (grado.getText().length() == 1 ) {
+    private void tfGradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyTyped
+    {//GEN-HEADEREND:event_tfGradoKeyTyped
+        if (tfGrado.getText().length() == 1 ) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_gradoKeyTyped
+    }//GEN-LAST:event_tfGradoKeyTyped
 
-    private void grupoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_grupoKeyPressed
-    {//GEN-HEADEREND:event_grupoKeyPressed
-        if (grupo.getText().isEmpty() != true)
+    private void tfGrupoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyPressed
+    {//GEN-HEADEREND:event_tfGrupoKeyPressed
+        if (tfGrupo.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, telefono);
+            Validaciones.enter(this, evt, tfTel);
         }
-    }//GEN-LAST:event_grupoKeyPressed
+    }//GEN-LAST:event_tfGrupoKeyPressed
 
-    private void grupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_grupoKeyTyped
-    {//GEN-HEADEREND:event_grupoKeyTyped
-        if (grupo.getText().length() == 1 ) {
+    private void tfGrupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyTyped
+    {//GEN-HEADEREND:event_tfGrupoKeyTyped
+        if (tfGrupo.getText().length() == 1 ) {
             evt.consume();
         } else {
             Validaciones.validaAlfabeticos(evt);
         }
-    }//GEN-LAST:event_grupoKeyTyped
+    }//GEN-LAST:event_tfGrupoKeyTyped
 
-    private void telefonoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_telefonoKeyPressed
-    {//GEN-HEADEREND:event_telefonoKeyPressed
-        if (telefono.getText().isEmpty() != true)
+    private void tfTelKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyPressed
+    {//GEN-HEADEREND:event_tfTelKeyPressed
+        if (tfTel.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, nombreM);
+            Validaciones.enter(this, evt, tfNombreM);
         }
-    }//GEN-LAST:event_telefonoKeyPressed
+    }//GEN-LAST:event_tfTelKeyPressed
 
-    private void telefonoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_telefonoKeyTyped
-    {//GEN-HEADEREND:event_telefonoKeyTyped
-        if (telefono.getText().length() == 10 ) {
+    private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
+    {//GEN-HEADEREND:event_tfTelKeyTyped
+        if (tfTel.getText().length() == 10 ) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_telefonoKeyTyped
+    }//GEN-LAST:event_tfTelKeyTyped
 
-    private void nombreMKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreMKeyPressed
-    {//GEN-HEADEREND:event_nombreMKeyPressed
-        if (nombreM.getText().isEmpty() != true)
+    private void tfNombreMKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreMKeyPressed
+    {//GEN-HEADEREND:event_tfNombreMKeyPressed
+        if (tfNombreM.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, nombreP);
+            Validaciones.enter(this, evt, tfNombreP);
         }
-    }//GEN-LAST:event_nombreMKeyPressed
+    }//GEN-LAST:event_tfNombreMKeyPressed
 
-    private void nombreMKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombreMKeyTyped
-    {//GEN-HEADEREND:event_nombreMKeyTyped
+    private void tfNombreMKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreMKeyTyped
+    {//GEN-HEADEREND:event_tfNombreMKeyTyped
         Validaciones.validaAlfabeticos(evt);
-    }//GEN-LAST:event_nombreMKeyTyped
+    }//GEN-LAST:event_tfNombreMKeyTyped
 
-    private void nombrePKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombrePKeyPressed
-    {//GEN-HEADEREND:event_nombrePKeyPressed
-        if (nombreP.getText().isEmpty() != true)
+    private void tfNombrePKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombrePKeyPressed
+    {//GEN-HEADEREND:event_tfNombrePKeyPressed
+        if (tfNombreP.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, folio);
+            Validaciones.enter(this, evt, tfFolio);
         }
-    }//GEN-LAST:event_nombrePKeyPressed
+    }//GEN-LAST:event_tfNombrePKeyPressed
 
-    private void nombrePKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_nombrePKeyTyped
-    {//GEN-HEADEREND:event_nombrePKeyTyped
+    private void tfNombrePKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombrePKeyTyped
+    {//GEN-HEADEREND:event_tfNombrePKeyTyped
         Validaciones.validaAlfabeticos(evt);
-    }//GEN-LAST:event_nombrePKeyTyped
+    }//GEN-LAST:event_tfNombrePKeyTyped
 
-    private void folioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_folioKeyPressed
-    {//GEN-HEADEREND:event_folioKeyPressed
-        if (folio.getText().isEmpty() != true)
+    private void tfFolioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfFolioKeyPressed
+    {//GEN-HEADEREND:event_tfFolioKeyPressed
+        if (tfFolio.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, correo);
+            Validaciones.enter(this, evt, tfCorreo);
         }
-    }//GEN-LAST:event_folioKeyPressed
+    }//GEN-LAST:event_tfFolioKeyPressed
 
-    private void folioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_folioKeyTyped
-    {//GEN-HEADEREND:event_folioKeyTyped
-        if (folio.getText().length() == 7 ) {
+    private void tfFolioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfFolioKeyTyped
+    {//GEN-HEADEREND:event_tfFolioKeyTyped
+        if (tfFolio.getText().length() == 7 ) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
         }
-    }//GEN-LAST:event_folioKeyTyped
+    }//GEN-LAST:event_tfFolioKeyTyped
 
-    private void correoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_correoKeyPressed
-    {//GEN-HEADEREND:event_correoKeyPressed
-        if (folio.getText().isEmpty() != true)
+    private void tfCorreoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCorreoKeyPressed
+    {//GEN-HEADEREND:event_tfCorreoKeyPressed
+        if (tfFolio.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, contraseña);
+            Validaciones.enter(this, evt, tfContraseña);
         }
-    }//GEN-LAST:event_correoKeyPressed
+    }//GEN-LAST:event_tfCorreoKeyPressed
 
-    private void correoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_correoKeyTyped
-    {//GEN-HEADEREND:event_correoKeyTyped
+    private void tfCorreoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCorreoKeyTyped
+    {//GEN-HEADEREND:event_tfCorreoKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_correoKeyTyped
+    }//GEN-LAST:event_tfCorreoKeyTyped
 
-    private void contraseñaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_contraseñaKeyPressed
-    {//GEN-HEADEREND:event_contraseñaKeyPressed
-        if (contraseña.getText().isEmpty() != true)
+    private void tfContraseñaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyPressed
+    {//GEN-HEADEREND:event_tfContraseñaKeyPressed
+        if (tfContraseña.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, btnRegistrar);
         }
-    }//GEN-LAST:event_contraseñaKeyPressed
+    }//GEN-LAST:event_tfContraseñaKeyPressed
 
-    private void contraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_contraseñaKeyTyped
-    {//GEN-HEADEREND:event_contraseñaKeyTyped
+    private void tfContraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyTyped
+    {//GEN-HEADEREND:event_tfContraseñaKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_contraseñaKeyTyped
+    }//GEN-LAST:event_tfContraseñaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -1020,24 +1024,12 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField aMaterno;
-    private javax.swing.JTextField aPaterno;
-    private javax.swing.JTextField año;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCurp;
     private javax.swing.JButton btnFoto;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JPasswordField contraseña;
-    private javax.swing.JTextField correo;
-    private javax.swing.JTextField curp;
-    private javax.swing.JTextField dia;
-    private javax.swing.JTextField edad;
-    private javax.swing.JTextField folio;
-    private javax.swing.JTextField grado;
-    private javax.swing.JTextField grupo;
-    private javax.swing.JRadioButton hombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1059,12 +1051,24 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField mes;
-    private javax.swing.JRadioButton mujer;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField nombreM;
-    private javax.swing.JTextField nombreP;
+    private javax.swing.JRadioButton jrbHombre;
+    private javax.swing.JRadioButton jrbMujer;
     private javax.swing.ButtonGroup sexo;
-    private javax.swing.JTextField telefono;
+    private javax.swing.JTextField tfAMaterno;
+    private javax.swing.JTextField tfAPaterno;
+    private javax.swing.JTextField tfAño;
+    private javax.swing.JPasswordField tfContraseña;
+    private javax.swing.JTextField tfCorreo;
+    private javax.swing.JTextField tfCurp;
+    private javax.swing.JTextField tfDia;
+    private javax.swing.JTextField tfEdad;
+    private javax.swing.JTextField tfFolio;
+    private javax.swing.JTextField tfGrado;
+    private javax.swing.JTextField tfGrupo;
+    private javax.swing.JTextField tfMes;
+    private javax.swing.JTextField tfNombre;
+    private javax.swing.JTextField tfNombreM;
+    private javax.swing.JTextField tfNombreP;
+    private javax.swing.JTextField tfTel;
     // End of variables declaration//GEN-END:variables
 }
