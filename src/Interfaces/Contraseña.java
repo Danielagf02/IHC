@@ -68,6 +68,13 @@ public class Contraseña extends javax.swing.JFrame
         jLabel5.setText("Escribir contraseña");
 
         Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Contraseña1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                Contraseña1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener()
@@ -200,8 +207,22 @@ public class Contraseña extends javax.swing.JFrame
             ControlEscolar.setVisible(true);
             this.dispose();
             
+            
+            
+            
         }
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Contraseña1ActionPerformed
+    {//GEN-HEADEREND:event_Contraseña1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Contraseña1ActionPerformed
 
     /**
      * @param args the command line arguments
