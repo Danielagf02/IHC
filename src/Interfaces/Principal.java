@@ -90,10 +90,10 @@ public class Principal extends javax.swing.JFrame
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel5.setText("Iniciar Sesión");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/pregunta.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pregunta.png"))); // NOI18N
         jLabel2.setToolTipText("si es nuevo debe registrarse");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/logo tipo CE.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo tipo CE.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel4.setText("*Colaca el usuario...");

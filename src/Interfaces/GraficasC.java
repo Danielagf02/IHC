@@ -68,9 +68,9 @@ public class GraficasC extends javax.swing.JFrame
             .addGap(0, 703, Short.MAX_VALUE)
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/colorido-grafico-barras-infografia-crecimiento-negocio_1302-8252.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/colorido-grafico-barras-infografia-crecimiento-negocio_1302-8252.jpg"))); // NOI18N
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -83,7 +83,7 @@ public class GraficasC extends javax.swing.JFrame
         jLabel2.setText("Graficas de crecimiento");
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
         jButton8.setToolTipText("Salir");
         jButton8.addActionListener(new java.awt.event.ActionListener()
         {

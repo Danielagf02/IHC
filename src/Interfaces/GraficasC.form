@@ -131,14 +131,14 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/colorido-grafico-barras-infografia-crecimiento-negocio_1302-8252.jpg"/>
+              <Image iconType="3" name="/Imagenes/colorido-grafico-barras-infografia-crecimiento-negocio_1302-8252.jpg"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/regresa (1).png"/>
+              <Image iconType="3" name="/Imagenes/regresa (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -159,7 +159,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/salida (8).png"/>
+              <Image iconType="3" name="/Imagenes/salida (8).png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Salir"/>
           </Properties>

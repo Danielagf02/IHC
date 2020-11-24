@@ -55,7 +55,7 @@ public class Calificaciones extends javax.swing.JFrame
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/grupo.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grupo.png"))); // NOI18N
         jButton2.setText("Todos los alumnos ");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
@@ -77,7 +77,7 @@ public class Calificaciones extends javax.swing.JFrame
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/regresa (1).png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -100,7 +100,7 @@ public class Calificaciones extends javax.swing.JFrame
         );
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/salida (8).png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
         jButton8.setToolTipText("Salir");
         jButton8.addActionListener(new java.awt.event.ActionListener()
         {

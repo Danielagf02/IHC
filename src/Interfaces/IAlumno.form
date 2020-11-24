@@ -337,7 +337,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaces/libro.png"/>
+                  <Image iconType="3" name="/Imagenes/libro.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Materias"/>
               </Properties>
@@ -354,7 +354,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaces/marcador.png"/>
+                  <Image iconType="3" name="/Imagenes/marcador.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Calificaciones"/>
               </Properties>
@@ -371,7 +371,7 @@
                   <Font name="Arial" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaces/hora.png"/>
+                  <Image iconType="3" name="/Imagenes/hora.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Horarios"/>
               </Properties>
@@ -382,7 +382,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaces/Sin t&#xed;tulo.png"/>
+                  <Image iconType="3" name="/Imagenes/Sin t&#xed;tulo.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -410,7 +410,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/salida (8).png"/>
+              <Image iconType="3" name="/Imagenes/salida (8).png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Salir"/>
           </Properties>
@@ -427,7 +427,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/impresora.png"/>
+              <Image iconType="3" name="/Imagenes/impresora.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Imprimir Reporte/Justifcante"/>
           </Properties>
@@ -441,7 +441,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/lista.png"/>
+              <Image iconType="3" name="/Imagenes/lista.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Boleta"/>
           </Properties>
@@ -455,7 +455,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/colegio (1).png"/>
+              <Image iconType="3" name="/Imagenes/colegio (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ver calificaciones"/>
           </Properties>
@@ -469,7 +469,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/humano.png"/>
+              <Image iconType="3" name="/Imagenes/humano.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Materias"/>
           </Properties>
@@ -483,7 +483,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/producto.png"/>
+              <Image iconType="3" name="/Imagenes/producto.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Materias"/>
           </Properties>
@@ -497,7 +497,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/reloj.png"/>
+              <Image iconType="3" name="/Imagenes/reloj.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Horarios de Clase"/>
             <Property name="toolTipText" type="java.lang.String" value="Horarios de clase"/>
@@ -512,7 +512,7 @@
               <Font name="Arial" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/profesor (1).png"/>
+              <Image iconType="3" name="/Imagenes/profesor (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Informacion Profesor"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>

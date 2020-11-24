@@ -130,7 +130,7 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/grupo.png"/>
+              <Image iconType="3" name="/Imagenes/grupo.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Todos los alumnos "/>
           </Properties>
@@ -203,7 +203,7 @@
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/regresa (1).png"/>
+              <Image iconType="3" name="/Imagenes/regresa (1).png"/>
             </Property>
           </Properties>
           <Events>
@@ -236,7 +236,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaces/salida (8).png"/>
+              <Image iconType="3" name="/Imagenes/salida (8).png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Salir"/>
           </Properties>
