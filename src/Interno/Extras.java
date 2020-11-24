@@ -54,7 +54,7 @@ public class Extras
             imagen.delete();
         } else
         {
-            System.out.println("HOLAAAAAAAA");
+            System.out.println("YA PUDEEEEEEEEEEEEEE JAJAJAJA");
         }
     }
 
