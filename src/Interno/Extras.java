@@ -54,7 +54,7 @@ public class Extras
             imagen.delete();
         } else
         {
-            System.out.println("No existe mamon");
+            System.out.println("HOLAAAAAAAA");
         }
     }
 
