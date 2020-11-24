@@ -1,6 +1,5 @@
 package Interno;
 
-/import cjb.ci.Mensaje;
 import java.sql.Connection;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -24,7 +23,7 @@ public class ManipulaBD
             return con.Conecta("localhost:3306", "ControlEcolar", "root", "", 2);
         } catch (Exception ex)
         {
-            Mensaje.error(jf, "No se pudo conectar a la BD, " + ex.toString());
+            System.out.println("Error");
             return null;
         }
     }

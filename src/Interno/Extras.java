@@ -1,6 +1,5 @@
 package Interno;
 
-import cjb.ci.Mensaje; //aqui falta agregar 
 import java.io.File;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
@@ -55,7 +54,7 @@ public class Extras
             imagen.delete();
         } else
         {
-            Mensaje.error(jf, "No existe el usuario");
+            System.out.println("No existe mamon");
         }
     }
 
