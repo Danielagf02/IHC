@@ -12,4 +12,10 @@ package Interno;
 public class MetodosTodos
 {
     // aqui se agregan todos los metodos
+    
+    
+    
+    
+    
+    
 }
