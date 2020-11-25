@@ -105,10 +105,6 @@ public class RegistrarProfesores extends javax.swing.JFrame
         tfDia = new javax.swing.JTextField();
         tfMes = new javax.swing.JTextField();
         tfAño = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jftfHoraEntrada = new javax.swing.JFormattedTextField();
-        jftfHoraSalida = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro");
@@ -466,33 +462,6 @@ public class RegistrarProfesores extends javax.swing.JFrame
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel21.setText("Hora de Entrada:");
-
-        jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel22.setText("Hora de Salida:");
-
-        jftfHoraEntrada.setText(" :");
-        jftfHoraEntrada.setCaretPosition(0);
-        jftfHoraEntrada.setEnabled(false);
-        jftfHoraEntrada.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyReleased(java.awt.event.KeyEvent evt)
-            {
-                jftfHoraEntradaKeyReleased(evt);
-            }
-        });
-
-        jftfHoraSalida.setText(" :");
-        jftfHoraSalida.setEnabled(false);
-        jftfHoraSalida.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyReleased(java.awt.event.KeyEvent evt)
-            {
-                jftfHoraSalidaKeyReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -563,26 +532,15 @@ public class RegistrarProfesores extends javax.swing.JFrame
                                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tfGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(101, 101, 101)
-                                .addComponent(jftfHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(tfContraseña, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(tfCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(75, 75, 75)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel21)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jftfHoraEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(94, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(141, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -663,23 +621,19 @@ public class RegistrarProfesores extends javax.swing.JFrame
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
-                                    .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21))
+                                    .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel4)
-                                    .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jftfHoraEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfNombreM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
-                                    .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel22))
+                                    .addComponent(tfNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
-                                    .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jftfHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel14)
@@ -1103,53 +1057,6 @@ public class RegistrarProfesores extends javax.swing.JFrame
         //SE LOGROOOOOOOOOOOO WUUUUU
     }//GEN-LAST:event_btnFotoActionPerformed
 
-    private void jftfHoraEntradaKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jftfHoraEntradaKeyReleased
-    {//GEN-HEADEREND:event_jftfHoraEntradaKeyReleased
-        Metodos hora = new Metodos();
-
-        if ((((hora.validaHora(jftfHoraSalida)) && ((hora.validaHora(jftfHoraEntrada))))))
-        {
-            Validaciones.enter(this, evt, jftfHoraSalida);
-        } else
-        {
-            jftfHoraSalida.setEnabled(false);
-        }
-
-        if ((hora.validaHora(jftfHoraEntrada)))
-        {
-            System.out.println("Hora insertada correctamente");
-        } else
-        {
-            System.out.println("Hora insertada incorrectamente");
-        //JOptionPane.showMessageDialog(null, "Hora Invalida");
-        //ME RINDO NO QUEDA :(
-        }
-    }//GEN-LAST:event_jftfHoraEntradaKeyReleased
-
-    private void jftfHoraSalidaKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jftfHoraSalidaKeyReleased
-    {//GEN-HEADEREND:event_jftfHoraSalidaKeyReleased
-        Metodos hora = new Metodos();
-
-        if (hora.validaHora(jftfHoraSalida) == false)
-        {
-            //JOptionPane.showMessageDialog(null, "Hora Invalida");
-             System.out.println("Hora insertada incorrectamente");
-        } else
-        {
-            System.out.println("Hora insertada correctamente");
-        }
-
-        if ((((hora.validaHora(jftfHoraSalida)) && ((hora.validaHora(jftfHoraEntrada)))) && ((jftfHoraEntrada.getText().trim().length() != 1) && (jftfHoraSalida.getText().trim().length() != 1))))
-        {
-            Validaciones.enter(this, evt, btnRegistrar);
-            btnRegistrar.setEnabled(true);
-        } else
-        {
-            btnRegistrar.setEnabled(false);
-        }
-        //ME RINDO NO QUEDA :(
-    }//GEN-LAST:event_jftfHoraSalidaKeyReleased
-
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM 
     public boolean validaEmail(String cad)
     {
@@ -1277,8 +1184,6 @@ public class RegistrarProfesores extends javax.swing.JFrame
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1286,8 +1191,6 @@ public class RegistrarProfesores extends javax.swing.JFrame
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JFormattedTextField jftfHoraEntrada;
-    private javax.swing.JFormattedTextField jftfHoraSalida;
     private javax.swing.JRadioButton rbHombre;
     private javax.swing.JRadioButton rbMujer;
     private javax.swing.ButtonGroup sexo;

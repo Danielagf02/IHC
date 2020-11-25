@@ -1,52 +1,97 @@
 package Interno;
 
-import Interfaces.Grupo;
-
 /**
  *
  * @author DanielaGF
  */
 public class Alumnno
 {
-    
+
     private int id;
+    private int Grado;
+    private String Grupo;
     private String ApellidoP;
     private String ApellidoM;
     private String Nombre;
     private String fechaNacimiento;
     private String CURP;
     private String sexo;
-    private int Grado;
-    private String Grupo;
     private int Telefono;
     private String NomMadre;
     private String NomPadre;
     private int FolioAlumno;
     private String Correo;
     private String Contraseña;
-    
 
     public Alumnno()
     {
     }
 
-    public Alumnno(int id,String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Grado, String Grupo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
+    public Alumnno(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
     {
-        this.id=id;
+        this.id = id;
+        this.Grado = Grado;
+        this.Grupo = Grupo;
         this.ApellidoP = ApellidoP;
         this.ApellidoM = ApellidoM;
         this.Nombre = Nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.CURP = CURP;
         this.sexo = sexo;
-        this.Grado = Grado;
-        this.Grupo = Grupo;
         this.Telefono = Telefono;
         this.NomMadre = NomMadre;
         this.NomPadre = NomPadre;
         this.FolioAlumno = FolioAlumno;
         this.Correo = Correo;
         this.Contraseña = Contraseña;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
+    /**
+     * @return the Grado
+     */
+    public int getGrado()
+    {
+        return Grado;
+    }
+
+    /**
+     * @param Grado the Grado to set
+     */
+    public void setGrado(int Grado)
+    {
+        this.Grado = Grado;
+    }
+
+    /**
+     * @return the Grupo
+     */
+    public String getGrupo()
+    {
+        return Grupo;
+    }
+
+    /**
+     * @param Grupo the Grupo to set
+     */
+    public void setGrupo(String Grupo)
+    {
+        this.Grupo = Grupo;
     }
 
     /**
@@ -146,38 +191,6 @@ public class Alumnno
     }
 
     /**
-     * @return the Grado
-     */
-    public int getGrado()
-    {
-        return Grado;
-    }
-
-    /**
-     * @param Grado the Grado to set
-     */
-    public void setGrado(int Grado)
-    {
-        this.Grado = Grado;
-    }
-
-    /**
-     * @return the Grupo
-     */
-    public String getGrupo()
-    {
-        return Grupo;
-    }
-
-    /**
-     * @param Grupo the Grupo to set
-     */
-    public void setGrupo(String Grupo)
-    {
-        this.Grupo = Grupo;
-    }
-
-    /**
      * @return the Telefono
      */
     public int getTelefono()
@@ -272,22 +285,5 @@ public class Alumnno
     {
         this.Contraseña = Contraseña;
     }
-
-    /**
-     * @return the id
-     */
-    public int getId()
-    {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
     
 }
