@@ -66,6 +66,13 @@ public class Estadisticas extends javax.swing.JFrame
         });
 
         jButton3.setText("Regresar");
+        jButton3.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Imprimir");
         jButton5.addActionListener(new java.awt.event.ActionListener()
@@ -129,6 +136,13 @@ public class Estadisticas extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
+    {//GEN-HEADEREND:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+      this.setVisible(false);
+      new Menu_Gerente().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

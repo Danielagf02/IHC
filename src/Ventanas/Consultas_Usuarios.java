@@ -67,6 +67,13 @@ public class Consultas_Usuarios extends javax.swing.JFrame
         jButton3.setText("Siguiente");
 
         jButton4.setText("Modificar");
+        jButton4.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Deshabilitar");
 
@@ -149,6 +156,12 @@ public class Consultas_Usuarios extends javax.swing.JFrame
       this.setVisible(false);
       
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
+    {//GEN-HEADEREND:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
