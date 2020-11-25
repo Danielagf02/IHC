@@ -5,9 +5,12 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import cjb.ci.Validaciones;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,13 +18,19 @@ import cjb.ci.Validaciones;
  */
 public class RegistrarAlumnos extends javax.swing.JFrame
 {
-
+    String sex;
     /**
      * Creates new form Registrarse
      */
     public RegistrarAlumnos()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");//Aqui va la ruta de la imagen ojo tengan cuidado con esto y al final antes de hacer el jar cambiamos la ruta
+        btnRegresar.setIcon(icono);
+        
+        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
+        btnSalir.setIcon(icono1);
     }
 
     /**
@@ -67,8 +76,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         jLabel20 = new javax.swing.JLabel();
         tfEdad = new javax.swing.JTextField();
         tfCurp = new javax.swing.JTextField();
-        jrbMujer = new javax.swing.JRadioButton();
-        jrbHombre = new javax.swing.JRadioButton();
+        rbMujer = new javax.swing.JRadioButton();
+        rbHombre = new javax.swing.JRadioButton();
         tfGrado = new javax.swing.JTextField();
         tfGrupo = new javax.swing.JTextField();
         tfTel = new javax.swing.JTextField();
@@ -175,7 +184,6 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnFoto.setForeground(new java.awt.Color(204, 204, 0));
         btnFoto.setText("Adjuntar");
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -185,7 +193,6 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         });
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
         btnSalir.setToolTipText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener()
         {
@@ -265,25 +272,25 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             }
         });
 
-        sexo.add(jrbMujer);
-        jrbMujer.setText("Mujer");
-        jrbMujer.setEnabled(false);
-        jrbMujer.addChangeListener(new javax.swing.event.ChangeListener()
+        sexo.add(rbMujer);
+        rbMujer.setText("Mujer");
+        rbMujer.setEnabled(false);
+        rbMujer.addChangeListener(new javax.swing.event.ChangeListener()
         {
             public void stateChanged(javax.swing.event.ChangeEvent evt)
             {
-                jrbMujerStateChanged(evt);
+                rbMujerStateChanged(evt);
             }
         });
 
-        sexo.add(jrbHombre);
-        jrbHombre.setText("Hombre");
-        jrbHombre.setEnabled(false);
-        jrbHombre.addChangeListener(new javax.swing.event.ChangeListener()
+        sexo.add(rbHombre);
+        rbHombre.setText("Hombre");
+        rbHombre.setEnabled(false);
+        rbHombre.addChangeListener(new javax.swing.event.ChangeListener()
         {
             public void stateChanged(javax.swing.event.ChangeEvent evt)
             {
-                jrbHombreStateChanged(evt);
+                rbHombreStateChanged(evt);
             }
         });
 
@@ -478,11 +485,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                                                 .addComponent(btnCurp))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jrbMujer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(rbMujer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(tfGrado))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jrbHombre)
+                                                    .addComponent(rbHombre)
                                                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(tfGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -517,6 +524,13 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel18)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(jLabel19)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel20))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(tfDia, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(tfMes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -524,15 +538,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                                         .addComponent(tfAño, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel18)
-                                        .addGap(34, 34, 34)
-                                        .addComponent(jLabel19)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel20)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(202, 202, 202))))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -547,8 +554,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSalir)
-                        .addGap(32, 32, 32))
+                        .addComponent(btnSalir))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -587,8 +593,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(jrbMujer)
-                            .addComponent(jrbHombre))
+                            .addComponent(rbMujer)
+                            .addComponent(rbHombre))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
@@ -619,11 +625,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(tfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCancelar)
-                            .addComponent(btnRegistrar))
-                        .addGap(20, 20, 20))))
+                            .addComponent(btnRegistrar))))
+                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(163, 163, 163)
@@ -651,23 +657,43 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-        new Principal().setVisible(true);
-       this.setVisible(false);
-       /*try{
+        //new Principal().setVisible(true);
+        //this.setVisible(false);
        
-       }catch(Exception e){
-           System.out.println("No se que pase jajaja");
-               }*/
        String nombre = tfNombre.getText();
        String apellidoP = tfAPaterno.getText();
        String apellidoM = tfAMaterno.getText();
        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
+       int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
+       String curp = tfCurp.getText();
+       String grado = tfGrado.getText();
+       String grupo = tfGrupo.getText();
+       String tel = tfTel.getText();
+       String nomMa = tfNombreM.getText();
+       String nomPa = tfNombreP.getText();
+       String folio = tfFolio.getText();
+       String correo = tfCorreo.getText();
+       String contra = tfContraseña.getText();
+       
+       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+       
+       //AQUI se hacen las validaciones con la conexion de base de datos 
+       //NINGUN CAMPO PUEDE IR VACIO
+       
+        JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
+       
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
     {//GEN-HEADEREND:event_btnCancelarActionPerformed
-        new ControlEscolar().setVisible(true);
-       this.setVisible(false);
+        CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
+        //CtrlInterfaz.habilita(false, rbHombre, rbMujer);
+        rbHombre.setEnabled(false);
+        rbMujer.setEnabled(false);
+        CtrlInterfaz.habilita(false, tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
+        btnRegistrar.setEnabled(false);
+        //new ControlEscolar().setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCurpActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCurpActionPerformed
@@ -812,11 +838,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     {//GEN-HEADEREND:event_tfCurpKeyPressed
         if (tfCurp.getText().isEmpty() != true)
         {
-            Validaciones.enter(this, evt, jrbMujer);
-            Validaciones.enter(this, evt, jrbHombre);
+            Validaciones.enter(this, evt, rbMujer);
+            Validaciones.enter(this, evt, rbHombre);
             
-            jrbHombre.setEnabled(true);
-            jrbMujer.setEnabled(true);
+            rbHombre.setEnabled(true);
+            rbMujer.setEnabled(true);
         }
     }//GEN-LAST:event_tfCurpKeyPressed
 
@@ -837,23 +863,23 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         }
     }//GEN-LAST:event_tfCurpKeyTyped
 
-    private void jrbMujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_jrbMujerStateChanged
-    {//GEN-HEADEREND:event_jrbMujerStateChanged
-        if (jrbMujer.isSelected())
+    private void rbMujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_rbMujerStateChanged
+    {//GEN-HEADEREND:event_rbMujerStateChanged
+        if (rbMujer.isSelected())
         {
-            String sexo = "Mujer";
+            sex = "Mujer";
         }
         tfGrado.setEnabled(true);
-    }//GEN-LAST:event_jrbMujerStateChanged
+    }//GEN-LAST:event_rbMujerStateChanged
 
-    private void jrbHombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_jrbHombreStateChanged
-    {//GEN-HEADEREND:event_jrbHombreStateChanged
-        if (jrbHombre.isSelected())
+    private void rbHombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_rbHombreStateChanged
+    {//GEN-HEADEREND:event_rbHombreStateChanged
+        if (rbHombre.isSelected())
         {
-            String sexo = "Mujer";
+            sex = "Hombre";
         }
         tfGrado.setEnabled(true);
-    }//GEN-LAST:event_jrbHombreStateChanged
+    }//GEN-LAST:event_rbHombreStateChanged
 
     private void tfGradoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyPressed
     {//GEN-HEADEREND:event_tfGradoKeyPressed
@@ -967,12 +993,17 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         if (tfContraseña.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, btnRegistrar);
+            btnRegistrar.setEnabled(true);
         }
     }//GEN-LAST:event_tfContraseñaKeyPressed
 
     private void tfContraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyTyped
     {//GEN-HEADEREND:event_tfContraseñaKeyTyped
-        // TODO add your handling code here:
+        if (tfFolio.getText().length() == 10 ) {
+            evt.consume();
+        } else {
+            Validaciones.validaAlfanumerico(evt);
+        }
     }//GEN-LAST:event_tfContraseñaKeyTyped
 
     /**
@@ -1051,8 +1082,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jrbHombre;
-    private javax.swing.JRadioButton jrbMujer;
+    private javax.swing.JRadioButton rbHombre;
+    private javax.swing.JRadioButton rbMujer;
     private javax.swing.ButtonGroup sexo;
     private javax.swing.JTextField tfAMaterno;
     private javax.swing.JTextField tfAPaterno;
