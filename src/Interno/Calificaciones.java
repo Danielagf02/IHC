@@ -12,6 +12,7 @@ package Interno;
 public class Calificaciones
 {
     
+    int id_Alumno;
     double Calificaciones;
     String Marticula;
 

@@ -9,6 +9,7 @@ import Interfaces.Grupo;
 public class Alumnno
 {
     
+    private int id;
     private String ApellidoP;
     private String ApellidoM;
     private String Nombre;
@@ -29,8 +30,9 @@ public class Alumnno
     {
     }
 
-    public Alumnno(String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Grado, String Grupo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
+    public Alumnno(int id,String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Grado, String Grupo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
     {
+        this.id=id;
         this.ApellidoP = ApellidoP;
         this.ApellidoM = ApellidoM;
         this.Nombre = Nombre;
@@ -269,6 +271,22 @@ public class Alumnno
     public void setContraseña(String Contraseña)
     {
         this.Contraseña = Contraseña;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
     
