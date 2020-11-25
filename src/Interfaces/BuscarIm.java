@@ -35,6 +35,13 @@ public class BuscarIm extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jFileIm.setCurrentDirectory(new java.io.File("C:\\Users\\HP\\Pictures"));
+        jFileIm.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jFileImActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -49,6 +56,11 @@ public class BuscarIm extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFileImActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jFileImActionPerformed
+    {//GEN-HEADEREND:event_jFileImActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFileImActionPerformed
 
     /**
      * @param args the command line arguments
