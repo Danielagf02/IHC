@@ -6,7 +6,7 @@ package Ventanas;
  */
 public class InicioSesion extends javax.swing.JFrame
 {
-    public static InicioSesion ref;
+
     
     /**
      * Creates new form InicioSesion
@@ -131,6 +131,7 @@ public class InicioSesion extends javax.swing.JFrame
     private void BAceptarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BAceptarActionPerformed
     {//GEN-HEADEREND:event_BAceptarActionPerformed
         // TODO add your handling code here:
+      
 /**
  * 
  * Verificar que exista el usuario

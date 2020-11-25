@@ -11,7 +11,7 @@ package Ventanas;
  */
 public class Menu_Empleado extends javax.swing.JFrame
 {
-public static Menu_Empleado ref;
+
     /**
      * Creates new form Menu_Gerente
      */
@@ -47,8 +47,22 @@ public static Menu_Empleado ref;
         });
 
         jButton3.setText("Productos");
+        jButton3.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Reportes");
+        jButton7.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Salir");
         jButton8.addActionListener(new java.awt.event.ActionListener()
@@ -92,17 +106,36 @@ public static Menu_Empleado ref;
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton8ActionPerformed
     {//GEN-HEADEREND:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-      Menu_Empleado.ref.setVisible(false);
-      InicioSesion.ref.setVisible(true);
+      
+     new InicioSesion().setVisible(true);
+     this.setVisible(false);
             
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
     {//GEN-HEADEREND:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       new Ventas().setVisible(true);
+       this.setVisible(false);
       
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
+    {//GEN-HEADEREND:event_jButton3ActionPerformed
+
+      /*
+      A que ventana de productos lo tenemos que enlazar ???
+      */
+      this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton7ActionPerformed
+    {//GEN-HEADEREND:event_jButton7ActionPerformed
+
+      // TODO add your handling code here:
+     new  Incidentes().setVisible(true);
+     this.setVisible(false);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
