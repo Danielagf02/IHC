@@ -90,17 +90,17 @@ public class Principal extends javax.swing.JFrame
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel5.setText("Iniciar Sesión");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pregunta.png"))); // NOI18N
+        jLabel2.setText("iba signo verde");
         jLabel2.setToolTipText("si es nuevo debe registrarse");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo tipo CE.png"))); // NOI18N
+        jLabel3.setText("icono control escolar");
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel4.setText("*Colaca el usuario...");
 
         jLabel6.setText("*Obligatorio");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "@admin", "@alumno", "@profesor" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -152,7 +152,7 @@ public class Principal extends javax.swing.JFrame
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -181,11 +181,11 @@ public class Principal extends javax.swing.JFrame
                         .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -200,8 +200,8 @@ public class Principal extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -227,43 +227,31 @@ public class Principal extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(this,"coloca la contraseña");
             }
+           
+switch (jComboBox1.getSelectedIndex()) {
+    
+        case 0:
+            System.out.println("kk");
             
+            AltaMaterias.ref.setVisible(true);
+            //new IAlumno().setVisible(true);
+        //this.setVisible(false);
+            break;
+        case 1:
             
-            //DanielaGF---> no puedo clasificar correo por alumno profesores y adminis, 
-            //ademas creo que la clase contraseña debe ser eliminada
-            
-           if (jComboBox1.equals("@alumno"))
-        {
-        new IAlumno().setVisible(true);
-        this.setVisible(false);
-        }
-            else
-        {
-            if (jComboBox1.equals("@admin"))
-            {
-                new ControlEscolar().setVisible(true);
-        this.setVisible(false);
-            } else
-            {
-                if (jComboBox1.equals("@profesor"))
-                {
-          new IProfesores().setVisible(true);
-        this.setVisible(false);
-                } else
-                {
-                    System.out.println("no encontramos nada...");
-                }
-            }
-        
-            
-            }
-            
-            
-            
-          
+          //  new ControlEscolar().setVisible(true);
+        //this.setVisible(false);
+            System.out.println("estoy harta de esta vida");
+            break;
+        case 2:
+            // new IProfesores().setVisible(true);
+        //this.setVisible(false);
+            System.out.println("sajkds");
+            break;
+    }
             
         
-       
+      
                 
      
 // new Contraseña().setVisible(true);
