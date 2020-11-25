@@ -11,6 +11,7 @@ package Interfaces;
  */
 public class AltaMaterias extends javax.swing.JFrame
 {
+    public static AltaMaterias ref;
 
     /**
      * Creates new form AltaMaterias

@@ -11,7 +11,7 @@ package Interfaces;
  */
 public class IAlumno extends javax.swing.JFrame
 {
-
+public static IAlumno ref;
     /**
      * Creates new form ControlEscolar
      */
