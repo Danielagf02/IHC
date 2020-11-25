@@ -5,8 +5,10 @@
  */
 package Interno;
 
+import cjb.ci.Mensaje;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JFormattedTextField;
 
 /**
  *
@@ -48,5 +50,33 @@ public class Metodos
         {
             return false;
         }
+    }
+    
+    //METODO PARA VALIDAR HORA DE ENTRADA Y SALIDA DE LOS PROFESORES
+    public boolean validaHora(JFormattedTextField obj)
+    {
+
+        boolean b = false;
+
+        try
+        {
+
+            String s = obj.getText();
+            char c[] = s.toString().toCharArray();
+            String hora[] = s.split(":");
+            int horas = Integer.parseInt(hora[0]);
+            int minutos = Integer.parseInt(hora[1]);
+
+            if (!(((c[0] == ' ') || (c[1] == ' ') || (c[3] == ' ') || (c[4] == ' ')) || (horas > 23 || minutos > 59)))
+            {
+                b = true;
+            }
+
+        } catch (NumberFormatException e)
+        {
+            Mensaje.error(null, "Error..." + e);
+            b = false;
+        }
+        return b;
     }
 }
