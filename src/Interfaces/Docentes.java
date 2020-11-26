@@ -45,7 +45,7 @@ public class Docentes extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnTodosD = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BuscarPorfesor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -65,9 +65,16 @@ public class Docentes extends javax.swing.JFrame
         btnTodosD.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTodosD.setText("Todos los Docentes ");
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setText("Buscar Docente");
+        BuscarPorfesor.setBackground(new java.awt.Color(255, 255, 255));
+        BuscarPorfesor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BuscarPorfesor.setText("Buscar Docente");
+        BuscarPorfesor.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BuscarPorfesorActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
@@ -173,7 +180,7 @@ public class Docentes extends javax.swing.JFrame
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTodosD)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 531, Short.MAX_VALUE)
-                                .addComponent(jButton3)
+                                .addComponent(BuscarPorfesor)
                                 .addGap(29, 29, 29))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnRegresar)
@@ -203,7 +210,7 @@ public class Docentes extends javax.swing.JFrame
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTodosD)
-                    .addComponent(jButton3))
+                    .addComponent(BuscarPorfesor))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
@@ -237,6 +244,12 @@ public class Docentes extends javax.swing.JFrame
         new MensajeSalida().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void BuscarPorfesorActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarPorfesorActionPerformed
+    {//GEN-HEADEREND:event_BuscarPorfesorActionPerformed
+         new Buscarprofesor().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BuscarPorfesorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,11 +298,11 @@ public class Docentes extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuscarPorfesor;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosD;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -36,7 +36,7 @@ public class Grupo extends javax.swing.JFrame
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        PrimerBoton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -55,9 +55,16 @@ public class Grupo extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Grupos");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton1.setText("1° A");
+        PrimerBoton.setBackground(new java.awt.Color(255, 255, 255));
+        PrimerBoton.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        PrimerBoton.setText("1° A");
+        PrimerBoton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                PrimerBotonActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -135,7 +142,7 @@ public class Grupo extends javax.swing.JFrame
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton1))
+                            .addComponent(PrimerBoton))
                         .addGap(111, 111, 111)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton4)
@@ -159,7 +166,7 @@ public class Grupo extends javax.swing.JFrame
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
+                            .addComponent(PrimerBoton)
                             .addComponent(jButton4)
                             .addComponent(jButton10))
                         .addGap(31, 31, 31)
@@ -208,6 +215,12 @@ public class Grupo extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void PrimerBotonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_PrimerBotonActionPerformed
+    {//GEN-HEADEREND:event_PrimerBotonActionPerformed
+        new Alumnos().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PrimerBotonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,8 +267,8 @@ public class Grupo extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton PrimerBoton;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

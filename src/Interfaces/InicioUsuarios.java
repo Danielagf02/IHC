@@ -59,12 +59,43 @@ public class InicioUsuarios extends javax.swing.JFrame
 
         btnProf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnProf.setText("Profesor");
+        btnProf.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnProfActionPerformed(evt);
+            }
+        });
 
         btnAlum.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnAlum.setText("Alumno ");
+        btnAlum.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnAlumActionPerformed(evt);
+            }
+        });
 
         btnAdmin.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnAdmin.setText("Administrador");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnAdminActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,16 +108,16 @@ public class InicioUsuarios extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
                         .addComponent(btnProf)
-                        .addGap(50, 50, 50)
+                        .addGap(61, 61, 61)
                         .addComponent(btnAlum))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(btnAdmin))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1)))
+                        .addGap(127, 127, 127)
+                        .addComponent(btnAdmin)))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,13 +125,13 @@ public class InicioUsuarios extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(68, 68, 68)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProf)
                     .addComponent(btnAlum))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                .addGap(82, 82, 82)
                 .addComponent(btnAdmin)
-                .addGap(42, 42, 42)
+                .addGap(64, 64, 64)
                 .addComponent(btnSalir)
                 .addGap(38, 38, 38))
         );
@@ -119,6 +150,30 @@ public class InicioUsuarios extends javax.swing.JFrame
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProfActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnProfActionPerformed
+    {//GEN-HEADEREND:event_btnProfActionPerformed
+       new PrincipalDocente().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnProfActionPerformed
+
+    private void btnAlumActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAlumActionPerformed
+    {//GEN-HEADEREND:event_btnAlumActionPerformed
+         new PrincipalAlumno().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAlumActionPerformed
+
+    private void btnAdminActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAdminActionPerformed
+    {//GEN-HEADEREND:event_btnAdminActionPerformed
+          new Principal().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAdminActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
+    {//GEN-HEADEREND:event_btnSalirActionPerformed
+        new MensajeSalida().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
