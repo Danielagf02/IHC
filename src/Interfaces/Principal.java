@@ -90,10 +90,10 @@ public class Principal extends javax.swing.JFrame
         jLabel5.setText("Iniciar Sesión");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pregunta.png"))); // NOI18N
+        jLabel2.setText("Icono de signo verde");
         jLabel2.setToolTipText("Coloque su usuario y contraseña, si tiene dudas consulte con un administrador ");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo tipo CE.png"))); // NOI18N
+        jLabel3.setText("Logo tipo CE");
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel4.setText("*Usuario:");
@@ -180,7 +180,7 @@ public class Principal extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(siguiente)
                 .addGap(7, 7, 7)
                 .addComponent(jLabel6)
@@ -220,6 +220,7 @@ public class Principal extends javax.swing.JFrame
             JOptionPane.showMessageDialog(this,"coloca la contraseña");
             }
            
+            
 /*switch (jC.getSelectedIndex()) {
     
         case 0:

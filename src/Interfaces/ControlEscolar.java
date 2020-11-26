@@ -170,6 +170,13 @@ public class ControlEscolar extends javax.swing.JFrame
         jButton7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grupo.png"))); // NOI18N
         jButton7.setText("Usuarios");
+        jButton7.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton6.setBackground(new java.awt.Color(255, 204, 102));
         jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -553,6 +560,11 @@ public class ControlEscolar extends javax.swing.JFrame
        new Registrarse().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton7ActionPerformed
+    {//GEN-HEADEREND:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
