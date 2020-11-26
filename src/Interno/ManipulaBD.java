@@ -38,7 +38,6 @@ public class ManipulaBD
         try
         {
             ArrayList<Adminis> lista = new ArrayList<>();
-
             for (int i = 0; i < reg.size(); i += 17)
             {
                 String idS = (String) reg.get(i);
@@ -65,6 +64,49 @@ public class ManipulaBD
                     String Contraseña = ((String) reg.get(i + 16)).trim();
                     Adminis obj = new Adminis(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
                             CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contraseña);
+                    lista.add(obj);
+                }
+            }
+            return lista;
+        } catch (Exception e)
+        {
+            System.out.println("Error al crear objeto");
+            return null;
+        }
+    }
+
+    public static ArrayList<Profesor> CargarProfesor(ArrayList<Object> reg)
+    {
+        try
+        {
+            ArrayList<Profesor> lista = new ArrayList<>();
+
+            for (int i = 0; i < reg.size(); i++)
+            {
+                String idS = (String) reg.get(i);
+                if (idS != "" && idS != " ")
+                {
+                    int id = Integer.parseInt(idS);
+                    String grad = ((String) reg.get(i + 1)).trim();
+                    int Grado = Integer.parseInt(grad);
+                    String Grupo = ((String) reg.get(i + 2)).trim();
+                    String ApellidoP = ((String) reg.get(i + 3)).trim();
+                    String ApellidoM = ((String) reg.get(i + 4)).trim();
+                    String Nombres = ((String) reg.get(i + 5)).trim();
+                    String fechaNacimiento = ((String) reg.get(i + 6)).trim();
+                    String CURP = ((String) reg.get(i + 7)).trim();
+                    String sexo = ((String) reg.get(i + 8)).trim();
+                    String tele = ((String) reg.get(i + 9)).trim();
+                    int Telefono = Integer.parseInt(tele);
+                    String CedulaProf = ((String) reg.get(i + 10)).trim();
+                    String Direccion = ((String) reg.get(i + 11)).trim();
+                    String rfc = ((String) reg.get(i + 12)).trim();
+                    String Hentrada = ((String) reg.get(i + 13)).trim();
+                    String Hsalida = ((String) reg.get(i + 14)).trim();
+                    String Correo = ((String) reg.get(i + 15)).trim();
+                    String Constraseña = ((String) reg.get(i + 16)).trim();
+                    Profesor obj = new Profesor(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
+                            sexo, Telefono, CedulaProf, Direccion, rfc, Hentrada, Hsalida, Correo, Constraseña);
                     lista.add(obj);
                 }
             }
