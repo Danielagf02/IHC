@@ -1,13 +1,11 @@
 package Interno;
 
-
 /**
  *
  * @author DanielaGF
  */
 public class Adminis
 {
-    
     private int id;
     private String ApellidoP;
     private String ApellidoM;
