@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interno;
 
 /**
@@ -11,40 +6,85 @@ package Interno;
  */
 public class Calificaciones
 {
-    
-    int id_Alumno;
-    double Calificaciones;
-    String Marticula;
+    private int id;
+    private int id_Alumno;
+    private int id_Materia;
+    private double Calificacion;
 
     public Calificaciones()
     {
     }
 
-    public Calificaciones(double Calificaciones, String Marticula)
+    public Calificaciones(int id, int id_Alumno, int id_Materia, double Calificacion)
     {
-        this.Calificaciones = Calificaciones;
-        this.Marticula = Marticula;
+        this.id = id;
+        this.id_Alumno = id_Alumno;
+        this.id_Materia = id_Materia;
+        this.Calificacion = Calificacion;
     }
 
-    public double getCalificaciones()
+    /**
+     * @return the id
+     */
+    public int getId()
     {
-        return Calificaciones;
+        return id;
     }
 
-    public void setCalificaciones(double Calificaciones)
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
     {
-        this.Calificaciones = Calificaciones;
+        this.id = id;
     }
 
-    public String getMarticula()
+    /**
+     * @return the id_Alumno
+     */
+    public int getId_Alumno()
     {
-        return Marticula;
+        return id_Alumno;
     }
 
-    public void setMarticula(String Marticula)
+    /**
+     * @param id_Alumno the id_Alumno to set
+     */
+    public void setId_Alumno(int id_Alumno)
     {
-        this.Marticula = Marticula;
+        this.id_Alumno = id_Alumno;
     }
-    
+
+    /**
+     * @return the id_Materia
+     */
+    public int getId_Materia()
+    {
+        return id_Materia;
+    }
+
+    /**
+     * @param id_Materia the id_Materia to set
+     */
+    public void setId_Materia(int id_Materia)
+    {
+        this.id_Materia = id_Materia;
+    }
+
+    /**
+     * @return the Calificacion
+     */
+    public double getCalificacion()
+    {
+        return Calificacion;
+    }
+
+    /**
+     * @param Calificacion the Calificacion to set
+     */
+    public void setCalificacion(double Calificacion)
+    {
+        this.Calificacion = Calificacion;
+    }
     
 }

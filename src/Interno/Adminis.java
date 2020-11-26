@@ -1,6 +1,5 @@
 package Interno;
 
-import Interfaces.Grupo;
 
 /**
  *
@@ -9,6 +8,7 @@ import Interfaces.Grupo;
 public class Adminis
 {
     
+    private int id;
     private String ApellidoP;
     private String ApellidoM;
     private String Nombre;
@@ -25,14 +25,14 @@ public class Adminis
     private String Puesto;
     private String Correo;
     private String Contraseña;
-    
 
     public Adminis()
     {
     }
 
-    public Adminis(String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida, String Puesto, String Correo, String Contraseña)
+    public Adminis(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida, String Puesto, String Correo, String Contraseña)
     {
+        this.id = id;
         this.ApellidoP = ApellidoP;
         this.ApellidoM = ApellidoM;
         this.Nombre = Nombre;
@@ -49,6 +49,22 @@ public class Adminis
         this.Puesto = Puesto;
         this.Correo = Correo;
         this.Contraseña = Contraseña;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
     /**
@@ -306,12 +322,7 @@ public class Adminis
     {
         this.Contraseña = Contraseña;
     }
-
-   
-   
-
-   
     
-    
+
     
 }
