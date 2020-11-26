@@ -187,4 +187,31 @@ public class ManipulaBD
         }
     }
 
+    public static ArrayList<Materias> CargarMateria(ArrayList<Object> reg)
+    {
+        try
+        {
+            ArrayList<Materias> lista = new ArrayList<>();
+            for (int i = 0; i < reg.size(); i += 4)
+            {
+                String idS = (String) reg.get(i);
+                if (idS != "" && idS != " ")
+                {
+                    int id = Integer.parseInt(idS);
+                    String grad = ((String) reg.get(i + 1)).trim();
+                    int grado = Integer.parseInt(grad);
+                    String grupo = ((String) reg.get(i + 2)).trim();
+                    String nombre = ((String) reg.get(i + 3)).trim();
+                    Materias obj = new Materias(id, grado, grupo, nombre);
+                    lista.add(obj);
+                }
+            }
+            return lista;
+        } catch (Exception e)
+        {
+            System.out.println("Error al crear objetos");
+            return null;
+        }
+    }
+
 }
