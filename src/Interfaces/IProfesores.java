@@ -224,6 +224,13 @@ public class IProfesores extends javax.swing.JFrame
         jButton15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
         jButton15.setText("Materias ");
+        jButton15.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton16.setBackground(new java.awt.Color(255, 255, 255));
         jButton16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -391,6 +398,12 @@ public class IProfesores extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton15ActionPerformed
+    {//GEN-HEADEREND:event_jButton15ActionPerformed
+      new Materias().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments

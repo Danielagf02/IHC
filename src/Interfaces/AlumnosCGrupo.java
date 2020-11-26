@@ -11,13 +11,13 @@ import javax.swing.ImageIcon;
  *
  * @author DanielaGF
  */
-public class Alumnos extends javax.swing.JFrame
+public class AlumnosCGrupo extends javax.swing.JFrame
 {
 
     /**
      * Creates new form Alumnos
      */
-    public Alumnos()
+    public AlumnosCGrupo()
     {
           initComponents();
           
@@ -802,7 +802,7 @@ public class Alumnos extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-        new ControlEscolar().setVisible(true);
+        new Grupo().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
@@ -845,17 +845,18 @@ public class Alumnos extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosCGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosCGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosCGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlumnosCGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -863,7 +864,7 @@ public class Alumnos extends javax.swing.JFrame
         {
             public void run()
             {
-                new Alumnos().setVisible(true);
+                new AlumnosCGrupo().setVisible(true);
             }
         });
     }
