@@ -158,4 +158,33 @@ public class ManipulaBD
         }
     }
 
+    public static ArrayList<Calificaciones> CargaCalificacion(ArrayList<Object> reg)
+    {
+        try
+        {
+            ArrayList<Calificaciones> lista = new ArrayList<>();
+
+            for (int i = 0; i < reg.size(); i += 4)
+            {
+                String idS = (String) reg.get(i);
+                if (idS != "" && idS != " ")
+                {
+                    int id = Integer.parseInt(idS);
+                    String id_Alum = ((String) reg.get(i + 1)).trim();
+                    int id_Alumno = Integer.parseInt(id_Alum);
+                    String id_Mat = ((String) reg.get(i + 2)).trim();
+                    int id_Materia = Integer.parseInt(id_Mat);
+                    String cal = ((String) reg.get(i + 3)).trim();
+                    double Calificaciones = Double.parseDouble(cal);
+                    Calificaciones obj = new Calificaciones(id, id_Alumno, id_Materia, Calificaciones);
+                }
+            }
+            return lista;
+        } catch (Exception e)
+        {
+            System.out.println("Error al crear objeto");
+            return null;
+        }
+    }
+
 }
