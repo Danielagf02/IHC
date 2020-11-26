@@ -214,4 +214,38 @@ public class ManipulaBD
         }
     }
 
+    public static ArrayList<Horarios> CargarHorarios(ArrayList<Object> reg)
+    {
+        try
+        {
+            ArrayList<Horarios> lista = new ArrayList<>();
+            for (int i = 0; i < reg.size(); i += 6)
+            {
+                String idS = (String) reg.get(i);
+                if (idS!="" && idS!=" ")
+                {
+                    int id = Integer.parseInt(idS);
+                    String id_Mat = ((String) reg.get(i + 1)).trim();
+                    int id_Materias = Integer.parseInt(id_Mat);
+                    String grad = ((String) reg.get(i + 2)).trim();
+                    int grado= Integer.parseInt(grad);
+                    String grupo = ((String) reg.get(i + 3)).trim();
+                    String horaini = ((String) reg.get(i + 4)).trim();
+                    int horaI = Integer.parseInt(horaini);
+                    String horafin = ((String) reg.get(i + 5)).trim();
+                    int horaF = Integer.parseInt(horafin);
+                    
+                    Horarios obj = new Horarios(id, id_Materias, grado, grupo, horaI, horaF);
+                    lista.add(obj);
+                    
+                }
+            }
+            return lista;
+        } catch (Exception e)
+        {
+            System.out.println("Error al crear objeto");
+            return null;
+        }
+    }
+
 }
