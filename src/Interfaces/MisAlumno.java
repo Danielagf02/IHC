@@ -11,13 +11,13 @@ import javax.swing.ImageIcon;
  *
  * @author DanielaGF
  */
-public class Alumnos extends javax.swing.JFrame
+public class MisAlumno extends javax.swing.JFrame
 {
 
     /**
      * Creates new form Alumnos
      */
-    public Alumnos()
+    public MisAlumno()
     {
           initComponents();
           
@@ -60,7 +60,7 @@ public class Alumnos extends javax.swing.JFrame
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("Alumnos");
+        jLabel1.setText("Mis Alumnos");
 
         btnTodosA.setBackground(new java.awt.Color(255, 255, 255));
         btnTodosA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -747,7 +747,7 @@ public class Alumnos extends javax.swing.JFrame
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnRegresar)
-                        .addGap(343, 343, 343)
+                        .addGap(400, 400, 400)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -802,7 +802,7 @@ public class Alumnos extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-        new ControlEscolar().setVisible(true);
+        new IProfesores().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
@@ -814,7 +814,7 @@ public class Alumnos extends javax.swing.JFrame
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
-        new BuscarAlumno1().setVisible(true);
+        new BuscarAlumno5().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -845,17 +845,18 @@ public class Alumnos extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MisAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MisAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MisAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MisAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -863,7 +864,7 @@ public class Alumnos extends javax.swing.JFrame
         {
             public void run()
             {
-                new Alumnos().setVisible(true);
+                new MisAlumno().setVisible(true);
             }
         });
     }

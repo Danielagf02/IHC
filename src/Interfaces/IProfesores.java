@@ -40,8 +40,6 @@ public class IProfesores extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -101,36 +99,12 @@ public class IProfesores extends javax.swing.JFrame
         jButton1.setBackground(new java.awt.Color(255, 204, 102));
         jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grupo.png"))); // NOI18N
-        jButton1.setText("Grupo");
+        jButton1.setText("Mi Grupo");
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setBackground(new java.awt.Color(255, 204, 102));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estudiante.png"))); // NOI18N
-        jButton2.setText("Alumnos");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setBackground(new java.awt.Color(255, 204, 102));
-        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hora.png"))); // NOI18N
-        jButton6.setText("Horarios");
-        jButton6.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton6ActionPerformed(evt);
             }
         });
 
@@ -148,13 +122,9 @@ public class IProfesores extends javax.swing.JFrame
                     .addComponent(jLabel2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel1)))
-                .addGap(84, 84, 84)
-                .addComponent(jButton1)
-                .addGap(31, 31, 31)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                        .addComponent(jLabel1)
+                        .addGap(210, 210, 210)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -164,15 +134,12 @@ public class IProfesores extends javax.swing.JFrame
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton1)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jButton2)
-                                .addComponent(jButton6))
-                            .addComponent(jLabel4))))
+                        .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -369,33 +336,22 @@ public class IProfesores extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton6ActionPerformed
-    {//GEN-HEADEREND:event_jButton6ActionPerformed
-       // new Horarios().setVisible(true);
-        //this.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton8ActionPerformed
     {//GEN-HEADEREND:event_jButton8ActionPerformed
         new MensajeSalida().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
-         new Alumnos().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
     {//GEN-HEADEREND:event_jButton1ActionPerformed
-        new Grupo().setVisible(true);
+        new AlumnosCGrupo().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorariosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_HorariosActionPerformed
     {//GEN-HEADEREND:event_HorariosActionPerformed
-        // TODO add your handling code here:
+       new MisHorariosP().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_HorariosActionPerformed
 
     private void MateriasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_MateriasActionPerformed
@@ -406,12 +362,14 @@ public class IProfesores extends javax.swing.JFrame
 
     private void ListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ListaAlumnosActionPerformed
     {//GEN-HEADEREND:event_ListaAlumnosActionPerformed
-        // TODO add your handling code here:
+        new MisAlumno().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ListaAlumnosActionPerformed
 
     private void RegistarCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegistarCalificacionesActionPerformed
     {//GEN-HEADEREND:event_RegistarCalificacionesActionPerformed
-        // TODO add your handling code here:
+        new RegistarCalificacionesProfesores().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_RegistarCalificacionesActionPerformed
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ImprimirActionPerformed
@@ -474,8 +432,6 @@ public class IProfesores extends javax.swing.JFrame
     private javax.swing.JButton Materias;
     private javax.swing.JButton RegistarCalificaciones;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;

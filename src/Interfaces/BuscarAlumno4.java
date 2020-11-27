@@ -9,13 +9,13 @@ package Interfaces;
  *
  * @author DanielaGF
  */
-public class Buscarprofesor extends javax.swing.JFrame
+public class BuscarAlumno4 extends javax.swing.JFrame
 {
 
     /**
      * Creates new form BuscarAlumno
      */
-    public Buscarprofesor()
+    public BuscarAlumno4()
     {
         initComponents();
     }
@@ -37,8 +37,8 @@ public class Buscarprofesor extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
-        Buscar = new javax.swing.JButton();
-        Regresar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        regresar = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -47,10 +47,10 @@ public class Buscarprofesor extends javax.swing.JFrame
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("Buscar Profesor");
+        jLabel1.setText("Buscar Alumno");
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Folio Profesor");
+        jLabel2.setText("Folio Alumno:");
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
@@ -58,18 +58,25 @@ public class Buscarprofesor extends javax.swing.JFrame
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(255, 0, 0));
         Cancelar.setText("Cancelar");
-
-        Buscar.setBackground(new java.awt.Color(255, 255, 255));
-        Buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Buscar.setForeground(new java.awt.Color(0, 102, 255));
-        Buscar.setText("Buscar");
-
-        Regresar.setText("Rregresar");
-        Regresar.addActionListener(new java.awt.event.ActionListener()
+        Cancelar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                RegresarActionPerformed(evt);
+                CancelarActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 102, 255));
+        jButton2.setText("Buscar");
+
+        regresar.setText("Regresar");
+        regresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                regresarActionPerformed(evt);
             }
         });
 
@@ -78,23 +85,24 @@ public class Buscarprofesor extends javax.swing.JFrame
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cancelar)
+                .addGap(63, 63, 63)
+                .addComponent(jButton2)
+                .addGap(72, 72, 72))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(Cancelar)
-                        .addGap(69, 69, 69)
-                        .addComponent(Buscar))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel2))
-                            .addComponent(Regresar))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(regresar)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +113,7 @@ public class Buscarprofesor extends javax.swing.JFrame
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Regresar)))
+                        .addComponent(regresar)))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -113,7 +121,7 @@ public class Buscarprofesor extends javax.swing.JFrame
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancelar)
-                    .addComponent(Buscar))
+                    .addComponent(jButton2))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -131,11 +139,16 @@ public class Buscarprofesor extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
-    {//GEN-HEADEREND:event_RegresarActionPerformed
-        new Docentes().setVisible(true);
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
+    {//GEN-HEADEREND:event_CancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CancelarActionPerformed
+
+    private void regresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_regresarActionPerformed
+    {//GEN-HEADEREND:event_regresarActionPerformed
+          new RegistarCalificacionesProfesores().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegresarActionPerformed
+    }//GEN-LAST:event_regresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,17 +172,31 @@ public class Buscarprofesor extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarAlumno4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarAlumno4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarAlumno4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarAlumno4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -178,20 +205,20 @@ public class Buscarprofesor extends javax.swing.JFrame
         {
             public void run()
             {
-                new Buscarprofesor().setVisible(true);
+                new BuscarAlumno4().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
-    private javax.swing.JButton Regresar;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton regresar;
     // End of variables declaration//GEN-END:variables
 }

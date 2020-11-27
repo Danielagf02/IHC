@@ -229,7 +229,8 @@ public class PrincipalDocente extends javax.swing.JFrame
             JOptionPane.showMessageDialog(this,"coloca la contraseña");
             }
            
-            
+      //al conectarse a la base de datos y si coincide con el usuario se manda a la interfaz profesor
+      
        new IProfesores().setVisible(true);
         this.setVisible(false);
 

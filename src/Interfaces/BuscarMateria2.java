@@ -9,13 +9,13 @@ package Interfaces;
  *
  * @author DanielaGF
  */
-public class BuscarMateria extends javax.swing.JFrame
+public class BuscarMateria2 extends javax.swing.JFrame
 {
 
     /**
      * Creates new form BuscarMateria
      */
-    public BuscarMateria()
+    public BuscarMateria2()
     {
         initComponents();
     }
@@ -122,7 +122,7 @@ public class BuscarMateria extends javax.swing.JFrame
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
     {//GEN-HEADEREND:event_jButton4ActionPerformed
-          new Materias().setVisible(true);
+          new MateriasxProfesor().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -148,17 +148,18 @@ public class BuscarMateria extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(BuscarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(BuscarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(BuscarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(BuscarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -166,7 +167,7 @@ public class BuscarMateria extends javax.swing.JFrame
         {
             public void run()
             {
-                new BuscarMateria().setVisible(true);
+                new BuscarMateria2().setVisible(true);
             }
         });
     }

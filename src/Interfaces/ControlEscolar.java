@@ -52,7 +52,7 @@ public class ControlEscolar extends javax.swing.JFrame
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         BRepJusti = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        Boletas = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
@@ -134,7 +134,7 @@ public class ControlEscolar extends javax.swing.JFrame
         jButton5.setBackground(new java.awt.Color(255, 204, 102));
         jButton5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estudiante (1).png"))); // NOI18N
-        jButton5.setText("Docentes");
+        jButton5.setText("Profesores");
         jButton5.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -182,7 +182,7 @@ public class ControlEscolar extends javax.swing.JFrame
         jButton6.setBackground(new java.awt.Color(255, 204, 102));
         jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hora.png"))); // NOI18N
-        jButton6.setText("Horarios");
+        jButton6.setText("Registar Horario");
         jButton6.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -287,10 +287,17 @@ public class ControlEscolar extends javax.swing.JFrame
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(255, 255, 255));
-        jButton11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista.png"))); // NOI18N
-        jButton11.setText("Boletas Alumnos");
+        Boletas.setBackground(new java.awt.Color(255, 255, 255));
+        Boletas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Boletas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista.png"))); // NOI18N
+        Boletas.setText("Boletas Alumnos");
+        Boletas.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BoletasActionPerformed(evt);
+            }
+        });
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -405,7 +412,7 @@ public class ControlEscolar extends javax.swing.JFrame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11)
+                                .addComponent(Boletas)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -435,7 +442,7 @@ public class ControlEscolar extends javax.swing.JFrame
                 .addGap(110, 110, 110)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton13)
-                    .addComponent(jButton11)
+                    .addComponent(Boletas)
                     .addComponent(jButton15)
                     .addComponent(BRepJusti)
                     .addComponent(jButton9))
@@ -618,6 +625,12 @@ public class ControlEscolar extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_BRepJustiActionPerformed
 
+    private void BoletasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BoletasActionPerformed
+    {//GEN-HEADEREND:event_BoletasActionPerformed
+        new Boletas().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BoletasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -666,9 +679,9 @@ public class ControlEscolar extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton BRepJusti;
+    private javax.swing.JButton Boletas;
     private javax.swing.JButton RegistrarProf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
