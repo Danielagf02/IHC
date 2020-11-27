@@ -51,7 +51,7 @@ public class ControlEscolar extends javax.swing.JFrame
         jLabel5 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        BRepJusti = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
@@ -275,10 +275,17 @@ public class ControlEscolar extends javax.swing.JFrame
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(255, 255, 255));
-        jButton10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/impresora.png"))); // NOI18N
-        jButton10.setText("Imprimir Reporte/Justifcante");
+        BRepJusti.setBackground(new java.awt.Color(255, 255, 255));
+        BRepJusti.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        BRepJusti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/impresora.png"))); // NOI18N
+        BRepJusti.setText("Imprimir Reporte/Justifcante");
+        BRepJusti.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BRepJustiActionPerformed(evt);
+            }
+        });
 
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
         jButton11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -402,7 +409,7 @@ public class ControlEscolar extends javax.swing.JFrame
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10))
+                                .addComponent(BRepJusti))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(RegistrarProf)
@@ -430,7 +437,7 @@ public class ControlEscolar extends javax.swing.JFrame
                     .addComponent(jButton13)
                     .addComponent(jButton11)
                     .addComponent(jButton15)
-                    .addComponent(jButton10)
+                    .addComponent(BRepJusti)
                     .addComponent(jButton9))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -605,6 +612,12 @@ public class ControlEscolar extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void BRepJustiActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BRepJustiActionPerformed
+    {//GEN-HEADEREND:event_BRepJustiActionPerformed
+         new ReporteJustufcante().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BRepJustiActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -652,9 +665,9 @@ public class ControlEscolar extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
+    private javax.swing.JButton BRepJusti;
     private javax.swing.JButton RegistrarProf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
