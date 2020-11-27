@@ -14,14 +14,14 @@ public class ManipulaBD
 
     private static Conexion con = new Conexion();
 
-    public static Connection conecta(JFrame jf)
+    public static Connection conecta()
     {
         try
         {
-            return con.Conecta("localhost:3306", "ControlEcolar", "root", "", 2);
+            return con.Conecta("localhost:3306", "controlecolar", "root", "", 2);
         } catch (Exception ex)
         {
-            System.out.println("Error");
+            System.out.println("Error al conectar en metodo conecta");
             return null;
         }
     }
