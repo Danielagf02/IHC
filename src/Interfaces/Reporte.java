@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +20,15 @@ public class Reporte extends javax.swing.JFrame
     public Reporte()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
+        btnRegresar.setIcon(icono);
+        
+        ImageIcon icono6 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/impresora.png");
+        btnImprimir.setIcon(icono6);
+        
+        ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/estudiante.png");
+        btnBuscarA.setIcon(icono2);
     }
 
     /**
@@ -27,12 +38,13 @@ public class Reporte extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        BuscarA = new javax.swing.JButton();
-        Regresar = new javax.swing.JButton();
+        btnBuscarA = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -42,7 +54,7 @@ public class Reporte extends javax.swing.JFrame
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        Imprimir = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,26 +64,31 @@ public class Reporte extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Reporte");
 
-        BuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BuscarA.setText("Buscar Alumno ");
-        BuscarA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarAActionPerformed(evt);
+        btnBuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnBuscarA.setText("Buscar Alumno ");
+        btnBuscarA.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnBuscarAActionPerformed(evt);
             }
         });
 
-        Regresar.setText("Regresar");
-        Regresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegresarActionPerformed(evt);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnRegresarActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            new Object [][]
+            {
                 {null, null, null, null, null, null}
             },
-            new String [] {
+            new String []
+            {
                 "Folio Alumno", "Apellido Paterno", "Apelido Materno", "Nombre", "Grado", "Grupo"
             }
         ));
@@ -96,7 +113,7 @@ public class Reporte extends javax.swing.JFrame
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BuscarA)
+                .addComponent(btnBuscarA)
                 .addGap(31, 31, 31))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
@@ -118,11 +135,11 @@ public class Reporte extends javax.swing.JFrame
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(279, 279, 279)
                         .addComponent(jLabel1)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(20, 20, 20)
-                    .addComponent(Regresar)
+                    .addComponent(btnRegresar)
                     .addContainerGap(564, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,7 +148,7 @@ public class Reporte extends javax.swing.JFrame
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(40, 40, 40)
-                .addComponent(BuscarA)
+                .addComponent(btnBuscarA)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
@@ -153,14 +170,15 @@ public class Reporte extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(Regresar)
+                    .addComponent(btnRegresar)
                     .addContainerGap(439, Short.MAX_VALUE)))
         );
 
-        Imprimir.setText("Imprimir");
-        Imprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ImprimirActionPerformed(evt);
+        btnImprimir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnImprimirActionPerformed(evt);
             }
         });
 
@@ -175,40 +193,40 @@ public class Reporte extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addGap(137, 137, 137)
-                .addComponent(Imprimir)
-                .addGap(45, 45, 45))
+                .addGap(138, 138, 138)
+                .addComponent(btnImprimir)
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Imprimir)
-                    .addComponent(jLabel5))
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(btnImprimir))
+                .addGap(0, 78, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAActionPerformed
-    {//GEN-HEADEREND:event_BuscarAActionPerformed
+    private void btnBuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarAActionPerformed
+    {//GEN-HEADEREND:event_btnBuscarAActionPerformed
          new BuscarAlumno().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BuscarAActionPerformed
+    }//GEN-LAST:event_btnBuscarAActionPerformed
 
-    private void ImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ImprimirActionPerformed
-    {//GEN-HEADEREND:event_ImprimirActionPerformed
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
+    {//GEN-HEADEREND:event_btnImprimirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImprimirActionPerformed
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
-    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
-    {//GEN-HEADEREND:event_RegresarActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
          new ReporteJustufcante().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegresarActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,9 +275,9 @@ public class Reporte extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarA;
-    private javax.swing.JButton Imprimir;
-    private javax.swing.JButton Regresar;
+    private javax.swing.JButton btnBuscarA;
+    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

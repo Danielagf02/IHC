@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +20,13 @@ public class TodosHorarios extends javax.swing.JFrame
     public TodosHorarios()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
+        btnRegresar.setIcon(icono);
+        
+        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
+        jLIm.setIcon(icono1);
+        
     }
 
     /**
@@ -32,8 +41,8 @@ public class TodosHorarios extends javax.swing.JFrame
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        Regresar = new javax.swing.JButton();
+        jLIm = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -44,15 +53,12 @@ public class TodosHorarios extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Todos los horarios ");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reloj.png"))); // NOI18N
-
-        Regresar.setBackground(new java.awt.Color(255, 255, 255));
-        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1)_1.png"))); // NOI18N
-        Regresar.addActionListener(new java.awt.event.ActionListener()
+        btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                RegresarActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -112,11 +118,12 @@ public class TodosHorarios extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Regresar)
-                        .addGap(47, 47, 47)
+                        .addContainerGap()
+                        .addComponent(btnRegresar)
+                        .addGap(37, 37, 37)
                         .addComponent(jLabel1)
                         .addGap(27, 27, 27)
-                        .addComponent(jLabel2)
+                        .addComponent(jLIm)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -127,14 +134,14 @@ public class TodosHorarios extends javax.swing.JFrame
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(jLIm)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Regresar)
+                            .addComponent(btnRegresar)
                             .addComponent(jLabel1))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                 .addGap(67, 67, 67))
         );
 
@@ -152,11 +159,11 @@ public class TodosHorarios extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
-    {//GEN-HEADEREND:event_RegresarActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
         new ControlEscolar().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegresarActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,9 +211,9 @@ public class TodosHorarios extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Regresar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
