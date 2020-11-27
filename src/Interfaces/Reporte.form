@@ -182,7 +182,7 @@
                   <Table columnCount="6" rowCount="1">
                     <Column editable="true" title="Folio Alumno" type="java.lang.Object"/>
                     <Column editable="true" title="Apellido Paterno" type="java.lang.Object"/>
-                    <Column editable="true" title="Apelido Paterno" type="java.lang.Object"/>
+                    <Column editable="true" title="Apelido Materno" type="java.lang.Object"/>
                     <Column editable="true" title="Nombre" type="java.lang.Object"/>
                     <Column editable="true" title="Grado" type="java.lang.Object"/>
                     <Column editable="true" title="Grupo" type="java.lang.Object"/>

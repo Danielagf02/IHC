@@ -27,8 +27,7 @@ public class Reporte extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -55,31 +54,25 @@ public class Reporte extends javax.swing.JFrame
 
         BuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BuscarA.setText("Buscar Alumno ");
-        BuscarA.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BuscarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscarAActionPerformed(evt);
             }
         });
 
         Regresar.setText("Regresar");
-        Regresar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegresarActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
+            new Object [][] {
                 {null, null, null, null, null, null}
             },
-            new String []
-            {
-                "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
+            new String [] {
+                "Folio Alumno", "Apellido Paterno", "Apelido Materno", "Nombre", "Grado", "Grupo"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -165,10 +158,8 @@ public class Reporte extends javax.swing.JFrame
         );
 
         Imprimir.setText("Imprimir");
-        Imprimir.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImprimirActionPerformed(evt);
             }
         });
