@@ -171,8 +171,9 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="btnMisCalificaciones" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                   <Component id="btnBoleta" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -188,9 +189,9 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="btnHorarios" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="btnInfoProfe" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -224,7 +225,7 @@
                               <Component id="btnMisCalificaciones" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBoleta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnHorarios" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnInfoProfe" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -235,7 +236,7 @@
                           <Component id="btnMaterias" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="218" max="32767" attributes="0"/>
+                  <EmptySpace pref="209" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="MiInfo" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSalir" min="-2" max="-2" attributes="0"/>

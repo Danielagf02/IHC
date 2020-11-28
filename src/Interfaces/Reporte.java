@@ -174,6 +174,8 @@ public class Reporte extends javax.swing.JFrame
                     .addContainerGap(439, Short.MAX_VALUE)))
         );
 
+        btnImprimir.setText("PDF ");
+        btnImprimir.setToolTipText("");
         btnImprimir.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -205,7 +207,7 @@ public class Reporte extends javax.swing.JFrame
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(btnImprimir))
-                .addGap(0, 78, Short.MAX_VALUE))
+                .addGap(0, 72, Short.MAX_VALUE))
         );
 
         pack();
