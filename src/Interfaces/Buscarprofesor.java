@@ -133,7 +133,7 @@ public class Buscarprofesor extends javax.swing.JFrame
 
     private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
     {//GEN-HEADEREND:event_RegresarActionPerformed
-        new ControlEscolar().setVisible(true);
+        new Docentes().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_RegresarActionPerformed
 

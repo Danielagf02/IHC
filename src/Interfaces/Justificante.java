@@ -95,7 +95,7 @@ public class Justificante extends javax.swing.JFrame
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Firma Director:____________________ ");
 
-        Imprimir.setText("Imprimir");
+        Imprimir.setText("PDF");
         Imprimir.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)

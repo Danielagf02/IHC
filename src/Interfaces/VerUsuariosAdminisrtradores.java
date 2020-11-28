@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +20,15 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     public VerUsuariosAdminisrtradores()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
+        btnRegresar.setIcon(icono);
+        
+        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
+        btnTodosU.setIcon(icono1);
+        
+        ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
+        btnSalir.setIcon(icono2);
     }
 
     /**
@@ -33,13 +44,13 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        TodosLosUsuarios = new javax.swing.JButton();
+        btnTodosU = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        BtnRegresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        btnSlir = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -50,10 +61,9 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Administradores");
 
-        TodosLosUsuarios.setBackground(new java.awt.Color(255, 255, 255));
-        TodosLosUsuarios.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        TodosLosUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grupo.png"))); // NOI18N
-        TodosLosUsuarios.setText("Todos los usuarios");
+        btnTodosU.setBackground(new java.awt.Color(255, 255, 255));
+        btnTodosU.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnTodosU.setText("Todos los usuarios");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -127,12 +137,11 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         });
         jScrollPane1.setViewportView(jTable1);
 
-        BtnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/regresa (1).png"))); // NOI18N
-        BtnRegresar.addActionListener(new java.awt.event.ActionListener()
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                BtnRegresarActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -149,14 +158,13 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        btnSlir.setBackground(new java.awt.Color(255, 255, 255));
-        btnSlir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
-        btnSlir.setToolTipText("Salir");
-        btnSlir.addActionListener(new java.awt.event.ActionListener()
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setToolTipText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnSlirActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -169,10 +177,9 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TodosLosUsuarios)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(BtnRegresar)
-                                .addGap(0, 221, Short.MAX_VALUE)))
+                            .addComponent(btnTodosU)
+                            .addComponent(btnRegresar))
+                        .addGap(0, 133, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(406, 406, 406)
@@ -182,13 +189,13 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                                 .addComponent(jLabel1)))
                         .addGap(35, 35, 35))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSlir)
-                        .addGap(37, 37, 37))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir)
+                        .addGap(18, 18, 18)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,18 +204,19 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnRegresar)
+                        .addComponent(btnRegresar)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TodosLosUsuarios)
+                    .addComponent(btnTodosU)
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(btnSlir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -227,17 +235,17 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BtnRegresarActionPerformed
-    {//GEN-HEADEREND:event_BtnRegresarActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
         new ControlEscolar().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BtnRegresarActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnSlirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSlirActionPerformed
-    {//GEN-HEADEREND:event_btnSlirActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
+    {//GEN-HEADEREND:event_btnSalirActionPerformed
         new MensajeSalida().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnSlirActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
@@ -293,9 +301,9 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnRegresar;
-    private javax.swing.JButton TodosLosUsuarios;
-    private javax.swing.JButton btnSlir;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnTodosU;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

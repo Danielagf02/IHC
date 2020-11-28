@@ -59,6 +59,13 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         BuscarAlumno.setBackground(new java.awt.Color(255, 255, 255));
         BuscarAlumno.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BuscarAlumno.setText("Buscar Alumno ");
+        BuscarAlumno.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BuscarAlumnoActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
@@ -137,7 +144,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(btnRegresar)
-                                .addGap(200, 200, 200)
+                                .addGap(277, 277, 277)
                                 .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(293, 293, 293)
@@ -202,6 +209,12 @@ public class RegistarCalificaciones extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
+    {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
+        new BuscarAlumno4().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
     /**
      * @param args the command line arguments

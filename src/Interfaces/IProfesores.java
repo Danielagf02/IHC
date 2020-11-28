@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +20,36 @@ public class IProfesores extends javax.swing.JFrame
     public IProfesores()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/Sin título.png");
+        jLLogo.setIcon(icono);
+        
+        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
+        btnGrupo.setIcon(icono1);
+        
+        ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/estudiante.png");
+        btnAlumnos.setIcon(icono2);
+        
+        ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/hora.png");
+        btnHorarios.setIcon(icono3);
+        
+        ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/producto.png");
+        btnMaterias.setIcon(icono4);
+        
+        ImageIcon icono5 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/lista.png");
+        btnListaAlumnos.setIcon(icono5);
+        
+        ImageIcon icono6 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/impresora.png");
+        btnImprimir.setIcon(icono6);
+        
+        ImageIcon icono7 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
+        btnHorariosClase.setIcon(icono7);
+        
+        ImageIcon icono8 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/mujer.png");
+        btnRegistarCalificaciones.setIcon(icono8);
+        
+        ImageIcon icono9 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
+        btnSalir.setIcon(icono9);
     }
 
     /**
@@ -39,18 +71,18 @@ public class IProfesores extends javax.swing.JFrame
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        btnGrupo = new javax.swing.JButton();
+        btnAlumnos = new javax.swing.JButton();
+        btnHorarios = new javax.swing.JButton();
+        jLLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        Imprimir = new javax.swing.JButton();
-        ListaAlumnos = new javax.swing.JButton();
-        Materias = new javax.swing.JButton();
-        RegistarCalificaciones = new javax.swing.JButton();
-        Horarios = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
+        btnListaAlumnos = new javax.swing.JButton();
+        btnMaterias = new javax.swing.JButton();
+        btnRegistarCalificaciones = new javax.swing.JButton();
+        btnHorariosClase = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -82,6 +114,7 @@ public class IProfesores extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setSize(new java.awt.Dimension(686, 476));
         setType(java.awt.Window.Type.POPUP);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -98,43 +131,38 @@ public class IProfesores extends javax.swing.JFrame
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Lic.Benito Juárez");
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 102));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grupo.png"))); // NOI18N
-        jButton1.setText("Grupo");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
+        btnGrupo.setBackground(new java.awt.Color(255, 204, 102));
+        btnGrupo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnGrupo.setText("Grupo");
+        btnGrupo.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton1ActionPerformed(evt);
+                btnGrupoActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 102));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estudiante.png"))); // NOI18N
-        jButton2.setText("Alumnos");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
+        btnAlumnos.setBackground(new java.awt.Color(255, 204, 102));
+        btnAlumnos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnAlumnos.setText("Alumnos");
+        btnAlumnos.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton2ActionPerformed(evt);
+                btnAlumnosActionPerformed(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 102));
-        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hora.png"))); // NOI18N
-        jButton6.setText("Horarios");
-        jButton6.addActionListener(new java.awt.event.ActionListener()
+        btnHorarios.setBackground(new java.awt.Color(255, 204, 102));
+        btnHorarios.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnHorarios.setText("Horarios");
+        btnHorarios.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton6ActionPerformed(evt);
+                btnHorariosActionPerformed(evt);
             }
         });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sin título.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -142,7 +170,7 @@ public class IProfesores extends javax.swing.JFrame
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(jLLogo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -150,12 +178,12 @@ public class IProfesores extends javax.swing.JFrame
                         .addGap(10, 10, 10)
                         .addComponent(jLabel1)))
                 .addGap(84, 84, 84)
-                .addComponent(jButton1)
+                .addComponent(btnGrupo)
                 .addGap(31, 31, 31)
-                .addComponent(jButton2)
+                .addComponent(btnAlumnos)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnHorarios)
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,10 +197,10 @@ public class IProfesores extends javax.swing.JFrame
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton1)
-                                .addComponent(jButton2)
-                                .addComponent(jButton6))
-                            .addComponent(jLabel4))))
+                                .addComponent(btnGrupo)
+                                .addComponent(btnAlumnos)
+                                .addComponent(btnHorarios))
+                            .addComponent(jLLogo))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -182,76 +210,70 @@ public class IProfesores extends javax.swing.JFrame
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("¿Qué deseas hacer hoy?");
 
-        jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salida (8).png"))); // NOI18N
-        jButton8.setToolTipText("Salir");
-        jButton8.addActionListener(new java.awt.event.ActionListener()
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setToolTipText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton8ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
-        Imprimir.setBackground(new java.awt.Color(255, 255, 255));
-        Imprimir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/impresora.png"))); // NOI18N
-        Imprimir.setText("Imprimir Reporte/Justifcante");
-        Imprimir.addActionListener(new java.awt.event.ActionListener()
+        btnImprimir.setBackground(new java.awt.Color(255, 255, 255));
+        btnImprimir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnImprimir.setText("Imprimir Reporte/Justifcante");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                ImprimirActionPerformed(evt);
+                btnImprimirActionPerformed(evt);
             }
         });
 
-        ListaAlumnos.setBackground(new java.awt.Color(255, 255, 255));
-        ListaAlumnos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        ListaAlumnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista.png"))); // NOI18N
-        ListaAlumnos.setText("Lista Mis Alumnos");
-        ListaAlumnos.setToolTipText("");
-        ListaAlumnos.addActionListener(new java.awt.event.ActionListener()
+        btnListaAlumnos.setBackground(new java.awt.Color(255, 255, 255));
+        btnListaAlumnos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnListaAlumnos.setText("Lista Mis Alumnos");
+        btnListaAlumnos.setToolTipText("");
+        btnListaAlumnos.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                ListaAlumnosActionPerformed(evt);
+                btnListaAlumnosActionPerformed(evt);
             }
         });
 
-        Materias.setBackground(new java.awt.Color(255, 255, 255));
-        Materias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Materias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
-        Materias.setText("Materias ");
-        Materias.addActionListener(new java.awt.event.ActionListener()
+        btnMaterias.setBackground(new java.awt.Color(255, 255, 255));
+        btnMaterias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnMaterias.setText("Materias ");
+        btnMaterias.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                MateriasActionPerformed(evt);
+                btnMateriasActionPerformed(evt);
             }
         });
 
-        RegistarCalificaciones.setBackground(new java.awt.Color(255, 255, 255));
-        RegistarCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        RegistarCalificaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mujer.png"))); // NOI18N
-        RegistarCalificaciones.setText("Registar Calificaciones ");
-        RegistarCalificaciones.addActionListener(new java.awt.event.ActionListener()
+        btnRegistarCalificaciones.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistarCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnRegistarCalificaciones.setText("Registar Calificaciones ");
+        btnRegistarCalificaciones.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                RegistarCalificacionesActionPerformed(evt);
+                btnRegistarCalificacionesActionPerformed(evt);
             }
         });
 
-        Horarios.setBackground(new java.awt.Color(255, 255, 255));
-        Horarios.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Horarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reloj.png"))); // NOI18N
-        Horarios.setText("Horarios de Clase");
-        Horarios.setToolTipText("Horarios de clase");
-        Horarios.addActionListener(new java.awt.event.ActionListener()
+        btnHorariosClase.setBackground(new java.awt.Color(255, 255, 255));
+        btnHorariosClase.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnHorariosClase.setText("Horarios de Clase");
+        btnHorariosClase.setToolTipText("Horarios de clase");
+        btnHorariosClase.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                HorariosActionPerformed(evt);
+                btnHorariosClaseActionPerformed(evt);
             }
         });
 
@@ -262,16 +284,13 @@ public class IProfesores extends javax.swing.JFrame
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(137, 137, 137)
-                .addComponent(Horarios)
+                .addComponent(btnHorariosClase)
                 .addGap(64, 64, 64)
-                .addComponent(RegistarCalificaciones)
+                .addComponent(btnRegistarCalificaciones)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
+                .addContainerGap(203, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton8)
-                        .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -280,12 +299,15 @@ public class IProfesores extends javax.swing.JFrame
                                     .addComponent(jLabel5))
                                 .addGap(18, 18, 18))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Materias)
-                                .addGap(44, 44, 44)
-                                .addComponent(ListaAlumnos)
+                                .addComponent(btnMaterias)
+                                .addGap(118, 118, 118)
+                                .addComponent(btnListaAlumnos)
                                 .addGap(38, 38, 38)))
-                        .addComponent(Imprimir)
-                        .addGap(41, 41, 41))))
+                        .addComponent(btnImprimir)
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSalir)
+                        .addGap(51, 51, 51))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,16 +319,16 @@ public class IProfesores extends javax.swing.JFrame
                 .addComponent(jLabel5)
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Materias)
-                    .addComponent(ListaAlumnos)
-                    .addComponent(Imprimir))
+                    .addComponent(btnMaterias)
+                    .addComponent(btnListaAlumnos)
+                    .addComponent(btnImprimir))
                 .addGap(75, 75, 75)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Horarios)
-                    .addComponent(RegistarCalificaciones))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(jButton8)
-                .addGap(28, 28, 28))
+                    .addComponent(btnHorariosClase)
+                    .addComponent(btnRegistarCalificaciones))
+                .addGap(35, 35, 35)
+                .addComponent(btnSalir)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 204, 102));
@@ -351,13 +373,13 @@ public class IProfesores extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -369,56 +391,56 @@ public class IProfesores extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton6ActionPerformed
-    {//GEN-HEADEREND:event_jButton6ActionPerformed
+    private void btnHorariosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosActionPerformed
+    {//GEN-HEADEREND:event_btnHorariosActionPerformed
        // new Horarios().setVisible(true);
         //this.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnHorariosActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton8ActionPerformed
-    {//GEN-HEADEREND:event_jButton8ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
+    {//GEN-HEADEREND:event_btnSalirActionPerformed
         new MensajeSalida().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
+    private void btnAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAlumnosActionPerformed
+    {//GEN-HEADEREND:event_btnAlumnosActionPerformed
          new Alumnos().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAlumnosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
+    private void btnGrupoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGrupoActionPerformed
+    {//GEN-HEADEREND:event_btnGrupoActionPerformed
         new Grupo().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGrupoActionPerformed
 
-    private void HorariosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_HorariosActionPerformed
-    {//GEN-HEADEREND:event_HorariosActionPerformed
+    private void btnHorariosClaseActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosClaseActionPerformed
+    {//GEN-HEADEREND:event_btnHorariosClaseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_HorariosActionPerformed
+    }//GEN-LAST:event_btnHorariosClaseActionPerformed
 
-    private void MateriasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_MateriasActionPerformed
-    {//GEN-HEADEREND:event_MateriasActionPerformed
+    private void btnMateriasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMateriasActionPerformed
+    {//GEN-HEADEREND:event_btnMateriasActionPerformed
       new MateriasxProfesor().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_MateriasActionPerformed
+    }//GEN-LAST:event_btnMateriasActionPerformed
 
-    private void ListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ListaAlumnosActionPerformed
-    {//GEN-HEADEREND:event_ListaAlumnosActionPerformed
+    private void btnListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnListaAlumnosActionPerformed
+    {//GEN-HEADEREND:event_btnListaAlumnosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ListaAlumnosActionPerformed
+    }//GEN-LAST:event_btnListaAlumnosActionPerformed
 
-    private void RegistarCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegistarCalificacionesActionPerformed
-    {//GEN-HEADEREND:event_RegistarCalificacionesActionPerformed
+    private void btnRegistarCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistarCalificacionesActionPerformed
+    {//GEN-HEADEREND:event_btnRegistarCalificacionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RegistarCalificacionesActionPerformed
+    }//GEN-LAST:event_btnRegistarCalificacionesActionPerformed
 
-    private void ImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ImprimirActionPerformed
-    {//GEN-HEADEREND:event_ImprimirActionPerformed
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
+    {//GEN-HEADEREND:event_btnImprimirActionPerformed
         new RJPProfesores().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_ImprimirActionPerformed
+    }//GEN-LAST:event_btnImprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -468,20 +490,20 @@ public class IProfesores extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
-    private javax.swing.JButton Horarios;
-    private javax.swing.JButton Imprimir;
-    private javax.swing.JButton ListaAlumnos;
-    private javax.swing.JButton Materias;
-    private javax.swing.JButton RegistarCalificaciones;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnAlumnos;
+    private javax.swing.JButton btnGrupo;
+    private javax.swing.JButton btnHorarios;
+    private javax.swing.JButton btnHorariosClase;
+    private javax.swing.JButton btnImprimir;
+    private javax.swing.JButton btnListaAlumnos;
+    private javax.swing.JButton btnMaterias;
+    private javax.swing.JButton btnRegistarCalificaciones;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JLabel jLLogo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
