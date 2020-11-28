@@ -2,7 +2,6 @@ package Interno;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 import poo.bd.Conexion;
 
 /**
@@ -33,43 +32,73 @@ public class ManipulaBD
 
     public static ArrayList<Adminis> CargarAdminis(ArrayList<Object> reg)
     {
+        ArrayList<Adminis> lista = new ArrayList<>();
         try
         {
-            ArrayList<Adminis> lista = new ArrayList<>();
-            for (int i = 0; i < reg.size(); i += 17)
+            for (int i = 0; i <= reg.size(); i += 17)
             {
-                String idS = (String) reg.get(i);
+                System.out.println("Vuelta " + i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS=idS.trim();
+                System.out.println(idS);
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
+                    System.out.println("id creado " + id);
                     String ApellidoP = ((String) reg.get(i + 1)).trim();
+                    System.out.println("ApellidoP creado " + ApellidoP);
                     String ApellidoM = ((String) reg.get(i + 2)).trim();
+                    System.out.println("ApellidoM creado " + ApellidoM);
                     String Nombre = ((String) reg.get(i + 3)).trim();
+                    System.out.println("Nombre creado " + ApellidoP);
                     String FechaNacimiento = ((String) reg.get(i + 4)).trim();
+                    System.out.println("FechNac creado " + FechaNacimiento);
                     String Curp = ((String) reg.get(i + 5)).trim();
+                    System.out.println("Curp creado " + Curp);
                     String rfc = ((String) reg.get(i + 6)).trim();
+                    System.out.println("rfc creado " + rfc);
                     String sexo = ((String) reg.get(i + 7)).trim();
+                    System.out.println("sexo creado " + sexo);
                     String tele = ((String) reg.get(i + 8)).trim();
                     int telefono = Integer.parseInt(tele);
+                    System.out.println("telefono creado " + telefono);
                     String CedulaProfe = ((String) reg.get(i + 9)).trim();
+                    System.out.println("ceduprofe creado " + CedulaProfe);
                     String Direccion = ((String) reg.get(i + 10)).trim();
+                    System.out.println("direccion creado " + Direccion);
                     String FolioEmpleadoS = ((String) reg.get(i + 11)).trim();
                     int FolioEmpleado = Integer.parseInt(FolioEmpleadoS);
+                    System.out.println("folioempleado creado " + FolioEmpleado);
                     String Hentrada = ((String) reg.get(i + 12)).trim();
+                    System.out.println("hentra creado " + Hentrada);
                     String Hsalida = ((String) reg.get(i + 13)).trim();
+                    System.out.println("hsalida creado " + Hsalida);
                     String Puesto = ((String) reg.get(i + 14)).trim();
+                    System.out.println("puesto creado " + Puesto);
                     String Correo = ((String) reg.get(i + 15)).trim();
-                    String Contraseña = ((String) reg.get(i + 16)).trim();
+                    System.out.println("correo creado " + Correo);
+                    String Contrasenia = ((String) reg.get(i + 16)).trim();
+                    System.out.println("contraseña creado " + Contrasenia);
                     Adminis obj = new Adminis(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
-                            CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contraseña);
+                            CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contrasenia);
                     lista.add(obj);
+                    System.out.println("Objeto agregado a la lista");
                 }
             }
+            System.out.println(lista.get(0).getNombre());
+            System.out.println(lista.get(1).getNombre());
             return lista;
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            return null;
+            if (lista!=null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
@@ -222,22 +251,22 @@ public class ManipulaBD
             for (int i = 0; i < reg.size(); i += 6)
             {
                 String idS = (String) reg.get(i);
-                if (idS!="" && idS!=" ")
+                if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
                     String id_Mat = ((String) reg.get(i + 1)).trim();
                     int id_Materias = Integer.parseInt(id_Mat);
                     String grad = ((String) reg.get(i + 2)).trim();
-                    int grado= Integer.parseInt(grad);
+                    int grado = Integer.parseInt(grad);
                     String grupo = ((String) reg.get(i + 3)).trim();
                     String horaini = ((String) reg.get(i + 4)).trim();
                     int horaI = Integer.parseInt(horaini);
                     String horafin = ((String) reg.get(i + 5)).trim();
                     int horaF = Integer.parseInt(horafin);
-                    
+
                     Horarios obj = new Horarios(id, id_Materias, grado, grupo, horaI, horaF);
                     lista.add(obj);
-                    
+
                 }
             }
             return lista;

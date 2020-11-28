@@ -22,7 +22,7 @@ public class Adminis
     private String Hsalida;
     private String Puesto;
     private String Correo;
-    private String Contraseña;
+    private String Contrasenia;
 
     public Adminis()
     {
@@ -46,7 +46,7 @@ public class Adminis
         this.Hsalida = Hsalida;
         this.Puesto = Puesto;
         this.Correo = Correo;
-        this.Contraseña = Contraseña;
+        this.Contrasenia = Contraseña;
     }
 
     /**
@@ -306,19 +306,19 @@ public class Adminis
     }
 
     /**
-     * @return the Contraseña
+     * @return the Contrasenia
      */
-    public String getContraseña()
+    public String getContrasenia()
     {
-        return Contraseña;
+        return Contrasenia;
     }
 
     /**
-     * @param Contraseña the Contraseña to set
+     * @param Contrasenia the Contrasenia to set
      */
-    public void setContraseña(String Contraseña)
+    public void setContrasenia(String Contrasenia)
     {
-        this.Contraseña = Contraseña;
+        this.Contrasenia = Contrasenia;
     }
     
 

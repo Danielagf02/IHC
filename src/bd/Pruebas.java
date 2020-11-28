@@ -1,7 +1,9 @@
 package bd;
 
+import Interno.Adminis;
 import Interno.ManipulaBD;
 import java.sql.Connection;
+import java.util.ArrayList;
 import poo.bd.Querys;
 
 /**
@@ -16,8 +18,9 @@ public class Pruebas
      */
     public static void main(String[] args)
     {
-        AltasAdminisPrueba();
-        
+        //AltasAdminisPrueba();
+        ArrayList<Adminis> admin = ConsultasAdminsPrueba();
+
     }
 
     public static void AltasAdminisPrueba()
@@ -39,7 +42,7 @@ public class Pruebas
 //        String Puesto = "Director";
 //        String Correo = "Tolkien@gandalf.com";
 //        String Contraseña = "hobit123";
-        
+
 //        int id = 2;
 //        String ApellidoP = "Escutia";
 //        String ApellidoM = "Ceja";
@@ -57,7 +60,6 @@ public class Pruebas
 //        String Puesto = "SubDirector";
 //        String Correo = "Tolkien@gandalf.com";
 //        String Contraseña = "hobit123";
-        
         int id = 3;
         String ApellidoP = "Garduño";
         String ApellidoM = "Fernandez";
@@ -102,6 +104,29 @@ public class Pruebas
             System.out.println("Dato Insertado");
         }
 
+    }
+
+    public static ArrayList<Adminis> ConsultasAdminsPrueba()
+    {
+        Connection con = ManipulaBD.conecta();
+        ArrayList<Adminis> ap = null;
+        if (con != null)
+        {
+            Querys sql = new Querys();
+            String condicion = "SubDirector";
+            ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "Puesto='" + condicion + "'"));
+            ManipulaBD.desconecta(con);
+            if (ap != null)
+            {
+                System.out.println("Datos encontrados");
+                System.out.println(ap.get(0).getNombre());
+                System.out.println(ap.get(1).getNombre());
+            } else
+            {
+                System.out.println("no se encontro nada");
+            }
+        }
+        return ap;
     }
 
 }
