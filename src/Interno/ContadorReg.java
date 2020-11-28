@@ -10,6 +10,8 @@ package Interno;
  */
 public class ContadorReg
 {
+
+    private int id;
     private int admin;
     private int alumno;
     private int profesores;
@@ -18,8 +20,9 @@ public class ContadorReg
     {
     }
 
-    public ContadorReg(int admin, int alumno, int profesores)
+    public ContadorReg(int id, int admin, int alumno, int profesores)
     {
+        this.id = id;
         this.admin = admin;
         this.alumno = alumno;
         this.profesores = profesores;
@@ -72,5 +75,21 @@ public class ContadorReg
     {
         this.profesores = profesores;
     }
-    
+
+    /**
+     * @return the id
+     */
+    public int getId()
+    {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
 }

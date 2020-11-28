@@ -19,8 +19,8 @@ public class Pruebas
     public static void main(String[] args)
     {
         //AltasAdminisPrueba();
-        ArrayList<Adminis> admin = ConsultasAdminsPrueba();
-
+//        BajasAdminisPrueba();
+        //ArrayList<Adminis> admin = ConsultasAdminsPrueba();
     }
 
     public static void AltasAdminisPrueba()
@@ -119,8 +119,6 @@ public class Pruebas
             if (ap != null)
             {
                 System.out.println("Datos encontrados");
-                System.out.println(ap.get(0).getNombre());
-                System.out.println(ap.get(1).getNombre());
             } else
             {
                 System.out.println("no se encontro nada");
@@ -128,5 +126,18 @@ public class Pruebas
         }
         return ap;
     }
+
+    public static void BajasAdminisPrueba()
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            Querys sql = new Querys();
+            int id=2;
+            sql.Delete(con, "adminis", "id", "" + id + "");
+        }
+        ManipulaBD.desconecta(con);
+    }
+    
 
 }

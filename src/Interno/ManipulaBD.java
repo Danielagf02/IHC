@@ -37,62 +37,41 @@ public class ManipulaBD
         {
             for (int i = 0; i <= reg.size(); i += 17)
             {
-                System.out.println("Vuelta " + i);
                 String idS = "";
                 idS = (String) reg.get(i);
-                idS=idS.trim();
-                System.out.println(idS);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
-                    System.out.println("id creado " + id);
                     String ApellidoP = ((String) reg.get(i + 1)).trim();
-                    System.out.println("ApellidoP creado " + ApellidoP);
                     String ApellidoM = ((String) reg.get(i + 2)).trim();
-                    System.out.println("ApellidoM creado " + ApellidoM);
                     String Nombre = ((String) reg.get(i + 3)).trim();
-                    System.out.println("Nombre creado " + ApellidoP);
                     String FechaNacimiento = ((String) reg.get(i + 4)).trim();
-                    System.out.println("FechNac creado " + FechaNacimiento);
                     String Curp = ((String) reg.get(i + 5)).trim();
-                    System.out.println("Curp creado " + Curp);
                     String rfc = ((String) reg.get(i + 6)).trim();
-                    System.out.println("rfc creado " + rfc);
                     String sexo = ((String) reg.get(i + 7)).trim();
-                    System.out.println("sexo creado " + sexo);
                     String tele = ((String) reg.get(i + 8)).trim();
                     int telefono = Integer.parseInt(tele);
-                    System.out.println("telefono creado " + telefono);
                     String CedulaProfe = ((String) reg.get(i + 9)).trim();
-                    System.out.println("ceduprofe creado " + CedulaProfe);
                     String Direccion = ((String) reg.get(i + 10)).trim();
-                    System.out.println("direccion creado " + Direccion);
                     String FolioEmpleadoS = ((String) reg.get(i + 11)).trim();
                     int FolioEmpleado = Integer.parseInt(FolioEmpleadoS);
-                    System.out.println("folioempleado creado " + FolioEmpleado);
                     String Hentrada = ((String) reg.get(i + 12)).trim();
-                    System.out.println("hentra creado " + Hentrada);
                     String Hsalida = ((String) reg.get(i + 13)).trim();
-                    System.out.println("hsalida creado " + Hsalida);
                     String Puesto = ((String) reg.get(i + 14)).trim();
-                    System.out.println("puesto creado " + Puesto);
                     String Correo = ((String) reg.get(i + 15)).trim();
-                    System.out.println("correo creado " + Correo);
                     String Contrasenia = ((String) reg.get(i + 16)).trim();
-                    System.out.println("contraseña creado " + Contrasenia);
                     Adminis obj = new Adminis(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
                             CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contrasenia);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
                 }
             }
-            System.out.println(lista.get(0).getNombre());
-            System.out.println(lista.get(1).getNombre());
             return lista;
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            if (lista!=null)
+            if (lista != null)
             {
                 return lista;
             } else
@@ -104,13 +83,14 @@ public class ManipulaBD
 
     public static ArrayList<Profesor> CargarProfesor(ArrayList<Object> reg)
     {
+        ArrayList<Profesor> lista = new ArrayList<>();
         try
         {
-            ArrayList<Profesor> lista = new ArrayList<>();
-
             for (int i = 0; i < reg.size(); i++)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
@@ -135,25 +115,33 @@ public class ManipulaBD
                     Profesor obj = new Profesor(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
                             sexo, Telefono, CedulaProf, Direccion, rfc, Hentrada, Hsalida, Correo, Constraseña);
                     lista.add(obj);
+                    System.out.println("Objeto agregado a la lista");
                 }
             }
             return lista;
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            return null;
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
     public static ArrayList<Alumnno> CargarAlumno(ArrayList<Object> reg)
     {
+        ArrayList<Alumnno> lista = new ArrayList<>();
         try
         {
-            ArrayList<Alumnno> lista = new ArrayList<>();
-
             for (int i = 0; i < reg.size(); i += 15)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
@@ -183,19 +171,26 @@ public class ManipulaBD
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            return null;
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
     public static ArrayList<Calificaciones> CargaCalificacion(ArrayList<Object> reg)
     {
+        ArrayList<Calificaciones> lista = new ArrayList<>();
         try
         {
-            ArrayList<Calificaciones> lista = new ArrayList<>();
-
             for (int i = 0; i < reg.size(); i += 4)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
@@ -212,18 +207,26 @@ public class ManipulaBD
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            return null;
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
     public static ArrayList<Materias> CargarMateria(ArrayList<Object> reg)
     {
+        ArrayList<Materias> lista = new ArrayList<>();
         try
         {
-            ArrayList<Materias> lista = new ArrayList<>();
             for (int i = 0; i < reg.size(); i += 4)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
@@ -239,18 +242,26 @@ public class ManipulaBD
         } catch (Exception e)
         {
             System.out.println("Error al crear objetos");
-            return null;
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
     public static ArrayList<Horarios> CargarHorarios(ArrayList<Object> reg)
     {
+        ArrayList<Horarios> lista = new ArrayList<>();
         try
         {
-            ArrayList<Horarios> lista = new ArrayList<>();
             for (int i = 0; i < reg.size(); i += 6)
             {
-                String idS = (String) reg.get(i);
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
                 if (idS != "" && idS != " ")
                 {
                     int id = Integer.parseInt(idS);
@@ -263,7 +274,6 @@ public class ManipulaBD
                     int horaI = Integer.parseInt(horaini);
                     String horafin = ((String) reg.get(i + 5)).trim();
                     int horaF = Integer.parseInt(horafin);
-
                     Horarios obj = new Horarios(id, id_Materias, grado, grupo, horaI, horaF);
                     lista.add(obj);
 
@@ -273,7 +283,50 @@ public class ManipulaBD
         } catch (Exception e)
         {
             System.out.println("Error al crear objeto");
-            return null;
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
+        }
+    }
+
+    public static ArrayList<ContadorReg> CargaContador(ArrayList<Object> reg)
+    {
+        ArrayList<ContadorReg> lista = new ArrayList<>();
+        try
+        {
+            for (int i = 0; i < reg.size(); i += 4)
+            {
+                String idS = "";
+                idS = (String) reg.get(i);
+                idS = idS.trim();
+                if (idS != "" && idS != " ")
+                {
+                    int id = Integer.parseInt(idS);
+                    String ad = ((String) reg.get(i + 1)).trim();
+                    int admin = Integer.parseInt(ad);
+                    String al = ((String) reg.get(i + 2)).trim();
+                    int alumno = Integer.parseInt(al);
+                    String pr = ((String) reg.get(i + 3)).trim();
+                    int profesores = Integer.parseInt(pr);
+                    ContadorReg obj = new ContadorReg(id, admin, alumno, profesores);
+                    lista.add(obj);
+                }
+            }
+            return lista;
+        } catch (Exception e)
+        {
+            System.out.println("Error al crear objeto");
+            if (lista != null)
+            {
+                return lista;
+            } else
+            {
+                return null;
+            }
         }
     }
 
