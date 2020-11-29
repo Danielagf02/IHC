@@ -6,6 +6,7 @@
 package Interfaces;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -127,7 +128,7 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(jButton1)
-                        .addGap(60, 60, 60)
+                        .addGap(63, 63, 63)
                         .addComponent(jButton2)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -138,21 +139,25 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
                 .addComponent(jLIm)
-                .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(21, 21, 21)
-                .addComponent(btnSalir)
-                .addGap(82, 82, 82))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 235, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton2)
+                                .addComponent(jButton1))
+                            .addComponent(btnSalir))
+                        .addGap(82, 82, 82))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,8 +177,7 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
-         new MensajeSalida().setVisible(true);
-        this.setVisible(false);
+        Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
@@ -182,6 +186,22 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    public void Cerrar()
+    {
+        String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION)
+        {
+            System.out.println("Salio del programa con exito");
+            System.exit(eleccion);
+        } else 
+        if(eleccion == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Se cancelo la salida");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

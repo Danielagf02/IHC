@@ -6,11 +6,21 @@
 package Interfaces;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author DanielaGF
  */
+
+//EN EL BTON DE GRUPOS CUANDO DAS REGRESAR EN LUGAR DE REGRESARTE AQUI TE DIRIGE A LA PRINCIPAL DE ADMIN 
+//YA QUE ADMIN TAMBIEN TIENE ESE BOTON Y LO REGRESA NORMAL A SU INTERFAZ NO SE SI DEBAMOS HACER OTRA INTERFAZ DE 
+//GRUPOS PARA ESTA(:
+//LO MISMO CON EL BOTON DE ALUMNOS
+//BOTON DE IMPRIMIR REPORTE/JUSTIFICANTE
+//HASTA AQUI MI REPORTE JOAQUIN 
+
+
 public class IProfesores extends javax.swing.JFrame
 {
 
@@ -282,32 +292,30 @@ public class IProfesores extends javax.swing.JFrame
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(btnHorariosClase)
-                .addGap(64, 64, 64)
-                .addComponent(btnRegistarCalificaciones)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(203, Short.MAX_VALUE)
+                .addContainerGap(248, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnMaterias)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnListaAlumnos)
+                        .addGap(52, 52, 52)
+                        .addComponent(btnImprimir))
+                    .addComponent(btnSalir))
+                .addGap(51, 51, 51))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(btnHorariosClase)
+                        .addGap(64, 64, 64)
+                        .addComponent(btnRegistarCalificaciones))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(btnMaterias)
-                                .addGap(118, 118, 118)
-                                .addComponent(btnListaAlumnos)
-                                .addGap(38, 38, 38)))
-                        .addComponent(btnImprimir)
-                        .addGap(41, 41, 41))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnSalir)
-                        .addGap(51, 51, 51))))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,9 +323,9 @@ public class IProfesores extends javax.swing.JFrame
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(jLabel3)
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel5)
-                .addGap(59, 59, 59)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMaterias)
                     .addComponent(btnListaAlumnos)
@@ -399,8 +407,7 @@ public class IProfesores extends javax.swing.JFrame
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
-        new MensajeSalida().setVisible(true);
-        this.setVisible(false);
+        Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAlumnosActionPerformed
@@ -442,6 +449,22 @@ public class IProfesores extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnImprimirActionPerformed
 
+    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    public void Cerrar()
+    {
+        String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION)
+        {
+            System.out.println("Salio del programa con exito");
+            System.exit(eleccion);
+        } else 
+        if(eleccion == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Se cancelo la salida");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

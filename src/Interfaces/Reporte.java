@@ -110,7 +110,8 @@ ArrayList<Object> datos = new ArrayList<Object>();
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -137,23 +138,29 @@ ArrayList<Object> datos = new ArrayList<Object>();
 
         btnBuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnBuscarA.setText("Buscar Alumno ");
-        btnBuscarA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnBuscarA.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnBuscarAActionPerformed(evt);
             }
         });
 
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnRegresarActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            new Object [][]
+            {
                 {null, null, null, null, null, null}
             },
-            new String [] {
+            new String []
+            {
                 "Folio Alumno", "Apellido Paterno", "Apelido Materno", "Nombre", "Grado", "Grupo"
             }
         ));
@@ -241,8 +248,10 @@ ArrayList<Object> datos = new ArrayList<Object>();
 
         btnImprimir.setText("PDF ");
         btnImprimir.setToolTipText("");
-        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnImprimir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnImprimirActionPerformed(evt);
             }
         });
@@ -274,6 +283,7 @@ ArrayList<Object> datos = new ArrayList<Object>();
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarAActionPerformed

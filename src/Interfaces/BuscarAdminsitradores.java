@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +20,9 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
     public BuscarAdminsitradores()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
+        btnRegresar.setIcon(icono);
     }
 
     /**
@@ -38,7 +43,7 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         jTextField1 = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
         Buscar = new javax.swing.JButton();
-        Regresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -64,12 +69,11 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         Buscar.setForeground(new java.awt.Color(0, 102, 255));
         Buscar.setText("Buscar");
 
-        Regresar.setText("Rregresar");
-        Regresar.addActionListener(new java.awt.event.ActionListener()
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                RegresarActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -90,7 +94,7 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
                         .addGap(18, 18, 18)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Regresar)
+                        .addComponent(btnRegresar)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1)))
                 .addContainerGap(45, Short.MAX_VALUE))
@@ -101,7 +105,7 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Regresar))
+                        .addComponent(btnRegresar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jLabel1)))
@@ -130,11 +134,11 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
-    {//GEN-HEADEREND:event_RegresarActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
         new ControlEscolar().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegresarActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,7 +191,7 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
-    private javax.swing.JButton Regresar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton3;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;

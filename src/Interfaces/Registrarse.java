@@ -631,8 +631,9 @@ public class Registrarse extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 63, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -711,8 +712,7 @@ public class Registrarse extends javax.swing.JFrame
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
-        new MensajeSalida().setVisible(true);
-        this.setVisible(false);
+        Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void tfNombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyPressed
@@ -1047,6 +1047,23 @@ public class Registrarse extends javax.swing.JFrame
             return false;
         }
     }
+    
+    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    public void Cerrar()
+    {
+        String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION)
+        {
+            System.out.println("Salio del programa con exito");
+            System.exit(eleccion);
+        } else 
+        if(eleccion == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Se cancelo la salida");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

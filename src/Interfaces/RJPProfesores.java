@@ -141,6 +141,7 @@ public class RJPProfesores extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ReporteActionPerformed
@@ -157,7 +158,7 @@ public class RJPProfesores extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-        new ControlEscolar().setVisible(true);
+        new IProfesores().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 

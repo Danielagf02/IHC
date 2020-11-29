@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import poo.bd.Querys;
@@ -40,6 +41,9 @@ public class Justificante extends javax.swing.JFrame
     public Justificante()
     {
         initComponents();
+        
+        ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
+        btnRegresar.setIcon(icono);
     }
     public void abrir(String nombre)
     {
@@ -95,12 +99,13 @@ public class Justificante extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BuscarA = new javax.swing.JButton();
-        Regresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -120,24 +125,29 @@ public class Justificante extends javax.swing.JFrame
 
         BuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BuscarA.setText("Buscar Alumno ");
-        BuscarA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        BuscarA.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 BuscarAActionPerformed(evt);
             }
         });
 
-        Regresar.setText("Regresar");
-        Regresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegresarActionPerformed(evt);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnRegresarActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            new Object [][]
+            {
                 {null, null, null, null, null, null}
             },
-            new String [] {
+            new String []
+            {
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
@@ -157,8 +167,10 @@ public class Justificante extends javax.swing.JFrame
         jLabel5.setText("Firma Director:____________________ ");
 
         Imprimir.setText("PDF");
-        Imprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Imprimir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ImprimirActionPerformed(evt);
             }
         });
@@ -199,7 +211,7 @@ public class Justificante extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(20, 20, 20)
-                    .addComponent(Regresar)
+                    .addComponent(btnRegresar)
                     .addContainerGap(564, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -230,7 +242,7 @@ public class Justificante extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(Regresar)
+                    .addComponent(btnRegresar)
                     .addContainerGap(439, Short.MAX_VALUE)))
         );
 
@@ -246,6 +258,7 @@ public class Justificante extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAActionPerformed
@@ -259,11 +272,11 @@ public class Justificante extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_ImprimirActionPerformed
 
-    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
-    {//GEN-HEADEREND:event_RegresarActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
+    {//GEN-HEADEREND:event_btnRegresarActionPerformed
          new ReporteJustufcante().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegresarActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,7 +329,7 @@ public class Justificante extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarA;
     private javax.swing.JButton Imprimir;
-    private javax.swing.JButton Regresar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

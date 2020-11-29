@@ -743,8 +743,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
-        new MensajeSalida().setVisible(true);
-        this.setVisible(false);
+        Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void tfNombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyPressed
@@ -1092,6 +1091,22 @@ public class RegistrarProfesor extends javax.swing.JFrame
         } else
         {
             return false;
+        }
+    }
+    
+    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    public void Cerrar()
+    {
+        String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION)
+        {
+            System.out.println("Salio del programa con exito");
+            System.exit(eleccion);
+        } else 
+        if(eleccion == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Se cancelo la salida");
         }
     }
     /**

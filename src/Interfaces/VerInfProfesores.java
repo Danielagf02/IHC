@@ -19,7 +19,7 @@ public class VerInfProfesores extends javax.swing.JFrame
      */
     public VerInfProfesores()
     {
-          initComponents();
+        initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
@@ -145,7 +145,7 @@ public class VerInfProfesores extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-        new ControlEscolar().setVisible(true);
+        new IAlumno().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
