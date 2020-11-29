@@ -18,66 +18,38 @@ public class Pruebas
      */
     public static void main(String[] args)
     {
-        //AltasAdminisPrueba();
+//        AltasAdminisPrueba();
 //        BajasAdminisPrueba();
-        //ArrayList<Adminis> admin = ConsultasAdminsPrueba();
+        ArrayList<Adminis> admin = ConsultasAdminsPrueba("Puesto=","'SubDirector'");
+        System.out.println(admin.get(0).getNombre());
+        System.out.println(admin.get(1).getNombre());
+//        ModificarAdminis();
     }
 
-    public static void AltasAdminisPrueba()
+    /**
+     * Método que hace las altas de los Admins en la bd la cual recibe por parametro los datos del objeto
+     * @param id tipo int
+     * @param ApellidoP tipo String
+     * @param ApellidoM tipo String
+     * @param Nombre tipo String
+     * @param fechaNacimiento tipo String
+     * @param CURP tipo String
+     * @param rfc  tipo String
+     * @param sexo tipo String
+     * @param Telefono tipo int
+     * @param CedulaProfe tipo String
+     * @param Direccion tipo String (Solo se acepta una palabra por errores en la base de datos)
+     * @param FolioEmpleado tipo int
+     * @param Hentrada tipo String
+     * @param Hsalida tipo String
+     * @param Puesto tipo String
+     * @param Correo tipo String
+     * @param Contraseña tipo String
+     */
+    public static void AltasAdminisPrueba(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP,
+            String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida,
+            String Puesto, String Correo, String Contraseña)
     {
-//        int id = 1;
-//        String ApellidoP = "Reunel";
-//        String ApellidoM = "Tolkien";
-//        String Nombre = "John";
-//        String fechaNacimiento = "03/01/1892";
-//        String CURP = "123456789012345678";
-//        String rfc = "12345678";
-//        String sexo = "Hombre";
-//        int Telefono = 12345;
-//        String CedulaProfe = "4r5g";
-//        String Direccion = "Londres, iIngleterra";
-//        int FolioEmpleado = 1;
-//        String Hentrada = "2:00";
-//        String Hsalida = "3:00";
-//        String Puesto = "Director";
-//        String Correo = "Tolkien@gandalf.com";
-//        String Contraseña = "hobit123";
-
-//        int id = 2;
-//        String ApellidoP = "Escutia";
-//        String ApellidoM = "Ceja";
-//        String Nombre = "Kevin";
-//        String fechaNacimiento = "15/01/2000";
-//        String CURP = "876543210987654321";
-//        String rfc = "15151515";
-//        String sexo = "Hombre";
-//        int Telefono = 72913;
-//        String CedulaProfe = "EUCK001";
-//        String Direccion = "Doroteo Arango";
-//        int FolioEmpleado = 2;
-//        String Hentrada = "2:00";
-//        String Hsalida = "3:00";
-//        String Puesto = "SubDirector";
-//        String Correo = "Tolkien@gandalf.com";
-//        String Contraseña = "hobit123";
-        int id = 3;
-        String ApellidoP = "Garduño";
-        String ApellidoM = "Fernandez";
-        String Nombre = "Daniela";
-        String fechaNacimiento = "04/10/2000";
-        String CURP = "287567934795678329";
-        String rfc = "0000000";
-        String sexo = "Mujer";
-        int Telefono = 722453;
-        String CedulaProfe = "FEDG104";
-        String Direccion = "Santiago";
-        int FolioEmpleado = 3;
-        String Hentrada = "2:00";
-        String Hsalida = "3:00";
-        String Puesto = "SubDirector";
-        String Correo = "Daniela@gmail.com";
-        String Contraseña = "yonas200";
-
         Connection con = ManipulaBD.conecta();
         if (con != null)
         {
@@ -103,18 +75,44 @@ public class Pruebas
             ManipulaBD.desconecta(con);
             System.out.println("Dato Insertado");
         }
-
+    }
+    
+    /**
+     * Se debe enviar el id ya que es unico e impide la eliminacion de un 
+     * dato erroneo así como se recomienda hacer uso del metodo 
+     * ConsultasAdmins el cual sera usado para encontrar cual es dato que se
+     * quiere eliminar
+     * @param id tipo int es el identificador unico del objeto en la bd
+     */
+    public static void BajasAdminisPrueba(int id)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            Querys sql = new Querys();
+            sql.Delete(con, "adminis", "id", "" + id + "");
+        }
+        ManipulaBD.desconecta(con);
     }
 
-    public static ArrayList<Adminis> ConsultasAdminsPrueba()
+    
+    /**
+     * Método para colsutar en la bd en la tabla de adminis y retorna el objeto
+     * o los objetos en un arraylist esto con la intencion de traer lo que se 
+     * requiera en el momento
+     * @param variable que variable va a buscar en la base ejemplo "Nombre=" es importante poner el igual
+     * @param condicion cual es la condicion por la cual se extraera el objeto ejemplo "'Firulais'"
+     * Nota: los números van sin comillas y los String entre comillas simples
+     * @return ArrayList de Adminis dada la condicion enviada
+     */
+    public static ArrayList<Adminis> ConsultasAdminsPrueba(String variable,String condicion)
     {
         Connection con = ManipulaBD.conecta();
         ArrayList<Adminis> ap = null;
         if (con != null)
         {
             Querys sql = new Querys();
-            String condicion = "SubDirector";
-            ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "Puesto='" + condicion + "'"));
+            ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", variable+condicion));
             ManipulaBD.desconecta(con);
             if (ap != null)
             {
@@ -127,17 +125,24 @@ public class Pruebas
         return ap;
     }
 
-    public static void BajasAdminisPrueba()
+    
+    public static void ModificarAdminis()
     {
         Connection con = ManipulaBD.conecta();
         if (con != null)
         {
             Querys sql = new Querys();
-            int id=2;
-            sql.Delete(con, "adminis", "id", "" + id + "");
+            ArrayList<Adminis> ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "id=" + 1 + ""));
+            Adminis obj = new Adminis(ap.get(0).getId(), ap.get(0).getApellidoP(), ap.get(0).getApellidoM(),
+                    "Gandalf", ap.get(0).getFechaNacimiento(), ap.get(0).getCURP(),
+                    ap.get(0).getRfc(), ap.get(0).getSexo(), ap.get(0).getTelefono(),
+                    ap.get(0).getCedulaProfe(), ap.get(0).getDireccion(), ap.get(0).getFolioEmpleado(),
+                    ap.get(0).getHentrada(), ap.get(0).getHsalida(), ap.get(0).getPuesto(), ap.get(0).getCorreo(),
+                    ap.get(0).getContrasenia());
+            if (ap != null)
+            {
+                sql.Modificar(con, "adminis", "Nombre", "Zelda", "id=1");
+            }
         }
-        ManipulaBD.desconecta(con);
     }
-    
-
 }
