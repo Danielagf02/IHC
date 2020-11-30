@@ -20,25 +20,26 @@ public class Pruebas
     {
 //        AltasAdminisPrueba();
 //        BajasAdminisPrueba();
-        ArrayList<Adminis> admin = ConsultasAdminsPrueba("Puesto=","'SubDirector'");
-        System.out.println(admin.get(0).getNombre());
-        System.out.println(admin.get(1).getNombre());
-//        ModificarAdminis();
+//        ArrayList<Adminis> admin = ConsultasAdminsPrueba("Puesto=","'SubDirector'");
+        ModificarAdminis();
     }
 
     /**
-     * Método que hace las altas de los Admins en la bd la cual recibe por parametro los datos del objeto
+     * Método que hace las altas de los Admins en la bd la cual recibe por
+     * parametro los datos del objeto
+     *
      * @param id tipo int
      * @param ApellidoP tipo String
      * @param ApellidoM tipo String
      * @param Nombre tipo String
      * @param fechaNacimiento tipo String
      * @param CURP tipo String
-     * @param rfc  tipo String
+     * @param rfc tipo String
      * @param sexo tipo String
      * @param Telefono tipo int
      * @param CedulaProfe tipo String
-     * @param Direccion tipo String (Solo se acepta una palabra por errores en la base de datos)
+     * @param Direccion tipo String (Solo se acepta una palabra por errores en
+     * la base de datos)
      * @param FolioEmpleado tipo int
      * @param Hentrada tipo String
      * @param Hsalida tipo String
@@ -76,12 +77,12 @@ public class Pruebas
             System.out.println("Dato Insertado");
         }
     }
-    
+
     /**
-     * Se debe enviar el id ya que es unico e impide la eliminacion de un 
-     * dato erroneo así como se recomienda hacer uso del metodo 
-     * ConsultasAdmins el cual sera usado para encontrar cual es dato que se
-     * quiere eliminar
+     * Se debe enviar el id ya que es unico e impide la eliminacion de un dato
+     * erroneo así como se recomienda hacer uso del metodo ConsultasAdmins el
+     * cual sera usado para encontrar cual es dato que se quiere eliminar
+     *
      * @param id tipo int es el identificador unico del objeto en la bd
      */
     public static void BajasAdminisPrueba(int id)
@@ -95,24 +96,26 @@ public class Pruebas
         ManipulaBD.desconecta(con);
     }
 
-    
     /**
      * Método para colsutar en la bd en la tabla de adminis y retorna el objeto
-     * o los objetos en un arraylist esto con la intencion de traer lo que se 
+     * o los objetos en un arraylist esto con la intencion de traer lo que se
      * requiera en el momento
-     * @param variable que variable va a buscar en la base ejemplo "Nombre=" es importante poner el igual
-     * @param condicion cual es la condicion por la cual se extraera el objeto ejemplo "'Firulais'"
-     * Nota: los números van sin comillas y los String entre comillas simples
+     *
+     * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
+     * importante poner el igual
+     * @param condicion cual es la condicion por la cual se extraera el objeto
+     * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
+     * entre comillas simples
      * @return ArrayList de Adminis dada la condicion enviada
      */
-    public static ArrayList<Adminis> ConsultasAdminsPrueba(String variable,String condicion)
+    public static ArrayList<Adminis> ConsultasAdminsPrueba(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
         ArrayList<Adminis> ap = null;
         if (con != null)
         {
             Querys sql = new Querys();
-            ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", variable+condicion));
+            ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", variable + condicion));
             ManipulaBD.desconecta(con);
             if (ap != null)
             {
@@ -125,23 +128,26 @@ public class Pruebas
         return ap;
     }
 
-    
     public static void ModificarAdminis()
     {
         Connection con = ManipulaBD.conecta();
         if (con != null)
         {
             Querys sql = new Querys();
-            ArrayList<Adminis> ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "id=" + 1 + ""));
+            ArrayList<Adminis> ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "id=" + 2 + ""));
             Adminis obj = new Adminis(ap.get(0).getId(), ap.get(0).getApellidoP(), ap.get(0).getApellidoM(),
-                    "Gandalf", ap.get(0).getFechaNacimiento(), ap.get(0).getCURP(),
+                    "Elkevin", ap.get(0).getFechaNacimiento(), ap.get(0).getCURP(),
                     ap.get(0).getRfc(), ap.get(0).getSexo(), ap.get(0).getTelefono(),
                     ap.get(0).getCedulaProfe(), ap.get(0).getDireccion(), ap.get(0).getFolioEmpleado(),
                     ap.get(0).getHentrada(), ap.get(0).getHsalida(), ap.get(0).getPuesto(), ap.get(0).getCorreo(),
-                    ap.get(0).getContrasenia());
-            if (ap != null)
+                    "gnomo115");
+            if (obj != null)
             {
-                sql.Modificar(con, "adminis", "Nombre", "Zelda", "id=1");
+                BajasAdminisPrueba(obj.getId());
+                AltasAdminisPrueba(obj.getId(), obj.getApellidoP(), obj.getApellidoM(), obj.getNombre(),
+                        obj.getFechaNacimiento(), obj.getCURP(), obj.getRfc(), obj.getSexo(),
+                        obj.getTelefono(), obj.getCedulaProfe(), obj.getDireccion(), obj.getFolioEmpleado(),
+                        obj.getHentrada(), obj.getHsalida(), obj.getPuesto(), obj.getCorreo(), obj.getContrasenia());
             }
         }
     }
