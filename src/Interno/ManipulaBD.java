@@ -529,10 +529,11 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de adminis y retorna el objeto
+     * Método para colsutar en la bd en la tabla de profesor y retorna el objeto
      * o los objetos en un arraylist esto con la intencion de traer lo que se
-     * requiera en el momento
-     *
+     * requiera en el momento 
+     * PD: Si quieres traer todos los datos la variable debe ser id!= y la 
+     * condicion es 0
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
      * @param condicion cual es la condicion por la cual se extraera el objeto
@@ -575,10 +576,133 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Profesor> ap = ManipulaBD.CargarProfesor(sql.Seleccion(con, "*", "adminis", "id=" + id + ""));
+            ArrayList<Profesor> ap = ManipulaBD.CargarProfesor(sql.Seleccion(con, "*", "profesor", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "profesor", campos, datos, "id='" + id + "'");
+                ManipulaBD.desconecta(con);
+                System.out.println("Modificados");
+            }
+        }
+    }
+
+    /**
+     * Método usado para dar de alta en la bd un objeto del tipo alumno
+     * 
+     * @param id tipo int
+     * @param Grado tipo int
+     * @param Grupo Tipo String
+     * @param ApellidoP Tipo String
+     * @param ApellidoM Tipo String
+     * @param Nombre Tipo String
+     * @param fechaNacimiento Tipo String
+     * @param CURP Tipo String
+     * @param sexo Tipo String
+     * @param Telefono tipo int
+     * @param NomMadre Tipo String
+     * @param NomPadre Tipo String
+     * @param FolioAlumno tipo int
+     * @param Correo Tipo String
+     * @param Contraseña  Tipo String
+     */
+    public static void AltasAlumnos(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre, 
+            String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, 
+            String Correo, String Contraseña)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            sql.Insertar(con, "alumnos",
+                    "" + id + ","
+                    + Grado + ",'"
+                    + Grupo + "','"
+                    + ApellidoP + "','"
+                    + ApellidoM+ "','"
+                    + Nombre + "','"
+                    + fechaNacimiento + "','"
+                    + CURP + "','"
+                    + sexo + "',"
+                    + Telefono + ",'"
+                    + NomMadre + "','"
+                    + NomPadre + "',"
+                    + FolioAlumno + ",'"
+                    + Correo + "','"
+                    + Contraseña + "','");
+            ManipulaBD.desconecta(con);
+            System.out.println("Dato Insertado");
+        }
+    }
+
+    /**
+     * Se debe enviar el id ya que es unico e impide la eliminacion de un dato
+     * erroneo así como se recomienda hacer uso del metodo ConsultasAlumnos el
+     * cual sera usado para encontrar cual es dato que se quiere eliminar
+     *
+     * @param id tipo int es el identificador unico del objeto en la bd
+     */
+    public static void BajasAlumnos(int id)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            sql.Delete(con, "alumnos", "id", "" + id + "");
+        }
+        ManipulaBD.desconecta(con);
+    }
+
+    /**
+     * Método para colsutar en la bd en la tabla de alumnos y retorna el objeto
+     * o los objetos en un arraylist esto con la intencion de traer lo que se
+     * requiera en el momento
+     *
+     * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
+     * importante poner el igual
+     * @param condicion cual es la condicion por la cual se extraera el objeto
+     * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
+     * entre comillas simples
+     * @return ArrayList de Adminis dada la condicion enviada
+     */
+    public static ArrayList<Alumnno> ConsultasAlumnos(String variable, String condicion)
+    {
+        Connection con = ManipulaBD.conecta();
+        ArrayList<Alumnno> ap = null;
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            ap = ManipulaBD.CargarAlumno(sql.Seleccion(con, "*", "alumnos", variable + condicion));
+            ManipulaBD.desconecta(con);
+            if (ap != null)
+            {
+                System.out.println("Datos encontrados");
+            } else
+            {
+                System.out.println("no se encontro nada");
+            }
+        }
+        return ap;
+    }
+
+    /**
+     * Método para modificar datos en la bd de un usario Alumnos
+     *
+     * @param id el id de la persona que se modificara sus datos
+     * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
+     * @param datos los datos nuevos que seran remplazados en la bd ejemplo:
+     * "'Pancho',1234" los datos tipos String deben ser puestos entre comillas
+     * simples
+     */
+    public static void ModificarAlumnos(int id, String campos, String datos)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            ArrayList<Alumnno> ap = ManipulaBD.CargarAlumno(sql.Seleccion(con, "*", "alumnos", "id=" + id + ""));
+            if (ap != null)
+            {
+                sql.Modificar(con, "alumnos", campos, datos, "id='" + id + "'");
                 ManipulaBD.desconecta(con);
                 System.out.println("Modificados");
             }
