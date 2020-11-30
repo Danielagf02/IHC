@@ -812,6 +812,7 @@ public class ManipulaBD
 
     /**
      * Método para dar de altas las materias
+     *
      * @param id tipo int
      * @param grado tipo int
      * @param grupo tipo String
@@ -853,7 +854,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de Calificaciones y retorna el
+     * Método para colsutar en la bd en la tabla de Materias y retorna el
      * objeto o los objetos en un arraylist esto con la intencion de traer lo
      * que se requiera en el momento
      *
@@ -862,7 +863,7 @@ public class ManipulaBD
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Calificaciones dada la condicion enviada
+     * @return ArrayList de Materias dada la condicion enviada
      */
     public static ArrayList<Materias> ConsultasMaterias(String variable, String condicion)
     {
@@ -885,7 +886,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para modificar datos en la bd de un usario Calificaciones
+     * Método para modificar datos en la bd de un objeto Materias
      *
      * @param id el id de la persona que se modificara sus datos
      * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
@@ -903,6 +904,108 @@ public class ManipulaBD
             if (ap != null)
             {
                 sql.Modificar(con, "materias", campos, datos, "id='" + id + "'");
+                ManipulaBD.desconecta(con);
+                System.out.println("Modificados");
+            }
+        }
+    }
+
+    /**
+     * Método para asignar Horarios a una materia dependiendo del grado
+     * @param id tipo int
+     * @param id_Materia tipo int
+     * @param grado tipo int
+     * @param grupo tipo String
+     * @param horaI  tipo int
+     * @param horaF  tipo int
+     */
+    public static void AltasHorarios(int id, int id_Materia, int grado, String grupo, int horaI, int horaF)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            sql.Insertar(con, "horarios",
+                    "" + id + ","
+                    + grado + ",'"
+                    + grupo + "',"
+                    + horaI + ","
+                    + horaF + "");
+            ManipulaBD.desconecta(con);
+            System.out.println("Dato Insertado");
+        }
+    }
+
+    /**
+     * Se debe enviar el id ya que es unico e impide la eliminacion de un dato
+     * erroneo así como se recomienda hacer uso del metodo
+     * ConsultasHorarios el cual sera usado para encontrar cual es dato
+     * que se quiere eliminar
+     *
+     * @param id tipo int es el identificador unico del objeto en la bd
+     */
+    public static void BajasHorarios(int id)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            sql.Delete(con, "horarios", "id", "" + id + "");
+        }
+        ManipulaBD.desconecta(con);
+    }
+
+    /**
+     * Método para colsutar en la bd en la tabla de horarios y retorna el
+     * objeto o los objetos en un arraylist esto con la intencion de traer lo
+     * que se requiera en el momento
+     *
+     * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
+     * importante poner el igual
+     * @param condicion cual es la condicion por la cual se extraera el objeto
+     * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
+     * entre comillas simples
+     * @return ArrayList de horarios dada la condicion enviada
+     */
+    public static ArrayList<Horarios> ConsultasHorarios(String variable, String condicion)
+    {
+        Connection con = ManipulaBD.conecta();
+        ArrayList<Horarios> ap = null;
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            ap = ManipulaBD.CargarHorarios(sql.Seleccion(con, "*", "horarios", variable + condicion));
+            ManipulaBD.desconecta(con);
+            if (ap != null)
+            {
+                System.out.println("Datos encontrados");
+            } else
+            {
+                System.out.println("no se encontro nada");
+            }
+        }
+        return ap;
+    }
+
+    /**
+     * Método para modificar datos en la bd de un objeto horarios
+     *
+     * @param id el id de la persona que se modificara sus datos
+     * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
+     * @param datos los datos nuevos que seran remplazados en la bd ejemplo:
+     * "'Pancho',1234" los datos tipos String deben ser puestos entre comillas
+     * simples
+     */
+    public static void ModificarHorarios(int id, String campos, String datos)
+    {
+        Connection con = ManipulaBD.conecta();
+        if (con != null)
+        {
+            poo.bd.Querys sql = new poo.bd.Querys();
+            ArrayList<Horarios> ap = ManipulaBD.CargarHorarios(sql.Seleccion(con, "*", "horarios", "id=" + id + ""));
+            if (ap != null)
+            {
+                sql.Modificar(con, "horarios", campos, datos, "id='" + id + "'");
                 ManipulaBD.desconecta(con);
                 System.out.println("Modificados");
             }
