@@ -139,6 +139,7 @@ public class ReporteJustufcante extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ReporteActionPerformed
@@ -192,6 +193,7 @@ public class ReporteJustufcante extends javax.swing.JFrame
         {
             java.util.logging.Logger.getLogger(ReporteJustufcante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

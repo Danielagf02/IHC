@@ -6,6 +6,7 @@
 package Interfaces;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -241,8 +242,7 @@ public class Docentes extends javax.swing.JFrame
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
-        new MensajeSalida().setVisible(true);
-        this.setVisible(false);
+        Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void BuscarPorfesorActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarPorfesorActionPerformed
@@ -251,6 +251,22 @@ public class Docentes extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_BuscarPorfesorActionPerformed
 
+    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    public void Cerrar()
+    {
+        String botones[] = {"Salir", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION)
+        {
+            System.out.println("Salio del programa con exito");
+            System.exit(eleccion);
+        } else 
+        if(eleccion == JOptionPane.NO_OPTION)
+        {
+            System.out.println("Se cancelo la salida");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -284,6 +300,8 @@ public class Docentes extends javax.swing.JFrame
         {
             java.util.logging.Logger.getLogger(Docentes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

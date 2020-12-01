@@ -157,6 +157,7 @@ public class TodosHorarios extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
@@ -198,6 +199,7 @@ public class TodosHorarios extends javax.swing.JFrame
         {
             java.util.logging.Logger.getLogger(TodosHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

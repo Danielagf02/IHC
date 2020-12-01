@@ -5,15 +5,37 @@
  */
 package Interfaces;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import poo.bd.Querys;
 
 /**
  *
  * @author DanielaGF
  */
+
 public class Reporte extends javax.swing.JFrame
 {
+ArrayList<Object> datos = new ArrayList<Object>();
+    ArrayList<Object> datos2 = new ArrayList<Object>();
+    Querys q = new Querys();
 
+    DefaultTableModel modelo;
+ 
+      
     /**
      * Creates new form Justificante
      */
@@ -30,6 +52,56 @@ public class Reporte extends javax.swing.JFrame
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/estudiante.png");
         btnBuscarA.setIcon(icono2);
     }
+    
+         public void abrir(String nombre)
+    {
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
+        }
+    }
+          public void generar(String nombre)
+    {
+       
+
+            FileOutputStream archivo;
+            try {
+                archivo = new FileOutputStream(nombre + ".pdf");
+                Document documento = new Document();
+                try {
+                    PdfWriter.getInstance(documento, archivo);
+                } catch (DocumentException ex) {
+                    Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                documento.open();
+                try {
+                    
+                    documento.add(new Paragraph("Datos del alumno"));
+                    documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
+                    documento.add(new Paragraph("Apellido paterno: " + datos2.get(0)));
+                    documento.add(new Paragraph("Apellido materno: " + datos2.get(1)));
+                    documento.add(new Paragraph("Nombre: " + datos2.get(2)));
+                    documento.add(new Paragraph("Grado: " + datos2.get(6)));
+                    documento.add(new Paragraph("Grupo: " + datos2.get(7)));
+                    documento.add(new Paragraph("Día: " + jtfdia.getText()));
+                    documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
+                    documento.add(new Paragraph("Día cita del padre: " + jtfdiaPadre.getText()));
+                    
+                   
+                } catch (DocumentException ex) {
+                    Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                documento.close();
+                JOptionPane.showMessageDialog(null, "PDF creado correctamente","Reporte",1);
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Error: " + ex,"Advertencia",1);
+            }
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,12 +120,12 @@ public class Reporte extends javax.swing.JFrame
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtfdia = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtfRazon = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtfdiaPadre = new javax.swing.JTextField();
         btnImprimir = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -97,9 +169,9 @@ public class Reporte extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Día:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jtfRazon.setColumns(20);
+        jtfRazon.setRows(5);
+        jScrollPane2.setViewportView(jtfRazon);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Razón:");
@@ -123,9 +195,9 @@ public class Reporte extends javax.swing.JFrame
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                    .addComponent(jtfdia, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
+                    .addComponent(jtfdiaPadre, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +225,7 @@ public class Reporte extends javax.swing.JFrame
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +237,7 @@ public class Reporte extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtfdiaPadre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(64, 64, 64))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -211,6 +283,7 @@ public class Reporte extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarAActionPerformed
@@ -265,6 +338,8 @@ public class Reporte extends javax.swing.JFrame
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
@@ -275,6 +350,9 @@ public class Reporte extends javax.swing.JFrame
             }
         });
     }
+    
+   
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarA;
@@ -289,8 +367,8 @@ public class Reporte extends javax.swing.JFrame
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextArea jtfRazon;
+    private javax.swing.JTextField jtfdia;
+    private javax.swing.JTextField jtfdiaPadre;
     // End of variables declaration//GEN-END:variables
 }

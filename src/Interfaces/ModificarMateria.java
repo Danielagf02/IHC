@@ -95,6 +95,7 @@ public class ModificarMateria extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -130,6 +131,8 @@ public class ModificarMateria extends javax.swing.JFrame
         {
             java.util.logging.Logger.getLogger(ModificarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
