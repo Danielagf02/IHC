@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import cjb.ci.Validaciones;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,21 +32,23 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author DanielaGF
  */
 public class Registrarse extends javax.swing.JFrame
-{
+  {
+
     String sex; //Para guardar el sexo
+
     /**
      * Creates new form Registrarse
      */
     public Registrarse()
-    {
+      {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono1);
-    }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -209,6 +212,13 @@ public class Registrarse extends javax.swing.JFrame
             }
         });
 
+        tfNombre.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                tfNombreActionPerformed(evt);
+            }
+        });
         tfNombre.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
@@ -222,6 +232,13 @@ public class Registrarse extends javax.swing.JFrame
         });
 
         tfAPaterno.setEnabled(false);
+        tfAPaterno.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                tfAPaternoActionPerformed(evt);
+            }
+        });
         tfAPaterno.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
@@ -647,29 +664,29 @@ public class Registrarse extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
         //new Principal().setVisible(true);
         //this.setVisible(false);
-       
-       String nombre = tfNombre.getText();
-       String apellidoP = tfAPaterno.getText();
-       String apellidoM = tfAMaterno.getText();
-       String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
-       int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
-       String curp = tfCurp.getText();
-       String grado = tfGrado.getText();
-       String grupo = tfGrupo.getText();
-       String tel = tfTel.getText();
-       String nomMa = tfCedula.getText();
-       String nomPa = tfDir.getText();
-       String folio = tfRfc.getText();
-       String correo = tfCorreo.getText();
-       String contra = tfContraseña.getText();
-       
-       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
-       
-       //AQUI se hacen las validaciones con la conexion de base de datos 
-       //NINGUN CAMPO PUEDE IR VACIO
-       
+
+        String nombre = tfNombre.getText();
+        String apellidoP = tfAPaterno.getText();
+        String apellidoM = tfAMaterno.getText();
+        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
+        int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
+        String curp = tfCurp.getText();
+        String grado = tfGrado.getText();
+        String grupo = tfGrupo.getText();
+        String tel = tfTel.getText();
+        String nomMa = tfCedula.getText();
+        String nomPa = tfDir.getText();
+        String folio = tfRfc.getText();
+        String correo = tfCorreo.getText();
+        String contra = tfContraseña.getText();
+
+        //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+        //AQUI se hacen las validaciones con la conexion de base de datos 
+        //NINGUN CAMPO PUEDE IR VACIO
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-       
+        CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfCedula, tfDir, tfRfc, tfCorreo, tfContraseña);
+        CtrlInterfaz.habilita(false, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfCedula, tfDir, tfRfc, tfCorreo, tfContraseña);
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
@@ -681,6 +698,7 @@ public class Registrarse extends javax.swing.JFrame
         CtrlInterfaz.habilita(false, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfCedula, tfDir, tfRfc, tfCorreo, tfContraseña);
         btnRegistrar.setEnabled(false);
         btnCurp.setEnabled(false);
+
         //new ControlEscolar().setVisible(true);
         //this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
@@ -688,19 +706,19 @@ public class Registrarse extends javax.swing.JFrame
     private void btnCurpActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCurpActionPerformed
     {//GEN-HEADEREND:event_btnCurpActionPerformed
         if (java.awt.Desktop.isDesktopSupported())
-        {
-            java.awt.Desktop desktop= java.awt.Desktop.getDesktop();
+          {
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE))
-            {
+              {
                 try
-                {
-                    java.net.URI uri= new java.net.URI("https://www.gob.mx/curp/");
+                  {
+                    java.net.URI uri = new java.net.URI("https://www.gob.mx/curp/");
                     desktop.browse(uri);
-                } catch (URISyntaxException | IOException ex)
-                {
-                }
-            }
-        }
+                  } catch (URISyntaxException | IOException ex)
+                  {
+                  }
+              }
+          }
     }//GEN-LAST:event_btnCurpActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
@@ -718,9 +736,9 @@ public class Registrarse extends javax.swing.JFrame
     private void tfNombreKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyPressed
     {//GEN-HEADEREND:event_tfNombreKeyPressed
         if (tfNombre.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfAPaterno);
-        } 
+          }
     }//GEN-LAST:event_tfNombreKeyPressed
 
     private void tfNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyTyped
@@ -731,9 +749,9 @@ public class Registrarse extends javax.swing.JFrame
     private void tfAPaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAPaternoKeyPressed
     {//GEN-HEADEREND:event_tfAPaternoKeyPressed
         if (tfAPaterno.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfAMaterno);
-        }
+          }
     }//GEN-LAST:event_tfAPaternoKeyPressed
 
     private void tfAPaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAPaternoKeyTyped
@@ -744,9 +762,9 @@ public class Registrarse extends javax.swing.JFrame
     private void tfAMaternoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAMaternoKeyPressed
     {//GEN-HEADEREND:event_tfAMaternoKeyPressed
         if (tfAMaterno.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfDia);
-        }
+          }
     }//GEN-LAST:event_tfAMaternoKeyPressed
 
     private void tfAMaternoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAMaternoKeyTyped
@@ -756,174 +774,188 @@ public class Registrarse extends javax.swing.JFrame
 
     private void tfDiaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyPressed
     {//GEN-HEADEREND:event_tfDiaKeyPressed
-        if (tfDia.getText().isEmpty() != true) 
-        {
+        if (tfDia.getText().isEmpty() != true)
+          {
             Validaciones.enter(this, evt, tfMes);
-        }
+          }
     }//GEN-LAST:event_tfDiaKeyPressed
 
     private void tfDiaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyTyped
     {//GEN-HEADEREND:event_tfDiaKeyTyped
-        if (tfDia.getText().length() == 2) {
+        if (tfDia.getText().length() == 2)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfDiaKeyTyped
 
     private void tfMesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyPressed
     {//GEN-HEADEREND:event_tfMesKeyPressed
-        if (tfMes.getText().isEmpty() != true) 
-        {
+        if (tfMes.getText().isEmpty() != true)
+          {
             Validaciones.enter(this, evt, tfAño);
-        }
+          }
     }//GEN-LAST:event_tfMesKeyPressed
 
     private void tfMesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyTyped
     {//GEN-HEADEREND:event_tfMesKeyTyped
-        if (tfMes.getText().length() == 2) {
+        if (tfMes.getText().length() == 2)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfMesKeyTyped
 
     private void tfAñoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyPressed
     {//GEN-HEADEREND:event_tfAñoKeyPressed
         if (tfAño.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfEdad);
-        }
+          }
     }//GEN-LAST:event_tfAñoKeyPressed
 
     private void tfAñoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyTyped
     {//GEN-HEADEREND:event_tfAñoKeyTyped
-        if (tfAño.getText().length() != 4 ) {
+        if (tfAño.getText().length() != 4)
+          {
             Validaciones.validaEntero(evt);
-        } else {
+          } else
+          {
             evt.consume();
-        }
+          }
     }//GEN-LAST:event_tfAñoKeyTyped
 
     private void tfEdadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyPressed
     {//GEN-HEADEREND:event_tfEdadKeyPressed
         if (tfEdad.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, btnCurp);
             Validaciones.enter(this, evt, tfCurp);
             btnCurp.setEnabled(true);
-        }
+          }
     }//GEN-LAST:event_tfEdadKeyPressed
 
     private void tfEdadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyTyped
     {//GEN-HEADEREND:event_tfEdadKeyTyped
-        if (tfEdad.getText().length() == 2) {
+        if (tfEdad.getText().length() == 2)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfEdadKeyTyped
 
     private void tfCurpKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCurpKeyPressed
     {//GEN-HEADEREND:event_tfCurpKeyPressed
         if (tfCurp.getText().length() == 18 && (validaCURP(tfCurp.getText())))
-        {
+          {
             Validaciones.enter(this, evt, rbMujer);
             Validaciones.enter(this, evt, rbHombre);
-            
+
             rbHombre.setEnabled(true);
             rbMujer.setEnabled(true);
-        }
+          }
     }//GEN-LAST:event_tfCurpKeyPressed
 
     private void tfCurpKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCurpKeyTyped
     {//GEN-HEADEREND:event_tfCurpKeyTyped
         Character c = evt.getKeyChar();
         if (Character.isLetter(c))
-        {
+          {
             evt.setKeyChar(Character.toUpperCase(c));
-        }
+          }
         if (tfCurp.getText().length() == 18)
-        {
+          {
             evt.consume();
-        }
+          }
     }//GEN-LAST:event_tfCurpKeyTyped
 
     private void rbMujerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_rbMujerStateChanged
     {//GEN-HEADEREND:event_rbMujerStateChanged
         if (rbMujer.isSelected())
-        {
+          {
             sex = "Mujer";
-        }
+          }
         tfGrado.setEnabled(true);
     }//GEN-LAST:event_rbMujerStateChanged
 
     private void rbHombreStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_rbHombreStateChanged
     {//GEN-HEADEREND:event_rbHombreStateChanged
         if (rbHombre.isSelected())
-        {
+          {
             sex = "Hombre";
-        }
+          }
         tfGrado.setEnabled(true);
     }//GEN-LAST:event_rbHombreStateChanged
 
     private void tfGradoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyPressed
     {//GEN-HEADEREND:event_tfGradoKeyPressed
         if (tfGrado.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfGrupo);
-        }
+          }
     }//GEN-LAST:event_tfGradoKeyPressed
 
     private void tfGradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyTyped
     {//GEN-HEADEREND:event_tfGradoKeyTyped
-        if (tfGrado.getText().length() == 1 ) {
+        if (tfGrado.getText().length() == 1)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfGradoKeyTyped
 
     private void tfGrupoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyPressed
     {//GEN-HEADEREND:event_tfGrupoKeyPressed
         if (tfGrupo.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfTel);
-        }
+          }
     }//GEN-LAST:event_tfGrupoKeyPressed
 
     private void tfGrupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyTyped
     {//GEN-HEADEREND:event_tfGrupoKeyTyped
-        if (tfGrupo.getText().length() == 1 ) {
+        if (tfGrupo.getText().length() == 1)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaAlfabeticos(evt);
-        }
+          }
     }//GEN-LAST:event_tfGrupoKeyTyped
 
     private void tfTelKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyPressed
     {//GEN-HEADEREND:event_tfTelKeyPressed
         if (!((tfTel.getText().isEmpty()) || (!(validaNumero(tfTel.getText(), 10)))))
-        {
+          {
             Validaciones.enter(this, evt, tfCedula);
-        }
+          }
     }//GEN-LAST:event_tfTelKeyPressed
 
     private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
     {//GEN-HEADEREND:event_tfTelKeyTyped
-        if (tfTel.getText().length() == 10 ) {
+        if (tfTel.getText().length() == 10)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfTelKeyTyped
 
     private void tfCedulaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCedulaKeyPressed
     {//GEN-HEADEREND:event_tfCedulaKeyPressed
         if (tfCedula.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfDir);
-        }
+          }
     }//GEN-LAST:event_tfCedulaKeyPressed
 
     private void tfCedulaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCedulaKeyTyped
@@ -934,9 +966,9 @@ public class Registrarse extends javax.swing.JFrame
     private void tfDirKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDirKeyPressed
     {//GEN-HEADEREND:event_tfDirKeyPressed
         if (tfDir.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfRfc);
-        }
+          }
     }//GEN-LAST:event_tfDirKeyPressed
 
     private void tfDirKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDirKeyTyped
@@ -947,55 +979,68 @@ public class Registrarse extends javax.swing.JFrame
     private void tfRfcKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfRfcKeyPressed
     {//GEN-HEADEREND:event_tfRfcKeyPressed
         if (tfRfc.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, tfCorreo);
-        }
+          }
     }//GEN-LAST:event_tfRfcKeyPressed
 
     private void tfRfcKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfRfcKeyTyped
     {//GEN-HEADEREND:event_tfRfcKeyTyped
-        if (tfRfc.getText().length() == 7 ) {
+        if (tfRfc.getText().length() == 7)
+          {
             evt.consume();
-        } else {
+          } else
+          {
             Validaciones.validaEntero(evt);
-        }
+          }
     }//GEN-LAST:event_tfRfcKeyTyped
 
     private void tfCorreoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCorreoKeyPressed
     {//GEN-HEADEREND:event_tfCorreoKeyPressed
         if (!((tfCorreo.getText().isEmpty()) || (!(validaEmail(tfCorreo.getText())))))
-        {
+          {
             Validaciones.enter(this, evt, tfContraseña);
-        }
+          }
     }//GEN-LAST:event_tfCorreoKeyPressed
 
     private void tfCorreoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCorreoKeyTyped
     {//GEN-HEADEREND:event_tfCorreoKeyTyped
         if (tfCorreo.getText().length() == 35)
-        {
+          {
             evt.consume();
-        }
+          }
     }//GEN-LAST:event_tfCorreoKeyTyped
 
     private void tfContraseñaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyPressed
     {//GEN-HEADEREND:event_tfContraseñaKeyPressed
         if (!(tfContraseña.getText().isEmpty()))
-        {
+          {
             Validaciones.enter(this, evt, btnRegistrar);
             btnRegistrar.setEnabled(true);
-        }
+          }
     }//GEN-LAST:event_tfContraseñaKeyPressed
 
     private void tfContraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyTyped
     {//GEN-HEADEREND:event_tfContraseñaKeyTyped
-        if (tfContraseña.getText().length() == 10 ) {
+        if (tfContraseña.getText().length() == 10)
+          {
             evt.consume();
-        } 
+          }
     }//GEN-LAST:event_tfContraseñaKeyTyped
+
+    private void tfNombreActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_tfNombreActionPerformed
+    {//GEN-HEADEREND:event_tfNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void tfAPaternoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_tfAPaternoActionPerformed
+    {//GEN-HEADEREND:event_tfAPaternoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAPaternoActionPerformed
 
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM 
     public boolean validaEmail(String cad)
-    {
+      {
         Pattern expReg = null;
         Matcher val = null;
 
@@ -1003,17 +1048,17 @@ public class Registrarse extends javax.swing.JFrame
         val = expReg.matcher(cad);
 
         if (val.find())
-        {
+          {
             return true;
-        } else
-        {
+          } else
+          {
             return false;
-        }
-    }
-    
+          }
+      }
+
     //VALIDA QUE SEA UNA CURP REAL
     public boolean validaCURP(String cad)
-    {
+      {
         Pattern expReg = null;
         Matcher val = null;
 
@@ -1021,17 +1066,17 @@ public class Registrarse extends javax.swing.JFrame
         val = expReg.matcher(cad);
 
         if (val.find())
-        {
+          {
             return true;
-        } else
-        {
+          } else
+          {
             return false;
-        }
-    }
-    
+          }
+      }
+
     //VALIDACION PARA EL TELEFONO
     public static boolean validaNumero(String cad, int nums)
-    {
+      {
         String n = String.valueOf(nums);
         Pattern expReg = null;
         Matcher val = null;
@@ -1040,46 +1085,86 @@ public class Registrarse extends javax.swing.JFrame
         val = expReg.matcher(cad);
 
         if (val.find())
-        {
+          {
             return true;
-        } else
-        {
+          } else
+          {
             return false;
-        }
-    }
+          }
+      }
+
+//    //Validacion para solo utilizar letras y caracteres especiales
+//    
+//     private void va(KeyEvent ke)
+//    {
+//        if ((ke.getKeyChar() < 'a' || ke.getKeyChar() > 'z')
+//                && (ke.getKeyChar() < 'A' || ke.getKeyChar() > 'Z')
+//                && ke.getKeyChar() != ' ' && ke.getKeyChar() != 'ñ'
+//                && ke.getKeyChar() != 'Ñ' && ke.getKeyChar() != 'á'
+//                && ke.getKeyChar() != 'Á' && ke.getKeyChar() != 'é'
+//                && ke.getKeyChar() != 'É' && ke.getKeyChar() != 'í'
+//                && ke.getKeyChar() != 'Í' && ke.getKeyChar() != 'ó'
+//                && ke.getKeyChar() != 'Ó' && ke.getKeyChar() != 'ú'
+//                && ke.getKeyChar() != 'Ú')
+//        {
+//            ke.setKeyChar((char) 8);
+//        }
+//    }
+//
+//    private boolean validarC(String s)
+//    {
+//        boolean si = true;
+//        for (int i = 0; i < s.length(); i++)
+//        {
+//            if ((s.charAt(i) < 'a' || s.charAt(i) > 'z')
+//                    && (s.charAt(i) < 'A' || s.charAt(i) > 'Z')
+//                    && s.charAt(i) != ' ' && s.charAt(i) != 'ñ'
+//                    && s.charAt(i) != 'Ñ' && s.charAt(i) != 'á'
+//                    && s.charAt(i) != 'Á' && s.charAt(i) != 'é'
+//                    && s.charAt(i) != 'É' && s.charAt(i) != 'í'
+//                    && s.charAt(i) != 'Í' && s.charAt(i) != 'ó'
+//                    && s.charAt(i) != 'Ó' && s.charAt(i) != 'ú'
+//                    && s.charAt(i) != 'Ú')
+//            {
+//                si = false;
+//                break;
+//            }
+//        }
+//        return si;
+//    }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(Registrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(Registrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(Registrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(Registrarse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1115,13 +1200,13 @@ public class Registrarse extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new Registrarse().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FOLIO;
