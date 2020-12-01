@@ -320,7 +320,7 @@ public class AltaMaterias extends javax.swing.JFrame
         if (jtGrupo.getText().isEmpty() != true)
           {
             Validaciones.enter(this, evt, btnRegresar);
-            btnRegresar.setEnabled(true);
+            btnRegistro.setEnabled(true);
           }
     }//GEN-LAST:event_jtGrupoKeyPressed
 
@@ -337,15 +337,15 @@ public class AltaMaterias extends javax.swing.JFrame
         String grupo = jtGrupo.getText();
         JOptionPane.showMessageDialog(null, "Se ha registrado con exito");
         CtrlInterfaz.limpia(tNombre, jtGrupo, jtID, jttGrado);
-        CtrlInterfaz.habilita(false, jtGrupo, jtID, jttGrado);
+        CtrlInterfaz.habilita(false, jtGrupo, jtID, jttGrado, btnRegistro);
 
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
     {//GEN-HEADEREND:event_btnCancelarActionPerformed
         CtrlInterfaz.limpia(tNombre, jtGrupo, jtID, jttGrado);
-        CtrlInterfaz.habilita(false, jtGrupo, jtID, jttGrado);
-        btnRegistro.setEnabled(false);
+        CtrlInterfaz.habilita(false, jtGrupo, jtID, jttGrado,btnRegistro);
+    
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

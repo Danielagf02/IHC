@@ -190,8 +190,9 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
-        CtrlInterfaz.habilita(false, jtFAdmin);
+       
         CtrlInterfaz.limpia(jtFAdmin);
+        CtrlInterfaz.habilita(false, Buscar);
 
     }//GEN-LAST:event_CancelarActionPerformed
 

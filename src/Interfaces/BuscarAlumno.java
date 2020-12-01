@@ -5,6 +5,9 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
+
 /**
  *
  * @author DanielaGF
@@ -18,6 +21,7 @@ public class BuscarAlumno extends javax.swing.JFrame
     public BuscarAlumno()
     {
         initComponents();
+        CtrlInterfaz.habilita(false, Buscar);
     }
 
     /**
@@ -35,10 +39,10 @@ public class BuscarAlumno extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtFAlumno = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Buscar = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -52,7 +56,18 @@ public class BuscarAlumno extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Folio Alumno:");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFAlumno.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jtFAlumnoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jtFAlumnoKeyTyped(evt);
+            }
+        });
 
         Cancelar.setBackground(new java.awt.Color(255, 255, 255));
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -66,17 +81,24 @@ public class BuscarAlumno extends javax.swing.JFrame
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 102, 255));
-        jButton2.setText("Buscar");
-
-        jButton1.setText("regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
+        Buscar.setBackground(new java.awt.Color(255, 255, 255));
+        Buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Buscar.setForeground(new java.awt.Color(0, 102, 255));
+        Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton1ActionPerformed(evt);
+                BuscarActionPerformed(evt);
+            }
+        });
+
+        Regresar.setText("regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -88,7 +110,7 @@ public class BuscarAlumno extends javax.swing.JFrame
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Cancelar)
                 .addGap(63, 63, 63)
-                .addComponent(jButton2)
+                .addComponent(Buscar)
                 .addGap(72, 72, 72))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,11 +119,11 @@ public class BuscarAlumno extends javax.swing.JFrame
                         .addComponent(jLabel2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(Regresar)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,15 +135,15 @@ public class BuscarAlumno extends javax.swing.JFrame
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(Regresar)))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancelar)
-                    .addComponent(jButton2))
+                    .addComponent(Buscar))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -141,14 +163,41 @@ public class BuscarAlumno extends javax.swing.JFrame
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
-        // TODO add your handling code here:
+      
+      CtrlInterfaz.limpia(jtFAlumno);
+      CtrlInterfaz.habilita(false, Buscar);
     }//GEN-LAST:event_CancelarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RegresarActionPerformed
+    {//GEN-HEADEREND:event_RegresarActionPerformed
          new AlumnosCGrupo().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegresarActionPerformed
+
+    private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
+    {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
+        if ( jtFAlumno.getText().isEmpty() != true)
+          {
+              Validaciones.enter(this, evt, evt);
+              Buscar.setEnabled(true);
+              
+          }
+    }//GEN-LAST:event_jtFAlumnoKeyPressed
+
+    private void jtFAlumnoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyTyped
+    {//GEN-HEADEREND:event_jtFAlumnoKeyTyped
+
+      Validaciones.validaEntero(evt);
+    }//GEN-LAST:event_jtFAlumnoKeyTyped
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
+    {//GEN-HEADEREND:event_BuscarActionPerformed
+
+      int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
+      CtrlInterfaz.habilita(false, Buscar);
+      CtrlInterfaz.limpia(jtFAlumno);
+      
+    }//GEN-LAST:event_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,14 +245,14 @@ public class BuscarAlumno extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Buscar;
     private javax.swing.JButton Cancelar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton jButton3;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtFAlumno;
     // End of variables declaration//GEN-END:variables
 }
