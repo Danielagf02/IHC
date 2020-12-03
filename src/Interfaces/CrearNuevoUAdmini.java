@@ -266,7 +266,9 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
 
     private void btnCreaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCreaActionPerformed
     {//GEN-HEADEREND:event_btnCreaActionPerformed
-         CtrlInterfaz.limpia(jtCorreo, jPasswordField1);
+         String correo = "";
+         String contra ="";
+      CtrlInterfaz.limpia(jtCorreo, jPasswordField1);
          CtrlInterfaz.habilita(false, btnCrea, jPasswordField1);
       
     }//GEN-LAST:event_btnCreaActionPerformed
