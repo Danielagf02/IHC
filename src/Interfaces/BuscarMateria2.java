@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
 
 /**
@@ -12,18 +14,19 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class BuscarMateria2 extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form BuscarMateria
      */
     public BuscarMateria2()
-    {
+      {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-    }
+         CtrlInterfaz.habilita(false, Buscar);
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,9 +42,10 @@ public class BuscarMateria2 extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jtNMateria = new javax.swing.JTextField();
+        Buscar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        Cancelar = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -55,11 +59,29 @@ public class BuscarMateria2 extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setText("Buscar Materia");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtNMateria.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtNMateria.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jtNMateriaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jtNMateriaKeyTyped(evt);
+            }
+        });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setText("Buscar");
+        Buscar.setBackground(new java.awt.Color(255, 255, 255));
+        Buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BuscarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
         btnRegresar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -71,25 +93,37 @@ public class BuscarMateria2 extends javax.swing.JFrame
             }
         });
 
+        Cancelar.setText("Cancelar");
+        Cancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                CancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(81, 299, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(24, 24, 24))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(btnRegresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(92, 92, 92))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Cancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Buscar)
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtNMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(69, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,9 +138,11 @@ public class BuscarMateria2 extends javax.swing.JFrame
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtNMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Buscar)
+                    .addComponent(Cancelar))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -126,43 +162,71 @@ public class BuscarMateria2 extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-          new MateriasxProfesor().setVisible(true);
+        new MateriasxProfesor().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void jtNMateriaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtNMateriaKeyPressed
+    {//GEN-HEADEREND:event_jtNMateriaKeyPressed
+        if (jtNMateria.getText().isEmpty() != true)
+          {
+            Validaciones.enter(this, evt, evt);
+            Buscar.setEnabled(true);
+
+          }
+    }//GEN-LAST:event_jtNMateriaKeyPressed
+
+    private void jtNMateriaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtNMateriaKeyTyped
+    {//GEN-HEADEREND:event_jtNMateriaKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_jtNMateriaKeyTyped
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
+    {//GEN-HEADEREND:event_BuscarActionPerformed
+        String nMateria = "";
+        CtrlInterfaz.habilita(false, Buscar);
+        CtrlInterfaz.limpia(jtNMateria);
+    }//GEN-LAST:event_BuscarActionPerformed
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
+    {//GEN-HEADEREND:event_CancelarActionPerformed
+        CtrlInterfaz.limpia(jtNMateria);
+        CtrlInterfaz.habilita(false, Buscar);
+    }//GEN-LAST:event_CancelarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarMateria2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -170,21 +234,22 @@ public class BuscarMateria2 extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new BuscarMateria2().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Buscar;
+    private javax.swing.JButton Cancelar;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtNMateria;
     // End of variables declaration//GEN-END:variables
 }
