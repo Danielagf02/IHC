@@ -51,7 +51,7 @@ public String password = "";
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Contraseña1 = new javax.swing.JPasswordField();
+        Contrasenia1 = new javax.swing.JPasswordField();
         Cancelar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -106,12 +106,12 @@ public String password = "";
         jLabel8.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel8.setText("*Contraseña:");
 
-        Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Contraseña1.addActionListener(new java.awt.event.ActionListener()
+        Contrasenia1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Contrasenia1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                Contraseña1ActionPerformed(evt);
+                Contrasenia1ActionPerformed(evt);
             }
         });
 
@@ -165,7 +165,7 @@ public String password = "";
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Contrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addContainerGap(107, Short.MAX_VALUE))
@@ -201,7 +201,7 @@ public String password = "";
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Contrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
@@ -243,7 +243,7 @@ public String password = "";
             JOptionPane.showMessageDialog(this,"coloca el usuario");
         }
   
-            if (Contraseña1.getText().isEmpty())
+            if (Contrasenia1.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this,"coloca la contraseña");
             }
@@ -292,10 +292,10 @@ public String password = "";
                
     }//GEN-LAST:event_Texto1ActionPerformed
 
-    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Contraseña1ActionPerformed
-    {//GEN-HEADEREND:event_Contraseña1ActionPerformed
+    private void Contrasenia1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Contrasenia1ActionPerformed
+    {//GEN-HEADEREND:event_Contrasenia1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Contraseña1ActionPerformed
+    }//GEN-LAST:event_Contrasenia1ActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
@@ -358,7 +358,7 @@ public String password = "";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
-    private javax.swing.JPasswordField Contraseña1;
+    private javax.swing.JPasswordField Contrasenia1;
     private javax.swing.JTextField Texto1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
