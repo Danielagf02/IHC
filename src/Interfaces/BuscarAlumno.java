@@ -21,6 +21,7 @@ public class BuscarAlumno extends javax.swing.JFrame
     public BuscarAlumno()
       {
         initComponents();
+        CtrlInterfaz.habilita(false, Buscar);
       }
 
     /**

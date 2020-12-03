@@ -22,9 +22,11 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
     public BuscarAdminsitradores()
       {
         initComponents();
+       
 
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
+        CtrlInterfaz.habilita(false, btnBuscar);
       }
 
     /**
