@@ -8,6 +8,8 @@ package Interfaces;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
 
 
 
@@ -35,8 +37,7 @@ public class PrincipalDocente extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -72,20 +73,24 @@ public class PrincipalDocente extends javax.swing.JFrame
         IniciarSesion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         IniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         IniciarSesion.setText("Iniciar sesion ");
-        IniciarSesion.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarSesionActionPerformed(evt);
             }
         });
 
         EscribirUsuario.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
-        EscribirUsuario.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EscribirUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EscribirUsuarioActionPerformed(evt);
+            }
+        });
+        EscribirUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                EscribirUsuarioKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EscribirUsuarioKeyTyped(evt);
             }
         });
 
@@ -105,11 +110,14 @@ public class PrincipalDocente extends javax.swing.JFrame
         jLabel8.setText("*Contraseña:");
 
         EscribirContraseña.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        EscribirContraseña.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        EscribirContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EscribirContraseñaActionPerformed(evt);
+            }
+        });
+        EscribirContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EscribirContraseñaKeyTyped(evt);
             }
         });
 
@@ -117,10 +125,8 @@ public class PrincipalDocente extends javax.swing.JFrame
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(255, 255, 255));
         Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarActionPerformed(evt);
             }
         });
@@ -253,6 +259,20 @@ public class PrincipalDocente extends javax.swing.JFrame
         this.setVisible(false);
   
     }//GEN-LAST:event_CancelarActionPerformed
+
+    private void EscribirUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyPressed
+        if(EscribirUsuario.getText().isEmpty()!=true){
+            Validaciones.enter(this, evt, EscribirContraseña);
+        }
+    }//GEN-LAST:event_EscribirUsuarioKeyPressed
+
+    private void EscribirUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyTyped
+        Validaciones.validaAlfanumerico(evt);
+    }//GEN-LAST:event_EscribirUsuarioKeyTyped
+
+    private void EscribirContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirContraseñaKeyTyped
+        Validaciones.validaAlfanumerico(evt);
+    }//GEN-LAST:event_EscribirContraseñaKeyTyped
 
     /**
      * @param args the command line arguments

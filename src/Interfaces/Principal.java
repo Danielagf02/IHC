@@ -6,6 +6,8 @@
 package Interfaces;
 
 import java.awt.event.ActionEvent;
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -36,8 +38,7 @@ public String password = "";
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -74,20 +75,24 @@ public String password = "";
         siguiente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         siguiente.setForeground(new java.awt.Color(255, 255, 255));
         siguiente.setText("Iniciar sesion ");
-        siguiente.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siguienteActionPerformed(evt);
             }
         });
 
         Texto1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
-        Texto1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Texto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Texto1ActionPerformed(evt);
+            }
+        });
+        Texto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Texto1KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Texto1KeyTyped(evt);
             }
         });
 
@@ -107,11 +112,14 @@ public String password = "";
         jLabel8.setText("*Contraseña:");
 
         Contrasenia1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Contrasenia1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Contrasenia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Contrasenia1ActionPerformed(evt);
+            }
+        });
+        Contrasenia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Contrasenia1KeyTyped(evt);
             }
         });
 
@@ -119,20 +127,16 @@ public String password = "";
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(255, 255, 255));
         Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarActionPerformed(evt);
             }
         });
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Agregar Adminsitrador Fijo");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
@@ -309,6 +313,21 @@ public String password = "";
          new CrearNuevoUAdmini().setVisible(true);
         this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Texto1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyPressed
+        if(Texto1.getText().isEmpty()!=true){
+            Validaciones.enter(this, evt,Contrasenia1);
+                    
+        }
+    }//GEN-LAST:event_Texto1KeyPressed
+
+    private void Texto1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyTyped
+        Validaciones.validaAlfanumerico(evt);
+    }//GEN-LAST:event_Texto1KeyTyped
+
+    private void Contrasenia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contrasenia1KeyTyped
+        Validaciones.validaAlfanumerico(evt);
+    }//GEN-LAST:event_Contrasenia1KeyTyped
 
     /**
      * @param args the command line arguments
