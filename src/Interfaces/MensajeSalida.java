@@ -5,23 +5,19 @@
  */
 package Interfaces;
 
-import cjb.ci.CtrlInterfaz;
-import cjb.ci.Validaciones;
-
 /**
  *
  * @author DanielaGF
  */
-public class ModificarMateria extends javax.swing.JFrame
+public class MensajeSalida extends javax.swing.JFrame
 {
 
     /**
-     * Creates new form VerMaterias
+     * Creates new form MensajeSalida
      */
-    public ModificarMateria()
+    public MensajeSalida()
     {
         initComponents();
-        CtrlInterfaz.habilita(false, Modificar);
     }
 
     /**
@@ -36,39 +32,34 @@ public class ModificarMateria extends javax.swing.JFrame
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Modificar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jtID = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText("Materias ");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("¿Deseas salir?");
 
-        Modificar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Modificar.setText("Modificar");
-        Modificar.addActionListener(new java.awt.event.ActionListener()
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setText("NO");
+        jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                ModificarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("ID Materia:");
-
-        jtID.addKeyListener(new java.awt.event.KeyAdapter()
+        jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton2.setText("SI");
+        jButton2.addActionListener(new java.awt.event.ActionListener()
         {
-            public void keyPressed(java.awt.event.KeyEvent evt)
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jtIDKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
-                jtIDKeyTyped(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -77,33 +68,27 @@ public class ModificarMateria extends javax.swing.JFrame
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28)
-                .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 129, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(182, 182, 182))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Modificar)
-                        .addGap(61, 61, 61))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton1)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton2)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(57, 57, 57)
+                .addGap(76, 76, 76)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(Modificar)
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,28 +106,16 @@ public class ModificarMateria extends javax.swing.JFrame
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtIDKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtIDKeyPressed
-    {//GEN-HEADEREND:event_jtIDKeyPressed
-        if (!jtID.getText().isEmpty())
-          {
-              Validaciones.enter(this, evt, evt);
-          }
-    }//GEN-LAST:event_jtIDKeyPressed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+    {//GEN-HEADEREND:event_jButton1ActionPerformed
+        new ControlEscolar().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jtIDKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtIDKeyTyped
-    {//GEN-HEADEREND:event_jtIDKeyTyped
-        Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_jtIDKeyTyped
-
-    private void ModificarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ModificarActionPerformed
-    {//GEN-HEADEREND:event_ModificarActionPerformed
-        // TODO add your handling code here:
-     String id = "";
-     CtrlInterfaz.limpia(jtID);
-     CtrlInterfaz.habilita(false, Modificar);
-      
-      
-    }//GEN-LAST:event_ModificarActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
+    {//GEN-HEADEREND:event_jButton2ActionPerformed
+      System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,20 +139,17 @@ public class ModificarMateria extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(ModificarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MensajeSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(ModificarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MensajeSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(ModificarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MensajeSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(ModificarMateria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MensajeSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -187,16 +157,15 @@ public class ModificarMateria extends javax.swing.JFrame
         {
             public void run()
             {
-                new ModificarMateria().setVisible(true);
+                new MensajeSalida().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Modificar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jtID;
     // End of variables declaration//GEN-END:variables
 }

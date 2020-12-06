@@ -31,8 +31,7 @@ public class ADministrFijoos extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,8 +49,7 @@ public class ADministrFijoos extends javax.swing.JFrame
         jLabel1.setToolTipText("");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
+            new Object [][] {
                 {null, null},
                 {null, null},
                 {null, null},
@@ -63,18 +61,15 @@ public class ADministrFijoos extends javax.swing.JFrame
                 {null, null},
                 {null, null}
             },
-            new String []
-            {
+            new String [] {
                 "Usuario", "Contraseña"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegresar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
@@ -83,6 +78,11 @@ public class ADministrFijoos extends javax.swing.JFrame
         jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 153, 255));
         jButton2.setText("Modificar Contraseña");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -131,6 +131,10 @@ public class ADministrFijoos extends javax.swing.JFrame
       new ControlEscolar().setVisible(true);
         this.setVisible(false); // TODO add your handling code here:
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

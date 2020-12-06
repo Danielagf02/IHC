@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
 
 /**
@@ -12,18 +14,20 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class BuscarAdminsitradores extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form BuscarAlumno
      */
     public BuscarAdminsitradores()
-    {
+      {
         initComponents();
-        
+       
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-    }
+        CtrlInterfaz.habilita(false, btnBuscar);
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,9 +44,9 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        Cancelar = new javax.swing.JButton();
-        Buscar = new javax.swing.JButton();
+        jtFolio = new javax.swing.JTextField();
+        btnCancelar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
@@ -57,17 +61,42 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Folio Adminsitrador:");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFolio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFolio.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jtFolioKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jtFolioKeyTyped(evt);
+            }
+        });
 
-        Cancelar.setBackground(new java.awt.Color(255, 255, 255));
-        Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Cancelar.setForeground(new java.awt.Color(255, 0, 0));
-        Cancelar.setText("Cancelar");
+        btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
-        Buscar.setBackground(new java.awt.Color(255, 255, 255));
-        Buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Buscar.setForeground(new java.awt.Color(0, 102, 255));
-        Buscar.setText("Buscar");
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(0, 102, 255));
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -85,14 +114,14 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(73, 73, 73)
-                        .addComponent(Cancelar)
+                        .addComponent(btnCancelar)
                         .addGap(69, 69, 69)
-                        .addComponent(Buscar))
+                        .addComponent(btnBuscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnRegresar)
                         .addGap(18, 18, 18)
@@ -112,11 +141,11 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancelar)
-                    .addComponent(Buscar))
+                    .addComponent(btnCancelar)
+                    .addComponent(btnBuscar))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -140,39 +169,66 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void jtFolioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFolioKeyPressed
+    {//GEN-HEADEREND:event_jtFolioKeyPressed
+        if (jtFolio.getText().isEmpty() != true)
+          {
+            Validaciones.enter(this, evt, evt);
+            btnBuscar.setEnabled(true);
+          }
+    }//GEN-LAST:event_jtFolioKeyPressed
+
+    private void jtFolioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFolioKeyTyped
+    {//GEN-HEADEREND:event_jtFolioKeyTyped
+        Validaciones.validaEntero(evt);
+    }//GEN-LAST:event_jtFolioKeyTyped
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
+    {//GEN-HEADEREND:event_btnCancelarActionPerformed
+        CtrlInterfaz.limpia(jtFolio);
+        CtrlInterfaz.habilita(false, btnBuscar);
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarActionPerformed
+    {//GEN-HEADEREND:event_btnBuscarActionPerformed
+        int folio = Integer.parseInt(String.valueOf(jtFolio.getText()));
+        CtrlInterfaz.habilita(false, btnBuscar);
+        CtrlInterfaz.limpia(jtFolio);
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAdminsitradores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAdminsitradores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAdminsitradores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAdminsitradores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -184,23 +240,23 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new BuscarAdminsitradores().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Buscar;
-    private javax.swing.JButton Cancelar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton3;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtFolio;
     // End of variables declaration//GEN-END:variables
 }

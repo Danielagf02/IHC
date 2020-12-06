@@ -5,6 +5,10 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -13,21 +17,23 @@ import javax.swing.JOptionPane;
  * @author DanielaGF
  */
 public class CrearNuevoUAdmini extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form CrearNuevoUpProfe
      */
     public CrearNuevoUAdmini()
-    {
+      {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/proyecto.png");
         jLIm.setIcon(icono);
-        
+
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono2);
-    }
+        
+          CtrlInterfaz.habilita(false, btnCrea, jPasswordField1);
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,11 +52,11 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jtCorreo = new javax.swing.JTextField();
+        btnCrea = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jLIm = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setText("Nuevo correo:");
@@ -79,24 +85,57 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jTextField1.setText("Ingrese nuevo correo");
+        jtCorreo.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jtCorreo.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jtCorreoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jtCorreoKeyTyped(evt);
+            }
+        });
 
-        jTextField3.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jTextField3.setText("Ingrese nueva contraseña");
-
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 255));
-        jButton1.setText("Crear usuario");
-
-        jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Cancelar ");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
+        btnCrea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCrea.setForeground(new java.awt.Color(0, 153, 255));
+        btnCrea.setText("Crear usuario");
+        btnCrea.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton2ActionPerformed(evt);
+                btnCreaActionPerformed(evt);
+            }
+        });
+
+        btnCancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(255, 0, 0));
+        btnCancelar.setText("Cancelar ");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jPasswordField1KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jPasswordField1KeyTyped(evt);
             }
         });
 
@@ -116,9 +155,9 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
                             .addComponent(jLabel4)
                             .addComponent(jLabel2))
                         .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addComponent(jLabel1))
@@ -127,9 +166,9 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
                         .addComponent(jLIm))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(jButton1)
+                        .addComponent(btnCrea)
                         .addGap(63, 63, 63)
-                        .addComponent(jButton2)))
+                        .addComponent(btnCancelar)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,18 +183,18 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
                         .addGap(66, 66, 66)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 235, Short.MAX_VALUE))
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 236, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton2)
-                                .addComponent(jButton1))
+                                .addComponent(btnCancelar)
+                                .addComponent(btnCrea))
                             .addComponent(btnSalir))
                         .addGap(82, 82, 82))))
         );
@@ -180,61 +219,134 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
         Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
-       new Principal().setVisible(true);
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
+    {//GEN-HEADEREND:event_btnCancelarActionPerformed
+        new Principal().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        CtrlInterfaz.limpia(jPasswordField1, jtCorreo);
+        CtrlInterfaz.habilita(false, btnCrea, jPasswordField1);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
-    //METODO PARA PREGUNTAR SI DESEA SALIR O NO
+    private void jtCorreoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtCorreoKeyPressed
+    {//GEN-HEADEREND:event_jtCorreoKeyPressed
+        if (!((jtCorreo.getText().isEmpty()) || (!(validaEmail(jtCorreo.getText())))))
+          {
+            Validaciones.enter(this, evt, jPasswordField1);
+          }
+    }//GEN-LAST:event_jtCorreoKeyPressed
+
+    private void jtCorreoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtCorreoKeyTyped
+    {//GEN-HEADEREND:event_jtCorreoKeyTyped
+         if (jtCorreo.getText().length() == 35)
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtCorreoKeyTyped
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordField1KeyPressed
+    {//GEN-HEADEREND:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+        if (jPasswordField1.getText().isEmpty() != true)
+          {
+            Validaciones.enter(this, evt, evt);
+
+          }
+
+    }//GEN-LAST:event_jPasswordField1KeyPressed
+
+    private void jPasswordField1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jPasswordField1KeyTyped
+    {//GEN-HEADEREND:event_jPasswordField1KeyTyped
+
+        if (jPasswordField1.getText().length() == 10)
+          {
+            evt.consume();
+            CtrlInterfaz.habilita(true, btnCrea);
+          }
+    }//GEN-LAST:event_jPasswordField1KeyTyped
+
+    private void btnCreaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCreaActionPerformed
+    {//GEN-HEADEREND:event_btnCreaActionPerformed
+         String correo = "";
+         String contra ="";
+      CtrlInterfaz.limpia(jtCorreo, jPasswordField1);
+         CtrlInterfaz.habilita(false, btnCrea, jPasswordField1);
+      
+    }//GEN-LAST:event_btnCreaActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jPasswordField1ActionPerformed
+    {//GEN-HEADEREND:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+// METODO PARA VALIDAR CI¡ORREO
+    public boolean validaEmail(String cad)
+      {
+        Pattern expReg = null;
+        Matcher val = null;
+
+        expReg = Pattern.compile("^[\\w\\-\\_\\+]+(\\.[\\w\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        val = expReg.matcher(cad);
+
+        if (val.find())
+          {
+            return true;
+          } else
+          {
+            return false;
+          }
+      }
+
+//METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
-    {
-        String botones[] = {"Salir", "Cancelar"};
+      {
+        String botones[] =
+          {
+            "Salir", "Cancelar"
+          };
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
-        {
+          {
             System.out.println("Salio del programa con exito");
             System.exit(eleccion);
-        } else 
-        if(eleccion == JOptionPane.NO_OPTION)
-        {
+          } else if (eleccion == JOptionPane.NO_OPTION)
+          {
             System.out.println("Se cancelo la salida");
-        }
-    }
-    
+          }
+      }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(CrearNuevoUAdmini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(CrearNuevoUAdmini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(CrearNuevoUAdmini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(CrearNuevoUAdmini.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -242,26 +354,26 @@ public class CrearNuevoUAdmini extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new CrearNuevoUAdmini().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCrea;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jtCorreo;
     // End of variables declaration//GEN-END:variables
 }

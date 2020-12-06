@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import cjb.ci.CtrlInterfaz;
+import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
 
 /**
@@ -12,18 +14,19 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class Buscarprofesor extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form BuscarAlumno
      */
     public Buscarprofesor()
-    {
+      {
         initComponents();
         
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-    }
+        CtrlInterfaz.habilita(false, Buscar);
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +43,7 @@ public class Buscarprofesor extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtFProfe = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
         Buscar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
@@ -57,17 +60,42 @@ public class Buscarprofesor extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Folio Profesor");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFProfe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFProfe.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                jtFProfeKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                jtFProfeKeyTyped(evt);
+            }
+        });
 
         Cancelar.setBackground(new java.awt.Color(255, 255, 255));
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(255, 0, 0));
         Cancelar.setText("Cancelar");
+        Cancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                CancelarActionPerformed(evt);
+            }
+        });
 
         Buscar.setBackground(new java.awt.Color(255, 255, 255));
         Buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Buscar.setForeground(new java.awt.Color(0, 102, 255));
         Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                BuscarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -97,7 +125,7 @@ public class Buscarprofesor extends javax.swing.JFrame
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jtFProfe, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,7 +141,7 @@ public class Buscarprofesor extends javax.swing.JFrame
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFProfe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancelar)
@@ -141,39 +169,67 @@ public class Buscarprofesor extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void jtFProfeKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFProfeKeyPressed
+    {//GEN-HEADEREND:event_jtFProfeKeyPressed
+        if (jtFProfe.getText().isEmpty() != true)
+          {
+            Validaciones.enter(this, evt, evt);
+            Buscar.setEnabled(true);
+            
+          }
+    }//GEN-LAST:event_jtFProfeKeyPressed
+
+    private void jtFProfeKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFProfeKeyTyped
+    {//GEN-HEADEREND:event_jtFProfeKeyTyped
+        Validaciones.validaAlfabeticos(evt);
+    }//GEN-LAST:event_jtFProfeKeyTyped
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
+    {//GEN-HEADEREND:event_BuscarActionPerformed
+        String nMateria = "";
+        CtrlInterfaz.habilita(false, Buscar);
+        CtrlInterfaz.limpia(jtFProfe);
+    }//GEN-LAST:event_BuscarActionPerformed
+
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
+    {//GEN-HEADEREND:event_CancelarActionPerformed
+        CtrlInterfaz.habilita(false, Buscar);
+        CtrlInterfaz.limpia(jtFProfe);
+    }//GEN-LAST:event_CancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(Buscarprofesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -181,13 +237,13 @@ public class Buscarprofesor extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new Buscarprofesor().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
@@ -198,6 +254,6 @@ public class Buscarprofesor extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jtFProfe;
     // End of variables declaration//GEN-END:variables
 }
