@@ -201,6 +201,7 @@ public class ManipulaBD
                     String cal = ((String) reg.get(i + 3)).trim();
                     double Calificaciones = Double.parseDouble(cal);
                     Calificaciones obj = new Calificaciones(id, id_Alumno, id_Materia, Calificaciones);
+                    lista.add(obj);
                 }
             }
             return lista;
@@ -413,6 +414,7 @@ public class ManipulaBD
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
      * @return ArrayList de Adminis dada la condicion enviada
+     * 
      */
     public static ArrayList<Adminis> ConsultasAdmins(String variable, String condicion)
     {
@@ -857,6 +859,9 @@ public class ManipulaBD
      * Método para colsutar en la bd en la tabla de Materias y retorna el objeto
      * o los objetos en un arraylist esto con la intencion de traer lo que se
      * requiera en el momento
+     * 
+     * "id!="
+     * "0"
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
