@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -29,6 +30,13 @@ public class Materias extends javax.swing.JFrame
         
         
     }
+
+    Materias(ArrayList<Interno.Materias> ConsultasMaterias)
+      {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // aqui deberia de regresar los datos de la materia creo 
+        
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.

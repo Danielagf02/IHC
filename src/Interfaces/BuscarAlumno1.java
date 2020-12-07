@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -14,19 +15,19 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class BuscarAlumno1 extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form BuscarAlumno
      */
     public BuscarAlumno1()
-    {
+      {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         CtrlInterfaz.habilita(false, Buscar);
-    }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -173,13 +174,13 @@ public class BuscarAlumno1 extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-          new Alumnos().setVisible(true);
+        new Alumnos().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
     {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
-            if (jtFAlumno.getText().isEmpty() != true)
+        if (jtFAlumno.getText().isEmpty() != true)
           {
             Validaciones.enter(this, evt, evt);
             Buscar.setEnabled(true);
@@ -194,44 +195,48 @@ public class BuscarAlumno1 extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
+        int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
+//        ManipulaBD.ConsultasAlumnos("folio=", "fAlumno");
+        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", "fAlumno")).setVisible(true);
+//Tengo que checar si es necesario hacer el metodo que lo mande a llamar 
+            this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAlumno1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAlumno1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAlumno1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(BuscarAlumno1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -239,13 +244,13 @@ public class BuscarAlumno1 extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new BuscarAlumno1().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;

@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -165,6 +166,7 @@ public class BuscarMateria extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
         new Materias().setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void CancekarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancekarActionPerformed
@@ -175,9 +177,12 @@ public class BuscarMateria extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        String nMateria = "";
+        String nMateria = jtNMateria.getText();
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtNMateria);
+        new Materias(ManipulaBD.ConsultasMaterias("'"+nMateria+"'", "Materias=")).setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void jtNMateriaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtNMateriaKeyPressed

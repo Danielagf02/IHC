@@ -985,10 +985,10 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfRfcKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfRfcKeyTyped
     {//GEN-HEADEREND:event_tfRfcKeyTyped
-        if (tfRfc.getText().length() == 7 ) {
+        if (tfRfc.getText().length() == 12 ) {
             evt.consume();
         } else {
-            Validaciones.validaEntero(evt);
+            Validaciones.validaAlfanumerico(evt);
         }
     }//GEN-LAST:event_tfRfcKeyTyped
 

@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Interno.Alumnno;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -32,6 +34,12 @@ public class Alumnos extends javax.swing.JFrame
         btnSalir.setIcon(icono2);
         
     }
+
+    Alumnos(ArrayList<Alumnno> ConsultasAlumnos)
+      {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Aqui esta el array de los alumnos que encontro en la bd
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
