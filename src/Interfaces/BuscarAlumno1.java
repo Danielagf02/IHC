@@ -23,7 +23,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
     public BuscarAlumno1()
       {
         initComponents();
-
+        
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         CtrlInterfaz.habilita(false, Buscar);
@@ -184,7 +184,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
           {
             Validaciones.enter(this, evt, evt);
             Buscar.setEnabled(true);
-
+            
           }
     }//GEN-LAST:event_jtFAlumnoKeyPressed
 
@@ -198,10 +198,10 @@ public class BuscarAlumno1 extends javax.swing.JFrame
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
-//        ManipulaBD.ConsultasAlumnos("folio=", "fAlumno");
-        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", "fAlumno")).setVisible(true);
-//Tengo que checar si es necesario hacer el metodo que lo mande a llamar 
-            this.setVisible(false);
+
+        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno))).setVisible(true);
+
+        this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 
     /**

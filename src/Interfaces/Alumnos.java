@@ -15,30 +15,33 @@ import javax.swing.JOptionPane;
  * @author DanielaGF
  */
 public class Alumnos extends javax.swing.JFrame
-{
+  {
 
     /**
      * Creates new form Alumnos
      */
     public Alumnos()
-    {
-          initComponents();
-          
+      {
+        initComponents();
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
         btnTodosA.setIcon(icono1);
-        
+
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono2);
-        
-    }
+
+      }
 
     Alumnos(ArrayList<Alumnno> ConsultasAlumnos)
       {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //Aqui esta el array de los alumnos que encontro en la bd
+        for (int i = 0; i < ConsultasAlumnos.size();  i++)
+          {
+            System.out.print(ConsultasAlumnos.get(i));
+            System.out.println("\n");
+          }
       }
 
     /**
@@ -825,65 +828,67 @@ public class Alumnos extends javax.swing.JFrame
 
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
-    {
-        String botones[] = {"Salir", "Cancelar"};
+      {
+        String botones[] =
+          {
+            "Salir", "Cancelar"
+          };
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
-        {
+          {
             System.out.println("Salio del programa con exito");
             System.exit(eleccion);
-        } else 
-        if(eleccion == JOptionPane.NO_OPTION)
-        {
+          } else if (eleccion == JOptionPane.NO_OPTION)
+          {
             System.out.println("Se cancelo la salida");
-        }
-    }
-    
+          }
+      }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(Alumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new Alumnos().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegresar;

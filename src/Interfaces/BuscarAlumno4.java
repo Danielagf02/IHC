@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -197,6 +198,8 @@ public class BuscarAlumno4 extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
+        new RegistarCalificacionesProfesores(ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno))).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 
     /**
