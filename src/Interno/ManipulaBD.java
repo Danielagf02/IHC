@@ -414,7 +414,7 @@ public class ManipulaBD
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
      * @return ArrayList de Adminis dada la condicion enviada
-     * 
+     *
      */
     public static ArrayList<Adminis> ConsultasAdmins(String variable, String condicion)
     {
@@ -616,24 +616,10 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            sql.Insertar(con, "alumnos",
-                    "" + id + ","
-                    + Grado + ",'"
-                    + Grupo + "','"
-                    + ApellidoP + "','"
-                    + ApellidoM + "','"
-                    + Nombre + "','"
-                    + fechaNacimiento + "','"
-                    + CURP + "','"
-                    + sexo + "',"
-                    + Telefono + ",'"
-                    + NomMadre + "','"
-                    + NomPadre + "',"
-                    + FolioAlumno + ",'"
-                    + Correo + "','"
-                    + Contraseña + "','");
-            ManipulaBD.desconecta(con);
+            sql.Insertar(con, "alumnos", "" + id + "," + Grado + ",'" + Grupo + "','" + ApellidoP + "','" + ApellidoM + "','" + Nombre + "','" + fechaNacimiento + "','" + CURP + "','"
+                    + sexo + "'," + Telefono + ",'" + NomMadre + "','" + NomPadre + "'," + FolioAlumno + ",'" + Correo + "','" + Contraseña + "'");
             System.out.println("Dato Insertado");
+
         }
     }
 
@@ -859,9 +845,8 @@ public class ManipulaBD
      * Método para colsutar en la bd en la tabla de Materias y retorna el objeto
      * o los objetos en un arraylist esto con la intencion de traer lo que se
      * requiera en el momento
-     * 
-     * "id!="
-     * "0"
+     *
+     * "id!=" "0"
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
@@ -1020,10 +1005,11 @@ public class ManipulaBD
     /**
      * Método que da de alta el contador de usuarios en la bd aunque no se
      * requiere pues solo se necesita actualizar los números
+     *
      * @param id
      * @param admin
      * @param alumno
-     * @param profesores 
+     * @param profesores
      */
     public static void AltasContadorReg(int id, int admin, int alumno, int profesores)
     {
@@ -1060,9 +1046,9 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de contadorreg y retorna el objeto
-     * o los objetos en un arraylist esto con la intencion de traer lo que se
-     * requiera en el momento
+     * Método para colsutar en la bd en la tabla de contadorreg y retorna el
+     * objeto o los objetos en un arraylist esto con la intencion de traer lo
+     * que se requiera en el momento
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
