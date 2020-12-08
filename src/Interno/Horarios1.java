@@ -4,7 +4,7 @@ package Interno;
  *
  * @author Kevin
  */
-public class Horarios
+public class Horarios1
 {
 
     private int id;
@@ -14,11 +14,11 @@ public class Horarios
     private int horaI;
     private int horaF;
 
-    public Horarios()
+    public Horarios1()
     {
     }
 
-    public Horarios(int id, int id_Materia, int grado, String grupo, int horaI, int horaF)
+    public Horarios1(int id, int id_Materia, int grado, String grupo, int horaI, int horaF)
     {
         this.id = id;
         this.id_Materia = id_Materia;

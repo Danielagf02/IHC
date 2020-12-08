@@ -30,9 +30,9 @@ public class ManipulaBD
         con.desconectar(conn);
     }
 
-    public static ArrayList<Adminis> CargarAdminis(ArrayList<Object> reg)
+    public static ArrayList<Adminis1> CargarAdminis(ArrayList<Object> reg)
     {
-        ArrayList<Adminis> lista = new ArrayList<>();
+        ArrayList<Adminis1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i <= reg.size(); i += 17)
@@ -61,7 +61,7 @@ public class ManipulaBD
                     String Puesto = ((String) reg.get(i + 14)).trim();
                     String Correo = ((String) reg.get(i + 15)).trim();
                     String Contrasenia = ((String) reg.get(i + 16)).trim();
-                    Adminis obj = new Adminis(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
+                    Adminis1 obj = new Adminis1(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
                             CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contrasenia);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
@@ -81,9 +81,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<Profesor> CargarProfesor(ArrayList<Object> reg)
+    public static ArrayList<Profesor1> CargarProfesor(ArrayList<Object> reg)
     {
-        ArrayList<Profesor> lista = new ArrayList<>();
+        ArrayList<Profesor1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i++)
@@ -112,7 +112,7 @@ public class ManipulaBD
                     String Hsalida = ((String) reg.get(i + 14)).trim();
                     String Correo = ((String) reg.get(i + 15)).trim();
                     String Constraseña = ((String) reg.get(i + 16)).trim();
-                    Profesor obj = new Profesor(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
+                    Profesor1 obj = new Profesor1(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
                             sexo, Telefono, CedulaProf, Direccion, rfc, Hentrada, Hsalida, Correo, Constraseña);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
@@ -132,9 +132,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<Alumnno> CargarAlumno(ArrayList<Object> reg)
+    public static ArrayList<Alumnno1> CargarAlumno(ArrayList<Object> reg)
     {
-        ArrayList<Alumnno> lista = new ArrayList<>();
+        ArrayList<Alumnno1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i += 15)
@@ -162,7 +162,7 @@ public class ManipulaBD
                     int FolioAlumno = Integer.parseInt(folio);
                     String Correo = ((String) reg.get(i + 13)).trim();
                     String Contraseña = ((String) reg.get(i + 14)).trim();
-                    Alumnno obj = new Alumnno(id, Grado, Grupo, ApellidoP, ApellidoM, Nombre, fechaNacimiento, CURP, sexo,
+                    Alumnno1 obj = new Alumnno1(id, Grado, Grupo, ApellidoP, ApellidoM, Nombre, fechaNacimiento, CURP, sexo,
                             Telefono, NomMadre, NomPadre, FolioAlumno, Correo, Contraseña);
                     lista.add(obj);
                 }
@@ -253,9 +253,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<Horarios> CargarHorarios(ArrayList<Object> reg)
+    public static ArrayList<Horarios1> CargarHorarios(ArrayList<Object> reg)
     {
-        ArrayList<Horarios> lista = new ArrayList<>();
+        ArrayList<Horarios1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i += 6)
@@ -275,7 +275,7 @@ public class ManipulaBD
                     int horaI = Integer.parseInt(horaini);
                     String horafin = ((String) reg.get(i + 5)).trim();
                     int horaF = Integer.parseInt(horafin);
-                    Horarios obj = new Horarios(id, id_Materias, grado, grupo, horaI, horaF);
+                    Horarios1 obj = new Horarios1(id, id_Materias, grado, grupo, horaI, horaF);
                     lista.add(obj);
 
                 }
@@ -294,9 +294,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<ContadorReg> CargarContador(ArrayList<Object> reg)
+    public static ArrayList<ContadorReg1> CargarContador(ArrayList<Object> reg)
     {
-        ArrayList<ContadorReg> lista = new ArrayList<>();
+        ArrayList<ContadorReg1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i += 4)
@@ -313,7 +313,7 @@ public class ManipulaBD
                     int alumno = Integer.parseInt(al);
                     String pr = ((String) reg.get(i + 3)).trim();
                     int profesores = Integer.parseInt(pr);
-                    ContadorReg obj = new ContadorReg(id, admin, alumno, profesores);
+                    ContadorReg1 obj = new ContadorReg1(id, admin, alumno, profesores);
                     lista.add(obj);
                 }
             }
@@ -413,13 +413,13 @@ public class ManipulaBD
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Adminis dada la condicion enviada
+     * @return ArrayList de Adminis1 dada la condicion enviada
      *
      */
-    public static ArrayList<Adminis> ConsultasAdmins(String variable, String condicion)
+    public static ArrayList<Adminis1> ConsultasAdmins(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Adminis> ap = null;
+        ArrayList<Adminis1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -451,7 +451,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Adminis> ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "id=" + id + ""));
+            ArrayList<Adminis1> ap = ManipulaBD.CargarAdminis(sql.Seleccion(con, "*", "adminis", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "adminis", campos, datos, "id='" + id + "'");
@@ -542,12 +542,12 @@ public class ManipulaBD
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Adminis dada la condicion enviada
+     * @return ArrayList de Adminis1 dada la condicion enviada
      */
-    public static ArrayList<Profesor> ConsultasProfesores(String variable, String condicion)
+    public static ArrayList<Profesor1> ConsultasProfesores(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Profesor> ap = null;
+        ArrayList<Profesor1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -579,7 +579,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Profesor> ap = ManipulaBD.CargarProfesor(sql.Seleccion(con, "*", "profesor", "id=" + id + ""));
+            ArrayList<Profesor1> ap = ManipulaBD.CargarProfesor(sql.Seleccion(con, "*", "profesor", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "profesor", campos, datos, "id='" + id + "'");
@@ -651,12 +651,12 @@ public class ManipulaBD
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Adminis dada la condicion enviada
+     * @return ArrayList de Adminis1 dada la condicion enviada
      */
-    public static ArrayList<Alumnno> ConsultasAlumnos(String variable, String condicion)
+    public static ArrayList<Alumnno1> ConsultasAlumnos(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Alumnno> ap = null;
+        ArrayList<Alumnno1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -688,7 +688,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Alumnno> ap = ManipulaBD.CargarAlumno(sql.Seleccion(con, "*", "alumnos", "id=" + id + ""));
+            ArrayList<Alumnno1> ap = ManipulaBD.CargarAlumno(sql.Seleccion(con, "*", "alumnos", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "alumnos", campos, datos, "id='" + id + "'");
@@ -901,7 +901,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para asignar Horarios a una materia dependiendo del grado
+     * Método para asignar Horarios1 a una materia dependiendo del grado
      *
      * @param id tipo int
      * @param id_Materia tipo int
@@ -957,10 +957,10 @@ public class ManipulaBD
      * entre comillas simples
      * @return ArrayList de horarios dada la condicion enviada
      */
-    public static ArrayList<Horarios> ConsultasHorarios(String variable, String condicion)
+    public static ArrayList<Horarios1> ConsultasHorarios(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Horarios> ap = null;
+        ArrayList<Horarios1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -992,7 +992,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Horarios> ap = ManipulaBD.CargarHorarios(sql.Seleccion(con, "*", "horarios", "id=" + id + ""));
+            ArrayList<Horarios1> ap = ManipulaBD.CargarHorarios(sql.Seleccion(con, "*", "horarios", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "horarios", campos, datos, "id='" + id + "'");
@@ -1057,10 +1057,10 @@ public class ManipulaBD
      * entre comillas simples
      * @return ArrayList de contadorreg dada la condicion enviada
      */
-    public static ArrayList<ContadorReg> ConsultasContadorReg(String variable, String condicion)
+    public static ArrayList<ContadorReg1> ConsultasContadorReg(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<ContadorReg> ap = null;
+        ArrayList<ContadorReg1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -1078,7 +1078,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para modificar datos en la bd de un objeto ContadorReg
+     * Método para modificar datos en la bd de un objeto ContadorReg1
      *
      * @param id el id de la persona que se modificara sus datos
      * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
@@ -1092,7 +1092,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<ContadorReg> ap = ManipulaBD.CargarContador(sql.Seleccion(con, "*", "contadorreg", "id=" + id + ""));
+            ArrayList<ContadorReg1> ap = ManipulaBD.CargarContador(sql.Seleccion(con, "*", "contadorreg", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "contadorreg", campos, datos, "id='" + id + "'");

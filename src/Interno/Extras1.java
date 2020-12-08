@@ -16,7 +16,7 @@ import poo.bd.Querys;
  *
  * @author kevin
  */
-public class Extras
+public class Extras1
 {
 
     /**

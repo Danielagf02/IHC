@@ -4,46 +4,49 @@ package Interno;
  *
  * @author DanielaGF
  */
-public class Alumnno
+public class Adminis1
 {
-
     private int id;
-    private int Grado;
-    private String Grupo;
     private String ApellidoP;
     private String ApellidoM;
     private String Nombre;
     private String fechaNacimiento;
     private String CURP;
+    private String rfc;
     private String sexo;
     private int Telefono;
-    private String NomMadre;
-    private String NomPadre;
-    private int FolioAlumno;
+    private String CedulaProfe;
+    private String Direccion;
+    private int FolioEmpleado;
+    private String Hentrada;
+    private String Hsalida;
+    private String Puesto;
     private String Correo;
-    private String Contraseña;
+    private String Contrasenia;
 
-    public Alumnno()
+    public Adminis1()
     {
     }
 
-    public Alumnno(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
+    public Adminis1(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida, String Puesto, String Correo, String Contraseña)
     {
         this.id = id;
-        this.Grado = Grado;
-        this.Grupo = Grupo;
         this.ApellidoP = ApellidoP;
         this.ApellidoM = ApellidoM;
         this.Nombre = Nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.CURP = CURP;
+        this.rfc = rfc;
         this.sexo = sexo;
         this.Telefono = Telefono;
-        this.NomMadre = NomMadre;
-        this.NomPadre = NomPadre;
-        this.FolioAlumno = FolioAlumno;
+        this.CedulaProfe = CedulaProfe;
+        this.Direccion = Direccion;
+        this.FolioEmpleado = FolioEmpleado;
+        this.Hentrada = Hentrada;
+        this.Hsalida = Hsalida;
+        this.Puesto = Puesto;
         this.Correo = Correo;
-        this.Contraseña = Contraseña;
+        this.Contrasenia = Contraseña;
     }
 
     /**
@@ -60,38 +63,6 @@ public class Alumnno
     public void setId(int id)
     {
         this.id = id;
-    }
-
-    /**
-     * @return the Grado
-     */
-    public int getGrado()
-    {
-        return Grado;
-    }
-
-    /**
-     * @param Grado the Grado to set
-     */
-    public void setGrado(int Grado)
-    {
-        this.Grado = Grado;
-    }
-
-    /**
-     * @return the Grupo
-     */
-    public String getGrupo()
-    {
-        return Grupo;
-    }
-
-    /**
-     * @param Grupo the Grupo to set
-     */
-    public void setGrupo(String Grupo)
-    {
-        this.Grupo = Grupo;
     }
 
     /**
@@ -175,6 +146,22 @@ public class Alumnno
     }
 
     /**
+     * @return the rfc
+     */
+    public String getRfc()
+    {
+        return rfc;
+    }
+
+    /**
+     * @param rfc the rfc to set
+     */
+    public void setRfc(String rfc)
+    {
+        this.rfc = rfc;
+    }
+
+    /**
      * @return the sexo
      */
     public String getSexo()
@@ -207,51 +194,99 @@ public class Alumnno
     }
 
     /**
-     * @return the NomMadre
+     * @return the CedulaProfe
      */
-    public String getNomMadre()
+    public String getCedulaProfe()
     {
-        return NomMadre;
+        return CedulaProfe;
     }
 
     /**
-     * @param NomMadre the NomMadre to set
+     * @param CedulaProfe the CedulaProfe to set
      */
-    public void setNomMadre(String NomMadre)
+    public void setCedulaProfe(String CedulaProfe)
     {
-        this.NomMadre = NomMadre;
+        this.CedulaProfe = CedulaProfe;
     }
 
     /**
-     * @return the NomPadre
+     * @return the Direccion
      */
-    public String getNomPadre()
+    public String getDireccion()
     {
-        return NomPadre;
+        return Direccion;
     }
 
     /**
-     * @param NomPadre the NomPadre to set
+     * @param Direccion the Direccion to set
      */
-    public void setNomPadre(String NomPadre)
+    public void setDireccion(String Direccion)
     {
-        this.NomPadre = NomPadre;
+        this.Direccion = Direccion;
     }
 
     /**
-     * @return the FolioAlumno
+     * @return the FolioEmpleado
      */
-    public int getFolioAlumno()
+    public int getFolioEmpleado()
     {
-        return FolioAlumno;
+        return FolioEmpleado;
     }
 
     /**
-     * @param FolioAlumno the FolioAlumno to set
+     * @param FolioEmpleado the FolioEmpleado to set
      */
-    public void setFolioAlumno(int FolioAlumno)
+    public void setFolioEmpleado(int FolioEmpleado)
     {
-        this.FolioAlumno = FolioAlumno;
+        this.FolioEmpleado = FolioEmpleado;
+    }
+
+    /**
+     * @return the Hentrada
+     */
+    public String getHentrada()
+    {
+        return Hentrada;
+    }
+
+    /**
+     * @param Hentrada the Hentrada to set
+     */
+    public void setHentrada(String Hentrada)
+    {
+        this.Hentrada = Hentrada;
+    }
+
+    /**
+     * @return the Hsalida
+     */
+    public String getHsalida()
+    {
+        return Hsalida;
+    }
+
+    /**
+     * @param Hsalida the Hsalida to set
+     */
+    public void setHsalida(String Hsalida)
+    {
+        this.Hsalida = Hsalida;
+    }
+
+    /**
+     * @return the Puesto
+     */
+    public String getPuesto()
+    {
+        return Puesto;
+    }
+
+    /**
+     * @param Puesto the Puesto to set
+     */
+    public void setPuesto(String Puesto)
+    {
+        this.Puesto = Puesto;
     }
 
     /**
@@ -271,19 +306,21 @@ public class Alumnno
     }
 
     /**
-     * @return the Contraseña
+     * @return the Contrasenia
      */
-    public String getContraseña()
+    public String getContrasenia()
     {
-        return Contraseña;
+        return Contrasenia;
     }
 
     /**
-     * @param Contraseña the Contraseña to set
+     * @param Contrasenia the Contrasenia to set
      */
-    public void setContraseña(String Contraseña)
+    public void setContrasenia(String Contrasenia)
     {
-        this.Contraseña = Contraseña;
+        this.Contrasenia = Contrasenia;
     }
+    
+
     
 }

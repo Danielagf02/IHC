@@ -1,6 +1,6 @@
 package Interfaces;
 
-import Interno.Alumnno;
+import Interno.Alumnno1;
 import Interno.Calificaciones1;
 import Interno.ManipulaBD;
 import Interno.Materias1;
@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Calificaciones extends javax.swing.JFrame
 {
 
-    public static ArrayList<Alumnno> objeto = null;
+    public static ArrayList<Alumnno1> objeto = null;
     ArrayList<Calificaciones1> cal = null;
     ArrayList<Materias1> mat = null;
 

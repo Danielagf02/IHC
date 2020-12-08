@@ -8,7 +8,7 @@ package Interno;
  *
  * @author Kevin
  */
-public class ContadorReg
+public class ContadorReg1
 {
 
     private int id;
@@ -16,11 +16,11 @@ public class ContadorReg
     private int alumno;
     private int profesores;
 
-    public ContadorReg()
+    public ContadorReg1()
     {
     }
 
-    public ContadorReg(int id, int admin, int alumno, int profesores)
+    public ContadorReg1(int id, int admin, int alumno, int profesores)
     {
         this.id = id;
         this.admin = admin;

@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Interno.Alumnno;
+import Interno.Alumnno1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -26,7 +26,7 @@ public class RegistarCalificacionesProfesores extends javax.swing.JFrame
         btnRegresar.setIcon(icono);
       }
 
-    RegistarCalificacionesProfesores(ArrayList<Alumnno> ConsultasAlumnos)
+    RegistarCalificacionesProfesores(ArrayList<Alumnno1> ConsultasAlumnos)
       {
         for (int i = 0; i < ConsultasAlumnos.size(); i++)
           {

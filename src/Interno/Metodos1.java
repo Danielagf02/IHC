@@ -14,7 +14,7 @@ import javax.swing.JFormattedTextField;
  *
  * @author HP
  */
-public class Metodos
+public class Metodos1
 {
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM O .ALGO JAJA
     public boolean validaEmail(String cad)

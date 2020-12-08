@@ -5,7 +5,7 @@
  */
 package Interfaces;
 
-import Interno.Alumnno;
+import Interno.Alumnno1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -35,7 +35,7 @@ public class MisAlumno extends javax.swing.JFrame
 
       }
 
-    MisAlumno(ArrayList<Alumnno> ConsultasAlumnos)
+    MisAlumno(ArrayList<Alumnno1> ConsultasAlumnos)
       {
         for (int i = 0; i < ConsultasAlumnos.size(); i++)
           {

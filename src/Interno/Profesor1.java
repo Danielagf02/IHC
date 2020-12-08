@@ -4,7 +4,7 @@ package Interno;
  *
  * @author DnielaGF
  */
-public class Profesor
+public class Profesor1
 {
 
     private int id;
@@ -25,11 +25,11 @@ public class Profesor
     private String Correo;
     private String Contraseña;
 
-    public Profesor()
+    public Profesor1()
     {
     }
 
-    public Profesor(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres, String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf, String Direccion, String rfc, String Hentrada, String Hsalida, String Correo, String Contraseña)
+    public Profesor1(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres, String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf, String Direccion, String rfc, String Hentrada, String Hsalida, String Correo, String Contraseña)
     {
         this.id = id;
         this.Grado = Grado;

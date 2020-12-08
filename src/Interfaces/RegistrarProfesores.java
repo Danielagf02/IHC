@@ -5,8 +5,8 @@
  */
 package Interfaces;
 
-import Interno.Extras;
-import Interno.Metodos;
+import Interno.Extras1;
+import Interno.Metodos1;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
