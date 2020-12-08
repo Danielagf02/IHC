@@ -5,6 +5,11 @@
  */
 package Interfaces;
 
+import Interno.Alumnno;
+import Interno.Calificaciones1;
+import Interno.ManipulaBD;
+import Interno.Materias1;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,6 +19,9 @@ import javax.swing.JOptionPane;
  */
 public class AlumnosCGrupo extends javax.swing.JFrame
 {
+    ArrayList<Alumnno> objeto = null;
+    ArrayList<Calificaciones1> cal = null;
+    ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Alumnos
@@ -25,11 +33,34 @@ public class AlumnosCGrupo extends javax.swing.JFrame
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
-        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
-        btnTodosA.setIcon(icono1);
-        
+    
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono2);
+        
+        //objeto = ManipulaBD.ConsultasAlumnos(variable, condicion);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomMadre(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomPadre(), 0, 10);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContraseña(), 0, 13);
+
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
 
@@ -46,13 +77,12 @@ public class AlumnosCGrupo extends javax.swing.JFrame
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnTodosA = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -62,17 +92,6 @@ public class AlumnosCGrupo extends javax.swing.JFrame
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Mi Grupo");
-
-        btnTodosA.setBackground(new java.awt.Color(255, 255, 255));
-        btnTodosA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnTodosA.setText("Todos los alumnos ");
-        btnTodosA.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnTodosAActionPerformed(evt);
-            }
-        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -116,8 +135,8 @@ public class AlumnosCGrupo extends javax.swing.JFrame
             }
         });
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -737,7 +756,7 @@ public class AlumnosCGrupo extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TaDatosAlumno);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -746,9 +765,7 @@ public class AlumnosCGrupo extends javax.swing.JFrame
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(btnTodosA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(195, 695, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(213, 213, 213))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -777,9 +794,7 @@ public class AlumnosCGrupo extends javax.swing.JFrame
                     .addComponent(btnRegresar)
                     .addComponent(jLabel1))
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(btnTodosA))
+                .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
@@ -817,11 +832,6 @@ public class AlumnosCGrupo extends javax.swing.JFrame
         new BuscarAlumno().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void btnTodosAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosAActionPerformed
-    {//GEN-HEADEREND:event_btnTodosAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTodosAActionPerformed
 
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
@@ -888,15 +898,14 @@ public class AlumnosCGrupo extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnTodosA;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

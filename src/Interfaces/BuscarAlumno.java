@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 
@@ -22,6 +23,10 @@ public class BuscarAlumno extends javax.swing.JFrame
       {
         initComponents();
         CtrlInterfaz.habilita(false, Buscar);
+        
+        
+        
+        
       }
 
     /**
@@ -178,6 +183,12 @@ public class BuscarAlumno extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
+        
+        ManipulaBD.ConsultasAlumnos("folio=", "fAlumno");
+        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno))).setVisible(true);
+//Tengo que enviar la informacion a la Tabla Buscar como 
+            this.setVisible(false);
+        
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
