@@ -4,18 +4,18 @@ package Interno;
  *
  * @author DanielaGF
  */
-public class Calificaciones
+public class Calificaciones1
 {
     private int id;
     private int id_Alumno;
     private int id_Materia;
     private double Calificacion;
 
-    public Calificaciones()
+    public Calificaciones1()
     {
     }
 
-    public Calificaciones(int id, int id_Alumno, int id_Materia, double Calificacion)
+    public Calificaciones1(int id, int id_Alumno, int id_Materia, double Calificacion)
     {
         this.id = id;
         this.id_Alumno = id_Alumno;

@@ -17,22 +17,25 @@ public class prueba
      */
     public static void main(String[] args)
     {
-        int id=1;
-        int Grado=3;
+
+        int id=2;
+        int Grado=4;
         String Grupo="A";
-        String ApellidoP="coco";
-        String ApellidoM="coca";
-        String Nombre="elcarl";
-        String fechaNacimiento="12/12/2020";
-        String CURP="erc";
-        String sexo="camion";
+        String ApellidoP="Piña";
+        String ApellidoM="Hernandez";
+        String Nombre="Daniela";
+        String fechaNacimiento="12/12/1399";
+        String CURP="X";
+        String sexo="FlorAmargo";
         int Telefono=123;
-        String NomMadre="luisa";
-        String NomPadre="luis";
-        int FolioAlumno=3;
-        String Correo="69@varl.com";
-        String Contraseña="dedos";
+        String NomMadre="Pastrana";
+        String NomPadre="Naarai";
+        int FolioAlumno=4;
+        String Correo="EMOXXITAFLOW@MOXA.com";
+        String Contraseña="si";
+        
         ManipulaBD.AltasAlumnos(id, Grado, Grupo, ApellidoP, ApellidoM, Nombre, fechaNacimiento, CURP, sexo, Telefono, NomMadre, NomPadre, FolioAlumno, Correo, Contraseña);
+
     }
 
 }

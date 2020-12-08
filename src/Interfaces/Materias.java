@@ -31,7 +31,7 @@ public class Materias extends javax.swing.JFrame
         
     }
 
-    Materias(ArrayList<Interno.Materias> ConsultasMaterias)
+    Materias(ArrayList<Interno.Materias1> ConsultasMaterias)
       {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         // aqui deberia de regresar los datos de la materia creo 

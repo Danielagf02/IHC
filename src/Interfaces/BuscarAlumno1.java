@@ -199,7 +199,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
         CtrlInterfaz.limpia(jtFAlumno);
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
 //        ManipulaBD.ConsultasAlumnos("folio=", "fAlumno");
-        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", "fAlumno")).setVisible(true);
+        new Alumnos(ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno))).setVisible(true);
 //Tengo que checar si es necesario hacer el metodo que lo mande a llamar 
             this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
