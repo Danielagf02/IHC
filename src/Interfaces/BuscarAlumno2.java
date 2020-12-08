@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.Calificaciones1;
 import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
@@ -197,7 +198,7 @@ public class BuscarAlumno2 extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
-        new Calificaciones1(ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno))).setVisible(true);
+        Calificaciones.objeto=ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 

@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Calificaciones extends javax.swing.JFrame
 {
 
-    ArrayList<Alumnno> objeto = null;
+    public static ArrayList<Alumnno> objeto = null;
     ArrayList<Calificaciones1> cal = null;
     ArrayList<Materias1> mat = null;
 
@@ -48,6 +48,7 @@ public class Calificaciones extends javax.swing.JFrame
         }
 
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
