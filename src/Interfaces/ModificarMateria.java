@@ -185,7 +185,7 @@ public class ModificarMateria extends javax.swing.JFrame
      ManipulaBD.ModificarMaterias(id, "nombre, grupo","'" + nombre + "'" + ",'" + grupo + "'");
      CtrlInterfaz.limpia(jtID, jtID1, jtID2);
      CtrlInterfaz.habilita(false, Modificar);
-      
+     
       
     }//GEN-LAST:event_ModificarActionPerformed
 

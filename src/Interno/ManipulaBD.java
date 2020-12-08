@@ -181,9 +181,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<Calificaciones> CargarCalificacion(ArrayList<Object> reg)
+    public static ArrayList<Calificaciones1> CargarCalificacion(ArrayList<Object> reg)
     {
-        ArrayList<Calificaciones> lista = new ArrayList<>();
+        ArrayList<Calificaciones1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i += 4)
@@ -200,7 +200,7 @@ public class ManipulaBD
                     int id_Materia = Integer.parseInt(id_Mat);
                     String cal = ((String) reg.get(i + 3)).trim();
                     double Calificaciones = Double.parseDouble(cal);
-                    Calificaciones obj = new Calificaciones(id, id_Alumno, id_Materia, Calificaciones);
+                    Calificaciones1 obj = new Calificaciones1(id, id_Alumno, id_Materia, Calificaciones);
                     lista.add(obj);
                 }
             }
@@ -218,9 +218,9 @@ public class ManipulaBD
         }
     }
 
-    public static ArrayList<Materias> CargarMateria(ArrayList<Object> reg)
+    public static ArrayList<Materias1> CargarMateria(ArrayList<Object> reg)
     {
-        ArrayList<Materias> lista = new ArrayList<>();
+        ArrayList<Materias1> lista = new ArrayList<>();
         try
         {
             for (int i = 0; i < reg.size(); i += 4)
@@ -235,7 +235,7 @@ public class ManipulaBD
                     int grado = Integer.parseInt(grad);
                     String grupo = ((String) reg.get(i + 2)).trim();
                     String nombre = ((String) reg.get(i + 3)).trim();
-                    Materias obj = new Materias(id, grado, grupo, nombre);
+                    Materias1 obj = new Materias1(id, grado, grupo, nombre);
                     lista.add(obj);
                 }
             }
@@ -742,21 +742,21 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de Calificaciones y retorna el
-     * objeto o los objetos en un arraylist esto con la intencion de traer lo
-     * que se requiera en el momento
+     * Método para colsutar en la bd en la tabla de Calificaciones1 y retorna el
+ objeto o los objetos en un arraylist esto con la intencion de traer lo
+ que se requiera en el momento
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Calificaciones dada la condicion enviada
+     * @return ArrayList de Calificaciones1 dada la condicion enviada
      */
-    public static ArrayList<Calificaciones> ConsultasCalificaciones(String variable, String condicion)
+    public static ArrayList<Calificaciones1> ConsultasCalificaciones(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Calificaciones> ap = null;
+        ArrayList<Calificaciones1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -774,7 +774,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para modificar datos en la bd de un usario Calificaciones
+     * Método para modificar datos en la bd de un usario Calificaciones1
      *
      * @param id el id de la persona que se modificara sus datos
      * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
@@ -788,7 +788,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Calificaciones> ap = ManipulaBD.CargarCalificacion(sql.Seleccion(con, "*", "calificaciones", "id=" + id + ""));
+            ArrayList<Calificaciones1> ap = ManipulaBD.CargarCalificacion(sql.Seleccion(con, "*", "calificaciones", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "calificaciones", campos, datos, "id='" + id + "'");
@@ -842,23 +842,23 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de Materias y retorna el objeto
-     * o los objetos en un arraylist esto con la intencion de traer lo que se
-     * requiera en el momento
-     *
-     * "id!=" "0"
+     * Método para colsutar en la bd en la tabla de Materias1 y retorna el objeto
+ o los objetos en un arraylist esto con la intencion de traer lo que se
+ requiera en el momento
+
+ "id!=" "0"
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
      * @param condicion cual es la condicion por la cual se extraera el objeto
      * ejemplo "'Firulais'" Nota: los números van sin comillas y los String
      * entre comillas simples
-     * @return ArrayList de Materias dada la condicion enviada
+     * @return ArrayList de Materias1 dada la condicion enviada
      */
-    public static ArrayList<Materias> ConsultasMaterias(String variable, String condicion)
+    public static ArrayList<Materias1> ConsultasMaterias(String variable, String condicion)
     {
         Connection con = ManipulaBD.conecta();
-        ArrayList<Materias> ap = null;
+        ArrayList<Materias1> ap = null;
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
@@ -876,7 +876,7 @@ public class ManipulaBD
     }
 
     /**
-     * Método para modificar datos en la bd de un objeto Materias
+     * Método para modificar datos en la bd de un objeto Materias1
      *
      * @param id el id de la persona que se modificara sus datos
      * @param campos los campos que seran cambiados ejemplo: "Nombre,Telefono"
@@ -890,7 +890,7 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            ArrayList<Materias> ap = ManipulaBD.CargarMateria(sql.Seleccion(con, "*", "materias", "id=" + id + ""));
+            ArrayList<Materias1> ap = ManipulaBD.CargarMateria(sql.Seleccion(con, "*", "materias", "id=" + id + ""));
             if (ap != null)
             {
                 sql.Modificar(con, "materias", campos, datos, "id='" + id + "'");

@@ -4,7 +4,7 @@ package Interno;
  *
  * @author Kevin
  */
-public class Materias
+public class Materias1
 {
 
     private int id;
@@ -12,11 +12,11 @@ public class Materias
     private String grupo;
     private String nombre;
 
-    public Materias()
+    public Materias1()
     {
     }
 
-    public Materias(int id, int grado, String grupo, String nombre)
+    public Materias1(int id, int grado, String grupo, String nombre)
     {
         this.id = id;
         this.grado = grado;

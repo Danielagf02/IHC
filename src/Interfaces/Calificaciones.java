@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import Interno.Alumnno;
+import Interno.Calificaciones1;
+import Interno.ManipulaBD;
+import Interno.Materias1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -14,26 +12,42 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class Calificaciones extends javax.swing.JFrame
-  {
+{
+
+    ArrayList<Alumnno> objeto = null;
+    ArrayList<Calificaciones1> cal = null;
+    ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Alumnos
      */
     public Calificaciones()
-      {
+    {
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-      }
+        String variable = "id=";
+        String condicion = "1";
+        objeto = ManipulaBD.ConsultasAlumnos(variable, condicion);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
 
-    Calificaciones(ArrayList<Alumnno> ConsultasAlumnos)
-      {
-        for (int i = 0; i < ConsultasAlumnos.size(); i++)
-          {
-            System.out.print(ConsultasAlumnos.get(i));
-            System.out.println("\n");
-          }
-      }
+        condicion = String.valueOf(objeto.get(0).getId());
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+
+        for (int i = 0; i < cal.size(); i++)
+        {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
+            TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
+        }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,11 +64,11 @@ public class Calificaciones extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         BuscarAlumno = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TaCali = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
@@ -77,7 +91,7 @@ public class Calificaciones extends javax.swing.JFrame
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null}
@@ -87,7 +101,7 @@ public class Calificaciones extends javax.swing.JFrame
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TaDatosAlumno);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -110,8 +124,8 @@ public class Calificaciones extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TaCali.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaCali.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null},
@@ -130,12 +144,19 @@ public class Calificaciones extends javax.swing.JFrame
                 "Materias", "Calificaciones"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TaCali);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton4.setText("Modificar Calificación");
         jButton4.setToolTipText("");
+        jButton4.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -174,12 +195,12 @@ public class Calificaciones extends javax.swing.JFrame
                 .addGap(41, 41, 41)
                 .addComponent(BuscarAlumno)
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addComponent(jButton4)
-                .addGap(43, 43, 43))
+                .addGap(37, 37, 37))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -211,54 +232,61 @@ public class Calificaciones extends javax.swing.JFrame
 
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
+    {//GEN-HEADEREND:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-      {
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-          {
+        {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-              {
+            {
                 if ("Nimbus".equals(info.getName()))
-                  {
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                  }
-              }
-          } catch (ClassNotFoundException ex)
-          {
+                }
+            }
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (InstantiationException ex)
-          {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (IllegalAccessException ex)
-          {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (javax.swing.UnsupportedLookAndFeelException ex)
-          {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          }
+        }
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-          {
+        {
             public void run()
-              {
+            {
                 new Calificaciones().setVisible(true);
-              }
-          });
-      }
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarAlumno;
+    private javax.swing.JTable TaCali;
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
@@ -267,7 +295,5 @@ public class Calificaciones extends javax.swing.JFrame
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
