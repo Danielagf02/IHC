@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -186,7 +187,7 @@ public class Buscarprofesor extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        String nMateria = "";
+        String nProfesor = "";
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFProfe);
     }//GEN-LAST:event_BuscarActionPerformed
