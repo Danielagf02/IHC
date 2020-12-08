@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 
@@ -31,14 +32,17 @@ public class ModificarMateria extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Modificar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jtID = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jtID1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jtID2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +53,8 @@ public class ModificarMateria extends javax.swing.JFrame
 
         Modificar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Modificar.setText("Modificar");
-        Modificar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarActionPerformed(evt);
             }
         });
@@ -60,15 +62,36 @@ public class ModificarMateria extends javax.swing.JFrame
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("ID Materia:");
 
-        jtID.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        jtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtIDKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt)
-            {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
                 jtIDKeyTyped(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setText("Nuevo nombre:");
+
+        jtID1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtID1KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtID1KeyTyped(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setText("Nuevo grupo:");
+
+        jtID2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtID2KeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtID2KeyTyped(evt);
             }
         });
 
@@ -76,12 +99,6 @@ public class ModificarMateria extends javax.swing.JFrame
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28)
-                .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 129, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,7 +107,24 @@ public class ModificarMateria extends javax.swing.JFrame
                         .addGap(182, 182, 182))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Modificar)
-                        .addGap(61, 61, 61))))
+                        .addGap(48, 48, 48))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel2)
+                        .addGap(28, 28, 28)
+                        .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtID1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtID2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 129, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,8 +136,16 @@ public class ModificarMateria extends javax.swing.JFrame
                     .addComponent(jLabel2)
                     .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jtID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jtID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(Modificar)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,13 +178,32 @@ public class ModificarMateria extends javax.swing.JFrame
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ModificarActionPerformed
     {//GEN-HEADEREND:event_ModificarActionPerformed
-        // TODO add your handling code here:
-     String id = "";
-     CtrlInterfaz.limpia(jtID);
+     
+     int id = Integer.parseInt(String.valueOf(jtID.getText()));
+     String nombre=jtID1.getText();
+     String grupo=jtID2.getText();
+     ManipulaBD.ModificarMaterias(id, "nombre, grupo","'" + nombre + "'" + ",'" + grupo + "'");
+     CtrlInterfaz.limpia(jtID, jtID1, jtID2);
      CtrlInterfaz.habilita(false, Modificar);
       
       
     }//GEN-LAST:event_ModificarActionPerformed
+
+    private void jtID1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtID1KeyPressed
+        CtrlInterfaz.habilita(true, jtID2);
+    }//GEN-LAST:event_jtID1KeyPressed
+
+    private void jtID1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtID1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtID1KeyTyped
+
+    private void jtID2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtID2KeyPressed
+        CtrlInterfaz.habilita(true, Modificar);
+    }//GEN-LAST:event_jtID2KeyPressed
+
+    private void jtID2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtID2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtID2KeyTyped
 
     /**
      * @param args the command line arguments
@@ -196,7 +257,11 @@ public class ModificarMateria extends javax.swing.JFrame
     private javax.swing.JButton Modificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jtID;
+    private javax.swing.JTextField jtID1;
+    private javax.swing.JTextField jtID2;
     // End of variables declaration//GEN-END:variables
 }

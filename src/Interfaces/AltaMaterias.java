@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -261,6 +262,7 @@ public class AltaMaterias extends javax.swing.JFrame
         int id = Integer.parseInt(String.valueOf(jtID.getText()));
         int grado = Integer.parseInt(String.valueOf(jtGrado.getText()));
         String grupo = jtGrupo.getText();
+        ManipulaBD.AltasMaterias(id, grado, grupo, nombre);
         JOptionPane.showMessageDialog(null, "Se ha registrado con exito");
         CtrlInterfaz.limpia(jtNombre, jtGrupo, jtID, jtGrado);
         CtrlInterfaz.habilita(false, jtGrupo, jtID, jtGrado, btnRegistro);
