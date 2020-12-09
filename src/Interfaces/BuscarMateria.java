@@ -180,7 +180,9 @@ public class BuscarMateria extends javax.swing.JFrame
         String nMateria = jtNMateria.getText();
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtNMateria);
-        new Materias(ManipulaBD.ConsultasMaterias("Materias=", "'"+ nMateria +"'" )).setVisible(true);
+        new Materias().setVisible(true);
+        Materias.objeto=ManipulaBD.ConsultasMaterias("Materias=", ""+ jtNMateria+"");
+
         this.setVisible(false);
         
     }//GEN-LAST:event_BuscarActionPerformed

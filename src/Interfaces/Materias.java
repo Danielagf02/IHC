@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.Materias1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -14,6 +15,8 @@ import javax.swing.ImageIcon;
  */
 public class Materias extends javax.swing.JFrame
 {
+
+   public  static ArrayList<Materias1> objeto;
 
     /**
      * Creates new form Alumnos
