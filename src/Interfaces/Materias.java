@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
+import Interno.Materias1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -15,28 +17,37 @@ import javax.swing.ImageIcon;
 public class Materias extends javax.swing.JFrame
 {
 
+    ArrayList<Materias1> mat = null;
+
     /**
      * Creates new form Alumnos
      */
     public Materias()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
         btnTodasM.setIcon(icono1);
-        
-        
+        String condicion = "-1";
+        mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
+        for (int i = 0; i < mat.size(); i++)
+        {
+            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
+            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
+            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
+            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
+        }
     }
 
     Materias(ArrayList<Interno.Materias1> ConsultasMaterias)
-      {
+    {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         // aqui deberia de regresar los datos de la materia creo 
-        
-      }
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,7 +68,7 @@ public class Materias extends javax.swing.JFrame
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        Tablamat = new javax.swing.JTable();
         jButton9 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
@@ -116,8 +127,8 @@ public class Materias extends javax.swing.JFrame
             }
         });
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        Tablamat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Tablamat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -158,7 +169,7 @@ public class Materias extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(Tablamat);
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -238,7 +249,7 @@ public class Materias extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-       new ControlEscolar().setVisible(true);
+        new ControlEscolar().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
@@ -306,6 +317,7 @@ public class Materias extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tablamat;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnTodasM;
     private javax.swing.JButton jButton1;
@@ -317,6 +329,5 @@ public class Materias extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
