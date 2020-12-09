@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Interno.Profesor1;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class Docentes extends javax.swing.JFrame
 {
-
+    public static ArrayList<Profesor1> objeto;
     /**
      * Creates new form Alumnos
      */
@@ -247,7 +249,7 @@ public class Docentes extends javax.swing.JFrame
 
     private void BuscarPorfesorActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarPorfesorActionPerformed
     {//GEN-HEADEREND:event_BuscarPorfesorActionPerformed
-         new Buscarprofesor().setVisible(true);
+        new Buscarprofesor().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BuscarPorfesorActionPerformed
 

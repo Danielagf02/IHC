@@ -6,8 +6,10 @@
 package Interfaces;
 
 import Interno.ManipulaBD;
+import Interno.Profesor1;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -162,6 +164,7 @@ public class Buscarprofesor extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
@@ -173,16 +176,21 @@ public class Buscarprofesor extends javax.swing.JFrame
     private void jtFProfeKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFProfeKeyPressed
     {//GEN-HEADEREND:event_jtFProfeKeyPressed
         if (jtFProfe.getText().isEmpty() != true)
-          {
-            Validaciones.enter(this, evt, evt);
+        {
+            Validaciones.enter(this, evt, Buscar);
             Buscar.setEnabled(true);
-            
-          }
+        }
     }//GEN-LAST:event_jtFProfeKeyPressed
 
     private void jtFProfeKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFProfeKeyTyped
     {//GEN-HEADEREND:event_jtFProfeKeyTyped
-        Validaciones.validaAlfabeticos(evt);
+        if (jtFProfe.getText().length() != 7 ) {
+            //evt.consume();
+            Validaciones.validaEntero(evt);
+        } else {
+            //Validaciones.validaEntero(evt);
+            evt.consume();
+        }
     }//GEN-LAST:event_jtFProfeKeyTyped
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
@@ -190,6 +198,11 @@ public class Buscarprofesor extends javax.swing.JFrame
         String nProfesor = "";
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFProfe);
+        Docentes.objeto = ManipulaBD.ConsultasProfesores("id=","'" +nProfesor+"'");
+        System.out.println(Docentes.objeto.get(0).getNombres());
+        Docentes nueva = new Docentes();
+        this.setVisible(false);
+
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed

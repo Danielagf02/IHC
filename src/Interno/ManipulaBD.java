@@ -17,7 +17,7 @@ public class ManipulaBD
     {
         try
         {
-            return con.Conecta("localhost:3306", "controlescolar", "root", "", 2);
+            return con.Conecta("localhost:3306", "controlecolar", "root", "", 2);
         } catch (Exception ex)
         {
             System.out.println("Error al conectar en metodo conecta");
