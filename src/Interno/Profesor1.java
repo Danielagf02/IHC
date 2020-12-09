@@ -20,8 +20,6 @@ public class Profesor1
     private String CedulaProf;
     private String Direccion;
     private String rfc;
-    private String Hentrada;
-    private String Hsalida;
     private String Correo;
     private String Contraseña;
 
@@ -29,7 +27,9 @@ public class Profesor1
     {
     }
 
-    public Profesor1(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres, String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf, String Direccion, String rfc, String Hentrada, String Hsalida, String Correo, String Contraseña)
+    public Profesor1(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres,
+            String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf,
+            String Direccion, String rfc, String Correo, String Contraseña)
     {
         this.id = id;
         this.Grado = Grado;
@@ -44,8 +44,6 @@ public class Profesor1
         this.CedulaProf = CedulaProf;
         this.Direccion = Direccion;
         this.rfc = rfc;
-        this.Hentrada = Hentrada;
-        this.Hsalida = Hsalida;
         this.Correo = Correo;
         this.Contraseña = Contraseña;
     }
@@ -259,38 +257,6 @@ public class Profesor1
     }
 
     /**
-     * @return the Hentrada
-     */
-    public String getHentrada()
-    {
-        return Hentrada;
-    }
-
-    /**
-     * @param Hentrada the Hentrada to set
-     */
-    public void setHentrada(String Hentrada)
-    {
-        this.Hentrada = Hentrada;
-    }
-
-    /**
-     * @return the Hsalida
-     */
-    public String getHsalida()
-    {
-        return Hsalida;
-    }
-
-    /**
-     * @param Hsalida the Hsalida to set
-     */
-    public void setHsalida(String Hsalida)
-    {
-        this.Hsalida = Hsalida;
-    }
-
-    /**
      * @return the Correo
      */
     public String getCorreo()
@@ -322,6 +288,4 @@ public class Profesor1
         this.Contraseña = Contraseña;
     }
 
-    
-    
 }

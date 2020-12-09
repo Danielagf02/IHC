@@ -86,7 +86,7 @@ public class ManipulaBD
         ArrayList<Profesor1> lista = new ArrayList<>();
         try
         {
-            for (int i = 0; i < reg.size(); i++)
+            for (int i = 0; i < reg.size(); i+=15)
             {
                 String idS = "";
                 idS = (String) reg.get(i);
@@ -108,12 +108,10 @@ public class ManipulaBD
                     String CedulaProf = ((String) reg.get(i + 10)).trim();
                     String Direccion = ((String) reg.get(i + 11)).trim();
                     String rfc = ((String) reg.get(i + 12)).trim();
-                    String Hentrada = ((String) reg.get(i + 13)).trim();
-                    String Hsalida = ((String) reg.get(i + 14)).trim();
-                    String Correo = ((String) reg.get(i + 15)).trim();
-                    String Constraseña = ((String) reg.get(i + 16)).trim();
+                    String Correo = ((String) reg.get(i + 13)).trim();
+                    String Constraseña = ((String) reg.get(i + 14)).trim();
                     Profesor1 obj = new Profesor1(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
-                            sexo, Telefono, CedulaProf, Direccion, rfc, Hentrada, Hsalida, Correo, Constraseña);
+                            sexo, Telefono, CedulaProf, Direccion, rfc,Correo, Constraseña);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
                 }
@@ -476,8 +474,6 @@ public class ManipulaBD
      * @param CedulaProf tipo String
      * @param Direccion tipo String
      * @param rfc tipo String
-     * @param Hentrada tipo String
-     * @param Hsalida tipo String
      * @param Correo tipo String
      * @param Contraseña tipo String
      */
