@@ -39,7 +39,6 @@ public class Docentes extends javax.swing.JFrame
 
     public void Mostrar()
     {
-
         TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
         TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
         TaDatosP.setValueAt(objeto.get(0).getNombres(), 0, 2);
@@ -54,7 +53,6 @@ public class Docentes extends javax.swing.JFrame
         TaDatosP.setValueAt(objeto.get(0).getId(), 0, 11);
         TaDatosP.setValueAt(objeto.get(0).getRfc(), 0, 12);
         TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 13);
-
     }
 
     Docentes(ArrayList<Profesor1> ConsultasProfesor1)
