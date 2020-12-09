@@ -116,7 +116,7 @@ public class ControlEscolar extends javax.swing.JFrame
         btnRegistrarCalificaciones = new javax.swing.JButton();
         btnHorarios = new javax.swing.JButton();
         btnRegistrarProf = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        btnAdminsFijos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -411,14 +411,14 @@ public class ControlEscolar extends javax.swing.JFrame
             }
         });
 
-        jButton12.setBackground(new java.awt.Color(255, 255, 255));
-        jButton12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton12.setText("Adminsitradores Fijos ");
-        jButton12.addActionListener(new java.awt.event.ActionListener()
+        btnAdminsFijos.setBackground(new java.awt.Color(255, 255, 255));
+        btnAdminsFijos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnAdminsFijos.setText("Adminsitradores Fijos ");
+        btnAdminsFijos.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton12ActionPerformed(evt);
+                btnAdminsFijosActionPerformed(evt);
             }
         });
 
@@ -461,7 +461,7 @@ public class ControlEscolar extends javax.swing.JFrame
                         .addGap(457, 457, 457))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
-                .addComponent(jButton12)
+                .addComponent(btnAdminsFijos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalir)
                 .addGap(59, 59, 59))
@@ -489,7 +489,7 @@ public class ControlEscolar extends javax.swing.JFrame
                     .addComponent(btnRegistrarProf))
                 .addGap(104, 104, 104)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
+                    .addComponent(btnAdminsFijos)
                     .addComponent(btnSalir))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
@@ -647,11 +647,11 @@ public class ControlEscolar extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegistrarCalificacionesActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton12ActionPerformed
-    {//GEN-HEADEREND:event_jButton12ActionPerformed
+    private void btnAdminsFijosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAdminsFijosActionPerformed
+    {//GEN-HEADEREND:event_btnAdminsFijosActionPerformed
         new ADministrFijoos().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_btnAdminsFijosActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
     {//GEN-HEADEREND:event_btnImprimirActionPerformed
@@ -729,6 +729,7 @@ public class ControlEscolar extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton btnAdministrarGrupos;
+    private javax.swing.JButton btnAdminsFijos;
     private javax.swing.JButton btnAlumnos;
     private javax.swing.JButton btnBoletas;
     private javax.swing.JButton btnCalificaciones;
@@ -745,7 +746,6 @@ public class ControlEscolar extends javax.swing.JFrame
     private javax.swing.JButton btnRegistroA;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnUsuarios;
-    private javax.swing.JButton jButton12;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLLogo;
     private javax.swing.JLabel jLabel1;
