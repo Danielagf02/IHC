@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
 public class RegistarCalificacionesProfesores extends javax.swing.JFrame
   {
 
+    public static ArrayList<Alumnno1> objeto; //El arraylist
+
     /**
      * Creates new form Alumnos
      */
