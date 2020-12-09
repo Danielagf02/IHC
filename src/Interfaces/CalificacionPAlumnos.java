@@ -1,5 +1,10 @@
 package Interfaces;
 
+import Interno.Alumnno1;
+import Interno.Calificaciones1;
+import Interno.ManipulaBD;
+import Interno.Materias1;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -8,6 +13,9 @@ import javax.swing.ImageIcon;
  */
 public class CalificacionPAlumnos extends javax.swing.JFrame
 {
+     public static ArrayList<Alumnno1> objeto;
+    ArrayList<Calificaciones1> cal = null;
+    ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Alumnos
@@ -20,6 +28,23 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         btnRegresar.setIcon(icono);
         
         
+       
+       TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+        String condicion = String.valueOf(objeto.get(0).getId());
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+
+        for (int i = 0; i < cal.size(); i++)
+          {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
+            TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
+          }
 
     }
 
@@ -37,11 +62,11 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TaCali = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -52,7 +77,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Mis Calificaciones");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null}
@@ -62,7 +87,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TaDatosAlumno);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -85,8 +110,8 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TaCali.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaCali.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null},
@@ -105,7 +130,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
                 "Materias", "Calificaciones"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TaCali);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -135,8 +160,8 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
                     .addComponent(btnRegresar)
                     .addComponent(jLabel1))
                 .addGap(114, 114, 114)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(140, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,6 +237,8 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaCali;
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -219,7 +246,5 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

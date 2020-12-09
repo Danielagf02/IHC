@@ -74,6 +74,13 @@ public class MateriasxProfesor extends javax.swing.JFrame
         btnTodasM.setBackground(new java.awt.Color(255, 255, 255));
         btnTodasM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTodasM.setText("Todas Mis materias");
+        btnTodasM.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnTodasMActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -205,6 +212,11 @@ public class MateriasxProfesor extends javax.swing.JFrame
          new BuscarMateria2().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnTodasMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodasMActionPerformed
+    {//GEN-HEADEREND:event_btnTodasMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTodasMActionPerformed
 
     /**
      * @param args the command line arguments
