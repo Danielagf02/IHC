@@ -620,6 +620,13 @@ public class RegistrarAlumnos extends javax.swing.JFrame
        
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
         id++;
+        CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
+        //CtrlInterfaz.habilita(false, rbHombre, rbMujer);
+        rbHombre.setEnabled(false);
+        rbMujer.setEnabled(false);
+        CtrlInterfaz.habilita(false, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
+        btnRegistrar.setEnabled(false);
+        btnCurp.setEnabled(false);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
