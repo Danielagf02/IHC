@@ -64,7 +64,7 @@ public class Materias extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnTodasM = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        JBuscarM = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -93,14 +93,14 @@ public class Materias extends javax.swing.JFrame
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setText("Buscar Materia");
-        jButton3.addActionListener(new java.awt.event.ActionListener()
+        JBuscarM.setBackground(new java.awt.Color(255, 255, 255));
+        JBuscarM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        JBuscarM.setText("Buscar Materia");
+        JBuscarM.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton3ActionPerformed(evt);
+                JBuscarMActionPerformed(evt);
             }
         });
 
@@ -220,7 +220,7 @@ public class Materias extends javax.swing.JFrame
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTodasM)
                                 .addGap(134, 134, 134)
-                                .addComponent(jButton3))
+                                .addComponent(JBuscarM))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton5)
@@ -242,7 +242,7 @@ public class Materias extends javax.swing.JFrame
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addComponent(btnTodasM))
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(JBuscarM, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -281,13 +281,11 @@ public class Materias extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
+    private void JBuscarMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBuscarMActionPerformed
+    {//GEN-HEADEREND:event_JBuscarMActionPerformed
         new BuscarMateria().setVisible(true);
-        System.out.println(mat.get(0).getNombre());
         this.setVisible(false);
-        Mostrar();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_JBuscarMActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         new ModificarMateria().setVisible(true);
@@ -354,11 +352,11 @@ public class Materias extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBuscarM;
     private javax.swing.JTable Tablamat;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnTodasM;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton9;
