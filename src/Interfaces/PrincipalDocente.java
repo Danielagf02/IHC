@@ -5,11 +5,13 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
+import Interno.Profesor1;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +19,8 @@ import cjb.ci.Validaciones;
  */
 public class PrincipalDocente extends javax.swing.JFrame
 {
+
+    public static ArrayList<Profesor1> obj;
 
     /**
      * Creates new form Principal
@@ -26,6 +30,7 @@ public class PrincipalDocente extends javax.swing.JFrame
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/logo tipo CE.png");
         jLIm.setIcon(icono);
+        obj = null;
     }
 
     /**
@@ -238,6 +243,14 @@ public class PrincipalDocente extends javax.swing.JFrame
             JOptionPane.showMessageDialog(this, "Hay campos vacíos");
         } else
         {
+            obj = ManipulaBD.ConsultasProfesores("CedulaProf=", "'" + EscribirUsuario.getText() + "'");
+            if (obj != null)
+            {
+                if (EscribirContraseña.getText().compareTo(obj.get(0).getContraseña()) == 0)
+                {
+                    System.out.println("Si existe");
+                }
+            }
             new IProfesores().setVisible(true);
             this.setVisible(false);
         }

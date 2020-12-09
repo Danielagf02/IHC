@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
-import static Interfaces.Materias.mat;
-import static Interfaces.MisMateriasAlumnos.mat;
 import Interno.ManipulaBD;
 import Interno.Materias1;
 import java.util.ArrayList;
@@ -18,28 +11,37 @@ import javax.swing.ImageIcon;
  */
 public class MateriasxProfesor extends javax.swing.JFrame
 {
+
     public static ArrayList<Materias1> mat = null;
+
     /**
      * Creates new form Alumnos
      */
     public MateriasxProfesor()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
         btnTodasM.setIcon(icono1);
-        
-        String condicion = "-1";
-        mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
+
+        String condicion = String.valueOf(PrincipalDocente.obj.get(0).getGrado());
+        System.out.println(condicion + " Es lo que busco");
+        mat = ManipulaBD.ConsultasMaterias("Grado=", condicion);
+
+        int con=0;
         for (int i = 0; i < mat.size(); i++)
         {
-            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
-            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
-            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
-            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
+            if (mat.get(i).getGrupo().compareTo(PrincipalDocente.obj.get(0).getGrupo()) == 0)
+            {
+                Tablamat.setValueAt(mat.get(con).getId(), con, 0);
+                Tablamat.setValueAt(mat.get(con).getNombre(), con, 1);
+                Tablamat.setValueAt(mat.get(con).getGrado(), con, 2);
+                Tablamat.setValueAt(mat.get(con).getGrupo(), con, 3);
+                con++;
+            }
         }
     }
 
@@ -205,30 +207,31 @@ public class MateriasxProfesor extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-       new IProfesores().setVisible(true);
+        new IProfesores().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
-         new BuscarMateria2().setVisible(true);
+        new BuscarMateria2().setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTodasMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodasMActionPerformed
     {//GEN-HEADEREND:event_btnTodasMActionPerformed
-       
+
+
     }//GEN-LAST:event_btnTodasMActionPerformed
 
-     public void Mostrar3()
+    public void Mostrar3()
     {
         Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
         Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
         Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
         Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
     }
-    
+
     /**
      * @param args the command line arguments
      */
