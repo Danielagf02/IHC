@@ -27,14 +27,19 @@ public class Calificaciones extends javax.swing.JFrame
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         String condicion;
+        
+
+      }
+    
+    public void Mostrar()
+    {
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-
-        condicion = String.valueOf(objeto.get(0).getId());
+        String condicion = String.valueOf(objeto.get(0).getId());
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
         for (int i = 0; i < cal.size(); i++)
@@ -44,7 +49,7 @@ public class Calificaciones extends javax.swing.JFrame
             TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
             TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
           }
-      }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
