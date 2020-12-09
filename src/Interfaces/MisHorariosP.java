@@ -5,6 +5,9 @@
  */
 package Interfaces;
 
+import Interno.Horarios1;
+import Interno.ManipulaBD;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,6 +16,7 @@ import javax.swing.ImageIcon;
  */
 public class MisHorariosP extends javax.swing.JFrame
 {
+    public static ArrayList<Horarios1> hora = null;
 
     /**
      * Creates new form TodosHorarios
@@ -26,6 +30,20 @@ public class MisHorariosP extends javax.swing.JFrame
         
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
         jLIm.setIcon(icono1);
+        
+   
+        
+       String condicion = "-1";
+       /* hora = ManipulaBD.ConsultasHorarios("id!=", condicion);
+        for (int i = 0; i < hora.size(); i++)
+        {
+            TaHora.setValueAt(hora.get(i).gethoral(), i, 0);
+            //TaHora.setValueAt(hora.get(i).getdia(), i, 1);
+            TaHora.setValueAt(hora.get(i).getid_materia(), i, 2);
+            TaHora.setValueAt(hora.get(i).getMateria(), i, 3);
+        TaHora.setValueAt(hora.get(i).getGrado(), i, 2);
+            TaHora.setValueAt(hora.get(i).getGrupo(), i, 3);
+        }*/
     }
 
     /**
@@ -42,8 +60,7 @@ public class MisHorariosP extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         jLIm = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,54 +78,27 @@ public class MisHorariosP extends javax.swing.JFrame
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String []
-            {
-                "Horas", "Dia", "ID", "Materia", "Grado", "Grupo"
-            }
-        )
-        {
-            Class[] types = new Class []
-            {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex)
-            {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/HORARIOS.JPG"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(btnRegresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(46, 46, 46)
-                .addComponent(jLIm)
-                .addGap(89, 89, 89))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLIm)
+                        .addGap(89, 89, 89))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(292, 292, 292)
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(46, 46, 46))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,20 +106,24 @@ public class MisHorariosP extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLIm)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRegresar)
-                            .addComponent(jLabel1))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                        .addGap(19, 19, 19)
+                        .addComponent(btnRegresar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(105, 105, 105))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,8 +192,7 @@ public class MisHorariosP extends javax.swing.JFrame
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
