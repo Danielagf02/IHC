@@ -190,11 +190,15 @@ public class BuscarMateria1 extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        String nMateria = "";
+        String nMateria = jtNMateria.getText();
+        System.out.println(nMateria);
         CtrlInterfaz.habilita(false, Buscar);
-        CtrlInterfaz.limpia(jtNMateria);
+        Horarios.mat = ManipulaBD.ConsultasMaterias("Nombre=" , "'" + jtNMateria.getText()+"'");
         
-        new Materias(ManipulaBD.ConsultasMaterias("Materias=", "'"+ nMateria +"'" )).setVisible(true);
+        CtrlInterfaz.limpia(jtNMateria);
+        //Horarios obj = new Horarios();
+       // obj.setVisible(true);
+        //obj.Mostrar();
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 

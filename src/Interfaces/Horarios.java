@@ -6,8 +6,10 @@
 package Interfaces;
 
 import Interno.ManipulaBD;
+import Interno.Materias1;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 
@@ -17,6 +19,8 @@ import javax.swing.ImageIcon;
  */
 public class Horarios extends javax.swing.JFrame
   {
+    
+    public static ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Horarios

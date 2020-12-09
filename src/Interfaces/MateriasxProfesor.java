@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import static Interfaces.Materias.mat;
 import static Interfaces.MisMateriasAlumnos.mat;
 import Interno.ManipulaBD;
 import Interno.Materias1;
@@ -53,16 +54,19 @@ public class MateriasxProfesor extends javax.swing.JFrame
     {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnTodasM = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tablamat = new javax.swing.JTable();
+        btnTodasM = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,17 +74,6 @@ public class MateriasxProfesor extends javax.swing.JFrame
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Mis Materias");
-
-        btnTodasM.setBackground(new java.awt.Color(255, 255, 255));
-        btnTodasM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnTodasM.setText("Todas Mis materias");
-        btnTodasM.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnTodasMActionPerformed(evt);
-            }
-        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -147,6 +140,15 @@ public class MateriasxProfesor extends javax.swing.JFrame
         });
         jScrollPane2.setViewportView(Tablamat);
 
+        btnTodasM.setText("Ver todas mis materias");
+        btnTodasM.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnTodasMActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -162,9 +164,9 @@ public class MateriasxProfesor extends javax.swing.JFrame
                         .addGap(57, 57, 57)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(167, 167, 167)
                         .addComponent(btnTodasM)
-                        .addGap(87, 87, 87)
+                        .addGap(103, 103, 103)
                         .addComponent(jButton3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,8 +180,8 @@ public class MateriasxProfesor extends javax.swing.JFrame
                     .addComponent(jLabel1))
                 .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTodasM)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(btnTodasM))
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 239, Short.MAX_VALUE))
@@ -211,13 +213,22 @@ public class MateriasxProfesor extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton3ActionPerformed
          new BuscarMateria2().setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTodasMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodasMActionPerformed
     {//GEN-HEADEREND:event_btnTodasMActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnTodasMActionPerformed
 
+     public void Mostrar3()
+    {
+        Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
+        Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
+        Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
+        Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -271,6 +282,7 @@ public class MateriasxProfesor extends javax.swing.JFrame
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnTodasM;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

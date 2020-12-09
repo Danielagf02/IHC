@@ -35,7 +35,7 @@ public class ManipulaBD
         ArrayList<Adminis1> lista = new ArrayList<>();
         try
         {
-            for (int i = 0; i <= reg.size(); i += 17)
+            for (int i = 0; i <= reg.size(); i += 15)
             {
                 String idS = "";
                 idS = (String) reg.get(i);
@@ -54,15 +54,14 @@ public class ManipulaBD
                     int telefono = Integer.parseInt(tele);
                     String CedulaProfe = ((String) reg.get(i + 9)).trim();
                     String Direccion = ((String) reg.get(i + 10)).trim();
+                    Direccion = Direccion.replace("|", " ");
                     String FolioEmpleadoS = ((String) reg.get(i + 11)).trim();
                     int FolioEmpleado = Integer.parseInt(FolioEmpleadoS);
-                    String Hentrada = ((String) reg.get(i + 12)).trim();
-                    String Hsalida = ((String) reg.get(i + 13)).trim();
-                    String Puesto = ((String) reg.get(i + 14)).trim();
-                    String Correo = ((String) reg.get(i + 15)).trim();
-                    String Contrasenia = ((String) reg.get(i + 16)).trim();
+                    String Puesto = ((String) reg.get(i + 12)).trim();
+                    String Correo = ((String) reg.get(i + 13)).trim();
+                    String Contrasenia = ((String) reg.get(i + 14)).trim();
                     Adminis1 obj = new Adminis1(id, ApellidoP, ApellidoM, Nombre, FechaNacimiento, Curp, rfc, sexo, telefono,
-                            CedulaProfe, Direccion, FolioEmpleado, Hentrada, Hsalida, Puesto, Correo, Contrasenia);
+                            CedulaProfe, Direccion, FolioEmpleado, Puesto, Correo, Contrasenia);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
                 }
@@ -348,8 +347,6 @@ public class ManipulaBD
      * @param Direccion tipo String (Solo se acepta una palabra por errores en
      * la base de datos)
      * @param FolioEmpleado tipo int
-     * @param Hentrada tipo String
-     * @param Hsalida tipo String
      * @param Puesto tipo String
      * @param Correo tipo String
      * @param Contraseña tipo String
@@ -359,6 +356,7 @@ public class ManipulaBD
             String Puesto, String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
+        Direccion = Direccion.replace(" ", "|");
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();

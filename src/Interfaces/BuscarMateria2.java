@@ -26,7 +26,7 @@ public class BuscarMateria2 extends javax.swing.JFrame
 
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-         CtrlInterfaz.habilita(false, Buscar);
+        CtrlInterfaz.habilita(false, Buscar);
       }
 
     /**
@@ -184,11 +184,15 @@ public class BuscarMateria2 extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        String nMateria = "";
+        String nMateria = jtNMateria.getText();
+        System.out.println(nMateria);
         CtrlInterfaz.habilita(false, Buscar);
+        MateriasxProfesor.mat = ManipulaBD.ConsultasMaterias("Nombre=", "'" + jtNMateria.getText() + "'");
         CtrlInterfaz.limpia(jtNMateria);
-        
-        new Materias(ManipulaBD.ConsultasMaterias("Materias=", "'"+ nMateria +"'" )).setVisible(true);
+
+        MateriasxProfesor obj = new MateriasxProfesor();
+        obj.setVisible(true);
+        obj.Mostrar3();
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 

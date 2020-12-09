@@ -6,6 +6,7 @@ package Interno;
  */
 public class Adminis1
 {
+
     private int id;
     private String ApellidoP;
     private String ApellidoM;
@@ -18,8 +19,6 @@ public class Adminis1
     private String CedulaProfe;
     private String Direccion;
     private int FolioEmpleado;
-    private String Hentrada;
-    private String Hsalida;
     private String Puesto;
     private String Correo;
     private String Contrasenia;
@@ -28,7 +27,7 @@ public class Adminis1
     {
     }
 
-    public Adminis1(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida, String Puesto, String Correo, String Contraseña)
+    public Adminis1(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Puesto, String Correo, String Contraseña)
     {
         this.id = id;
         this.ApellidoP = ApellidoP;
@@ -42,8 +41,6 @@ public class Adminis1
         this.CedulaProfe = CedulaProfe;
         this.Direccion = Direccion;
         this.FolioEmpleado = FolioEmpleado;
-        this.Hentrada = Hentrada;
-        this.Hsalida = Hsalida;
         this.Puesto = Puesto;
         this.Correo = Correo;
         this.Contrasenia = Contraseña;
@@ -242,38 +239,6 @@ public class Adminis1
     }
 
     /**
-     * @return the Hentrada
-     */
-    public String getHentrada()
-    {
-        return Hentrada;
-    }
-
-    /**
-     * @param Hentrada the Hentrada to set
-     */
-    public void setHentrada(String Hentrada)
-    {
-        this.Hentrada = Hentrada;
-    }
-
-    /**
-     * @return the Hsalida
-     */
-    public String getHsalida()
-    {
-        return Hsalida;
-    }
-
-    /**
-     * @param Hsalida the Hsalida to set
-     */
-    public void setHsalida(String Hsalida)
-    {
-        this.Hsalida = Hsalida;
-    }
-
-    /**
      * @return the Puesto
      */
     public String getPuesto()
@@ -320,7 +285,5 @@ public class Adminis1
     {
         this.Contrasenia = Contrasenia;
     }
-    
 
-    
 }
