@@ -249,10 +249,11 @@ public class PrincipalDocente extends javax.swing.JFrame
                 if (EscribirContraseña.getText().compareTo(obj.get(0).getContraseña()) == 0)
                 {
                     System.out.println("Si existe");
+                    new IProfesores().setVisible(true);
+                    this.setVisible(false);
                 }
             }
-            new IProfesores().setVisible(true);
-            this.setVisible(false);
+
         }
 
     }//GEN-LAST:event_IniciarSesionActionPerformed

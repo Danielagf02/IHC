@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
+import Interno.Horarios1;
+import Interno.ManipulaBD;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,18 +12,32 @@ import javax.swing.ImageIcon;
 public class MisHorariosP extends javax.swing.JFrame
 {
 
+    ArrayList<Horarios1> hor = null;
+
     /**
      * Creates new form TodosHorarios
      */
     public MisHorariosP()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
         jLIm.setIcon(icono1);
+
+        String condicion = String.valueOf(PrincipalDocente.obj.get(0).getGrado());
+        hor = ManipulaBD.ConsultasHorarios("grado=", condicion);
+        int con = 0;
+        for (int i = 0; i < hor.size(); i++)
+        {
+            if (hor.get(i).getGrupo().compareTo(PrincipalDocente.obj.get(0).getGrupo()) == 0)
+            {
+                
+            }
+        }
+
     }
 
     /**
@@ -78,13 +90,13 @@ public class MisHorariosP extends javax.swing.JFrame
             },
             new String []
             {
-                "Horas", "Dia", "ID", "Materia", "Grado", "Grupo"
+                "Materia", "Hora Inicio", "Hora Salida", "Dia", "Grado", "Grupo"
             }
         )
         {
             Class[] types = new Class []
             {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex)
