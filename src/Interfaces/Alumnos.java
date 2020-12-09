@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 public class Alumnos extends javax.swing.JFrame
   {
 
+    public static ArrayList<Alumnno1> objeto;
+
     /**
      * Creates new form Alumnos
      */
@@ -37,7 +39,7 @@ public class Alumnos extends javax.swing.JFrame
 
     Alumnos(ArrayList<Alumnno1> ConsultasAlumnos)
       {
-        for (int i = 0; i < ConsultasAlumnos.size();  i++)
+        for (int i = 0; i < ConsultasAlumnos.size(); i++)
           {
             System.out.print(ConsultasAlumnos.get(i));
             System.out.println("\n");
