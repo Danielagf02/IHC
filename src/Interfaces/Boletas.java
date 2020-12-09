@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import static Interfaces.Materias.mat;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -27,7 +28,8 @@ import poo.bd.Querys;
  *
  * @author DanielaGF
  */
-public class Boletas extends javax.swing.JFrame {
+public class Boletas extends javax.swing.JFrame
+  {
 
     ArrayList<Object> datos = new ArrayList<Object>();
     ArrayList<Object> datos2 = new ArrayList<Object>();
@@ -38,20 +40,24 @@ public class Boletas extends javax.swing.JFrame {
     /**
      * Creates new form Alumnos
      */
-    public Boletas() {
+    public Boletas()
+      {
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-    }
+      }
 
-    public void abrir(String nombre) {
-        try {
+    public void abrir(String nombre)
+      {
+        try
+          {
             File path = new File(nombre + ".pdf");
             Desktop.getDesktop().open(path);
-        } catch (IOException ex) {
+          } catch (IOException ex)
+          {
             JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
-        }
-    }
+          }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,7 +77,7 @@ public class Boletas extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableBoletas = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -117,8 +123,8 @@ public class Boletas extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableBoletas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTableBoletas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null},
@@ -137,7 +143,7 @@ public class Boletas extends javax.swing.JFrame {
                 "Materias", "Calificaciones"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableBoletas);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -228,47 +234,57 @@ public class Boletas extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    public void Mostrar()
+    {
+        jTableBoletas.setValueAt(mat.get(0).getNombre(), 0, 0);
+        jTableBoletas.setValueAt(mat.get(0).getNombre(), 0, 1);
+ 
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
     {//GEN-HEADEREND:event_jButton4ActionPerformed
         new BuscarAlumno3().setVisible(true);
         this.setVisible(false);
-        int fils = jTable2.getRowCount();
+        int fils = jTableBoletas.getRowCount();
         System.out.println("FILAS: " + fils);
         String arr[] = new String[fils];
-        
-        for (int i = 0; i < fils; i++) 
-        {
-            arr[i] += jTable2.getValueAt(i, 0);
-        }
 
-        for (int i = 0; i < fils; i++) 
-        {
-            arr[i] += "\t\t" + jTable2.getValueAt(i, 1);
-        }
+        for (int i = 0; i < fils; i++)
+          {
+            arr[i] += jTableBoletas.getValueAt(i, 0);
+          }
+
+        for (int i = 0; i < fils; i++)
+          {
+            arr[i] += "\t\t" + jTableBoletas.getValueAt(i, 1);
+          }
         String cali = "";
-        for (int i = 0; i < arr.length; i++) 
-        {
-            if (arr[i].contains("null")) 
-            {
+        for (int i = 0; i < arr.length; i++)
+          {
+            if (arr[i].contains("null"))
+              {
                 cali += arr[i].replaceAll("null", "");
-            }
-        }
+              }
+          }
 
         System.out.println(cali);
         FileOutputStream archivo;
-        String nombreAlumno= (String) datos.get(1);
-        try{
-            
+        String nombreAlumno = (String) datos.get(1);
+        try
+          {
+
             archivo = new FileOutputStream(nombreAlumno + ".pdf");
             Document documento = new Document();
-            try{
+            try
+              {
                 PdfWriter.getInstance(documento, archivo);
-           }catch (DocumentException ex) 
-            {
-                        Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+              } catch (DocumentException ex)
+              {
+                Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+              }
             documento.open();
-            try{
+            try
+              {
                 documento.add(new Paragraph("Datos del alumno"));
                 documento.add(new Paragraph("Folio Alumno: " + datos2.get(0)));
                 documento.add(new Paragraph("Apellido paterno: " + datos2.get(1)));
@@ -278,15 +294,17 @@ public class Boletas extends javax.swing.JFrame {
                 documento.add(new Paragraph("Grado: " + datos2.get(4)));
                 documento.add(new Paragraph("Grupo: " + datos2.get(5)));
 
-            }catch (DocumentException ex) {
-                        Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
-                   }
+              } catch (DocumentException ex)
+              {
+                Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+              }
 
             documento.close();
             JOptionPane.showMessageDialog(null, "PDF creado correctamente", "Reporte", 1);
-        } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Error: " + ex,"Advertencia",1);
-            }
+          } catch (FileNotFoundException ex)
+          {
+            JOptionPane.showMessageDialog(null, "Error: " + ex, "Advertencia", 1);
+          }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5ActionPerformed
@@ -298,28 +316,36 @@ public class Boletas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+          {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+              {
+                if ("Nimbus".equals(info.getName()))
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(Boletas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(Boletas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(Boletas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(Boletas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -330,12 +356,14 @@ public class Boletas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+          {
+            public void run()
+              {
                 new Boletas().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegresar;
@@ -348,6 +376,6 @@ public class Boletas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableBoletas;
     // End of variables declaration//GEN-END:variables
 }

@@ -181,21 +181,23 @@ public class BuscarAlumno1 extends javax.swing.JFrame
     private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
     {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
         if (jtFAlumno.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, evt);
             Buscar.setEnabled(true);
-        }
+          }
     }//GEN-LAST:event_jtFAlumnoKeyPressed
 
     private void jtFAlumnoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyTyped
     {//GEN-HEADEREND:event_jtFAlumnoKeyTyped
-        if (jtFAlumno.getText().length() != 7 ) {
+        if (jtFAlumno.getText().length() != 7)
+          {
             //evt.consume();
             Validaciones.validaEntero(evt);
-        } else {
+          } else
+          {
             //Validaciones.validaEntero(evt);
             evt.consume();
-        }
+          }
     }//GEN-LAST:event_jtFAlumnoKeyTyped
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
@@ -204,7 +206,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
         CtrlInterfaz.limpia(jtFAlumno);
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
 
-        Alumnos.objeto = ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
+        Alumnos.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + fAlumno + "");
         new Alumnos().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
