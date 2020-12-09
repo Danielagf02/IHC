@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import Interno.Profesor1;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,6 +15,7 @@ import javax.swing.ImageIcon;
  */
 public class VerInfProfesores extends javax.swing.JFrame
 {
+    public static ArrayList<Profesor1> objeto;
 
     /**
      * Creates new form Alumnos
@@ -23,6 +26,15 @@ public class VerInfProfesores extends javax.swing.JFrame
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
+         String condicion;
+      
+        TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        TaDatosP.setValueAt(objeto.get(0).getNombres(), 0, 3);
+        TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 4);
+       
+
+        condicion = String.valueOf(objeto.get(0).getId());
     }
 
     /**
@@ -41,7 +53,7 @@ public class VerInfProfesores extends javax.swing.JFrame
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TaDatosP = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -73,8 +85,8 @@ public class VerInfProfesores extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosP.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaDatosP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null}
@@ -95,7 +107,7 @@ public class VerInfProfesores extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TaDatosP);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,12 +222,12 @@ public class VerInfProfesores extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaDatosP;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
