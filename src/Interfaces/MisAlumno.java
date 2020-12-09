@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 public class MisAlumno extends javax.swing.JFrame
   {
 
+    public static ArrayList<Alumnno1> objeto;
+
     /**
      * Creates new form Alumnos
      */

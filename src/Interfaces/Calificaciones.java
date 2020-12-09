@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  * @author DanielaGF
  */
 public class Calificaciones extends javax.swing.JFrame
-{
+  {
 
     public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
@@ -22,7 +22,7 @@ public class Calificaciones extends javax.swing.JFrame
      * Creates new form Alumnos
      */
     public Calificaciones()
-    {
+      {
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
@@ -40,14 +40,14 @@ public class Calificaciones extends javax.swing.JFrame
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
         for (int i = 0; i < cal.size(); i++)
-        {
+          {
             condicion = String.valueOf(cal.get(i).getId_Materia());
             mat = ManipulaBD.ConsultasMaterias("id=", condicion);
             TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
             TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
-        }
+          }
 
-    }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -247,9 +247,9 @@ public class Calificaciones extends javax.swing.JFrame
     {//GEN-HEADEREND:event_BModificaCalActionPerformed
 
         for (int i = 0; i < cal.size(); i++)
-        {
+          {
             ManipulaBD.ModificarCalificaciones(cal.get(i).getId(), "Calificacion", "" + TaCali.getValueAt(i, 1) + "");
-        }
+          }
 
 
     }//GEN-LAST:event_BModificaCalActionPerformed
@@ -258,47 +258,47 @@ public class Calificaciones extends javax.swing.JFrame
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(Calificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new Calificaciones().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BModificaCal;

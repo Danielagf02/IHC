@@ -23,7 +23,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
     public BuscarAlumno1()
       {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         CtrlInterfaz.habilita(false, Buscar);
@@ -184,7 +184,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
           {
             Validaciones.enter(this, evt, evt);
             Buscar.setEnabled(true);
-            
+
           }
     }//GEN-LAST:event_jtFAlumnoKeyPressed
 
@@ -199,7 +199,7 @@ public class BuscarAlumno1 extends javax.swing.JFrame
         CtrlInterfaz.limpia(jtFAlumno);
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
 
-        Alumnos.objeto=ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
+        Alumnos.objeto = ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
         new Alumnos().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed

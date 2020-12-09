@@ -198,7 +198,7 @@ public class BuscarAlumno3 extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
-       Calificaciones.objeto=ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
+        Calificaciones.objeto = ManipulaBD.ConsultasAlumnos("folio=", String.valueOf(fAlumno));
         new Calificaciones().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
