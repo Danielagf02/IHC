@@ -356,7 +356,7 @@ public class ManipulaBD
      * @param Contraseña tipo String
      */
     public static void AltasAdminis(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP,
-            String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, String Hentrada, String Hsalida,
+            String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, 
             String Puesto, String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
@@ -376,8 +376,6 @@ public class ManipulaBD
                     + CedulaProfe + "','"
                     + Direccion + "',"
                     + FolioEmpleado + ",'"
-                    + Hentrada + "','"
-                    + Hsalida + "','"
                     + Puesto + "','"
                     + Correo + "','"
                     + Contraseña + "'");
@@ -485,7 +483,7 @@ public class ManipulaBD
      */
     public static void AltasProfesores(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres,
             String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf, String Direccion, String rfc,
-            String Hentrada, String Hsalida, String Correo, String Contraseña)
+            String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
         if (con != null)
@@ -505,8 +503,6 @@ public class ManipulaBD
                     + CedulaProf + "','"
                     + Direccion + "','"
                     + rfc + "','"
-                    + Hentrada + "','"
-                    + Hsalida + "','"
                     + Correo + "','"
                     + Contraseña + "'");
             ManipulaBD.desconecta(con);
