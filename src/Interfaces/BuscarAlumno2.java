@@ -144,12 +144,12 @@ public class BuscarAlumno2 extends javax.swing.JFrame
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancelar)
                     .addComponent(Buscar))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,10 +194,10 @@ public class BuscarAlumno2 extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
-        Calificaciones.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", String.valueOf(fAlumno));
-        System.out.println(Calificaciones.objeto.get(0).getNombre());
+        Calificaciones.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", ""+fAlumno+"");
         Calificaciones nueva = new Calificaciones();
         nueva.setVisible(true);
+        nueva.Mostrar();
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 
