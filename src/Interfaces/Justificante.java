@@ -45,14 +45,7 @@ public class Justificante extends javax.swing.JFrame
      */
     public Justificante()
     {
-       String Folio = JOptionPane.showInputDialog("Folio del Alumno");
-        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
-        jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+       
         
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
@@ -280,8 +273,14 @@ public class Justificante extends javax.swing.JFrame
 
     private void BuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAActionPerformed
     {//GEN-HEADEREND:event_BuscarAActionPerformed
-         new BuscarAlumno().setVisible(true);
-        this.setVisible(false);
+         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
+        jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
     }//GEN-LAST:event_BuscarAActionPerformed
 
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ImprimirActionPerformed
