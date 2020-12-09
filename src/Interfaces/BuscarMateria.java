@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import Interno.ManipulaBD;
@@ -180,9 +175,11 @@ public class BuscarMateria extends javax.swing.JFrame
         String nMateria = jtNMateria.getText();
         System.out.println(nMateria);
         CtrlInterfaz.habilita(false, Buscar);
-        new Materias().setVisible(true);
         Materias.mat = ManipulaBD.ConsultasMaterias("Nombre=", "'" + jtNMateria.getText() + "'");
         CtrlInterfaz.limpia(jtNMateria);
+        Materias obj = new Materias();
+        obj.setVisible(true);
+        obj.Mostrar();
         this.setVisible(false);
 
     }//GEN-LAST:event_BuscarActionPerformed

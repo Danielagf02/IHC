@@ -6,27 +6,45 @@
 package Interfaces;
 
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
+import Interno.Horarios1;
+import Interno.ManipulaBD;
+import Interno.Materias1;
 
 /**
  *
  * @author DanielaGF
  */
-public class TodosHorarios extends javax.swing.JFrame
-{
+public class TodosHorarios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TodosHorarios
-     */
-    public TodosHorarios()
-    {
-        initComponents();
+    ArrayList<Horarios1> hor = null;
+    ArrayList<Materias1> mat = null;
+
+    public TodosHorarios() {
+        String variable = "id=";
+        String condicion = "1";
+        condicion = String.valueOf(hor.get(0).getId());
+        hor = ManipulaBD.ConsultasHorarios("id", condicion);
+        mat = ManipulaBD.ConsultasMaterias("id_Materia", condicion);
         
+        for (int i = 0; i < hor.size(); i++) {
+            condicion = String.valueOf(hor.get(i).getId_Materia());
+            jTablaHor.setValueAt(hor.get(i).getHoraI(), i, 0);
+            jTablaHor.setValueAt(hor.get(i).getHoraF(), i, 1);
+            jTablaHor.setValueAt(hor.get(i).getDia(), i,2);
+            jTablaHor.setValueAt(hor.get(i).getId_Materia(), i, 3);
+            jTablaHor.setValueAt(mat.get(i).getNombre(), i, 4);
+            jTablaHor.setValueAt(hor.get(i).getGrado(), i, 5);
+            jTablaHor.setValueAt(hor.get(i).getGrupo(), i, 6);
+        }
+        initComponents();
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
         jLIm.setIcon(icono1);
-        
+
     }
 
     /**
@@ -36,15 +54,14 @@ public class TodosHorarios extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLIm = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTablaHor = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,18 +71,15 @@ public class TodosHorarios extends javax.swing.JFrame
         jLabel1.setText("Todos los horarios ");
 
         btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegresar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
+        jTablaHor.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTablaHor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -93,23 +107,19 @@ public class TodosHorarios extends javax.swing.JFrame
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
-            new String []
-            {
+            new String [] {
                 "Horas", "Dia", "ID", "Materia", "Grado", "Grupo"
             }
-        )
-        {
-            Class[] types = new Class []
-            {
+        ) {
+            Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
-            public Class getColumnClass(int columnIndex)
-            {
+            public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTablaHor);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,44 +179,34 @@ public class TodosHorarios extends javax.swing.JFrame
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try
-        {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
-                if ("Nimbus".equals(info.getName()))
-                {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex)
-        {
+        } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(TodosHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(TodosHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(TodosHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TodosHorarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new TodosHorarios().setVisible(true);
             }
         });
@@ -218,6 +218,6 @@ public class TodosHorarios extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTablaHor;
     // End of variables declaration//GEN-END:variables
 }
