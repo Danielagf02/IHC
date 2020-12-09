@@ -26,9 +26,7 @@ public class Calificaciones extends javax.swing.JFrame
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        String variable = "id=";
-        String condicion = "1";
-        objeto = ManipulaBD.ConsultasAlumnos(variable, condicion);
+        String condicion;
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
@@ -46,7 +44,6 @@ public class Calificaciones extends javax.swing.JFrame
             TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
             TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
           }
-
       }
 
     /**
