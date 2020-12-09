@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class Calificaciones extends javax.swing.JFrame
 {
 
-    public static ArrayList<Alumnno1> objeto = null;
+    public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
     ArrayList<Materias1> mat = null;
 
@@ -49,7 +49,6 @@ public class Calificaciones extends javax.swing.JFrame
 
     }
 
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,7 +69,7 @@ public class Calificaciones extends javax.swing.JFrame
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TaCali = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
+        BModificaCal = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -144,18 +143,29 @@ public class Calificaciones extends javax.swing.JFrame
             {
                 "Materias", "Calificaciones"
             }
-        ));
+        )
+        {
+            Class[] types = new Class []
+            {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex)
+            {
+                return types [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(TaCali);
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton4.setText("Modificar Calificación");
-        jButton4.setToolTipText("");
-        jButton4.addActionListener(new java.awt.event.ActionListener()
+        BModificaCal.setBackground(new java.awt.Color(255, 255, 255));
+        BModificaCal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BModificaCal.setText("Modificar Calificación");
+        BModificaCal.setToolTipText("");
+        BModificaCal.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton4ActionPerformed(evt);
+                BModificaCalActionPerformed(evt);
             }
         });
 
@@ -182,7 +192,7 @@ public class Calificaciones extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(BModificaCal)
                         .addGap(102, 102, 102)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -200,7 +210,7 @@ public class Calificaciones extends javax.swing.JFrame
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(BModificaCal)
                 .addGap(37, 37, 37))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -233,10 +243,16 @@ public class Calificaciones extends javax.swing.JFrame
 
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
-    {//GEN-HEADEREND:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void BModificaCalActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BModificaCalActionPerformed
+    {//GEN-HEADEREND:event_BModificaCalActionPerformed
+
+        for (int i = 0; i < cal.size(); i++)
+        {
+            ManipulaBD.ModificarCalificaciones(cal.get(i).getId(), "Calificacion", "" + TaCali.getValueAt(i, 1) + "");
+        }
+
+
+    }//GEN-LAST:event_BModificaCalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,12 +301,12 @@ public class Calificaciones extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BModificaCal;
     private javax.swing.JButton BuscarAlumno;
     private javax.swing.JTable TaCali;
     private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

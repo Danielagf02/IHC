@@ -17,7 +17,7 @@ public class ManipulaBD
     {
         try
         {
-            return con.Conecta("localhost:3306", "controlescolar", "root", "", 2);
+            return con.Conecta("localhost:3306", "controlecolar", "root", "", 2);
         } catch (Exception ex)
         {
             System.out.println("Error al conectar en metodo conecta");
@@ -893,7 +893,7 @@ public class ManipulaBD
             ArrayList<Materias1> ap = ManipulaBD.CargarMateria(sql.Seleccion(con, "*", "materias", "id=" + id + ""));
             if (ap != null)
             {
-                sql.Modificar(con, "materias", campos, datos, "id='" + id + "'");
+                sql.Modificar(con, "materias", campos, datos, "id=" + id + "");
                 ManipulaBD.desconecta(con);
                 System.out.println("Modificados");
             }
