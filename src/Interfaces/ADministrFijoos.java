@@ -5,6 +5,9 @@
  */
 package Interfaces;
 
+import Interno.Adminis1;
+import Interno.ManipulaBD;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /**
@@ -13,6 +16,7 @@ import javax.swing.ImageIcon;
  */
 public class ADministrFijoos extends javax.swing.JFrame
 {
+    ArrayList<Adminis1> objeto;
 
     /**
      * Creates new form ADministrFijoos
@@ -22,6 +26,19 @@ public class ADministrFijoos extends javax.swing.JFrame
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
+        
+        String condicion = "-1";
+        objeto = ManipulaBD.ConsultasAdmins("id!=", condicion);
+        for (int i = 0; i < objeto.size(); i++)
+        {
+           
+            
+        TaDatosA.setValueAt(objeto.get(i).getCorreo(), i, 0);
+        TaDatosA.setValueAt(objeto.get(i).getContrasenia(), i, 1);
+      
+        
+       
+        }
     }
 
     /**
@@ -31,12 +48,13 @@ public class ADministrFijoos extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TaDatosA = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -48,8 +66,9 @@ public class ADministrFijoos extends javax.swing.JFrame
         jLabel1.setText("Usuarios definidos Adminsitradores");
         jLabel1.setToolTipText("");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        TaDatosA.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
                 {null, null},
                 {null, null},
                 {null, null},
@@ -61,15 +80,18 @@ public class ADministrFijoos extends javax.swing.JFrame
                 {null, null},
                 {null, null}
             },
-            new String [] {
+            new String []
+            {
                 "Usuario", "Contraseña"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TaDatosA);
 
         btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnRegresarActionPerformed(evt);
             }
         });
@@ -78,8 +100,10 @@ public class ADministrFijoos extends javax.swing.JFrame
         jButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 153, 255));
         jButton2.setText("Modificar Contraseña");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton2.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton2ActionPerformed(evt);
             }
         });
@@ -183,11 +207,11 @@ public class ADministrFijoos extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaDatosA;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

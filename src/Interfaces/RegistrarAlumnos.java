@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interno.Extras1;
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -33,6 +34,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class RegistrarAlumnos extends javax.swing.JFrame
 {
     String sex; //Para guardar el sexo
+    int id=1;
     /**
      * Creates new form Registrarse
      */
@@ -588,31 +590,36 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-        //new Principal().setVisible(true);
-        //this.setVisible(false);
-       
        String nombre = tfNombre.getText();
        String apellidoP = tfAPaterno.getText();
        String apellidoM = tfAMaterno.getText();
        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
        int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
+        if (rbHombre.isSelected())
+        {
+            sex = "Mujer";
+        }else 
+        {
+            if (rbHombre.isSelected())
+            {
+                sex = "Hombre";
+            }
+        }
        String curp = tfCurp.getText();
-       String grado = tfGrado.getText();
+       int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
        String grupo = tfGrupo.getText();
-       String tel = tfTel.getText();
+       int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
        String nomMa = tfNombreM.getText();
        String nomPa = tfNombreP.getText();
-       String folio = tfFolio.getText();
+       int folio = Integer.parseInt(String.valueOf(tfFolio.getText()));
        String correo = tfCorreo.getText();
        String contra = tfContraseña.getText();
        
        //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
-       
-       //AQUI se hacen las validaciones con la conexion de base de datos 
-       //NINGUN CAMPO PUEDE IR VACIO
+       ManipulaBD.AltasAlumnos(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp, sex, tel, nomMa, nomPa, folio, correo, contra);
        
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-       
+        id++;
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
