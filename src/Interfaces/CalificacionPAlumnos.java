@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import javax.swing.ImageIcon;
@@ -19,11 +14,13 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
      */
     public CalificacionPAlumnos()
     {
-          initComponents();
-        
+        initComponents();
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
+        
+
     }
 
     /**

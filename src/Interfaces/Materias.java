@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 public class Materias extends javax.swing.JFrame
 {
 
-    ArrayList<Materias1> mat = null;
+    public static ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Alumnos
@@ -31,15 +31,16 @@ public class Materias extends javax.swing.JFrame
 
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
         btnTodasM.setIcon(icono1);
-        String condicion = "-1";
-        mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
-        for (int i = 0; i < mat.size(); i++)
-        {
-            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
-            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
-            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
-            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
-        }
+
+        
+    }
+    
+    public void Mostrar()
+    {
+        Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
+        Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
+        Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
+        Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
     }
 
     Materias(ArrayList<Interno.Materias1> ConsultasMaterias)
@@ -56,7 +57,8 @@ public class Materias extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -83,18 +85,29 @@ public class Materias extends javax.swing.JFrame
         btnTodasM.setBackground(new java.awt.Color(255, 255, 255));
         btnTodasM.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTodasM.setText("Todas las Materias ");
+        btnTodasM.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnTodasMActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton3.setText("Buscar Materia");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton3.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnRegresarActionPerformed(evt);
             }
         });
@@ -121,15 +134,18 @@ public class Materias extends javax.swing.JFrame
         jButton6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 153, 255));
         jButton6.setText("Modificar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton6.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton6ActionPerformed(evt);
             }
         });
 
         Tablamat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Tablamat.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+            new Object [][]
+            {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
@@ -157,15 +173,19 @@ public class Materias extends javax.swing.JFrame
                 {null, null, null, null},
                 {null, null, null, null}
             },
-            new String [] {
+            new String []
+            {
                 "ID", "Materia", "Grado", "Grupo"
             }
-        ) {
-            Class[] types = new Class [] {
+        )
+        {
+            Class[] types = new Class []
+            {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
-            public Class getColumnClass(int columnIndex) {
+            public Class getColumnClass(int columnIndex)
+            {
                 return types [columnIndex];
             }
         });
@@ -175,8 +195,10 @@ public class Materias extends javax.swing.JFrame
         jButton9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 102, 0));
         jButton9.setText("Agregar Materia");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton9.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton9ActionPerformed(evt);
             }
         });
@@ -262,13 +284,28 @@ public class Materias extends javax.swing.JFrame
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
         new BuscarMateria().setVisible(true);
+        System.out.println(mat.get(0).getNombre());
         this.setVisible(false);
+        Mostrar();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         new ModificarMateria().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnTodasMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodasMActionPerformed
+    {//GEN-HEADEREND:event_btnTodasMActionPerformed
+        String condicion = "-1";
+        mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
+        for (int i = 0; i < mat.size(); i++)
+        {
+            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
+            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
+            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
+            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
+        }
+    }//GEN-LAST:event_btnTodasMActionPerformed
 
     /**
      * @param args the command line arguments
