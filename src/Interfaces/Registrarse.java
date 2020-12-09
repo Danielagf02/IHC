@@ -622,10 +622,20 @@ public class Registrarse extends javax.swing.JFrame
        String dir = TDireccion.getText();
        String rfc = TRFC.getText();
        String correo = TCorreo.getText();
-       String contra = TContra.getText();       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+       String contra = TContra.getText();       
+       
+       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
         ManipulaBD.AltasAdminis(folio, apellidoP, apellidoM, nombre, fechaNa, curp, rfc, sex, tel, ced, dir, folio, puesto, correo, contra);
        
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
+        
+        CtrlInterfaz.limpia(TNombre, TApellidoP, TApellidoM, TDIA, TMes, TAnio, TCurp, TFolio, TPuesto, TTelefono, TCedula, TDireccion, TRFC, TCorreo, TContra);
+        //CtrlInterfaz.habilita(false, rbHombre, rbMujer);
+        rbHombre.setEnabled(false);
+        rbMujer.setEnabled(false);
+        CtrlInterfaz.habilita(false, TApellidoP, TApellidoM, TDIA, TMes, TAnio, TCurp, TFolio, TPuesto, TTelefono, TCedula, TDireccion, TRFC, TCorreo, TContra);
+        btnRegistrar.setEnabled(false);
+        btnCurp.setEnabled(false);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
