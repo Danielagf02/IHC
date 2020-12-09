@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interno.Alumnno1;
+import Interno.ManipulaBD;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -36,6 +37,27 @@ public class MisAlumno extends javax.swing.JFrame
         btnSalir.setIcon(icono2);
 
       }
+    public void Mostrar()
+    {
+       
+        
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomMadre(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomPadre(), 0, 10);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContraseña(), 0, 13);
+      
+        
+    }
 
     MisAlumno(ArrayList<Alumnno1> ConsultasAlumnos)
       {
@@ -65,7 +87,7 @@ public class MisAlumno extends javax.swing.JFrame
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -129,8 +151,8 @@ public class MisAlumno extends javax.swing.JFrame
             }
         });
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -750,7 +772,7 @@ public class MisAlumno extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(TaDatosAlumno);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -833,7 +855,26 @@ public class MisAlumno extends javax.swing.JFrame
 
     private void btnTodosAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosAActionPerformed
     {//GEN-HEADEREND:event_btnTodosAActionPerformed
-        // TODO add your handling code here:
+         String condicion = "-1";
+        objeto = ManipulaBD.ConsultasAlumnos("id!=", condicion);
+        for (int i = 0; i < objeto.size(); i++)
+        {
+        TaDatosAlumno.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+        TaDatosAlumno.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+        TaDatosAlumno.setValueAt(objeto.get(i).getNombre(), i, 2);
+        TaDatosAlumno.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+        TaDatosAlumno.setValueAt(objeto.get(i).getCURP(), i, 4);
+        TaDatosAlumno.setValueAt(objeto.get(i).getSexo(), i, 5);
+        TaDatosAlumno.setValueAt(objeto.get(i).getGrado(), i, 6);
+        TaDatosAlumno.setValueAt(objeto.get(i).getGrupo(), i, 7);
+        TaDatosAlumno.setValueAt(objeto.get(i).getTelefono(), i, 8);
+        TaDatosAlumno.setValueAt(objeto.get(i).getNomMadre(), i, 9);
+        TaDatosAlumno.setValueAt(objeto.get(i).getNomPadre(), i, 10);
+        TaDatosAlumno.setValueAt(objeto.get(i).getFolioAlumno(), i, 11);
+        TaDatosAlumno.setValueAt(objeto.get(i).getCorreo(), i, 12);
+        TaDatosAlumno.setValueAt(objeto.get(i).getContraseña(), i, 13);
+       
+        }
     }//GEN-LAST:event_btnTodosAActionPerformed
 
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
@@ -903,6 +944,7 @@ public class MisAlumno extends javax.swing.JFrame
       }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosA;
@@ -912,6 +954,5 @@ public class MisAlumno extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
