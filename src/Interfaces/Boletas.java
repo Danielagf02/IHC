@@ -6,6 +6,11 @@
 package Interfaces;
 
 import static Interfaces.Materias.mat;
+import static Interfaces.RegistarCalificaciones.objeto;
+import Interno.Alumnno1;
+import Interno.Calificaciones1;
+import Interno.ManipulaBD;
+import Interno.Materias1;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -35,6 +40,10 @@ public class Boletas extends javax.swing.JFrame
     ArrayList<Object> datos2 = new ArrayList<Object>();
     Querys q = new Querys();
 
+    public static ArrayList<Alumnno1> objeto;
+    ArrayList<Calificaciones1> cal = null;
+    ArrayList<Materias1> mat = null;
+
     DefaultTableModel modelo;
 
     /**
@@ -45,6 +54,29 @@ public class Boletas extends javax.swing.JFrame
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
+        String condicion;
+      }
+
+    public void Mostrar()
+      {
+
+        jTBoletas.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTBoletas.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTBoletas.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTBoletas.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTBoletas.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTBoletas.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+        String condicion = String.valueOf(objeto.get(0).getId());
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+
+        for (int i = 0; i < cal.size(); i++)
+          {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            jTCalificaciones.setValueAt(mat.get(0).getNombre(), i, 0);
+            jTCalificaciones.setValueAt(cal.get(i).getCalificacion(), i, 1);
+          }
+
       }
 
     public void abrir(String nombre)
@@ -73,11 +105,11 @@ public class Boletas extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTBoletas = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTableBoletas = new javax.swing.JTable();
+        jTCalificaciones = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -90,7 +122,7 @@ public class Boletas extends javax.swing.JFrame
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Boletas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTBoletas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null}
@@ -100,7 +132,7 @@ public class Boletas extends javax.swing.JFrame
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTBoletas);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -123,8 +155,8 @@ public class Boletas extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTableBoletas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTableBoletas.setModel(new javax.swing.table.DefaultTableModel(
+        jTCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTCalificaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null},
@@ -143,7 +175,7 @@ public class Boletas extends javax.swing.JFrame
                 "Materias", "Calificaciones"
             }
         ));
-        jScrollPane2.setViewportView(jTableBoletas);
+        jScrollPane2.setViewportView(jTCalificaciones);
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -234,29 +266,23 @@ public class Boletas extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    public void Mostrar()
-    {
-        jTableBoletas.setValueAt(mat.get(0).getNombre(), 0, 0);
-        jTableBoletas.setValueAt(mat.get(0).getNombre(), 0, 1);
- 
-    }
-    
+
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
     {//GEN-HEADEREND:event_jButton4ActionPerformed
         new BuscarAlumno3().setVisible(true);
         this.setVisible(false);
-        int fils = jTableBoletas.getRowCount();
+        int fils = jTCalificaciones.getRowCount();
         System.out.println("FILAS: " + fils);
         String arr[] = new String[fils];
 
         for (int i = 0; i < fils; i++)
           {
-            arr[i] += jTableBoletas.getValueAt(i, 0);
+            arr[i] += jTCalificaciones.getValueAt(i, 0);
           }
 
         for (int i = 0; i < fils; i++)
           {
-            arr[i] += "\t\t" + jTableBoletas.getValueAt(i, 1);
+            arr[i] += "\t\t" + jTCalificaciones.getValueAt(i, 1);
           }
         String cali = "";
         for (int i = 0; i < arr.length; i++)
@@ -375,7 +401,7 @@ public class Boletas extends javax.swing.JFrame
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTableBoletas;
+    private javax.swing.JTable jTBoletas;
+    private javax.swing.JTable jTCalificaciones;
     // End of variables declaration//GEN-END:variables
 }
