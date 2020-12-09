@@ -43,8 +43,8 @@ public class IProfesores extends javax.swing.JFrame
         ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/hora.png");
         btnHorarios.setIcon(icono3);
         
-        ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/producto.png");
-        btnMaterias.setIcon(icono4);
+        //ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/producto.png");
+        //btnMaterias.setIcon(icono4);
         
         ImageIcon icono5 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/lista.png");
         btnListaAlumnos.setIcon(icono5);
@@ -90,7 +90,6 @@ public class IProfesores extends javax.swing.JFrame
         btnSalir = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
         btnListaAlumnos = new javax.swing.JButton();
-        btnMaterias = new javax.swing.JButton();
         btnRegistarCalificaciones = new javax.swing.JButton();
         btnHorariosClase = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -253,17 +252,6 @@ public class IProfesores extends javax.swing.JFrame
             }
         });
 
-        btnMaterias.setBackground(new java.awt.Color(255, 255, 255));
-        btnMaterias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnMaterias.setText("Materias ");
-        btnMaterias.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnMateriasActionPerformed(evt);
-            }
-        });
-
         btnRegistarCalificaciones.setBackground(new java.awt.Color(255, 255, 255));
         btnRegistarCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnRegistarCalificaciones.setText("Registar Calificaciones ");
@@ -293,11 +281,9 @@ public class IProfesores extends javax.swing.JFrame
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
+                .addContainerGap(378, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnMaterias)
-                        .addGap(49, 49, 49)
                         .addComponent(btnListaAlumnos)
                         .addGap(52, 52, 52)
                         .addComponent(btnImprimir))
@@ -327,7 +313,6 @@ public class IProfesores extends javax.swing.JFrame
                 .addComponent(jLabel5)
                 .addGap(66, 66, 66)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMaterias)
                     .addComponent(btnListaAlumnos)
                     .addComponent(btnImprimir))
                 .addGap(75, 75, 75)
@@ -427,12 +412,6 @@ public class IProfesores extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHorariosClaseActionPerformed
 
-    private void btnMateriasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMateriasActionPerformed
-    {//GEN-HEADEREND:event_btnMateriasActionPerformed
-      new MateriasxProfesor().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnMateriasActionPerformed
-
     private void btnListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnListaAlumnosActionPerformed
     {//GEN-HEADEREND:event_btnListaAlumnosActionPerformed
         // TODO add your handling code here:
@@ -521,7 +500,6 @@ public class IProfesores extends javax.swing.JFrame
     private javax.swing.JButton btnHorariosClase;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnListaAlumnos;
-    private javax.swing.JButton btnMaterias;
     private javax.swing.JButton btnRegistarCalificaciones;
     private javax.swing.JButton btnSalir;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;

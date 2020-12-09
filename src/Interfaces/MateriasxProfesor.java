@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
-import static Interfaces.Materias.mat;
-import static Interfaces.MisMateriasAlumnos.mat;
 import Interno.ManipulaBD;
 import Interno.Materias1;
 import java.util.ArrayList;
@@ -18,28 +11,34 @@ import javax.swing.ImageIcon;
  */
 public class MateriasxProfesor extends javax.swing.JFrame
 {
+
     public static ArrayList<Materias1> mat = null;
+
     /**
      * Creates new form Alumnos
      */
     public MateriasxProfesor()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
-        ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
-        btnTodasM.setIcon(icono1);
-        
-        String condicion = "-1";
-        mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
+
+        String condicion = String.valueOf(PrincipalDocente.obj.get(0).getGrado());
+        System.out.println(condicion + " Es lo que busco");
+        mat = ManipulaBD.ConsultasMaterias("Grado=", condicion);
+
+        int con=0;
         for (int i = 0; i < mat.size(); i++)
         {
-            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
-            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
-            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
-            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
+            if (mat.get(i).getGrupo().compareTo(PrincipalDocente.obj.get(0).getGrupo()) == 0)
+            {
+                Tablamat.setValueAt(mat.get(con).getId(), con, 0);
+                Tablamat.setValueAt(mat.get(con).getNombre(), con, 1);
+                Tablamat.setValueAt(mat.get(con).getGrado(), con, 2);
+                Tablamat.setValueAt(mat.get(con).getGrupo(), con, 3);
+                con++;
+            }
         }
     }
 
@@ -57,12 +56,10 @@ public class MateriasxProfesor extends javax.swing.JFrame
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Tablamat = new javax.swing.JTable();
-        btnTodasM = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -74,17 +71,6 @@ public class MateriasxProfesor extends javax.swing.JFrame
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Mis Materias");
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setText("Buscar Materia");
-        jButton3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -140,15 +126,6 @@ public class MateriasxProfesor extends javax.swing.JFrame
         });
         jScrollPane2.setViewportView(Tablamat);
 
-        btnTodasM.setText("Ver todas mis materias");
-        btnTodasM.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnTodasMActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,14 +138,9 @@ public class MateriasxProfesor extends javax.swing.JFrame
                         .addGap(163, 163, 163)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(btnTodasM)
-                        .addGap(103, 103, 103)
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -179,12 +151,8 @@ public class MateriasxProfesor extends javax.swing.JFrame
                     .addComponent(btnRegresar)
                     .addComponent(jLabel1))
                 .addGap(93, 93, 93)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(btnTodasM))
-                .addGap(39, 39, 39)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 239, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -205,30 +173,18 @@ public class MateriasxProfesor extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-       new IProfesores().setVisible(true);
+        new IProfesores().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
-         new BuscarMateria2().setVisible(true);
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void btnTodasMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodasMActionPerformed
-    {//GEN-HEADEREND:event_btnTodasMActionPerformed
-       
-    }//GEN-LAST:event_btnTodasMActionPerformed
-
-     public void Mostrar3()
+    public void Mostrar3()
     {
         Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
         Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
         Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
         Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -280,10 +236,8 @@ public class MateriasxProfesor extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablamat;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton btnTodasM;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
