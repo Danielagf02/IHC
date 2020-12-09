@@ -86,7 +86,7 @@ public class ManipulaBD
         ArrayList<Profesor1> lista = new ArrayList<>();
         try
         {
-            for (int i = 0; i < reg.size(); i+=15)
+            for (int i = 0; i < reg.size(); i += 15)
             {
                 String idS = "";
                 idS = (String) reg.get(i);
@@ -107,11 +107,12 @@ public class ManipulaBD
                     int Telefono = Integer.parseInt(tele);
                     String CedulaProf = ((String) reg.get(i + 10)).trim();
                     String Direccion = ((String) reg.get(i + 11)).trim();
+                    Direccion = Direccion.replace("|", " ");
                     String rfc = ((String) reg.get(i + 12)).trim();
                     String Correo = ((String) reg.get(i + 13)).trim();
                     String Constraseña = ((String) reg.get(i + 14)).trim();
                     Profesor1 obj = new Profesor1(id, Grado, Grupo, ApellidoP, ApellidoM, Nombres, fechaNacimiento, CURP,
-                            sexo, Telefono, CedulaProf, Direccion, rfc,Correo, Constraseña);
+                            sexo, Telefono, CedulaProf, Direccion, rfc, Correo, Constraseña);
                     lista.add(obj);
                     System.out.println("Objeto agregado a la lista");
                 }
@@ -354,7 +355,7 @@ public class ManipulaBD
      * @param Contraseña tipo String
      */
     public static void AltasAdminis(int id, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP,
-            String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado, 
+            String rfc, String sexo, int Telefono, String CedulaProfe, String Direccion, int FolioEmpleado,
             String Puesto, String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
@@ -482,6 +483,7 @@ public class ManipulaBD
             String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
+        Direccion = Direccion.replace(" ", "|");
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
