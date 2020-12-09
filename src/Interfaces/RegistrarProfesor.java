@@ -5,27 +5,15 @@
  */
 package Interfaces;
 
-import Interno.Extras1;
 import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import cjb.ci.Validaciones;
-import java.awt.Image;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -931,7 +919,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfTelKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyPressed
     {//GEN-HEADEREND:event_tfTelKeyPressed
-        if (!((tfTel.getText().isEmpty()) || (!(validaNumero(tfTel.getText(), 10)))))
+        if (!((tfTel.getText().isEmpty()) || (!(validaNumero(tfTel.getText(), 5)))))
         {
             Validaciones.enter(this, evt, tfCedula);
         }
@@ -939,7 +927,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
     {//GEN-HEADEREND:event_tfTelKeyTyped
-        if (tfTel.getText().length() == 10 ) {
+        if (tfTel.getText().length() == 5 ) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);
