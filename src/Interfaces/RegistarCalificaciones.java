@@ -1,25 +1,53 @@
 package Interfaces;
 
+import static Interfaces.Calificaciones.objeto;
+import static Interfaces.Materias.mat;
 import Interno.Alumnno1;
+import Interno.Calificaciones1;
+import Interno.ManipulaBD;
+import cjb.ci.CtrlInterfaz;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author DanielaGF
  */
 public class RegistarCalificaciones extends javax.swing.JFrame
-{
+  {
+
     public static ArrayList<Alumnno1> objeto;
+    ArrayList<Calificaciones1> cal = null;
+
     /**
      * Creates new form Alumnos
      */
     public RegistarCalificaciones()
-    {
-          initComponents();
+      {
+        initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-    }
+
+        String condicion;
+        condicion = String.valueOf(objeto.get(0).getId());
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+        jTAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+
+        for (int i = 0; i < cal.size(); i++)
+          {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            jTCalificaciones.setValueAt(mat.get(0).getNombre(), i, 0);
+            jTCalificaciones.setValueAt(cal.get(i).getCalificacion(), i, 1);
+          }
+
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,13 +64,13 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         jLabel1 = new javax.swing.JLabel();
         BuscarAlumno = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jTCalificaciones = new javax.swing.JTable();
+        btnAgregar = new javax.swing.JButton();
+        btnModifica = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -64,7 +92,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null}
@@ -74,7 +102,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTAlumno);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -97,8 +125,8 @@ public class RegistarCalificaciones extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTable2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTCalificaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null},
@@ -117,18 +145,25 @@ public class RegistarCalificaciones extends javax.swing.JFrame
                 "Materias", "Calificaciones"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTCalificaciones);
 
-        jButton2.setText("Agregar Calificacion ");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
+        btnAgregar.setText("Agregar Calificacion ");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton2ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("ModificarCalificación");
+        btnModifica.setText("ModificarCalificación");
+        btnModifica.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnModificaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,9 +189,9 @@ public class RegistarCalificaciones extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnAgregar)
                         .addGap(177, 177, 177)
-                        .addComponent(jButton3)
+                        .addComponent(btnModifica)
                         .addGap(187, 187, 187)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -175,8 +210,8 @@ public class RegistarCalificaciones extends javax.swing.JFrame
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnAgregar)
+                    .addComponent(btnModifica))
                 .addContainerGap(61, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -202,10 +237,18 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAgregarActionPerformed
+    {//GEN-HEADEREND:event_btnAgregarActionPerformed
+
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    public void Mostrar()
+      {
+        jTCalificaciones.setValueAt(mat.get(0).getNombre(), 0, 0);
+        jTCalificaciones.setValueAt(mat.get(0).getNombre(), 0, 1);
+
+      }
 
     private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
     {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
@@ -213,39 +256,47 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
+    private void btnModificaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnModificaActionPerformed
+    {//GEN-HEADEREND:event_btnModificaActionPerformed
+        for (int i = 0; i < cal.size(); i++)
+          {
+            ManipulaBD.ModificarCalificaciones(cal.get(i).getId(), "Calificacion", "" + jTCalificaciones.getValueAt(i, 1) + "");
+          }
+    }//GEN-LAST:event_btnModificaActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-    {
+      {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-        {
+          {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-            {
+              {
                 if ("Nimbus".equals(info.getName()))
-                {
+                  {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
-            }
-        } catch (ClassNotFoundException ex)
-        {
+                  }
+              }
+          } catch (ClassNotFoundException ex)
+          {
             java.util.logging.Logger.getLogger(RegistarCalificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
+          } catch (InstantiationException ex)
+          {
             java.util.logging.Logger.getLogger(RegistarCalificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
+          } catch (IllegalAccessException ex)
+          {
             java.util.logging.Logger.getLogger(RegistarCalificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
+          } catch (javax.swing.UnsupportedLookAndFeelException ex)
+          {
             java.util.logging.Logger.getLogger(RegistarCalificaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+          }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -253,26 +304,26 @@ public class RegistarCalificaciones extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-        {
+          {
             public void run()
-            {
+              {
                 new RegistarCalificaciones().setVisible(true);
-            }
-        });
-    }
+              }
+          });
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarAlumno;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnModifica;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTAlumno;
+    private javax.swing.JTable jTCalificaciones;
     // End of variables declaration//GEN-END:variables
 }
