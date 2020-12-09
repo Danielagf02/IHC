@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import Interno.Profesor1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -16,23 +17,57 @@ import javax.swing.JOptionPane;
  */
 public class Docentes extends javax.swing.JFrame
 {
+
     public static ArrayList<Profesor1> objeto;
+
     /**
      * Creates new form Alumnos
      */
     public Docentes()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/grupo.png");
         btnTodosD.setIcon(icono1);
-        
+
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono2);
     }
+      public void Mostrar()
+    {
+       
+
+        TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosP.setValueAt(objeto.get(0).getNombres(), 0, 2);
+        TaDatosP.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosP.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosP.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosP.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosP.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosP.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosP.setValueAt(objeto.get(0).getCedulaProf(), 0, 9);
+        TaDatosP.setValueAt(objeto.get(0).getDireccion(), 0, 10);
+       // TaDatosP.setValueAt(objeto.get(0).getFolioprofesor(), 0, 11);
+        TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 13);
+        TaDatosP.setValueAt(objeto.get(0).getContraseña(), 0, 14);
+       
+      
+        
+    }
+    
+
+    Docentes(ArrayList<Profesor1> ConsultasProfesor1)
+      {
+        for (int i = 0; i < ConsultasProfesor1.size(); i++)
+          {
+            System.out.print(ConsultasProfesor1.get(i));
+            System.out.println("\n");
+          }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,7 +85,7 @@ public class Docentes extends javax.swing.JFrame
         btnTodosD = new javax.swing.JButton();
         BuscarPorfesor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TaDatosP = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
@@ -67,6 +102,13 @@ public class Docentes extends javax.swing.JFrame
         btnTodosD.setBackground(new java.awt.Color(255, 255, 255));
         btnTodosD.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTodosD.setText("Todos los Docentes ");
+        btnTodosD.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnTodosDActionPerformed(evt);
+            }
+        });
 
         BuscarPorfesor.setBackground(new java.awt.Color(255, 255, 255));
         BuscarPorfesor.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -79,53 +121,53 @@ public class Docentes extends javax.swing.JFrame
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String []
             {
-                "A.Paterno", "A.Materno", "Nombres", "Fecha nacimiento", "CURP", "Sexo", "Grado", "Grupo", "Telefono", "Cedula profesional", "Dirección", "Folio Docente", "RFC", "Correo", "Contraseña"
+                "A.Paterno", "A.Materno", "Nombres", "Fecha nacimiento", "CURP", "Sexo", "Grado", "Grupo", "Telefono", "Cedula profesional", "Dirección", "Folio Docente", "RFC", "Correo"
             }
         )
         {
             Class[] types = new Class []
             {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean []
             {
-                true, true, true, true, true, true, true, true, true, true, true, true, true, false, true
+                true, true, true, true, true, true, true, true, true, true, true, true, true, false
             };
 
             public Class getColumnClass(int columnIndex)
@@ -138,7 +180,7 @@ public class Docentes extends javax.swing.JFrame
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TaDatosP);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -182,7 +224,7 @@ public class Docentes extends javax.swing.JFrame
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTodosD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 531, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 924, Short.MAX_VALUE)
                                 .addComponent(BuscarPorfesor)
                                 .addGap(29, 29, 29))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -253,22 +295,52 @@ public class Docentes extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_BuscarPorfesorActionPerformed
 
+    private void btnTodosDActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosDActionPerformed
+    {//GEN-HEADEREND:event_btnTodosDActionPerformed
+        {                                              
+        String condicion = "-1";
+        objeto = ManipulaBD.ConsultasProfesores("id!=", condicion);
+        for (int i = 0; i < objeto.size(); i++)
+        {
+           
+            
+        TaDatosP.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+        TaDatosP.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+        TaDatosP.setValueAt(objeto.get(i).getNombres(), i, 2);
+        TaDatosP.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+        TaDatosP.setValueAt(objeto.get(i).getCURP(), i, 4);
+        TaDatosP.setValueAt(objeto.get(i).getSexo(), i, 5);
+        TaDatosP.setValueAt(objeto.get(i).getGrado(), i, 6);
+        TaDatosP.setValueAt(objeto.get(i).getGrupo(), i, 7);
+        TaDatosP.setValueAt(objeto.get(i).getTelefono(), i, 8);
+        TaDatosP.setValueAt(objeto.get(i).getCedulaProf(), i, 9);
+        TaDatosP.setValueAt(objeto.get(i).getDireccion(), i, 10);
+       // TaDatosP.setValueAt(objeto.get(i).getFolioprofesor(), i, 11);
+        TaDatosP.setValueAt(objeto.get(i).getCorreo(), i, 13);
+        TaDatosP.setValueAt(objeto.get(i).getContraseña(), i, 14);
+       
+        }
+        }
+    }//GEN-LAST:event_btnTodosDActionPerformed
+
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
     {
-        String botones[] = {"Salir", "Cancelar"};
+        String botones[] =
+        {
+            "Salir", "Cancelar"
+        };
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
         {
             System.out.println("Salio del programa con exito");
             System.exit(eleccion);
-        } else 
-        if(eleccion == JOptionPane.NO_OPTION)
+        } else if (eleccion == JOptionPane.NO_OPTION)
         {
             System.out.println("Se cancelo la salida");
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -319,6 +391,7 @@ public class Docentes extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarPorfesor;
+    private javax.swing.JTable TaDatosP;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosD;
@@ -327,6 +400,5 @@ public class Docentes extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

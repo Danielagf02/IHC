@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 import javax.swing.ImageIcon;
@@ -62,6 +63,13 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
         jLabel2.setText("Folio Adminsitrador:");
 
         jtFolio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtFolio.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jtFolioActionPerformed(evt);
+            }
+        });
         jtFolio.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
@@ -197,10 +205,21 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarActionPerformed
     {//GEN-HEADEREND:event_btnBuscarActionPerformed
-        int folio = Integer.parseInt(String.valueOf(jtFolio.getText()));
+        String folio = jtFolio.getText();
+        System.out.println(folio);
         CtrlInterfaz.habilita(false, btnBuscar);
+       VerUsuariosAdminisrtradores.objeto= ManipulaBD.ConsultasAdmins("Nombre=", "'" + jtFolio.getText() + "'");
         CtrlInterfaz.limpia(jtFolio);
+        Materias obj = new Materias();
+        obj.setVisible(true);
+        obj.Mostrar();
+        this.setVisible(false);
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void jtFolioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jtFolioActionPerformed
+    {//GEN-HEADEREND:event_jtFolioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFolioActionPerformed
 
     /**
      * @param args the command line arguments

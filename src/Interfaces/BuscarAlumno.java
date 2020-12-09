@@ -183,6 +183,8 @@ public class BuscarAlumno extends javax.swing.JFrame
         AlumnosCGrupo.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + fAlumno + "");
         new AlumnosCGrupo().setVisible(true);
         this.setVisible(false);
+        
+        
 
     }//GEN-LAST:event_BuscarActionPerformed
 

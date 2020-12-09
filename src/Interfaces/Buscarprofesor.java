@@ -195,12 +195,14 @@ public class Buscarprofesor extends javax.swing.JFrame
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarActionPerformed
     {//GEN-HEADEREND:event_BuscarActionPerformed
-        String nProfesor = "";
+        String nProfesor = jtFProfe.getText();
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFProfe);
-        Docentes.objeto = ManipulaBD.ConsultasProfesores("id=","'" +nProfesor+"'");
+        Docentes.objeto = ManipulaBD.ConsultasProfesores("id=","" +nProfesor+"");
         System.out.println(Docentes.objeto.get(0).getNombres());
         Docentes nueva = new Docentes();
+        nueva.setVisible(true);
+        nueva.Mostrar();
         this.setVisible(false);
 
     }//GEN-LAST:event_BuscarActionPerformed
