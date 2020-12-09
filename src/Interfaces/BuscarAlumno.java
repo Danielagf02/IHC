@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 
@@ -178,26 +179,33 @@ public class BuscarAlumno extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
+
+        AlumnosCGrupo.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + fAlumno + "");
+        new AlumnosCGrupo().setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
     {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
         if (jtFAlumno.getText().isEmpty() != true)
-        {
+          {
             Validaciones.enter(this, evt, evt);
             Buscar.setEnabled(true);
-        }
+          }
     }//GEN-LAST:event_jtFAlumnoKeyPressed
 
     private void jtFAlumnoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyTyped
     {//GEN-HEADEREND:event_jtFAlumnoKeyTyped
-        if (jtFAlumno.getText().length() != 7 ) {
+        if (jtFAlumno.getText().length() != 7)
+          {
             //evt.consume();
             Validaciones.validaEntero(evt);
-        } else {
+          } else
+          {
             //Validaciones.validaEntero(evt);
             evt.consume();
-        }
+          }
     }//GEN-LAST:event_jtFAlumnoKeyTyped
 
     /**

@@ -30,7 +30,8 @@ import poo.bd.Querys;
  *
  * @author DanielaGF
  */
-public class Reporte extends javax.swing.JFrame {
+public class Reporte extends javax.swing.JFrame
+{
 
     ArrayList<Object> datos = new ArrayList<Object>();
     ArrayList<Object> datos2 = new ArrayList<Object>();
@@ -42,17 +43,9 @@ public class Reporte extends javax.swing.JFrame {
     /**
      * Creates new form Justificante
      */
-    public Reporte() {
+    public Reporte()
+    {
         initComponents();
-        String condicion;
-        jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-        condicion = String.valueOf(objeto.get(0).getId());
-        objeto = ManipulaBD.ConsultasAlumnos("id_Alumno=", condicion);
 
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
@@ -64,28 +57,36 @@ public class Reporte extends javax.swing.JFrame {
         btnBuscarA.setIcon(icono2);
     }
 
-    public void abrir(String nombre) {
-        try {
+    public void abrir(String nombre)
+    {
+        try
+        {
             File path = new File(nombre + ".pdf");
             Desktop.getDesktop().open(path);
-        } catch (IOException ex) {
+        } catch (IOException ex)
+        {
             JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
         }
     }
 
-    public void generar(String nombre) {
+    public void generar(String nombre)
+    {
 
         FileOutputStream archivo;
-        try {
+        try
+        {
             archivo = new FileOutputStream(nombre + ".pdf");
             Document documento = new Document();
-            try {
+            try
+            {
                 PdfWriter.getInstance(documento, archivo);
-            } catch (DocumentException ex) {
+            } catch (DocumentException ex)
+            {
                 Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
             }
             documento.open();
-            try {
+            try
+            {
 
                 documento.add(new Paragraph("Datos del alumno"));
                 documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
@@ -98,13 +99,15 @@ public class Reporte extends javax.swing.JFrame {
                 documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
                 documento.add(new Paragraph("Día cita del padre: " + jtfdiaPadre.getText()));
 
-            } catch (DocumentException ex) {
+            } catch (DocumentException ex)
+            {
                 Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             documento.close();
             JOptionPane.showMessageDialog(null, "PDF creado correctamente", "Reporte", 1);
-        } catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex)
+        {
             JOptionPane.showMessageDialog(null, "Error: " + ex, "Advertencia", 1);
         }
 
@@ -310,8 +313,15 @@ public class Reporte extends javax.swing.JFrame {
     private void btnBuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBuscarAActionPerformed
     {//GEN-HEADEREND:event_btnBuscarAActionPerformed
 
-        new BuscarAlumno().setVisible(true);
-        this.setVisible(false);
+        String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
+        jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+
     }//GEN-LAST:event_btnBuscarAActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
@@ -326,7 +336,8 @@ public class Reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void jtfdiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfdiaKeyPressed
-        if (jtfdia.getText().isEmpty() != true) {
+        if (jtfdia.getText().isEmpty() != true)
+        {
             Validaciones.enter(this, evt, jtfRazon);
         }
     }//GEN-LAST:event_jtfdiaKeyPressed
@@ -336,17 +347,19 @@ public class Reporte extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfdiaKeyTyped
 
     private void jtfRazonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRazonKeyPressed
-        if (jtfRazon.getText().isEmpty() != true) {
+        if (jtfRazon.getText().isEmpty() != true)
+        {
             Validaciones.enter(this, evt, jtfdiaPadre);
         }
     }//GEN-LAST:event_jtfRazonKeyPressed
 
     private void jtfRazonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRazonKeyTyped
-        if (jtfRazon.getText().length() == 70) {
+        if (jtfRazon.getText().length() == 70)
+        {
             evt.consume();
             Validaciones.validaAlfanumerico(evt);
         }
-       
+
     }//GEN-LAST:event_jtfRazonKeyTyped
 
     private void jtfdiaPadreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfdiaPadreKeyTyped
@@ -356,26 +369,34 @@ public class Reporte extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(Reporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(Reporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(Reporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(Reporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -384,8 +405,10 @@ public class Reporte extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+        {
+            public void run()
+            {
                 new Reporte().setVisible(true);
             }
         });
