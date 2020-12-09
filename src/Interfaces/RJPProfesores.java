@@ -146,7 +146,7 @@ public class RJPProfesores extends javax.swing.JFrame
 
     private void ReporteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ReporteActionPerformed
     {//GEN-HEADEREND:event_ReporteActionPerformed
-         new Reporte().setVisible(true);
+        new Reporte().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ReporteActionPerformed
 

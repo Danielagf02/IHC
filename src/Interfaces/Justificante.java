@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import static Interfaces.Reporte.objeto;
 import Interno.ManipulaBD;
 import Interno.Alumnno1;
 import cjb.ci.Validaciones;
@@ -44,16 +45,14 @@ public class Justificante extends javax.swing.JFrame
      */
     public Justificante()
     {
-        initComponents();
-        String condicion;
+       String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
         jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
         jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
         jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
         jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-        condicion = String.valueOf(objeto.get(0).getId());
-        objeto = ManipulaBD.ConsultasAlumnos("id_Alumno=", condicion);
         
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
