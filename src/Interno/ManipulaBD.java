@@ -617,8 +617,22 @@ public class ManipulaBD
         if (con != null)
         {
             poo.bd.Querys sql = new poo.bd.Querys();
-            sql.Insertar(con, "alumnos", "" + id + "," + Grado + ",'" + Grupo + "','" + ApellidoP + "','" + ApellidoM + "','" + Nombre + "','" + fechaNacimiento + "','" + CURP + "','"
-                    + sexo + "'," + Telefono + ",'" + NomMadre + "','" + NomPadre + "'," + FolioAlumno + ",'" + Correo + "','" + Contraseña + "'");
+            sql.Insertar(con, "alumnos",
+                    "" + id + ","
+                    + Grado + ",'"
+                    + Grupo + "','"
+                    + ApellidoP + "','"
+                    + ApellidoM + "','"
+                    + Nombre + "','"
+                    + fechaNacimiento + "','"
+                    + CURP + "','"
+                    + sexo + "',"
+                    + Telefono + ",'"
+                    + NomMadre + "','"
+                    + NomPadre + "',"
+                    + FolioAlumno + ",'"
+                    + Correo + "','"
+                    + Contraseña + "'");
             System.out.println("Dato Insertado");
 
         }
