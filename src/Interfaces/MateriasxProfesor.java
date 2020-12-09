@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import static Interfaces.Materias.mat;
 import static Interfaces.MisMateriasAlumnos.mat;
 import Interno.ManipulaBD;
 import Interno.Materias1;
@@ -204,8 +205,17 @@ public class MateriasxProfesor extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton3ActionPerformed
          new BuscarMateria2().setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
+     public void Mostrar3()
+    {
+        Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
+        Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
+        Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
+        Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
+    }
+    
     /**
      * @param args the command line arguments
      */
