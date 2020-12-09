@@ -5,6 +5,7 @@ import static Interfaces.Materias.mat;
 import Interno.Alumnno1;
 import Interno.Calificaciones1;
 import Interno.ManipulaBD;
+import Interno.Materias1;
 import cjb.ci.CtrlInterfaz;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -19,6 +20,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
 
     public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
+    ArrayList<Materias1> mat = null;
 
     /**
      * Creates new form Alumnos
@@ -30,23 +32,6 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         btnRegresar.setIcon(icono);
 
         String condicion;
-        condicion = String.valueOf(objeto.get(0).getId());
-        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
-        jTAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        jTAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        jTAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        jTAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        jTAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        jTAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-
-        for (int i = 0; i < cal.size(); i++)
-          {
-            condicion = String.valueOf(cal.get(i).getId_Materia());
-            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
-            jTCalificaciones.setValueAt(mat.get(0).getNombre(), i, 0);
-            jTCalificaciones.setValueAt(cal.get(i).getCalificacion(), i, 1);
-          }
-
       }
 
     /**
@@ -239,14 +224,34 @@ public class RegistarCalificaciones extends javax.swing.JFrame
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAgregarActionPerformed
     {//GEN-HEADEREND:event_btnAgregarActionPerformed
+        
+        for (int i = 0; i < cal.size(); i++)
+          {
+            ManipulaBD.AltasCalificaciones(cal.get(i).getId(), objeto.get(i).getId(), mat.get(i).getId(), cal.get(i).getCalificacion());
 
+          }
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     public void Mostrar()
       {
-        jTCalificaciones.setValueAt(mat.get(0).getNombre(), 0, 0);
-        jTCalificaciones.setValueAt(mat.get(0).getNombre(), 0, 1);
+
+        jTAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+        String condicion = String.valueOf(objeto.get(0).getId());
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+
+        for (int i = 0; i < cal.size(); i++)
+          {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            jTCalificaciones.setValueAt(mat.get(0).getNombre(), i, 0);
+            jTCalificaciones.setValueAt(cal.get(i).getCalificacion(), i, 1);
+          }
 
       }
 
