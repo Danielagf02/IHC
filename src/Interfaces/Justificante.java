@@ -5,6 +5,9 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
+import Interno.Alumnno1;
+import cjb.ci.Validaciones;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -30,6 +33,7 @@ public class Justificante extends javax.swing.JFrame
 {
     ArrayList<Object> datos = new ArrayList<Object>();
     ArrayList<Object> datos2 = new ArrayList<Object>();
+    public static ArrayList<Alumnno1> objeto;
     Querys q = new Querys();
 
     DefaultTableModel modelo;
@@ -41,6 +45,15 @@ public class Justificante extends javax.swing.JFrame
     public Justificante()
     {
         initComponents();
+        String condicion;
+        jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        jTabAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        jTabAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        jTabAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        jTabAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+        condicion = String.valueOf(objeto.get(0).getId());
+        objeto = ManipulaBD.ConsultasAlumnos("id_Alumno=", condicion);
         
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
@@ -99,15 +112,14 @@ public class Justificante extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BuscarA = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTabAlumno = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jtfdia = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -125,39 +137,47 @@ public class Justificante extends javax.swing.JFrame
 
         BuscarA.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BuscarA.setText("Buscar Alumno ");
-        BuscarA.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        BuscarA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscarAActionPerformed(evt);
             }
         });
 
-        btnRegresar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][]
-            {
+        jTabAlumno.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
                 {null, null, null, null, null, null}
             },
-            new String []
-            {
+            new String [] {
                 "Folio Alumno", "Apellido Paterno", "Apelido Paterno", "Nombre", "Grado", "Grupo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTabAlumno);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Día:");
 
+        jtfdia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtfdiaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfdiaKeyTyped(evt);
+            }
+        });
+
         jtfRazon.setColumns(20);
         jtfRazon.setRows(5);
+        jtfRazon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfRazonKeyTyped(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtfRazon);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -167,10 +187,8 @@ public class Justificante extends javax.swing.JFrame
         jLabel5.setText("Firma Director:____________________ ");
 
         Imprimir.setText("PDF");
-        Imprimir.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImprimirActionPerformed(evt);
             }
         });
@@ -278,6 +296,23 @@ public class Justificante extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void jtfdiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfdiaKeyPressed
+        if (jtfdia.getText().isEmpty() != true) {
+            Validaciones.enter(this, evt, jtfRazon);
+        }
+    }//GEN-LAST:event_jtfdiaKeyPressed
+
+    private void jtfdiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfdiaKeyTyped
+        Validaciones.validaAlfanumerico(evt);
+    }//GEN-LAST:event_jtfdiaKeyTyped
+
+    private void jtfRazonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRazonKeyTyped
+        if (jtfRazon.getText().length() == 70) {
+            evt.consume();
+            Validaciones.validaAlfanumerico(evt);
+        }
+    }//GEN-LAST:event_jtfRazonKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -341,7 +376,7 @@ public class Justificante extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTabAlumno;
     private javax.swing.JTextArea jtfRazon;
     private javax.swing.JTextField jtfdia;
     // End of variables declaration//GEN-END:variables

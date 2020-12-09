@@ -197,6 +197,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             }
         });
 
+        tfNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNombreActionPerformed(evt);
+            }
+        });
         tfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tfNombreKeyPressed(evt);
@@ -929,6 +934,10 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             evt.consume();
         } 
     }//GEN-LAST:event_tfContraseñaKeyTyped
+
+    private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNombreActionPerformed
 
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM 
     public boolean validaEmail(String cad)
