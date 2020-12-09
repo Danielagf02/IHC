@@ -54,7 +54,7 @@ public class PrincipalAlumno extends javax.swing.JFrame
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Contraseña1 = new javax.swing.JPasswordField();
+        contra1 = new javax.swing.JPasswordField();
         Cancelar = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
@@ -119,19 +119,19 @@ public class PrincipalAlumno extends javax.swing.JFrame
         jLabel8.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel8.setText("*Contraseña:");
 
-        Contraseña1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Contraseña1.addActionListener(new java.awt.event.ActionListener()
+        contra1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        contra1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                Contraseña1ActionPerformed(evt);
+                contra1ActionPerformed(evt);
             }
         });
-        Contraseña1.addKeyListener(new java.awt.event.KeyAdapter()
+        contra1.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                Contraseña1KeyTyped(evt);
+                contra1KeyTyped(evt);
             }
         });
 
@@ -164,7 +164,7 @@ public class PrincipalAlumno extends javax.swing.JFrame
                         .addGap(5, 5, 5)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contra1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -209,7 +209,7 @@ public class PrincipalAlumno extends javax.swing.JFrame
                 .addComponent(jLabel2)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -243,27 +243,14 @@ public class PrincipalAlumno extends javax.swing.JFrame
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_siguienteActionPerformed
     {//GEN-HEADEREND:event_siguienteActionPerformed
-     if (Texto1.getText().isEmpty())
+     if (Texto1.getText().isEmpty() || contra1.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"coloca el usuario");
-        }
-  
-            if (Contraseña1.getText().isEmpty())
+            JOptionPane.showMessageDialog(this, "Hay campos vacíos");
+        } else
         {
-            JOptionPane.showMessageDialog(this,"coloca la contraseña");
-            }
-           
-            //CAMBIAR a la base de datos 
-            //solo queda como referencia
             new IAlumno().setVisible(true);
-        this.setVisible(false);
-  
-        
-      
-                
-     
-// new Contraseña().setVisible(true);
-       //this.setVisible(false);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void Texto1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Texto1ActionPerformed
@@ -272,10 +259,10 @@ public class PrincipalAlumno extends javax.swing.JFrame
                
     }//GEN-LAST:event_Texto1ActionPerformed
 
-    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Contraseña1ActionPerformed
-    {//GEN-HEADEREND:event_Contraseña1ActionPerformed
+    private void contra1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_contra1ActionPerformed
+    {//GEN-HEADEREND:event_contra1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Contraseña1ActionPerformed
+    }//GEN-LAST:event_contra1ActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
@@ -286,7 +273,7 @@ public class PrincipalAlumno extends javax.swing.JFrame
 
     private void Texto1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyPressed
         if(Texto1.getText().isEmpty()!=true){
-            Validaciones.enter(this, evt, Contraseña1);
+            Validaciones.enter(this, evt, contra1);
         }
                 
     }//GEN-LAST:event_Texto1KeyPressed
@@ -295,9 +282,9 @@ public class PrincipalAlumno extends javax.swing.JFrame
         Validaciones.validaAlfanumerico(evt);
     }//GEN-LAST:event_Texto1KeyTyped
 
-    private void Contraseña1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contraseña1KeyTyped
+    private void contra1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contra1KeyTyped
         Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_Contraseña1KeyTyped
+    }//GEN-LAST:event_contra1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -347,8 +334,8 @@ public class PrincipalAlumno extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
-    private javax.swing.JPasswordField Contraseña1;
     private javax.swing.JTextField Texto1;
+    private javax.swing.JPasswordField contra1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;

@@ -11,8 +11,6 @@ import javax.swing.JOptionPane;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
 
-
-
 /**
  *
  * @author DanielaGF
@@ -25,7 +23,7 @@ public class PrincipalDocente extends javax.swing.JFrame
      */
     public PrincipalDocente()
     {
-         initComponents();
+        initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/logo tipo CE.png");
         jLIm.setIcon(icono);
     }
@@ -235,27 +233,21 @@ public class PrincipalDocente extends javax.swing.JFrame
 
     private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_IniciarSesionActionPerformed
     {//GEN-HEADEREND:event_IniciarSesionActionPerformed
-     if (EscribirUsuario.getText().isEmpty())
+        if (EscribirUsuario.getText().isEmpty() || EscribirContraseña.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"coloca el usuario");
+            JOptionPane.showMessageDialog(this, "Hay campos vacíos");
+        } else
+        {
+            new IProfesores().setVisible(true);
+            this.setVisible(false);
         }
-  
-            if (EscribirContraseña.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(this,"coloca la contraseña");
-            }
-           
-      //al conectarse a la base de datos y si coincide con el usuario se manda a la interfaz profesor
-      
-       new IProfesores().setVisible(true);
-        this.setVisible(false);
 
     }//GEN-LAST:event_IniciarSesionActionPerformed
 
     private void EscribirUsuarioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirUsuarioActionPerformed
     {//GEN-HEADEREND:event_EscribirUsuarioActionPerformed
-        
-               
+
+
     }//GEN-LAST:event_EscribirUsuarioActionPerformed
 
     private void EscribirContraseñaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirContraseñaActionPerformed
@@ -265,13 +257,14 @@ public class PrincipalDocente extends javax.swing.JFrame
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
-      new InicioUsuarios().setVisible(true);
+        new InicioUsuarios().setVisible(true);
         this.setVisible(false);
-  
+
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void EscribirUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyPressed
-        if(EscribirUsuario.getText().isEmpty()!=true){
+        if (EscribirUsuario.getText().isEmpty() != true)
+        {
             Validaciones.enter(this, evt, EscribirContraseña);
         }
     }//GEN-LAST:event_EscribirUsuarioKeyPressed

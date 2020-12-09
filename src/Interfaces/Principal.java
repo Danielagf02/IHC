@@ -242,52 +242,14 @@ public String password = "";
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_siguienteActionPerformed
     {//GEN-HEADEREND:event_siguienteActionPerformed
-     if (Texto1.getText().isEmpty())
+     if (Texto1.getText().isEmpty() || Contrasenia1.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"coloca el usuario");
-        }
-  
-            if (Contrasenia1.getText().isEmpty())
+            JOptionPane.showMessageDialog(this, "Hay campos vacíos");
+        } else
         {
-            JOptionPane.showMessageDialog(this,"coloca la contraseña");
-            }
-           
-            
-            //conectarse con la BD 
-            //solo queda como referencia 
-            //cambiar 
             new ControlEscolar().setVisible(true);
-        this.setVisible(false);
-            
-            
-/*switch (jC.getSelectedIndex()) {
-    
-        case 0:
-            System.out.println("kk");
-            
-            AltaMaterias.ref.setVisible(true);
-            //new IAlumno().setVisible(true);
-        //this.setVisible(false);
-            break;
-        case 1:
-            
-          //  new ControlEscolar().setVisible(true);
-        //this.setVisible(false);
-            System.out.println("estoy harta de esta vida");
-            break;
-        case 2:
-            // new IProfesores().setVisible(true);
-        //this.setVisible(false);
-            System.out.println("sajkds");
-            break;
-    }*/
-            
-        
-      
-                
-     
-// new Contraseña().setVisible(true);
-       //this.setVisible(false);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void Texto1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Texto1ActionPerformed
