@@ -852,7 +852,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfTelKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyPressed
     {//GEN-HEADEREND:event_tfTelKeyPressed
-        if (!((tfTel.getText().isEmpty()) || (!(validaNumero(tfTel.getText(), 10)))))
+        if (!((tfTel.getText().isEmpty()) || (!(validaNumero(tfTel.getText(), 5)))))
         {
             Validaciones.enter(this, evt, tfNombreM);
         }
@@ -860,7 +860,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
     {//GEN-HEADEREND:event_tfTelKeyTyped
-        if (tfTel.getText().length() == 10 ) {
+        if (tfTel.getText().length() == 5 ) {
             evt.consume();
         } else {
             Validaciones.validaEntero(evt);

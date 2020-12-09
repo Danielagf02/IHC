@@ -224,7 +224,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAgregarActionPerformed
     {//GEN-HEADEREND:event_btnAgregarActionPerformed
-        
+
         for (int i = 0; i < cal.size(); i++)
           {
             ManipulaBD.AltasCalificaciones(cal.get(i).getId(), objeto.get(i).getId(), mat.get(i).getId(), cal.get(i).getCalificacion());
@@ -233,7 +233,7 @@ public class RegistarCalificaciones extends javax.swing.JFrame
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    public void Mostrar()
+    public void Mostrar1()
       {
 
         jTAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
@@ -243,10 +243,11 @@ public class RegistarCalificaciones extends javax.swing.JFrame
         jTAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         jTAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
         String condicion = String.valueOf(objeto.get(0).getId());
-        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
         for (int i = 0; i < cal.size(); i++)
           {
+            cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
             condicion = String.valueOf(cal.get(i).getId_Materia());
             mat = ManipulaBD.ConsultasMaterias("id=", condicion);
             jTCalificaciones.setValueAt(mat.get(0).getNombre(), i, 0);
