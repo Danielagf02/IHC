@@ -13,12 +13,13 @@ public class Horarios1
     private String grupo;
     private int horaI;
     private int horaF;
+    private String dia;
 
     public Horarios1()
     {
     }
 
-    public Horarios1(int id, int id_Materia, int grado, String grupo, int horaI, int horaF)
+    public Horarios1(int id, int id_Materia, int grado, String grupo, int horaI, int horaF, String dia)
     {
         this.id = id;
         this.id_Materia = id_Materia;
@@ -26,6 +27,7 @@ public class Horarios1
         this.grupo = grupo;
         this.horaI = horaI;
         this.horaF = horaF;
+        this.dia = dia;
     }
 
     /**
@@ -123,7 +125,21 @@ public class Horarios1
     {
         this.horaF = horaF;
     }
-    
-    
+
+    /**
+     * @return the dia
+     */
+    public String getDia()
+    {
+        return dia;
+    }
+
+    /**
+     * @param dia the dia to set
+     */
+    public void setDia(String dia)
+    {
+        this.dia = dia;
+    }
 
 }

@@ -258,7 +258,7 @@ public class ManipulaBD
         ArrayList<Horarios1> lista = new ArrayList<>();
         try
         {
-            for (int i = 0; i < reg.size(); i += 6)
+            for (int i = 0; i < reg.size(); i += 7)
             {
                 String idS = "";
                 idS = (String) reg.get(i);
@@ -275,7 +275,8 @@ public class ManipulaBD
                     int horaI = Integer.parseInt(horaini);
                     String horafin = ((String) reg.get(i + 5)).trim();
                     int horaF = Integer.parseInt(horafin);
-                    Horarios1 obj = new Horarios1(id, id_Materias, grado, grupo, horaI, horaF);
+                    String dia = ((String) reg.get(i + 6)).trim();
+                    Horarios1 obj = new Horarios1(id, id_Materias, grado, grupo, horaI, horaF, dia);
                     lista.add(obj);
 
                 }
@@ -743,8 +744,8 @@ public class ManipulaBD
 
     /**
      * Método para colsutar en la bd en la tabla de Calificaciones1 y retorna el
- objeto o los objetos en un arraylist esto con la intencion de traer lo
- que se requiera en el momento
+     * objeto o los objetos en un arraylist esto con la intencion de traer lo
+     * que se requiera en el momento
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
@@ -842,11 +843,11 @@ public class ManipulaBD
     }
 
     /**
-     * Método para colsutar en la bd en la tabla de Materias1 y retorna el objeto
- o los objetos en un arraylist esto con la intencion de traer lo que se
- requiera en el momento
-
- "id!=" "0"
+     * Método para colsutar en la bd en la tabla de Materias1 y retorna el
+     * objeto o los objetos en un arraylist esto con la intencion de traer lo
+     * que se requiera en el momento
+     *
+     * "id!=" "0"
      *
      * @param variable que variable va a buscar en la base ejemplo "Nombre=" es
      * importante poner el igual
@@ -909,8 +910,9 @@ public class ManipulaBD
      * @param grupo tipo String
      * @param horaI tipo int
      * @param horaF tipo int
+     * @param dia tipo String
      */
-    public static void AltasHorarios(int id, int id_Materia, int grado, String grupo, int horaI, int horaF)
+    public static void AltasHorarios(int id, int id_Materia, int grado, String grupo, int horaI, int horaF, String dia)
     {
         Connection con = ManipulaBD.conecta();
         if (con != null)
@@ -921,7 +923,9 @@ public class ManipulaBD
                     + grado + ",'"
                     + grupo + "',"
                     + horaI + ","
-                    + horaF + "");
+                    + horaF + ",'"
+                    + dia + "'"
+            );
             ManipulaBD.desconecta(con);
             System.out.println("Dato Insertado");
         }
