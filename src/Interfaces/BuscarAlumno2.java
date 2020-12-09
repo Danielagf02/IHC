@@ -144,12 +144,12 @@ public class BuscarAlumno2 extends javax.swing.JFrame
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtFAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancelar)
                     .addComponent(Buscar))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,10 +179,6 @@ public class BuscarAlumno2 extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
-    {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
-        Validaciones.validaEntero(evt);    }//GEN-LAST:event_jtFAlumnoKeyPressed
-
     private void jtFAlumnoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyTyped
     {//GEN-HEADEREND:event_jtFAlumnoKeyTyped
         if (jtFAlumno.getText().isEmpty() != true)
@@ -204,6 +200,11 @@ public class BuscarAlumno2 extends javax.swing.JFrame
         nueva.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
+
+    private void jtFAlumnoKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFAlumnoKeyPressed
+    {//GEN-HEADEREND:event_jtFAlumnoKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFAlumnoKeyPressed
 
     /**
      * @param args the command line arguments

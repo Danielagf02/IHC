@@ -180,7 +180,13 @@ public class BuscarAdminsitradores extends javax.swing.JFrame
 
     private void jtFolioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_jtFolioKeyTyped
     {//GEN-HEADEREND:event_jtFolioKeyTyped
-        Validaciones.validaEntero(evt);
+        if (jtFolio.getText().length() != 7 ) {
+            //evt.consume();
+            Validaciones.validaEntero(evt);
+        } else {
+            //Validaciones.validaEntero(evt);
+            evt.consume();
+        }
     }//GEN-LAST:event_jtFolioKeyTyped
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
