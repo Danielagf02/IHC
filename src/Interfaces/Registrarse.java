@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interno.Extras1;
+import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -33,6 +34,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Registrarse extends javax.swing.JFrame
 {
     String sex; //Para guardar el sexo
+    int id=1;
     /**
      * Creates new form Registrarse
      */
@@ -646,31 +648,33 @@ public class Registrarse extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-        //new Principal().setVisible(true);
-        //this.setVisible(false);
-       
        String nombre = tfNombre.getText();
        String apellidoP = tfAPaterno.getText();
        String apellidoM = tfAMaterno.getText();
        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
-       int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
+       if (rbHombre.isSelected())
+        {
+            sex = "Mujer";
+        }else 
+        {
+            if (rbHombre.isSelected())
+            {
+                sex = "Hombre";
+            }
+        }
        String curp = tfCurp.getText();
-       String grado = tfGrado.getText();
-       String grupo = tfGrupo.getText();
-       String tel = tfTel.getText();
-       String nomMa = tfCedula.getText();
-       String nomPa = tfDir.getText();
-       String folio = tfRfc.getText();
+       int folio = Integer.parseInt(String.valueOf(tfEdad.getText()));
+       String puesto = tfGrupo.getText();
+       int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
+       String ced = tfCedula.getText();
+       String dir = tfDir.getText();
+       String rfc = tfRfc.getText();
        String correo = tfCorreo.getText();
-       String contra = tfContraseña.getText();
-       
-       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
-       
-       //AQUI se hacen las validaciones con la conexion de base de datos 
-       //NINGUN CAMPO PUEDE IR VACIO
+       String contra = tfContraseña.getText();       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+        ManipulaBD.AltasAdminis(id, apellidoP, apellidoM, nombre, fechaNa, curp, rfc, sex, tel, ced, dir, folio, puesto, correo, contra);
        
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-       
+       id++;
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelarActionPerformed
