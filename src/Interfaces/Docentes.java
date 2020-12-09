@@ -36,9 +36,9 @@ public class Docentes extends javax.swing.JFrame
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono2);
     }
-      public void Mostrar()
+
+    public void Mostrar()
     {
-       
 
         TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
         TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
@@ -51,23 +51,20 @@ public class Docentes extends javax.swing.JFrame
         TaDatosP.setValueAt(objeto.get(0).getTelefono(), 0, 8);
         TaDatosP.setValueAt(objeto.get(0).getCedulaProf(), 0, 9);
         TaDatosP.setValueAt(objeto.get(0).getDireccion(), 0, 10);
-       // TaDatosP.setValueAt(objeto.get(0).getFolioprofesor(), 0, 11);
+        TaDatosP.setValueAt(objeto.get(0).getId(), 0, 11);
+        TaDatosP.setValueAt(objeto.get(0).getRfc(), 0, 12);
         TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 13);
-        TaDatosP.setValueAt(objeto.get(0).getContraseña(), 0, 14);
-       
-      
-        
+
     }
-    
 
     Docentes(ArrayList<Profesor1> ConsultasProfesor1)
-      {
+    {
         for (int i = 0; i < ConsultasProfesor1.size(); i++)
-          {
+        {
             System.out.print(ConsultasProfesor1.get(i));
             System.out.println("\n");
-          }
-      }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -297,30 +294,26 @@ public class Docentes extends javax.swing.JFrame
 
     private void btnTodosDActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosDActionPerformed
     {//GEN-HEADEREND:event_btnTodosDActionPerformed
-        {                                              
         String condicion = "-1";
         objeto = ManipulaBD.ConsultasProfesores("id!=", condicion);
         for (int i = 0; i < objeto.size(); i++)
         {
-           
-            
-        TaDatosP.setValueAt(objeto.get(i).getApellidoP(), i, 0);
-        TaDatosP.setValueAt(objeto.get(i).getApellidoM(), i, 1);
-        TaDatosP.setValueAt(objeto.get(i).getNombres(), i, 2);
-        TaDatosP.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
-        TaDatosP.setValueAt(objeto.get(i).getCURP(), i, 4);
-        TaDatosP.setValueAt(objeto.get(i).getSexo(), i, 5);
-        TaDatosP.setValueAt(objeto.get(i).getGrado(), i, 6);
-        TaDatosP.setValueAt(objeto.get(i).getGrupo(), i, 7);
-        TaDatosP.setValueAt(objeto.get(i).getTelefono(), i, 8);
-        TaDatosP.setValueAt(objeto.get(i).getCedulaProf(), i, 9);
-        TaDatosP.setValueAt(objeto.get(i).getDireccion(), i, 10);
-       // TaDatosP.setValueAt(objeto.get(i).getFolioprofesor(), i, 11);
-        TaDatosP.setValueAt(objeto.get(i).getCorreo(), i, 13);
-        TaDatosP.setValueAt(objeto.get(i).getContraseña(), i, 14);
-       
+            TaDatosP.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+            TaDatosP.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+            TaDatosP.setValueAt(objeto.get(i).getNombres(), i, 2);
+            TaDatosP.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+            TaDatosP.setValueAt(objeto.get(i).getCURP(), i, 4);
+            TaDatosP.setValueAt(objeto.get(i).getSexo(), i, 5);
+            TaDatosP.setValueAt(objeto.get(i).getGrado(), i, 6);
+            TaDatosP.setValueAt(objeto.get(i).getGrupo(), i, 7);
+            TaDatosP.setValueAt(objeto.get(i).getTelefono(), i, 8);
+            TaDatosP.setValueAt(objeto.get(i).getCedulaProf(), i, 9);
+            TaDatosP.setValueAt(objeto.get(i).getDireccion(), i, 10);
+            TaDatosP.setValueAt(objeto.get(i).getId(), i, 11);
+            TaDatosP.setValueAt(objeto.get(i).getRfc(), i, 12);
+            TaDatosP.setValueAt(objeto.get(i).getCorreo(), i, 13);
         }
-        }
+
     }//GEN-LAST:event_btnTodosDActionPerformed
 
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
