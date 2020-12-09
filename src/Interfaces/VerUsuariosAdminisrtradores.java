@@ -5,6 +5,9 @@
  */
 package Interfaces;
 
+import Interno.Adminis1;
+import Interno.ManipulaBD;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
 {
+     public static ArrayList<Adminis1> objeto;
 
     /**
      * Creates new form Alumnos
@@ -32,6 +36,37 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         btnSalir.setIcon(icono2);
     }
 
+     public void Mostrar()
+    {
+       
+        
+        TaDatosA.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosA.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        
+        TaDatosA.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosA.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosA.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        //TaDatosA.setValueAt(objeto.get(0).getRFC(), 0, 5);
+        TaDatosA.setValueAt(objeto.get(0).getSexo(), 0, 6);
+        TaDatosA.setValueAt(objeto.get(0).getTelefono(), 0, 7);
+        TaDatosA.setValueAt(objeto.get(0).getCedulaProfe(), 0, 8);
+        TaDatosA.setValueAt(objeto.get(0).getDireccion(), 0, 9);
+        TaDatosA.setValueAt(objeto.get(0).getFolioEmpleado(), 0, 10);
+        //TaDatosA.setValueAt(objeto.get(0).getFolioPuesto(), 0, 11);
+        TaDatosA.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosA.setValueAt(objeto.get(0).getContrasenia(), 0, 13);
+    }
+    
+
+    VerUsuariosAdminisrtradores(ArrayList<Adminis1> ConsultaAdminis1)
+      {
+        for (int i = 0; i < ConsultaAdminis1.size(); i++)
+          {
+            System.out.print(ConsultaAdminis1.get(i));
+            System.out.println("\n");
+          }
+      }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,7 +83,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         btnTodosU = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TaDatosA = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
@@ -65,6 +100,13 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         btnTodosU.setBackground(new java.awt.Color(255, 255, 255));
         btnTodosU.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnTodosU.setText("Todos los usuarios");
+        btnTodosU.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnTodosUActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -77,7 +119,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -136,7 +178,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TaDatosA);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -252,6 +294,32 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btnTodosUActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosUActionPerformed
+    {//GEN-HEADEREND:event_btnTodosUActionPerformed
+         String condicion = "-1";
+        objeto = ManipulaBD.ConsultasAdmins("id!=", condicion);
+        for (int i = 0; i < objeto.size(); i++)
+        {
+           
+            
+        TaDatosA.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+        TaDatosA.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+        TaDatosA.setValueAt(objeto.get(i).getNombre(), i, 2);
+        TaDatosA.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+        TaDatosA.setValueAt(objeto.get(i).getCURP(), i, 4);
+        //TaDatosA.setValueAt(objeto.get(i).getRFC(), i, 5);
+        TaDatosA.setValueAt(objeto.get(i).getSexo(), i, 6);
+        TaDatosA.setValueAt(objeto.get(i).getTelefono(), i, 7);
+        TaDatosA.setValueAt(objeto.get(i).getCedulaProfe(), i, 8);
+        TaDatosA.setValueAt(objeto.get(i).getDireccion(), i, 9);
+        TaDatosA.setValueAt(objeto.get(i).getFolioEmpleado(), i, 10);
+        //TaDatosA.setValueAt(objeto.get(i).getFolioPuesto(), i, 11);
+        TaDatosA.setValueAt(objeto.get(i).getCorreo(), i, 12);
+        TaDatosA.setValueAt(objeto.get(i).getContrasenia(), i, 13);
+       
+        }
+    }//GEN-LAST:event_btnTodosUActionPerformed
+
     
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
@@ -322,6 +390,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TaDatosA;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosU;
@@ -331,6 +400,5 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
