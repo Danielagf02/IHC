@@ -331,6 +331,14 @@ public class Boletas extends javax.swing.JFrame
           {
             JOptionPane.showMessageDialog(null, "Error: " + ex, "Advertencia", 1);
           }
+         try
+          {
+            File path = new File(nombreAlumno + ".pdf");
+            Desktop.getDesktop().open(path);
+          } catch (IOException ex)
+          {
+            JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
+          }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5ActionPerformed
