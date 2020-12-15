@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  */
 public class CalificacionPAlumnos extends javax.swing.JFrame
 {
-     public static ArrayList<Alumnno1> objeto;
+    public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
     ArrayList<Materias1> mat = null;
 
@@ -27,25 +27,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
-        
-       
-       TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-        String condicion = String.valueOf(objeto.get(0).getId());
-        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
-
-        for (int i = 0; i < cal.size(); i++)
-          {
-            condicion = String.valueOf(cal.get(i).getId_Materia());
-            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
-            TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
-            TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
-          }
-
+        Mostrar();
     }
 
     /**
@@ -188,6 +170,28 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    public void Mostrar()
+    {
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+        
+        String condicion = String.valueOf(objeto.get(0).getId());
+        
+        cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
+
+        for (int i = 0; i < cal.size(); i++)
+        {
+            condicion = String.valueOf(cal.get(i).getId_Materia());
+            mat = ManipulaBD.ConsultasMaterias("id=", condicion);
+            TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
+            TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

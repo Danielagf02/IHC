@@ -26,12 +26,13 @@ import java.util.ArrayList;
 public class PrincipalAlumno extends javax.swing.JFrame
 {
 public static ArrayList<Alumnno1> obj;
+
     /**
      * Creates new form Principal
      */
     public PrincipalAlumno()
     {
-         initComponents();
+        initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/logo tipo CE.png");
         jLIm.setIcon(icono);
     }
@@ -264,6 +265,8 @@ public static ArrayList<Alumnno1> obj;
             }
 
         }
+    int fAlumno = Integer.parseInt(String.valueOf(EscribirUsuario.getText()));
+    CalificacionPAlumnos.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", ""+ fAlumno +"");
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void EscribirUsuarioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirUsuarioActionPerformed
