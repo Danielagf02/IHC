@@ -28,8 +28,8 @@ public static IAlumno ref;
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/colegio (1).png");
         btnMisCalificaciones.setIcon(icono1);
         
-        ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/lista.png");
-        btnBoleta.setIcon(icono2);
+      //  ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/lista.png");
+        //btnBoleta.setIcon(icono2);
         
         ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/humano.png");
         btnMaterias.setIcon(icono3);
@@ -67,7 +67,6 @@ public static IAlumno ref;
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        btnBoleta = new javax.swing.JButton();
         btnMisCalificaciones = new javax.swing.JButton();
         btnMaterias = new javax.swing.JButton();
         btnHorarios = new javax.swing.JButton();
@@ -165,10 +164,6 @@ public static IAlumno ref;
             }
         });
 
-        btnBoleta.setBackground(new java.awt.Color(255, 255, 255));
-        btnBoleta.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnBoleta.setText("Boleta");
-
         btnMisCalificaciones.setBackground(new java.awt.Color(255, 255, 255));
         btnMisCalificaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnMisCalificaciones.setText("Ver calificaciones");
@@ -249,9 +244,7 @@ public static IAlumno ref;
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addComponent(btnMisCalificaciones)
-                        .addGap(65, 65, 65)
-                        .addComponent(btnBoleta)
-                        .addGap(64, 64, 64)
+                        .addGap(194, 194, 194)
                         .addComponent(btnMaterias))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(263, 263, 263)
@@ -271,7 +264,6 @@ public static IAlumno ref;
                 .addComponent(jLabel5)
                 .addGap(95, 95, 95)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBoleta)
                     .addComponent(btnMaterias)
                     .addComponent(btnMisCalificaciones))
                 .addGap(53, 53, 53)
@@ -350,7 +342,7 @@ public static IAlumno ref;
 
     private void btnMisCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMisCalificacionesActionPerformed
     {//GEN-HEADEREND:event_btnMisCalificacionesActionPerformed
-         new CalificacionPAlumnos().setVisible(true);
+       new CalificacionPAlumnos().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnMisCalificacionesActionPerformed
 
@@ -449,7 +441,6 @@ public static IAlumno ref;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton MiInfo;
-    private javax.swing.JButton btnBoleta;
     private javax.swing.JButton btnHorarios;
     private javax.swing.JButton btnInfoProfe;
     private javax.swing.JButton btnMaterias;

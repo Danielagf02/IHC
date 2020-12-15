@@ -5,11 +5,15 @@
  */
 package Interfaces;
 
+import Interno.Adminis1;
+import Interno.Alumnno1;
+import Interno.ManipulaBD;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 
 
 
@@ -21,7 +25,7 @@ import cjb.ci.Validaciones;
  */
 public class PrincipalAlumno extends javax.swing.JFrame
 {
-
+public static ArrayList<Alumnno1> obj;
     /**
      * Creates new form Principal
      */
@@ -47,14 +51,14 @@ public class PrincipalAlumno extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         siguiente = new javax.swing.JButton();
-        Texto1 = new javax.swing.JTextField();
+        EscribirUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLIm = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        contra1 = new javax.swing.JPasswordField();
+        EscribirContraseña = new javax.swing.JPasswordField();
         Cancelar = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
@@ -84,23 +88,23 @@ public class PrincipalAlumno extends javax.swing.JFrame
             }
         });
 
-        Texto1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
-        Texto1.addActionListener(new java.awt.event.ActionListener()
+        EscribirUsuario.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
+        EscribirUsuario.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                Texto1ActionPerformed(evt);
+                EscribirUsuarioActionPerformed(evt);
             }
         });
-        Texto1.addKeyListener(new java.awt.event.KeyAdapter()
+        EscribirUsuario.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
             {
-                Texto1KeyPressed(evt);
+                EscribirUsuarioKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                Texto1KeyTyped(evt);
+                EscribirUsuarioKeyTyped(evt);
             }
         });
 
@@ -119,19 +123,19 @@ public class PrincipalAlumno extends javax.swing.JFrame
         jLabel8.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel8.setText("*Contraseña:");
 
-        contra1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        contra1.addActionListener(new java.awt.event.ActionListener()
+        EscribirContraseña.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        EscribirContraseña.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                contra1ActionPerformed(evt);
+                EscribirContraseñaActionPerformed(evt);
             }
         });
-        contra1.addKeyListener(new java.awt.event.KeyAdapter()
+        EscribirContraseña.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                contra1KeyTyped(evt);
+                EscribirContraseñaKeyTyped(evt);
             }
         });
 
@@ -164,8 +168,8 @@ public class PrincipalAlumno extends javax.swing.JFrame
                         .addGap(5, 5, 5)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contra1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EscribirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscribirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -203,13 +207,13 @@ public class PrincipalAlumno extends javax.swing.JFrame
                 .addComponent(jLIm)
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscribirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(5, 5, 5)
                 .addComponent(jLabel2)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscribirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -243,26 +247,35 @@ public class PrincipalAlumno extends javax.swing.JFrame
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_siguienteActionPerformed
     {//GEN-HEADEREND:event_siguienteActionPerformed
-     if (Texto1.getText().isEmpty() || contra1.getText().isEmpty())
+     if (EscribirUsuario.getText().isEmpty() || EscribirContraseña.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Hay campos vacíos");
         } else
         {
-            new IAlumno().setVisible(true);
-            this.setVisible(false);
+            obj = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "'" + EscribirUsuario.getText() + "'");
+            if (obj != null)
+            {
+                if (EscribirContraseña.getText().compareTo(obj.get(0).getContraseña()) == 0)
+                {
+                    System.out.println("Si existe");
+                    new IAlumno().setVisible(true);
+                    this.setVisible(false);
+                }
+            }
+
         }
     }//GEN-LAST:event_siguienteActionPerformed
 
-    private void Texto1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Texto1ActionPerformed
-    {//GEN-HEADEREND:event_Texto1ActionPerformed
+    private void EscribirUsuarioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirUsuarioActionPerformed
+    {//GEN-HEADEREND:event_EscribirUsuarioActionPerformed
         
                
-    }//GEN-LAST:event_Texto1ActionPerformed
+    }//GEN-LAST:event_EscribirUsuarioActionPerformed
 
-    private void contra1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_contra1ActionPerformed
-    {//GEN-HEADEREND:event_contra1ActionPerformed
+    private void EscribirContraseñaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirContraseñaActionPerformed
+    {//GEN-HEADEREND:event_EscribirContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_contra1ActionPerformed
+    }//GEN-LAST:event_EscribirContraseñaActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
@@ -271,20 +284,20 @@ public class PrincipalAlumno extends javax.swing.JFrame
   
     }//GEN-LAST:event_CancelarActionPerformed
 
-    private void Texto1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyPressed
-        if(Texto1.getText().isEmpty()!=true){
-            Validaciones.enter(this, evt, contra1);
+    private void EscribirUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyPressed
+        if(EscribirUsuario.getText().isEmpty()!=true){
+            Validaciones.enter(this, evt, EscribirContraseña);
         }
                 
-    }//GEN-LAST:event_Texto1KeyPressed
+    }//GEN-LAST:event_EscribirUsuarioKeyPressed
 
-    private void Texto1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyTyped
+    private void EscribirUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyTyped
         Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_Texto1KeyTyped
+    }//GEN-LAST:event_EscribirUsuarioKeyTyped
 
-    private void contra1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contra1KeyTyped
+    private void EscribirContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirContraseñaKeyTyped
         Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_contra1KeyTyped
+    }//GEN-LAST:event_EscribirContraseñaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -334,8 +347,8 @@ public class PrincipalAlumno extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
-    private javax.swing.JTextField Texto1;
-    private javax.swing.JPasswordField contra1;
+    private javax.swing.JPasswordField EscribirContraseña;
+    private javax.swing.JTextField EscribirUsuario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;

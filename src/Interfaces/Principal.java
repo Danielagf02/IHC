@@ -5,9 +5,14 @@
  */
 package Interfaces;
 
+import static Interfaces.PrincipalDocente.obj;
+import Interno.Adminis1;
+import Interno.ManipulaBD;
+import Interno.Profesor1;
 import java.awt.event.ActionEvent;
 import cjb.ci.CtrlInterfaz;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -21,6 +26,10 @@ public class Principal extends javax.swing.JFrame
 {
 public String usuario = "";
 public String password = "";
+
+
+public static ArrayList<Adminis1> obj;
+
     /**
      * Creates new form Principal
      */
@@ -38,23 +47,23 @@ public String password = "";
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         siguiente = new javax.swing.JButton();
-        Texto1 = new javax.swing.JTextField();
+        EscribirUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLIm = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Contrasenia1 = new javax.swing.JPasswordField();
+        EscribirContraseña = new javax.swing.JPasswordField();
         Cancelar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
 
@@ -75,24 +84,31 @@ public String password = "";
         siguiente.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         siguiente.setForeground(new java.awt.Color(255, 255, 255));
         siguiente.setText("Iniciar sesion ");
-        siguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        siguiente.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 siguienteActionPerformed(evt);
             }
         });
 
-        Texto1.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
-        Texto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Texto1ActionPerformed(evt);
+        EscribirUsuario.setFont(new java.awt.Font("Arial", 2, 10)); // NOI18N
+        EscribirUsuario.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EscribirUsuarioActionPerformed(evt);
             }
         });
-        Texto1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Texto1KeyPressed(evt);
+        EscribirUsuario.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
+                EscribirUsuarioKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Texto1KeyTyped(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                EscribirUsuarioKeyTyped(evt);
             }
         });
 
@@ -101,7 +117,7 @@ public String password = "";
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Icono de signo verde");
-        jLabel2.setToolTipText("Coloque su usuario y contraseña, si tiene dudas consulte con un administrador ");
+        jLabel2.setToolTipText("Recuerde que su usuario es su folio de empleado. ");
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel4.setText("*Usuario:");
@@ -111,15 +127,19 @@ public String password = "";
         jLabel8.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel8.setText("*Contraseña:");
 
-        Contrasenia1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Contrasenia1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Contrasenia1ActionPerformed(evt);
+        EscribirContraseña.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        EscribirContraseña.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EscribirContraseñaActionPerformed(evt);
             }
         });
-        Contrasenia1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Contrasenia1KeyTyped(evt);
+        EscribirContraseña.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                EscribirContraseñaKeyTyped(evt);
             }
         });
 
@@ -127,17 +147,11 @@ public String password = "";
         Cancelar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(255, 255, 255));
         Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Cancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 CancelarActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setText("Agregar Adminsitrador Fijo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -165,18 +179,12 @@ public String password = "";
                             .addComponent(jLabel8)
                             .addComponent(jLabel6))
                         .addGap(5, 5, 5)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Contrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addContainerGap(107, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(EscribirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscribirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(107, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLIm)
@@ -197,7 +205,7 @@ public String password = "";
                 .addComponent(jLIm)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Texto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EscribirUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
@@ -205,18 +213,16 @@ public String password = "";
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Contrasenia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EscribirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Cancelar)
                             .addComponent(siguiente))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel6))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,26 +248,35 @@ public String password = "";
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_siguienteActionPerformed
     {//GEN-HEADEREND:event_siguienteActionPerformed
-     if (Texto1.getText().isEmpty() || Contrasenia1.getText().isEmpty())
+     if (EscribirUsuario.getText().isEmpty() || EscribirContraseña.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Hay campos vacíos");
         } else
         {
-            new ControlEscolar().setVisible(true);
-            this.setVisible(false);
+            obj = ManipulaBD.ConsultasAdmins("FolioEmpleado=", "'" + EscribirUsuario.getText() + "'");
+            if (obj != null)
+            {
+                if (EscribirContraseña.getText().compareTo(obj.get(0).getContrasenia()) == 0)
+                {
+                    System.out.println("Si existe");
+                    new ControlEscolar().setVisible(true);
+                    this.setVisible(false);
+                }
+            }
+
         }
     }//GEN-LAST:event_siguienteActionPerformed
 
-    private void Texto1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Texto1ActionPerformed
-    {//GEN-HEADEREND:event_Texto1ActionPerformed
+    private void EscribirUsuarioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirUsuarioActionPerformed
+    {//GEN-HEADEREND:event_EscribirUsuarioActionPerformed
         
                
-    }//GEN-LAST:event_Texto1ActionPerformed
+    }//GEN-LAST:event_EscribirUsuarioActionPerformed
 
-    private void Contrasenia1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_Contrasenia1ActionPerformed
-    {//GEN-HEADEREND:event_Contrasenia1ActionPerformed
+    private void EscribirContraseñaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EscribirContraseñaActionPerformed
+    {//GEN-HEADEREND:event_EscribirContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Contrasenia1ActionPerformed
+    }//GEN-LAST:event_EscribirContraseñaActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CancelarActionPerformed
     {//GEN-HEADEREND:event_CancelarActionPerformed
@@ -270,26 +285,20 @@ public String password = "";
 
     }//GEN-LAST:event_CancelarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
-        new Registrarse().setVisible(true);
-        this.setVisible(false);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void Texto1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyPressed
-        if(Texto1.getText().isEmpty()!=true){
-            Validaciones.enter(this, evt,Contrasenia1);
+    private void EscribirUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyPressed
+        if(EscribirUsuario.getText().isEmpty()!=true){
+            Validaciones.enter(this, evt,EscribirContraseña);
                     
         }
-    }//GEN-LAST:event_Texto1KeyPressed
+    }//GEN-LAST:event_EscribirUsuarioKeyPressed
 
-    private void Texto1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Texto1KeyTyped
+    private void EscribirUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirUsuarioKeyTyped
         Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_Texto1KeyTyped
+    }//GEN-LAST:event_EscribirUsuarioKeyTyped
 
-    private void Contrasenia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Contrasenia1KeyTyped
+    private void EscribirContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EscribirContraseñaKeyTyped
         Validaciones.validaAlfanumerico(evt);
-    }//GEN-LAST:event_Contrasenia1KeyTyped
+    }//GEN-LAST:event_EscribirContraseñaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -339,9 +348,8 @@ public String password = "";
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
-    private javax.swing.JPasswordField Contrasenia1;
-    private javax.swing.JTextField Texto1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPasswordField EscribirContraseña;
+    private javax.swing.JTextField EscribirUsuario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLIm;
     private javax.swing.JLabel jLabel1;

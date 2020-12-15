@@ -110,7 +110,7 @@ public class PrincipalDocente extends javax.swing.JFrame
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Icono de signo verde");
-        jLabel2.setToolTipText("Coloque su usuario y contraseña, si tiene dudas consulte con un administrador ");
+        jLabel2.setToolTipText("Coloque su usuario y contraseña, si tiene dudas consulte con un administrador,recuerda que es tu cedula profesional ");
 
         jLabel4.setFont(new java.awt.Font("Arial", 2, 11)); // NOI18N
         jLabel4.setText("*Usuario:");
