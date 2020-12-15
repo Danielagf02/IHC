@@ -6,6 +6,7 @@ import Interno.ManipulaBD;
 import Interno.Materias1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -240,8 +241,22 @@ public class Calificaciones extends javax.swing.JFrame
 
     private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
     {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
-        new BuscarAlumno2().setVisible(true);
-        this.setVisible(false);
+      
+         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
+      
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0,2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+       
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+     
+        
+        
+        
+        
 
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 

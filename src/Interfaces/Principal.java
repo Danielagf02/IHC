@@ -261,6 +261,9 @@ public static ArrayList<Adminis1> obj;
                     System.out.println("Si existe");
                     new ControlEscolar().setVisible(true);
                     this.setVisible(false);
+                }else
+                {
+                    System.out.println("No existe");
                 }
             }
 
