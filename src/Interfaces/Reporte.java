@@ -326,7 +326,47 @@ public class Reporte extends javax.swing.JFrame
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
     {//GEN-HEADEREND:event_btnImprimirActionPerformed
-        // TODO add your handling code here:
+            FileOutputStream archivo;
+            String nombreAlumno= (String) datos.get(1);
+
+            try {
+                archivo = new FileOutputStream(nombreAlumno + ".pdf");
+                Document documento = new Document();
+                try {
+                    PdfWriter.getInstance(documento, archivo);
+                } catch (DocumentException ex) {
+                    Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                documento.open();
+                try {
+                    
+                    documento.add(new Paragraph("Datos del alumno"));
+                    documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
+                    documento.add(new Paragraph("Apellido paterno: " + datos2.get(0)));
+                    documento.add(new Paragraph("Apellido materno: " + datos2.get(1)));
+                    documento.add(new Paragraph("Nombre: " + datos2.get(2)));
+                    documento.add(new Paragraph("Grado: " + datos2.get(6)));
+                    documento.add(new Paragraph("Grupo: " + datos2.get(7)));
+                    documento.add(new Paragraph("Día: " + jtfdia.getText()));
+                    documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
+                    documento.add(new Paragraph("Día cita del padre: " + jtfdiaPadre.getText()));
+                    
+                   
+                } catch (DocumentException ex) {
+                    Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                documento.close();
+                JOptionPane.showMessageDialog(null, "PDF creado correctamente","Reporte",1);
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Error: " + ex,"Advertencia",1);
+            }
+             try {
+            File path = new File(nombreAlumno + ".pdf");
+            Desktop.getDesktop().open(path);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
+        }
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
