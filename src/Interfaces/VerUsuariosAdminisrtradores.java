@@ -40,21 +40,21 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     {
        
         
-        TaDatosA.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
-        TaDatosA.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
         
-        TaDatosA.setValueAt(objeto.get(0).getNombre(), 0, 2);
-        TaDatosA.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
-        TaDatosA.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
         //TaDatosA.setValueAt(objeto.get(0).getRFC(), 0, 5);
-        TaDatosA.setValueAt(objeto.get(0).getSexo(), 0, 6);
-        TaDatosA.setValueAt(objeto.get(0).getTelefono(), 0, 7);
-        TaDatosA.setValueAt(objeto.get(0).getCedulaProfe(), 0, 8);
-        TaDatosA.setValueAt(objeto.get(0).getDireccion(), 0, 9);
-        TaDatosA.setValueAt(objeto.get(0).getFolioEmpleado(), 0, 10);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCedulaProfe(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getDireccion(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioEmpleado(), 0, 10);
         //TaDatosA.setValueAt(objeto.get(0).getFolioPuesto(), 0, 11);
-        TaDatosA.setValueAt(objeto.get(0).getCorreo(), 0, 12);
-        TaDatosA.setValueAt(objeto.get(0).getContrasenia(), 0, 13);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContrasenia(), 0, 13);
     }
     
 
@@ -83,7 +83,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         btnTodosU = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TaDatosA = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
@@ -119,7 +119,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
             }
         });
 
-        TaDatosA.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -178,7 +178,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TaDatosA);
+        jScrollPane1.setViewportView(TaDatosAlumno);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -291,7 +291,25 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+       String Folio = JOptionPane.showInputDialog("Folio Admnistrador");
+      
+       objeto = ManipulaBD.ConsultasAdmins("FolioAdministrador=", "" + Folio + "");
+      
+        
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCedulaProfe(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getDireccion(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioEmpleado(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getPuesto(), 0, 10);
+       
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContrasenia(), 0, 12);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTodosUActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosUActionPerformed
@@ -302,20 +320,20 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         {
            
             
-        TaDatosA.setValueAt(objeto.get(i).getApellidoP(), i, 0);
-        TaDatosA.setValueAt(objeto.get(i).getApellidoM(), i, 1);
-        TaDatosA.setValueAt(objeto.get(i).getNombre(), i, 2);
-        TaDatosA.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
-        TaDatosA.setValueAt(objeto.get(i).getCURP(), i, 4);
+        TaDatosAlumno.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+        TaDatosAlumno.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+        TaDatosAlumno.setValueAt(objeto.get(i).getNombre(), i, 2);
+        TaDatosAlumno.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+        TaDatosAlumno.setValueAt(objeto.get(i).getCURP(), i, 4);
         //TaDatosA.setValueAt(objeto.get(i).getRFC(), i, 5);
-        TaDatosA.setValueAt(objeto.get(i).getSexo(), i, 6);
-        TaDatosA.setValueAt(objeto.get(i).getTelefono(), i, 7);
-        TaDatosA.setValueAt(objeto.get(i).getCedulaProfe(), i, 8);
-        TaDatosA.setValueAt(objeto.get(i).getDireccion(), i, 9);
-        TaDatosA.setValueAt(objeto.get(i).getFolioEmpleado(), i, 10);
+        TaDatosAlumno.setValueAt(objeto.get(i).getSexo(), i, 6);
+        TaDatosAlumno.setValueAt(objeto.get(i).getTelefono(), i, 7);
+        TaDatosAlumno.setValueAt(objeto.get(i).getCedulaProfe(), i, 8);
+        TaDatosAlumno.setValueAt(objeto.get(i).getDireccion(), i, 9);
+        TaDatosAlumno.setValueAt(objeto.get(i).getFolioEmpleado(), i, 10);
         //TaDatosA.setValueAt(objeto.get(i).getFolioPuesto(), i, 11);
-        TaDatosA.setValueAt(objeto.get(i).getCorreo(), i, 12);
-        TaDatosA.setValueAt(objeto.get(i).getContrasenia(), i, 13);
+        TaDatosAlumno.setValueAt(objeto.get(i).getCorreo(), i, 12);
+        TaDatosAlumno.setValueAt(objeto.get(i).getContrasenia(), i, 13);
        
         }
     }//GEN-LAST:event_btnTodosUActionPerformed
@@ -390,7 +408,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TaDatosA;
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosU;

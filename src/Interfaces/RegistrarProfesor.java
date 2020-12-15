@@ -320,6 +320,13 @@ public class RegistrarProfesor extends javax.swing.JFrame
         });
 
         tfTel.setEnabled(false);
+        tfTel.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                tfTelActionPerformed(evt);
+            }
+        });
         tfTel.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyPressed(java.awt.event.KeyEvent evt)
@@ -1033,6 +1040,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfFolioKeyTyped
+
+    private void tfTelActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_tfTelActionPerformed
+    {//GEN-HEADEREND:event_tfTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTelActionPerformed
 
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM 
     public boolean validaEmail(String cad)

@@ -19,6 +19,7 @@ public class Docentes extends javax.swing.JFrame
 {
 
     public static ArrayList<Profesor1> objeto;
+    private String ApellidoP;
 
     /**
      * Creates new form Alumnos
@@ -39,20 +40,20 @@ public class Docentes extends javax.swing.JFrame
 
     public void Mostrar()
     {
-        TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
-        TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
-        TaDatosP.setValueAt(objeto.get(0).getNombres(), 0, 2);
-        TaDatosP.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
-        TaDatosP.setValueAt(objeto.get(0).getCURP(), 0, 4);
-        TaDatosP.setValueAt(objeto.get(0).getSexo(), 0, 5);
-        TaDatosP.setValueAt(objeto.get(0).getGrado(), 0, 6);
-        TaDatosP.setValueAt(objeto.get(0).getGrupo(), 0, 7);
-        TaDatosP.setValueAt(objeto.get(0).getTelefono(), 0, 8);
-        TaDatosP.setValueAt(objeto.get(0).getCedulaProf(), 0, 9);
-        TaDatosP.setValueAt(objeto.get(0).getDireccion(), 0, 10);
-        TaDatosP.setValueAt(objeto.get(0).getId(), 0, 11);
-        TaDatosP.setValueAt(objeto.get(0).getRfc(), 0, 12);
-        TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 13);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombres(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCedulaProf(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getDireccion(), 0, 10);
+        TaDatosAlumno.setValueAt(objeto.get(0).getId(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getRfc(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 13);
     }
 
     Docentes(ArrayList<Profesor1> ConsultasProfesor1)
@@ -80,7 +81,7 @@ public class Docentes extends javax.swing.JFrame
         btnTodosD = new javax.swing.JButton();
         BuscarPorfesor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TaDatosP = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
@@ -116,7 +117,7 @@ public class Docentes extends javax.swing.JFrame
             }
         });
 
-        TaDatosP.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -175,7 +176,7 @@ public class Docentes extends javax.swing.JFrame
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TaDatosP);
+        jScrollPane1.setViewportView(TaDatosAlumno);
 
         btnRegresar.addActionListener(new java.awt.event.ActionListener()
         {
@@ -219,7 +220,7 @@ public class Docentes extends javax.swing.JFrame
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTodosD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 924, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BuscarPorfesor)
                                 .addGap(29, 29, 29))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -232,9 +233,9 @@ public class Docentes extends javax.swing.JFrame
                         .addComponent(btnSalir)
                         .addGap(37, 37, 37))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(78, 78, 78)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 998, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -253,7 +254,7 @@ public class Docentes extends javax.swing.JFrame
                     .addComponent(BuscarPorfesor))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(btnSalir))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -262,7 +263,7 @@ public class Docentes extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1112, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,8 +287,30 @@ public class Docentes extends javax.swing.JFrame
 
     private void BuscarPorfesorActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarPorfesorActionPerformed
     {//GEN-HEADEREND:event_BuscarPorfesorActionPerformed
-        new Buscarprofesor().setVisible(true);
-        this.setVisible(false);
+       String Nombres = JOptionPane.showInputDialog("Nombre del Docente");
+      
+        objeto = ManipulaBD.ConsultasProfesores("Nombres=", Nombres + "" + "");
+      
+        
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombres(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCedulaProf(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getDireccion(), 0, 10);
+        //TaDatosAlumno.setValueAt(objeto.get(0).getRFC(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContraseña(), 0, 13);
+        
+        
+       // new Buscarprofesor().setVisible(true);
+        //this.setVisible(false);
+        
     }//GEN-LAST:event_BuscarPorfesorActionPerformed
 
     private void btnTodosDActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosDActionPerformed
@@ -296,20 +319,20 @@ public class Docentes extends javax.swing.JFrame
         objeto = ManipulaBD.ConsultasProfesores("id!=", condicion);
         for (int i = 0; i < objeto.size(); i++)
         {
-            TaDatosP.setValueAt(objeto.get(i).getApellidoP(), i, 0);
-            TaDatosP.setValueAt(objeto.get(i).getApellidoM(), i, 1);
-            TaDatosP.setValueAt(objeto.get(i).getNombres(), i, 2);
-            TaDatosP.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
-            TaDatosP.setValueAt(objeto.get(i).getCURP(), i, 4);
-            TaDatosP.setValueAt(objeto.get(i).getSexo(), i, 5);
-            TaDatosP.setValueAt(objeto.get(i).getGrado(), i, 6);
-            TaDatosP.setValueAt(objeto.get(i).getGrupo(), i, 7);
-            TaDatosP.setValueAt(objeto.get(i).getTelefono(), i, 8);
-            TaDatosP.setValueAt(objeto.get(i).getCedulaProf(), i, 9);
-            TaDatosP.setValueAt(objeto.get(i).getDireccion(), i, 10);
-            TaDatosP.setValueAt(objeto.get(i).getId(), i, 11);
-            TaDatosP.setValueAt(objeto.get(i).getRfc(), i, 12);
-            TaDatosP.setValueAt(objeto.get(i).getCorreo(), i, 13);
+            TaDatosAlumno.setValueAt(objeto.get(i).getApellidoP(), i, 0);
+            TaDatosAlumno.setValueAt(objeto.get(i).getApellidoM(), i, 1);
+            TaDatosAlumno.setValueAt(objeto.get(i).getNombres(), i, 2);
+            TaDatosAlumno.setValueAt(objeto.get(i).getFechaNacimiento(), i, 3);
+            TaDatosAlumno.setValueAt(objeto.get(i).getCURP(), i, 4);
+            TaDatosAlumno.setValueAt(objeto.get(i).getSexo(), i, 5);
+            TaDatosAlumno.setValueAt(objeto.get(i).getGrado(), i, 6);
+            TaDatosAlumno.setValueAt(objeto.get(i).getGrupo(), i, 7);
+            TaDatosAlumno.setValueAt(objeto.get(i).getTelefono(), i, 8);
+            TaDatosAlumno.setValueAt(objeto.get(i).getCedulaProf(), i, 9);
+            TaDatosAlumno.setValueAt(objeto.get(i).getDireccion(), i, 10);
+            TaDatosAlumno.setValueAt(objeto.get(i).getId(), i, 11);
+            TaDatosAlumno.setValueAt(objeto.get(i).getRfc(), i, 12);
+            TaDatosAlumno.setValueAt(objeto.get(i).getCorreo(), i, 13);
         }
 
     }//GEN-LAST:event_btnTodosDActionPerformed
@@ -382,7 +405,7 @@ public class Docentes extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarPorfesor;
-    private javax.swing.JTable TaDatosP;
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosD;

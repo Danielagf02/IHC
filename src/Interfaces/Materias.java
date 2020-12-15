@@ -9,6 +9,7 @@ import Interno.ManipulaBD;
 import Interno.Materias1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,10 +38,10 @@ public class Materias extends javax.swing.JFrame
     
     public void Mostrar()
     {
-        Tablamat.setValueAt(mat.get(0).getId(), 0, 0);
-        Tablamat.setValueAt(mat.get(0).getNombre(), 0, 1);
-        Tablamat.setValueAt(mat.get(0).getGrado(), 0, 2);
-        Tablamat.setValueAt(mat.get(0).getGrupo(), 0, 3);
+        TaDatosAlumno.setValueAt(mat.get(0).getId(), 0, 0);
+        TaDatosAlumno.setValueAt(mat.get(0).getNombre(), 0, 1);
+        TaDatosAlumno.setValueAt(mat.get(0).getGrado(), 0, 2);
+        TaDatosAlumno.setValueAt(mat.get(0).getGrupo(), 0, 3);
     }
 
     Materias(ArrayList<Interno.Materias1> ConsultasMaterias)
@@ -67,10 +68,9 @@ public class Materias extends javax.swing.JFrame
         JBuscarM = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Tablamat = new javax.swing.JTable();
+        TaDatosAlumno = new javax.swing.JTable();
         jButton9 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
@@ -125,11 +125,6 @@ public class Materias extends javax.swing.JFrame
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 0, 0));
-        jButton5.setText("Eliminar Materia");
-
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 153, 255));
@@ -142,8 +137,8 @@ public class Materias extends javax.swing.JFrame
             }
         });
 
-        Tablamat.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Tablamat.setModel(new javax.swing.table.DefaultTableModel(
+        TaDatosAlumno.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null},
@@ -189,7 +184,7 @@ public class Materias extends javax.swing.JFrame
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(Tablamat);
+        jScrollPane2.setViewportView(TaDatosAlumno);
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -216,18 +211,18 @@ public class Materias extends javax.swing.JFrame
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnTodasM)
                                 .addGap(134, 134, 134)
                                 .addComponent(JBuscarM))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addGap(65, 65, 65)
+                                .addGap(196, 196, 196)
                                 .addComponent(jButton6)
-                                .addGap(48, 48, 48)
-                                .addComponent(jButton9)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton9)
+                                .addGap(16, 16, 16)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -247,7 +242,6 @@ public class Materias extends javax.swing.JFrame
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
                     .addComponent(jButton6)
                     .addComponent(jButton9))
                 .addGap(36, 154, Short.MAX_VALUE))
@@ -283,8 +277,16 @@ public class Materias extends javax.swing.JFrame
 
     private void JBuscarMActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBuscarMActionPerformed
     {//GEN-HEADEREND:event_JBuscarMActionPerformed
-        new BuscarMateria().setVisible(true);
-        this.setVisible(false);
+         String Nombre = JOptionPane.showInputDialog("Nombre de la materia");
+        mat = ManipulaBD.ConsultasMaterias("NombreMat=", "" + Nombre + "");
+      
+        
+        TaDatosAlumno.setValueAt(mat.get(0).getId(), 0, 0);
+      
+        TaDatosAlumno.setValueAt(mat.get(0).getNombre(), 0, 1);
+        TaDatosAlumno.setValueAt(mat.get(0).getGrado(), 0, 3);
+        TaDatosAlumno.setValueAt(mat.get(0).getGrupo(), 0, 4);
+        
     }//GEN-LAST:event_JBuscarMActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -298,10 +300,10 @@ public class Materias extends javax.swing.JFrame
         mat = ManipulaBD.ConsultasMaterias("id!=", condicion);
         for (int i = 0; i < mat.size(); i++)
         {
-            Tablamat.setValueAt(mat.get(i).getId(), i, 0);
-            Tablamat.setValueAt(mat.get(i).getNombre(), i, 1);
-            Tablamat.setValueAt(mat.get(i).getGrado(), i, 2);
-            Tablamat.setValueAt(mat.get(i).getGrupo(), i, 3);
+            TaDatosAlumno.setValueAt(mat.get(i).getId(), i, 0);
+            TaDatosAlumno.setValueAt(mat.get(i).getNombre(), i, 1);
+            TaDatosAlumno.setValueAt(mat.get(i).getGrado(), i, 2);
+            TaDatosAlumno.setValueAt(mat.get(i).getGrupo(), i, 3);
         }
     }//GEN-LAST:event_btnTodasMActionPerformed
 
@@ -353,11 +355,10 @@ public class Materias extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBuscarM;
-    private javax.swing.JTable Tablamat;
+    private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnTodasM;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;

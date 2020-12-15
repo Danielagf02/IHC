@@ -571,7 +571,7 @@ public class ControlEscolar extends javax.swing.JFrame
 
     private void btnAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAlumnosActionPerformed
     {//GEN-HEADEREND:event_btnAlumnosActionPerformed
-         new Alumnos().setVisible(true);
+         new Alumnos1().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAlumnosActionPerformed
 
