@@ -34,12 +34,6 @@ public class Calificaciones extends javax.swing.JFrame
     
     public void Mostrar()
     {
-//        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-//        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-//        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-//        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-//        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-//        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
         String condicion = String.valueOf(objeto.get(0).getId());
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
@@ -241,7 +235,6 @@ public class Calificaciones extends javax.swing.JFrame
 
     private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
     {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
-      
         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
         objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
@@ -250,23 +243,15 @@ public class Calificaciones extends javax.swing.JFrame
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-     
         Mostrar();
-        
-        
-        
-
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
     private void BModificaCalActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BModificaCalActionPerformed
     {//GEN-HEADEREND:event_BModificaCalActionPerformed
-
         for (int i = 0; i < cal.size(); i++)
           {
             ManipulaBD.ModificarCalificaciones(cal.get(i).getId(), "Calificacion", "" + TaCali.getValueAt(i, 1) + "");
           }
-
-
     }//GEN-LAST:event_BModificaCalActionPerformed
 
     /**

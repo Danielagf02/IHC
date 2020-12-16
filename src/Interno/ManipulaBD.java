@@ -477,8 +477,8 @@ public class ManipulaBD
      * @param Contraseña tipo String
      */
     public static void AltasProfesores(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombres,
-            String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf, String Direccion, String rfc,
-            String Correo, String Contraseña)
+            String fechaNacimiento, String CURP, String sexo, int Telefono, String CedulaProf,
+            String Direccion, String rfc, String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
         Direccion = Direccion.replace(" ", "|");
