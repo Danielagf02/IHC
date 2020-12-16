@@ -5,11 +5,14 @@
  */
 package Interfaces;
 
+import Interno.Alumnno1;
 import Interno.ManipulaBD;
+import Interno.Profesor1;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
@@ -21,20 +24,41 @@ import javax.swing.JOptionPane;
  */
 public class RegistrarProfesor extends javax.swing.JFrame
 {
+
     String sex; //Para guardar el sexo
-    int id=1;
+    ArrayList<Profesor1> tmp;
+    int total;
+
     /**
      * Creates new form Registrarse
      */
     public RegistrarProfesor()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono1);
+
+        tmp = ManipulaBD.ConsultasProfesores("id!=", "0");
+        try
+        {
+            System.out.println(tmp.isEmpty());
+            if (!tmp.isEmpty())
+            {
+                total = tmp.get(tmp.size() - 1).getId() + 1;
+                System.out.println(total);
+            } else
+            {
+                total = 0;
+            }
+        } catch (java.lang.NullPointerException e)
+        {
+            total = 0;
+        }
+
     }
 
     /**
@@ -667,34 +691,35 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-       String nombre = tfNombre.getText();
-       String apellidoP = tfAPaterno.getText();
-       String apellidoM = tfAMaterno.getText();
-       String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
-       if (rbHombre.isSelected())
+        int id = total++;
+        String nombre = tfNombre.getText();
+        String apellidoP = tfAPaterno.getText();
+        String apellidoM = tfAMaterno.getText();
+        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
+        if (rbHombre.isSelected())
         {
             sex = "Mujer";
-        }else 
+        } else
         {
             if (rbHombre.isSelected())
             {
                 sex = "Hombre";
             }
         }
-       String curp = tfCurp.getText();
-       int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
-       String grupo = tfGrupo.getText();
-       int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
-       String Ced = tfCedula.getText();
-       String Dir = tfDir.getText();
-       String rfc = tfRfc.getText();
-       String correo = tfCorreo.getText();
-       String contra = tfContraseña.getText(); //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+        String curp = tfCurp.getText();
+        int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
+        String grupo = tfGrupo.getText();
+        int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
+        String Ced = tfCedula.getText();
+        String Dir = tfDir.getText();
+        String rfc = tfRfc.getText();
+        String correo = tfCorreo.getText();
+        String contra = tfContraseña.getText(); //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
         ManipulaBD.AltasProfesores(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp, sex, tel, Ced, Dir, rfc, correo, contra);
-       
+
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-       id++;
-       CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfCedula, tfDir, tfRfc, tfCorreo, tfContraseña);
+        id++;
+        CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfCedula, tfDir, tfRfc, tfCorreo, tfContraseña);
         //CtrlInterfaz.habilita(false, rbHombre, rbMujer);
         rbHombre.setEnabled(false);
         rbMujer.setEnabled(false);
@@ -720,12 +745,12 @@ public class RegistrarProfesor extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnCurpActionPerformed
         if (java.awt.Desktop.isDesktopSupported())
         {
-            java.awt.Desktop desktop= java.awt.Desktop.getDesktop();
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE))
             {
                 try
                 {
-                    java.net.URI uri= new java.net.URI("https://www.gob.mx/curp/");
+                    java.net.URI uri = new java.net.URI("https://www.gob.mx/curp/");
                     desktop.browse(uri);
                 } catch (URISyntaxException | IOException ex)
                 {
@@ -750,7 +775,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
         if (tfNombre.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfAPaterno);
-        } 
+        }
     }//GEN-LAST:event_tfNombreKeyPressed
 
     private void tfNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyTyped
@@ -786,7 +811,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfDiaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyPressed
     {//GEN-HEADEREND:event_tfDiaKeyPressed
-        if (tfDia.getText().isEmpty() != true) 
+        if (tfDia.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfMes);
         }
@@ -794,16 +819,18 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfDiaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyTyped
     {//GEN-HEADEREND:event_tfDiaKeyTyped
-        if (tfDia.getText().length() == 2) {
+        if (tfDia.getText().length() == 2)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfDiaKeyTyped
 
     private void tfMesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyPressed
     {//GEN-HEADEREND:event_tfMesKeyPressed
-        if (tfMes.getText().isEmpty() != true) 
+        if (tfMes.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfAño);
         }
@@ -811,9 +838,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfMesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyTyped
     {//GEN-HEADEREND:event_tfMesKeyTyped
-        if (tfMes.getText().length() == 2) {
+        if (tfMes.getText().length() == 2)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfMesKeyTyped
@@ -828,9 +857,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfAñoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyTyped
     {//GEN-HEADEREND:event_tfAñoKeyTyped
-        if (tfAño.getText().length() != 4 ) {
+        if (tfAño.getText().length() != 4)
+        {
             Validaciones.validaEntero(evt);
-        } else {
+        } else
+        {
             evt.consume();
         }
     }//GEN-LAST:event_tfAñoKeyTyped
@@ -847,9 +878,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfEdadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyTyped
     {//GEN-HEADEREND:event_tfEdadKeyTyped
-        if (tfEdad.getText().length() == 2) {
+        if (tfEdad.getText().length() == 2)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfEdadKeyTyped
@@ -860,7 +893,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
         {
             Validaciones.enter(this, evt, rbMujer);
             Validaciones.enter(this, evt, rbHombre);
-            
+
             rbHombre.setEnabled(true);
             rbMujer.setEnabled(true);
         }
@@ -907,9 +940,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfGradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyTyped
     {//GEN-HEADEREND:event_tfGradoKeyTyped
-        if (tfGrado.getText().length() == 1 ) {
+        if (tfGrado.getText().length() == 1)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfGradoKeyTyped
@@ -924,9 +959,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfGrupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyTyped
     {//GEN-HEADEREND:event_tfGrupoKeyTyped
-        if (tfGrupo.getText().length() == 1 ) {
+        if (tfGrupo.getText().length() == 1)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaAlfabeticos(evt);
         }
     }//GEN-LAST:event_tfGrupoKeyTyped
@@ -941,9 +978,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
     {//GEN-HEADEREND:event_tfTelKeyTyped
-        if (tfTel.getText().length() == 5 ) {
+        if (tfTel.getText().length() == 5)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfTelKeyTyped
@@ -984,9 +1023,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfRfcKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfRfcKeyTyped
     {//GEN-HEADEREND:event_tfRfcKeyTyped
-        if (tfRfc.getText().length() == 12 ) {
+        if (tfRfc.getText().length() == 12)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaAlfanumerico(evt);
         }
     }//GEN-LAST:event_tfRfcKeyTyped
@@ -1018,9 +1059,10 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfContraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyTyped
     {//GEN-HEADEREND:event_tfContraseñaKeyTyped
-        if (tfContraseña.getText().length() == 10 ) {
+        if (tfContraseña.getText().length() == 10)
+        {
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_tfContraseñaKeyTyped
 
     private void tfFolioKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfFolioKeyPressed
@@ -1034,9 +1076,11 @@ public class RegistrarProfesor extends javax.swing.JFrame
 
     private void tfFolioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfFolioKeyTyped
     {//GEN-HEADEREND:event_tfFolioKeyTyped
-        if (tfGrado.getText().length() == 7 ) {
+        if (tfGrado.getText().length() == 7)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfFolioKeyTyped
@@ -1063,7 +1107,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //VALIDA QUE SEA UNA CURP REAL
     public boolean validaCURP(String cad)
     {
@@ -1081,7 +1125,7 @@ public class RegistrarProfesor extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //VALIDACION PARA EL TELEFONO
     public static boolean validaNumero(String cad, int nums)
     {
@@ -1100,11 +1144,14 @@ public class RegistrarProfesor extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
     {
-        String botones[] = {"Salir", "Cancelar"};
+        String botones[] =
+        {
+            "Salir", "Cancelar"
+        };
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
         {
@@ -1112,12 +1159,12 @@ public class RegistrarProfesor extends javax.swing.JFrame
 //            System.exit(eleccion);
             new InicioUsuarios().setVisible(true);
             this.setVisible(false);
-        } else 
-        if(eleccion == JOptionPane.NO_OPTION)
+        } else if (eleccion == JOptionPane.NO_OPTION)
         {
             System.out.println("Se cancelo la salida");
         }
     }
+
     /**
      * @param args the command line arguments
      */
