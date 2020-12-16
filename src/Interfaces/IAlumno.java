@@ -342,7 +342,7 @@ public static IAlumno ref;
 
     private void btnMisCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMisCalificacionesActionPerformed
     {//GEN-HEADEREND:event_btnMisCalificacionesActionPerformed
-       new CalificacionPAlumnos().setVisible(true);
+       new CalificacionesPAlumnos1().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnMisCalificacionesActionPerformed
 

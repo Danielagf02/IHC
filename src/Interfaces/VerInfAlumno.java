@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interno.Alumnno1;
+import Interno.ManipulaBD;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
@@ -30,9 +31,11 @@ public class VerInfAlumno extends javax.swing.JFrame
         
         
         
-         String condicion;
-        
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+         String condicion="3";
+         objeto= ManipulaBD.ConsultasAlumnos("!id=", condicion);
+         for (int i = 0; i < objeto.size(); i++)
+        {
+          TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
         TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
@@ -46,8 +49,13 @@ public class VerInfAlumno extends javax.swing.JFrame
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 11);
         TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
         TaDatosAlumno.setValueAt(objeto.get(0).getContraseña(), 0, 13);
+           
+            
+            
+        }
         
-         condicion = String.valueOf(objeto.get(0).getId());
+        
+         //condicion = String.valueOf(objeto.get(0).getId());
     }
 
     /**

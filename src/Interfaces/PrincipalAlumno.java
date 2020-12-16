@@ -266,7 +266,7 @@ public static ArrayList<Alumnno1> obj;
 
         }
     int fAlumno = Integer.parseInt(String.valueOf(EscribirUsuario.getText()));
-    CalificacionPAlumnos.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", ""+ fAlumno +"");
+    CalificacionesPAlumnos1.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", ""+ fAlumno +"");
     VerInfAlumno.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", ""+ fAlumno +"");
     }//GEN-LAST:event_siguienteActionPerformed
 
