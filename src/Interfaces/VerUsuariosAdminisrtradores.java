@@ -81,7 +81,6 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnTodosU = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -105,17 +104,6 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 btnTodosUActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setText("Buscar Usuario");
-        jButton3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -222,15 +210,9 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnTodosU)
                             .addComponent(btnRegresar))
-                        .addGap(0, 133, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(406, 406, 406)
-                                .addComponent(jButton3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(73, 73, 73)
-                                .addComponent(jLabel1)))
-                        .addGap(35, 35, 35))
+                        .addGap(73, 206, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(321, 321, 321))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1)
@@ -252,9 +234,7 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTodosU)
-                    .addComponent(jButton3))
+                .addComponent(btnTodosU)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
@@ -288,29 +268,6 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnSalirActionPerformed
         Cerrar();
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
-       String Folio = JOptionPane.showInputDialog("Folio Admnistrador");
-      
-       objeto = ManipulaBD.ConsultasAdmins("FolioAdministrador=", "" + Folio + "");
-      
-        
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
-        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
-        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
-        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
-        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
-        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 6);
-        TaDatosAlumno.setValueAt(objeto.get(0).getCedulaProfe(), 0, 7);
-        TaDatosAlumno.setValueAt(objeto.get(0).getDireccion(), 0, 8);
-        TaDatosAlumno.setValueAt(objeto.get(0).getFolioEmpleado(), 0, 9);
-        TaDatosAlumno.setValueAt(objeto.get(0).getPuesto(), 0, 10);
-       
-        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 11);
-        TaDatosAlumno.setValueAt(objeto.get(0).getContrasenia(), 0, 12);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTodosUActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosUActionPerformed
     {//GEN-HEADEREND:event_btnTodosUActionPerformed
@@ -415,7 +372,6 @@ public class VerUsuariosAdminisrtradores extends javax.swing.JFrame
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTodosU;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
