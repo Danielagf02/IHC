@@ -325,11 +325,11 @@ public class Boletas extends javax.swing.JFrame
 
               } catch (DocumentException ex)
               {
-                Logger.getLogger(Reporte.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Boletas.class.getName()).log(Level.SEVERE, null, ex);
               }
 
             documento.close();
-            JOptionPane.showMessageDialog(null, "PDF creado correctamente", "Reporte", 1);
+            JOptionPane.showMessageDialog(null, "PDF creado correctamente", "Boletas", 1);
           } catch (FileNotFoundException ex)
           {
             JOptionPane.showMessageDialog(null, "Error: " + ex, "Advertencia", 1);
