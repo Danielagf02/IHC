@@ -5,11 +5,13 @@
  */
 package Interfaces;
 
+import Interno.Adminis1;
 import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import cjb.ci.Validaciones;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
@@ -22,7 +24,8 @@ import javax.swing.JOptionPane;
 public class Registrarse extends javax.swing.JFrame
 {
     String sex; //Para guardar el sexo
-    int id=1;
+    int tt;
+    ArrayList<Adminis1> tmp;
     /**
      * Creates new form Registrarse
      */
@@ -35,6 +38,24 @@ public class Registrarse extends javax.swing.JFrame
         
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono1);
+        
+        tmp = ManipulaBD.ConsultasAdmins("id!=", "0");
+        try
+        {
+            System.out.println(tmp.isEmpty());
+            if (!tmp.isEmpty())
+            {
+                tt = tmp.get(tmp.size() - 1).getId() + 1;
+                System.out.println(tt);
+            } else
+            {
+                tt = 0;
+            }
+        } catch (java.lang.NullPointerException e)
+        {
+            tt = 0;
+        }
+        
     }
 
     /**
@@ -610,12 +631,14 @@ public class Registrarse extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-       String nombre = TNombre.getText();
+       
+  
+      String nombre = TNombre.getText();
        String apellidoP = TApellidoP.getText();
        String apellidoM = TApellidoM.getText();
        String fechaNa = TDIA.getText() + "/" + TMes.getText() + "/" + TAnio.getText();
        String curp = TCurp.getText();
-       int folio = Integer.parseInt(String.valueOf(TFolio.getText()));
+       int folio = tt++;
        String puesto = TPuesto.getText();
        int tel = Integer.parseInt(String.valueOf(TTelefono.getText()));
        String ced = TCedula.getText();
