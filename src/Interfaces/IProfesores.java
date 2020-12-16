@@ -352,7 +352,7 @@ public class IProfesores extends javax.swing.JFrame
 
     private void btnRegistarCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistarCalificacionesActionPerformed
     {//GEN-HEADEREND:event_btnRegistarCalificacionesActionPerformed
-        new RegistarCalificaciones1().setVisible(true);
+        new RegistrarCalificaciones().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegistarCalificacionesActionPerformed
 

@@ -174,7 +174,7 @@ public class BuscarAlumno4 extends javax.swing.JFrame
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegresarActionPerformed
     {//GEN-HEADEREND:event_btnRegresarActionPerformed
-        new RegistarCalificaciones().setVisible(true);
+        new RegistrarCalificaciones1().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
@@ -205,11 +205,9 @@ public class BuscarAlumno4 extends javax.swing.JFrame
         int fAlumno = Integer.parseInt(String.valueOf(jtFAlumno.getText()));
         CtrlInterfaz.habilita(false, Buscar);
         CtrlInterfaz.limpia(jtFAlumno);
-        RegistarCalificaciones.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + fAlumno + "");
-        RegistarCalificaciones nueva1 = new RegistarCalificaciones();
+        RegistrarCalificaciones1.objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + fAlumno + "");
+        RegistrarCalificaciones1 nueva1 = new RegistrarCalificaciones1();
         nueva1.setVisible(true);
-        nueva1.Mostrar1();
-
         this.setVisible(false);
     }//GEN-LAST:event_BuscarActionPerformed
 

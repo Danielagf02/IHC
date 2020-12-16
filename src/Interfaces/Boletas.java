@@ -7,7 +7,6 @@ package Interfaces;
 
 import static Interfaces.Justificante.objeto;
 import static Interfaces.Materias.mat;
-import static Interfaces.RegistarCalificaciones.objeto;
 import Interno.Alumnno1;
 import Interno.Calificaciones1;
 import Interno.ManipulaBD;

@@ -643,8 +643,8 @@ public class ControlEscolar extends javax.swing.JFrame
 
     private void btnRegistrarCalificacionesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarCalificacionesActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarCalificacionesActionPerformed
-      new RegistarCalificaciones().setVisible(true);
-        this.setVisible(false);
+      new RegistrarCalificaciones().setVisible(true);
+      this.setVisible(false);
     }//GEN-LAST:event_btnRegistrarCalificacionesActionPerformed
 
     private void btnAdminsFijosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnAdminsFijosActionPerformed
