@@ -40,8 +40,8 @@ public class IProfesores extends javax.swing.JFrame
         ImageIcon icono2 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/estudiante.png");
         btnAlumnos.setIcon(icono2);
         
-        ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/hora.png");
-        btnHorarios.setIcon(icono3);
+        //ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/hora.png");
+        //btnHorarios.setIcon(icono3);
         
         //ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/producto.png");
         //btnMaterias.setIcon(icono4);
@@ -82,7 +82,6 @@ public class IProfesores extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnAlumnos = new javax.swing.JButton();
-        btnHorarios = new javax.swing.JButton();
         jLLogo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -150,17 +149,6 @@ public class IProfesores extends javax.swing.JFrame
             }
         });
 
-        btnHorarios.setBackground(new java.awt.Color(255, 204, 102));
-        btnHorarios.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnHorarios.setText("Horarios");
-        btnHorarios.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnHorariosActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -176,8 +164,6 @@ public class IProfesores extends javax.swing.JFrame
                         .addComponent(jLabel1)))
                 .addGap(135, 135, 135)
                 .addComponent(btnAlumnos)
-                .addGap(70, 70, 70)
-                .addComponent(btnHorarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -191,9 +177,7 @@ public class IProfesores extends javax.swing.JFrame
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnAlumnos)
-                                .addComponent(btnHorarios))
+                            .addComponent(btnAlumnos)
                             .addComponent(jLLogo))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -369,12 +353,6 @@ public class IProfesores extends javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
-    private void btnHorariosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosActionPerformed
-    {//GEN-HEADEREND:event_btnHorariosActionPerformed
-       new Horarios().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnHorariosActionPerformed
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSalirActionPerformed
     {//GEN-HEADEREND:event_btnSalirActionPerformed
         Cerrar();
@@ -388,7 +366,8 @@ public class IProfesores extends javax.swing.JFrame
 
     private void btnHorariosClaseActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosClaseActionPerformed
     {//GEN-HEADEREND:event_btnHorariosClaseActionPerformed
-        // TODO add your handling code here:
+         new HorasProfesor().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnHorariosClaseActionPerformed
 
     private void btnListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnListaAlumnosActionPerformed
@@ -478,7 +457,6 @@ public class IProfesores extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton btnAlumnos;
-    private javax.swing.JButton btnHorarios;
     private javax.swing.JButton btnHorariosClase;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnListaAlumnos;

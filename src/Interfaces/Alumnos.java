@@ -858,8 +858,24 @@ public class Alumnos extends javax.swing.JFrame
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
     {//GEN-HEADEREND:event_jButton3ActionPerformed
-        new BuscarAlumno1().setVisible(true);
-        this.setVisible(false);
+         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
+      
+        
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 0);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 1);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFechaNacimiento(), 0, 3);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCURP(), 0, 4);
+        TaDatosAlumno.setValueAt(objeto.get(0).getSexo(), 0, 5);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 6);
+        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 7);
+        TaDatosAlumno.setValueAt(objeto.get(0).getTelefono(), 0, 8);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomMadre(), 0, 9);
+        TaDatosAlumno.setValueAt(objeto.get(0).getNomPadre(), 0, 10);
+        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 11);
+        TaDatosAlumno.setValueAt(objeto.get(0).getCorreo(), 0, 12);
+        TaDatosAlumno.setValueAt(objeto.get(0).getContraseña(), 0, 13);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnTodosAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnTodosAActionPerformed

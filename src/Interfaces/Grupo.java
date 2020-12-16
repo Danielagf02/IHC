@@ -217,7 +217,7 @@ public class Grupo extends javax.swing.JFrame
 
     private void PrimerBotonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_PrimerBotonActionPerformed
     {//GEN-HEADEREND:event_PrimerBotonActionPerformed
-        new Alumnos().setVisible(true);
+        new Alumnos1().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_PrimerBotonActionPerformed
 
