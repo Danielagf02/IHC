@@ -178,7 +178,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-        
+        /*
         String condicion = String.valueOf(objeto.get(0).getId());
         
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
@@ -189,7 +189,7 @@ public class CalificacionPAlumnos extends javax.swing.JFrame
             mat = ManipulaBD.ConsultasMaterias("id=", condicion);
             TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
             TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
-        }
+        }*/
     }
     
     /**

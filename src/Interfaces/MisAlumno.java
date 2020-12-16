@@ -887,8 +887,10 @@ public class MisAlumno extends javax.swing.JFrame
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
           {
-            System.out.println("Salio del programa con exito");
-            System.exit(eleccion);
+//            System.out.println("Salio del programa con exito");
+//            System.exit(eleccion);
+            new InicioUsuarios().setVisible(true);
+            this.setVisible(false);
           } else if (eleccion == JOptionPane.NO_OPTION)
           {
             System.out.println("Se cancelo la salida");
