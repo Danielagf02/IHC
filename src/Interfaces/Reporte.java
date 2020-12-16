@@ -33,8 +33,8 @@ import poo.bd.Querys;
 public class Reporte extends javax.swing.JFrame
 {
 
-    ArrayList<Object> datos = new ArrayList<Object>();
-    ArrayList<Object> datos2 = new ArrayList<Object>();
+    //ArrayList<Object> datos = new ArrayList<Object>();
+    //ArrayList<Object> datos2 = new ArrayList<Object>();
     public static ArrayList<Alumnno1> objeto;
     Querys q = new Querys();
 
@@ -89,12 +89,12 @@ public class Reporte extends javax.swing.JFrame
             {
 
                 documento.add(new Paragraph("Datos del alumno"));
-                documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
-                documento.add(new Paragraph("Apellido paterno: " + datos2.get(0)));
-                documento.add(new Paragraph("Apellido materno: " + datos2.get(1)));
-                documento.add(new Paragraph("Nombre: " + datos2.get(2)));
-                documento.add(new Paragraph("Grado: " + datos2.get(6)));
-                documento.add(new Paragraph("Grupo: " + datos2.get(7)));
+                documento.add(new Paragraph("Folio Alumno: " + objeto.get(0).getFolioAlumno()));
+                documento.add(new Paragraph("Apellido paterno: " + objeto.get(0).getApellidoP()));
+                documento.add(new Paragraph("Apellido materno: " + objeto.get(0).getApellidoM()));
+                documento.add(new Paragraph("Nombre: " + objeto.get(0).getNombre()));
+                documento.add(new Paragraph("Grado: " + objeto.get(0).getGrado()));
+                documento.add(new Paragraph("Grupo: " + objeto.get(0).getGrupo()));
                 documento.add(new Paragraph("Día: " + jtfdia.getText()));
                 documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
                 documento.add(new Paragraph("Día cita del padre: " + jtfdiaPadre.getText()));
@@ -326,9 +326,10 @@ public class Reporte extends javax.swing.JFrame
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnImprimirActionPerformed
     {//GEN-HEADEREND:event_btnImprimirActionPerformed
-            FileOutputStream archivo;
-            String nombreAlumno= (String) datos.get(1);
-
+        System.out.println("Aqui VAMOOOOOOOS");
+        FileOutputStream archivo;
+            String nombreAlumno= objeto.get(0).getNombre().toString() + " " + objeto.get(0).getApellidoP().toString();
+            System.out.println(nombreAlumno);
             try {
                 archivo = new FileOutputStream(nombreAlumno + ".pdf");
                 Document documento = new Document();
@@ -341,12 +342,12 @@ public class Reporte extends javax.swing.JFrame
                 try {
                     
                     documento.add(new Paragraph("Datos del alumno"));
-                    documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
-                    documento.add(new Paragraph("Apellido paterno: " + datos2.get(0)));
-                    documento.add(new Paragraph("Apellido materno: " + datos2.get(1)));
-                    documento.add(new Paragraph("Nombre: " + datos2.get(2)));
-                    documento.add(new Paragraph("Grado: " + datos2.get(6)));
-                    documento.add(new Paragraph("Grupo: " + datos2.get(7)));
+                    documento.add(new Paragraph("Folio Alumno: " + objeto.get(0).getFolioAlumno()));
+                    documento.add(new Paragraph("Apellido paterno: " + objeto.get(0).getApellidoP()));
+                    documento.add(new Paragraph("Apellido materno: " + objeto.get(0).getApellidoM()));
+                    documento.add(new Paragraph("Nombre: " + objeto.get(0).getNombre()));
+                    documento.add(new Paragraph("Grado: " + objeto.get(0).getGrado()));
+                    documento.add(new Paragraph("Grupo: " + objeto.get(0).getGrupo()));
                     documento.add(new Paragraph("Día: " + jtfdia.getText()));
                     documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
                     documento.add(new Paragraph("Día cita del padre: " + jtfdiaPadre.getText()));

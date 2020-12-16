@@ -32,8 +32,8 @@ import poo.bd.Querys;
  */
 public class Justificante extends javax.swing.JFrame
 {
-    ArrayList<Object> datos = new ArrayList<Object>();
-    ArrayList<Object> datos2 = new ArrayList<Object>();
+    //ArrayList<Object> datos = new ArrayList<Object>();
+    //ArrayList<Object> datos2 = new ArrayList<Object>();
     public static ArrayList<Alumnno1> objeto;
     Querys q = new Querys();
 
@@ -45,8 +45,7 @@ public class Justificante extends javax.swing.JFrame
      */
     public Justificante()
     {
-       
-        
+        initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
     }
@@ -227,7 +226,7 @@ public class Justificante extends javax.swing.JFrame
 
     private void BuscarAActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAActionPerformed
     {//GEN-HEADEREND:event_BuscarAActionPerformed
-         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        String Folio = JOptionPane.showInputDialog("Folio del Alumno");
         objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
         jTabAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         jTabAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
@@ -240,8 +239,9 @@ public class Justificante extends javax.swing.JFrame
     private void ImprimirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ImprimirActionPerformed
     {//GEN-HEADEREND:event_ImprimirActionPerformed
         FileOutputStream archivo;
-            String nombreAlumno= (String) datos.get(1);
-
+            String nombreAlumno= objeto.get(0).getNombre().toString() + " " + objeto.get(0).getApellidoP().toString();
+            System.out.println(nombreAlumno);
+            
             try {
                 archivo = new FileOutputStream(nombreAlumno + ".pdf");
                 Document documento = new Document();
@@ -254,12 +254,12 @@ public class Justificante extends javax.swing.JFrame
                 try {
                     
                     documento.add(new Paragraph("Datos del alumno"));
-                    documento.add(new Paragraph("Folio Alumno: " + datos2.get(11)));
-                    documento.add(new Paragraph("Apellido paterno: " + datos2.get(0)));
-                    documento.add(new Paragraph("Apellido materno: " + datos2.get(1)));
-                    documento.add(new Paragraph("Nombre: " + datos2.get(2)));
-                    documento.add(new Paragraph("Grado: " + datos2.get(6)));
-                    documento.add(new Paragraph("Grupo: " + datos2.get(7)));
+                    documento.add(new Paragraph("Folio Alumno: " + objeto.get(0).getFolioAlumno()));
+                    documento.add(new Paragraph("Apellido paterno: " + objeto.get(0).getApellidoP()));
+                    documento.add(new Paragraph("Apellido materno: " + objeto.get(0).getApellidoM()));
+                    documento.add(new Paragraph("Nombre: " + objeto.get(0).getNombre()));
+                    documento.add(new Paragraph("Grado: " + objeto.get(0).getGrado()));
+                    documento.add(new Paragraph("Grupo: " + objeto.get(0).getGrupo()));
                     documento.add(new Paragraph("Día: " + jtfdia.getText()));
                     documento.add(new Paragraph("Razon: " + jtfRazon.getText()));
                     
