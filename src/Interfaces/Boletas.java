@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import static Interfaces.Justificante.objeto;
 import static Interfaces.Materias.mat;
 import static Interfaces.RegistarCalificaciones.objeto;
 import Interno.Alumnno1;
@@ -36,9 +37,10 @@ import poo.bd.Querys;
 public class Boletas extends javax.swing.JFrame
   {
 
-    ArrayList<Object> datos = new ArrayList<Object>();
-    ArrayList<Object> datos2 = new ArrayList<Object>();
-    Querys q = new Querys();
+//    ArrayList<Object> datos = new ArrayList<Object>();
+//    ArrayList<Object> datos2 = new ArrayList<Object>();
+   Querys q = new Querys();
+
 
     public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
@@ -295,7 +297,8 @@ public class Boletas extends javax.swing.JFrame
 
         System.out.println(cali);
         FileOutputStream archivo;
-        String nombreAlumno = (String) datos.get(1);
+         String nombreAlumno= objeto.get(0).getNombre().toString() + " " + objeto.get(0).getApellidoP().toString();
+         System.out.println(nombreAlumno);
         try
           {
 
@@ -312,13 +315,13 @@ public class Boletas extends javax.swing.JFrame
             try
               {
                 documento.add(new Paragraph("Datos del alumno"));
-                documento.add(new Paragraph("Folio Alumno: " + datos2.get(0)));
-                documento.add(new Paragraph("Apellido paterno: " + datos2.get(1)));
-                documento.add(new Paragraph("Apellido materno: " + datos2.get(2)));
+                documento.add(new Paragraph("Folio Alumno: " + objeto.get(0)));
+                documento.add(new Paragraph("Apellido paterno: " + objeto.get(1)));
+                documento.add(new Paragraph("Apellido materno: " + objeto.get(2)));
                 documento.add(new Paragraph("Materia\t\t Calificacion "));
                 documento.add(new Paragraph(cali));
-                documento.add(new Paragraph("Grado: " + datos2.get(4)));
-                documento.add(new Paragraph("Grupo: " + datos2.get(5)));
+                documento.add(new Paragraph("Grado: " + objeto.get(4)));
+                documento.add(new Paragraph("Grupo: " + objeto.get(5)));
 
               } catch (DocumentException ex)
               {
