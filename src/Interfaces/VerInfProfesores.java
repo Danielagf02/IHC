@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.ManipulaBD;
 import Interno.Profesor1;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -16,6 +17,7 @@ import javax.swing.ImageIcon;
 public class VerInfProfesores extends javax.swing.JFrame
 {
     public static ArrayList<Profesor1> objeto;
+    
 
     /**
      * Creates new form Alumnos
@@ -26,15 +28,15 @@ public class VerInfProfesores extends javax.swing.JFrame
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         
-         String condicion;
-      
-        TaDatosP.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        TaDatosP.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        TaDatosP.setValueAt(objeto.get(0).getNombres(), 0, 3);
-        TaDatosP.setValueAt(objeto.get(0).getCorreo(), 0, 4);
-       
-
-        condicion = String.valueOf(objeto.get(0).getId());
+        String condicion = "-1";
+        objeto = ManipulaBD.ConsultasProfesores("id!=", condicion);
+        for (int i = 0; i < objeto.size(); i++)
+        {
+            TaDatosP.setValueAt(objeto.get(0).getApellidoP(), i, 0);
+            TaDatosP.setValueAt(objeto.get(0).getApellidoM(), i, 1);
+            TaDatosP.setValueAt(objeto.get(0).getNombres(), i, 2);
+            TaDatosP.setValueAt(objeto.get(0).getCorreo(), i, 3);
+        }
     }
 
     /**
