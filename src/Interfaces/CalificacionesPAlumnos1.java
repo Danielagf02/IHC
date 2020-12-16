@@ -64,7 +64,6 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        BuscarAlumno = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TaDatosAlumno = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -80,17 +79,6 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Calificaciones");
-
-        BuscarAlumno.setBackground(new java.awt.Color(255, 255, 255));
-        BuscarAlumno.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BuscarAlumno.setText("Buscar Alumno ");
-        BuscarAlumno.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                BuscarAlumnoActionPerformed(evt);
-            }
-        });
 
         TaDatosAlumno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
@@ -173,9 +161,7 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
                         .addGap(20, 20, 20)
                         .addComponent(btnRegresar)
                         .addGap(240, 240, 240)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(BuscarAlumno))))
+                        .addComponent(jLabel1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -186,9 +172,7 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnRegresar)
                     .addComponent(jLabel1))
-                .addGap(41, 41, 41)
-                .addComponent(BuscarAlumno)
-                .addGap(48, 48, 48)
+                .addGap(122, 122, 122)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,18 +200,6 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
         new ControlEscolar().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegresarActionPerformed
-
-    private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
-    {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
-        String Folio = JOptionPane.showInputDialog("Folio del Alumno");
-        objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
-        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-    }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,7 +250,6 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarAlumno;
     private javax.swing.JTable TaCali;
     private javax.swing.JTable TaDatosAlumno;
     private javax.swing.JButton btnRegresar;
