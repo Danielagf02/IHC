@@ -34,8 +34,8 @@ public static IAlumno ref;
         ImageIcon icono3 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/humano.png");
         btnMaterias.setIcon(icono3);
         
-        ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
-        btnHorarios.setIcon(icono4);
+       // ImageIcon icono4 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
+        //btnHorarios.setIcon(icono4);
         
         ImageIcon icono5 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/profesor (1).png");
         btnInfoProfe.setIcon(icono5);
@@ -69,7 +69,6 @@ public static IAlumno ref;
         btnSalir = new javax.swing.JButton();
         btnMisCalificaciones = new javax.swing.JButton();
         btnMaterias = new javax.swing.JButton();
-        btnHorarios = new javax.swing.JButton();
         btnInfoProfe = new javax.swing.JButton();
         MiInfo = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -186,18 +185,6 @@ public static IAlumno ref;
             }
         });
 
-        btnHorarios.setBackground(new java.awt.Color(255, 255, 255));
-        btnHorarios.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnHorarios.setText("Horarios de Clase");
-        btnHorarios.setToolTipText("Horarios de clase");
-        btnHorarios.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnHorariosActionPerformed(evt);
-            }
-        });
-
         btnInfoProfe.setBackground(new java.awt.Color(255, 255, 255));
         btnInfoProfe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnInfoProfe.setText("Informacion Profesor");
@@ -228,30 +215,25 @@ public static IAlumno ref;
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(123, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnHorarios)
-                        .addGap(82, 82, 82)
-                        .addComponent(btnInfoProfe)
-                        .addGap(13, 13, 13))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(MiInfo)
-                        .addGap(304, 304, 304)
-                        .addComponent(btnSalir)))
+                .addComponent(MiInfo)
+                .addGap(304, 304, 304)
+                .addComponent(btnSalir)
                 .addGap(104, 104, 104))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(btnMisCalificaciones)
-                        .addGap(194, 194, 194)
-                        .addComponent(btnMaterias))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(263, 263, 263)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabel5)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnInfoProfe)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(37, 37, 37)
+                            .addComponent(btnMisCalificaciones)
+                            .addGap(194, 194, 194)
+                            .addComponent(btnMaterias))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(263, 263, 263)
+                            .addComponent(jLabel3))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(250, 250, 250)
+                            .addComponent(jLabel5))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -266,11 +248,9 @@ public static IAlumno ref;
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMaterias)
                     .addComponent(btnMisCalificaciones))
-                .addGap(53, 53, 53)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHorarios)
-                    .addComponent(btnInfoProfe))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
+                .addComponent(btnInfoProfe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(MiInfo)
                     .addComponent(btnSalir))
@@ -358,12 +338,6 @@ public static IAlumno ref;
         this.setVisible(false);
     }//GEN-LAST:event_btnInfoProfeActionPerformed
 
-    private void btnHorariosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosActionPerformed
-    {//GEN-HEADEREND:event_btnHorariosActionPerformed
-        new MisHorariosAlumnos().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnHorariosActionPerformed
-
     private void btnMateriasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnMateriasActionPerformed
     {//GEN-HEADEREND:event_btnMateriasActionPerformed
         new MisMateriasAlumnos().setVisible(true);
@@ -443,7 +417,6 @@ public static IAlumno ref;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton MiInfo;
-    private javax.swing.JButton btnHorarios;
     private javax.swing.JButton btnInfoProfe;
     private javax.swing.JButton btnMaterias;
     private javax.swing.JButton btnMisCalificaciones;

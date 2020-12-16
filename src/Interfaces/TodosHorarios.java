@@ -22,18 +22,19 @@ public class TodosHorarios extends javax.swing.JFrame {
 
     public TodosHorarios() {
         String variable = "id=";
-        String condicion = "1";
+        String condicion = "-1";
         condicion = String.valueOf(hor.get(0).getId());
         hor = ManipulaBD.ConsultasHorarios("id", condicion);
         mat = ManipulaBD.ConsultasMaterias("id_Materia", condicion);
-        
+                    //condicion = String.valueOf(hor.get().getId_Materia());
+
         for (int i = 0; i < hor.size(); i++) {
             condicion = String.valueOf(hor.get(i).getId_Materia());
             jTablaHor.setValueAt(hor.get(i).getHoraI(), i, 0);
             jTablaHor.setValueAt(hor.get(i).getHoraF(), i, 1);
             jTablaHor.setValueAt(hor.get(i).getDia(), i,2);
             jTablaHor.setValueAt(hor.get(i).getId_Materia(), i, 3);
-            jTablaHor.setValueAt(mat.get(i).getNombre(), i, 4);
+            //jTablaHor.setValueAt(mat.get(i).getNombre(), i, 4);
             jTablaHor.setValueAt(hor.get(i).getGrado(), i, 5);
             jTablaHor.setValueAt(hor.get(i).getGrupo(), i, 6);
         }

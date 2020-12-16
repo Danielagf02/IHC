@@ -52,8 +52,8 @@ public class IProfesores extends javax.swing.JFrame
         ImageIcon icono6 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/impresora.png");
         btnImprimir.setIcon(icono6);
         
-        ImageIcon icono7 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
-        btnHorariosClase.setIcon(icono7);
+       // ImageIcon icono7 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/reloj.png");
+        //btnHorariosClase.setIcon(icono7);
         
         ImageIcon icono8 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/mujer.png");
         btnRegistarCalificaciones.setIcon(icono8);
@@ -89,7 +89,6 @@ public class IProfesores extends javax.swing.JFrame
         btnImprimir = new javax.swing.JButton();
         btnListaAlumnos = new javax.swing.JButton();
         btnRegistarCalificaciones = new javax.swing.JButton();
-        btnHorariosClase = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -232,18 +231,6 @@ public class IProfesores extends javax.swing.JFrame
             }
         });
 
-        btnHorariosClase.setBackground(new java.awt.Color(255, 255, 255));
-        btnHorariosClase.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnHorariosClase.setText("Horarios de Clase");
-        btnHorariosClase.setToolTipText("Horarios de clase");
-        btnHorariosClase.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnHorariosClaseActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -259,17 +246,12 @@ public class IProfesores extends javax.swing.JFrame
                     .addComponent(btnSalir))
                 .addGap(51, 51, 51))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(279, 279, 279)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(btnHorariosClase)
-                        .addGap(64, 64, 64)
-                        .addComponent(btnRegistarCalificaciones))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(279, 279, 279)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3))))
+                    .addComponent(btnRegistarCalificaciones)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -284,11 +266,9 @@ public class IProfesores extends javax.swing.JFrame
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListaAlumnos)
                     .addComponent(btnImprimir))
-                .addGap(75, 75, 75)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHorariosClase)
-                    .addComponent(btnRegistarCalificaciones))
-                .addGap(35, 35, 35)
+                .addGap(76, 76, 76)
+                .addComponent(btnRegistarCalificaciones)
+                .addGap(34, 34, 34)
                 .addComponent(btnSalir)
                 .addContainerGap(142, Short.MAX_VALUE))
         );
@@ -363,12 +343,6 @@ public class IProfesores extends javax.swing.JFrame
          new Alumnos().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAlumnosActionPerformed
-
-    private void btnHorariosClaseActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnHorariosClaseActionPerformed
-    {//GEN-HEADEREND:event_btnHorariosClaseActionPerformed
-         new HorasProfesor().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnHorariosClaseActionPerformed
 
     private void btnListaAlumnosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnListaAlumnosActionPerformed
     {//GEN-HEADEREND:event_btnListaAlumnosActionPerformed
@@ -457,7 +431,6 @@ public class IProfesores extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Ayuda;
     private javax.swing.JButton btnAlumnos;
-    private javax.swing.JButton btnHorariosClase;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnListaAlumnos;
     private javax.swing.JButton btnRegistarCalificaciones;
