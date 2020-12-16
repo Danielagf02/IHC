@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author DanielaGF
  */
 public class CalificacionesPAlumnos1 extends javax.swing.JFrame
-  {
+{
 
     public static ArrayList<Alumnno1> objeto;
     ArrayList<Calificaciones1> cal = null;
@@ -23,15 +23,14 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
      * Creates new form Alumnos
      */
     public CalificacionesPAlumnos1()
-      {
+    {
         initComponents();
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");
         btnRegresar.setIcon(icono);
         String condicion;
-        
 
-      }
-    
+    }
+
     public void Mostrar()
     {
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
@@ -44,12 +43,12 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
         for (int i = 0; i < cal.size(); i++)
-          {
+        {
             condicion = String.valueOf(cal.get(i).getId_Materia());
             mat = ManipulaBD.ConsultasMaterias("id=", condicion);
             TaCali.setValueAt(mat.get(0).getNombre(), i, 0);
             TaCali.setValueAt(cal.get(i).getCalificacion(), i, 1);
-          }
+        }
     }
 
     /**
@@ -167,9 +166,9 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnRegresar)
@@ -190,8 +189,8 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
                 .addGap(41, 41, 41)
                 .addComponent(BuscarAlumno)
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 148, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -220,58 +219,49 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
 
     private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
     {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
-      
-         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        String Folio = JOptionPane.showInputDialog("Folio del Alumno");
         objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
-      
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0,2);
+        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-       
         TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
-     
-        
-        
-        
-        
-
     }//GEN-LAST:event_BuscarAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[])
-      {
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try
-          {
+        {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-              {
+            {
                 if ("Nimbus".equals(info.getName()))
-                  {
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                  }
-              }
-          } catch (ClassNotFoundException ex)
-          {
+                }
+            }
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(CalificacionesPAlumnos1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (InstantiationException ex)
-          {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(CalificacionesPAlumnos1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (IllegalAccessException ex)
-          {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(CalificacionesPAlumnos1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (javax.swing.UnsupportedLookAndFeelException ex)
-          {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(CalificacionesPAlumnos1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          }
+        }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -279,13 +269,13 @@ public class CalificacionesPAlumnos1 extends javax.swing.JFrame
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable()
-          {
+        {
             public void run()
-              {
+            {
                 new CalificacionesPAlumnos1().setVisible(true);
-              }
-          });
-      }
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarAlumno;

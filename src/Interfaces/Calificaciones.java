@@ -34,12 +34,12 @@ public class Calificaciones extends javax.swing.JFrame
     
     public void Mostrar()
     {
-        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
-        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
-        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
-        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0, 2);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
+//        TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
         String condicion = String.valueOf(objeto.get(0).getId());
         cal = ManipulaBD.ConsultasCalificaciones("id_Alumno=", condicion);
 
@@ -242,18 +242,16 @@ public class Calificaciones extends javax.swing.JFrame
     private void BuscarAlumnoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BuscarAlumnoActionPerformed
     {//GEN-HEADEREND:event_BuscarAlumnoActionPerformed
       
-         String Folio = JOptionPane.showInputDialog("Folio del Alumno");
+        String Folio = JOptionPane.showInputDialog("Folio del Alumno");
         objeto = ManipulaBD.ConsultasAlumnos("FolioAlumno=", "" + Folio + "");
-      
         TaDatosAlumno.setValueAt(objeto.get(0).getFolioAlumno(), 0, 0);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoP(), 0, 1);
         TaDatosAlumno.setValueAt(objeto.get(0).getApellidoM(), 0,2);
         TaDatosAlumno.setValueAt(objeto.get(0).getNombre(), 0, 3);
-       
         TaDatosAlumno.setValueAt(objeto.get(0).getGrado(), 0, 4);
         TaDatosAlumno.setValueAt(objeto.get(0).getGrupo(), 0, 5);
      
-        
+        Mostrar();
         
         
         

@@ -681,7 +681,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         int id = total++;
         int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
         String grupo = tfGrupo.getText();
-         String apellidoP = tfAPaterno.getText();
+        String apellidoP = tfAPaterno.getText();
         String apellidoM = tfAMaterno.getText();
         String nombre = tfNombre.getText();
         String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
@@ -704,8 +704,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         String contra = tfContraseña.getText();
 
         //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
-        ManipulaBD.AltasAlumnos(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp, 
-                sex, tel, nomMa, nomPa, folio, correo, contra);
+        ManipulaBD.AltasAlumnos(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp,
+                sex, tel, nomMa, nomPa, id, correo, contra);
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
         id++;
         CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
