@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Interno.Alumnno1;
 import Interno.Extras1;
 import Interno.ManipulaBD;
 import cjb.ci.CtrlInterfaz;
@@ -17,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -33,20 +35,41 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class RegistrarAlumnos extends javax.swing.JFrame
 {
+
     String sex; //Para guardar el sexo
-    int id=1;
+    ArrayList<Alumnno1> tmp;
+    int total;
+
     /**
      * Creates new form Registrarse
      */
     public RegistrarAlumnos()
     {
         initComponents();
-        
+
         ImageIcon icono = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/regresa (1).png");//Aqui va la ruta de la imagen ojo tengan cuidado con esto y al final antes de hacer el jar cambiamos la ruta
         btnRegresar.setIcon(icono);
-        
+
         ImageIcon icono1 = new ImageIcon("C:/Users/HP/Desktop/ProyectoIHC/IHC/src/Imagenes/salida (8).png");
         btnSalir.setIcon(icono1);
+
+        tmp = ManipulaBD.ConsultasAlumnos("id!=", "0");
+        try
+        {
+            System.out.println(tmp.isEmpty());
+            if (!tmp.isEmpty())
+            {
+                total = tmp.get(tmp.size() - 1).getId() + 1;
+                System.out.println(total);
+            } else
+            {
+                total = 0;
+            }
+        } catch (java.lang.NullPointerException e)
+        {
+            total = 0;
+        }
+
     }
 
     /**
@@ -56,7 +79,8 @@ public class RegistrarAlumnos extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         sexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -161,8 +185,10 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnRegistrar.setForeground(new java.awt.Color(0, 153, 255));
         btnRegistrar.setText("Registrase");
         btnRegistrar.setEnabled(false);
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnRegistrarActionPerformed(evt);
             }
         });
@@ -170,8 +196,10 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnCancelar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 0, 0));
         btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCancelar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnCancelarActionPerformed(evt);
             }
         });
@@ -179,56 +207,73 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         btnCurp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         btnCurp.setText("Obtener CURP");
         btnCurp.setEnabled(false);
-        btnCurp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCurp.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnCurpActionPerformed(evt);
             }
         });
 
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnRegresar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnRegresarActionPerformed(evt);
             }
         });
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setToolTipText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnSalir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnSalirActionPerformed(evt);
             }
         });
 
-        tfNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        tfNombre.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 tfNombreActionPerformed(evt);
             }
         });
-        tfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfNombre.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfNombreKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfNombreKeyTyped(evt);
             }
         });
 
         tfAPaterno.setEnabled(false);
-        tfAPaterno.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfAPaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfAPaternoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfAPaternoKeyTyped(evt);
             }
         });
 
         tfAMaterno.setEnabled(false);
-        tfAMaterno.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfAMaterno.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfAMaternoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfAMaternoKeyTyped(evt);
             }
         });
@@ -240,21 +285,27 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         jLabel20.setText("Año");
 
         tfEdad.setEnabled(false);
-        tfEdad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfEdad.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfEdadKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfEdadKeyTyped(evt);
             }
         });
 
         tfCurp.setEnabled(false);
-        tfCurp.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfCurp.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfCurpKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfCurpKeyTyped(evt);
             }
         });
@@ -262,8 +313,10 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         sexo.add(rbMujer);
         rbMujer.setText("Mujer");
         rbMujer.setEnabled(false);
-        rbMujer.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+        rbMujer.addChangeListener(new javax.swing.event.ChangeListener()
+        {
+            public void stateChanged(javax.swing.event.ChangeEvent evt)
+            {
                 rbMujerStateChanged(evt);
             }
         });
@@ -271,118 +324,153 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         sexo.add(rbHombre);
         rbHombre.setText("Hombre");
         rbHombre.setEnabled(false);
-        rbHombre.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+        rbHombre.addChangeListener(new javax.swing.event.ChangeListener()
+        {
+            public void stateChanged(javax.swing.event.ChangeEvent evt)
+            {
                 rbHombreStateChanged(evt);
             }
         });
 
         tfGrado.setEnabled(false);
-        tfGrado.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfGrado.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfGradoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfGradoKeyTyped(evt);
             }
         });
 
         tfGrupo.setEnabled(false);
-        tfGrupo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfGrupo.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfGrupoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfGrupoKeyTyped(evt);
             }
         });
 
         tfTel.setEnabled(false);
-        tfTel.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfTel.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfTelKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfTelKeyTyped(evt);
             }
         });
 
         tfNombreM.setEnabled(false);
-        tfNombreM.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfNombreM.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfNombreMKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfNombreMKeyTyped(evt);
             }
         });
 
         tfNombreP.setEnabled(false);
-        tfNombreP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfNombreP.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfNombrePKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfNombrePKeyTyped(evt);
             }
         });
 
         tfFolio.setEnabled(false);
-        tfFolio.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfFolio.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfFolioKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfFolioKeyTyped(evt);
             }
         });
 
         tfCorreo.setEnabled(false);
-        tfCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfCorreo.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfCorreoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfCorreoKeyTyped(evt);
             }
         });
 
         tfContraseña.setEnabled(false);
-        tfContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfContraseña.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfContraseñaKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfContraseñaKeyTyped(evt);
             }
         });
 
         tfDia.setEnabled(false);
-        tfDia.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfDia.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfDiaKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfDiaKeyTyped(evt);
             }
         });
 
         tfMes.setEnabled(false);
-        tfMes.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfMes.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfMesKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfMesKeyTyped(evt);
             }
         });
 
         tfAño.setEnabled(false);
-        tfAño.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        tfAño.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 tfAñoKeyPressed(evt);
             }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
                 tfAñoKeyTyped(evt);
             }
         });
@@ -590,34 +678,34 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRegistrarActionPerformed
     {//GEN-HEADEREND:event_btnRegistrarActionPerformed
-       String nombre = tfNombre.getText();
-       String apellidoP = tfAPaterno.getText();
-       String apellidoM = tfAMaterno.getText();
-       String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
-       int edad = Integer.parseInt(String.valueOf(tfEdad.getText()));
+        int id = total++;
+        int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
+        String grupo = tfGrupo.getText();
+         String apellidoP = tfAPaterno.getText();
+        String apellidoM = tfAMaterno.getText();
+        String nombre = tfNombre.getText();
+        String fechaNa = tfDia.getText() + "/" + tfMes.getText() + "/" + tfAño.getText();
+        String curp = tfCurp.getText();
         if (rbHombre.isSelected())
         {
             sex = "Mujer";
-        }else 
+        } else
         {
             if (rbHombre.isSelected())
             {
                 sex = "Hombre";
             }
         }
-       String curp = tfCurp.getText();
-       int grado = Integer.parseInt(String.valueOf(tfGrado.getText()));
-       String grupo = tfGrupo.getText();
-       int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
-       String nomMa = tfNombreM.getText();
-       String nomPa = tfNombreP.getText();
-       int folio = Integer.parseInt(String.valueOf(tfFolio.getText()));
-       String correo = tfCorreo.getText();
-       String contra = tfContraseña.getText();
-       
-       //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
-       ManipulaBD.AltasAlumnos(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp, sex, tel, nomMa, nomPa, folio, correo, contra);
-       
+        int tel = Integer.parseInt(String.valueOf(tfTel.getText()));
+        String nomMa = tfNombreM.getText();
+        String nomPa = tfNombreP.getText();
+        int folio = Integer.parseInt(String.valueOf(tfFolio.getText()));
+        String correo = tfCorreo.getText();
+        String contra = tfContraseña.getText();
+
+        //AQUI SE HACE LA CONEXION CON LA BASE DE DATOS 
+        ManipulaBD.AltasAlumnos(id, grado, grupo, apellidoP, apellidoM, nombre, fechaNa, curp, 
+                sex, tel, nomMa, nomPa, folio, correo, contra);
         JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
         id++;
         CtrlInterfaz.limpia(tfNombre, tfAPaterno, tfAMaterno, tfDia, tfMes, tfAño, tfEdad, tfCurp, tfGrado, tfGrupo, tfTel, tfNombreM, tfNombreP, tfFolio, tfCorreo, tfContraseña);
@@ -646,12 +734,12 @@ public class RegistrarAlumnos extends javax.swing.JFrame
     {//GEN-HEADEREND:event_btnCurpActionPerformed
         if (java.awt.Desktop.isDesktopSupported())
         {
-            java.awt.Desktop desktop= java.awt.Desktop.getDesktop();
+            java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
             if (desktop.isSupported(java.awt.Desktop.Action.BROWSE))
             {
                 try
                 {
-                    java.net.URI uri= new java.net.URI("https://www.gob.mx/curp/");
+                    java.net.URI uri = new java.net.URI("https://www.gob.mx/curp/");
                     desktop.browse(uri);
                 } catch (URISyntaxException | IOException ex)
                 {
@@ -676,7 +764,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         if (tfNombre.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfAPaterno);
-        } 
+        }
     }//GEN-LAST:event_tfNombreKeyPressed
 
     private void tfNombreKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfNombreKeyTyped
@@ -712,7 +800,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfDiaKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyPressed
     {//GEN-HEADEREND:event_tfDiaKeyPressed
-        if (tfDia.getText().isEmpty() != true) 
+        if (tfDia.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfMes);
         }
@@ -720,16 +808,18 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfDiaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfDiaKeyTyped
     {//GEN-HEADEREND:event_tfDiaKeyTyped
-        if (tfDia.getText().length() == 2) {
+        if (tfDia.getText().length() == 2)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfDiaKeyTyped
 
     private void tfMesKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyPressed
     {//GEN-HEADEREND:event_tfMesKeyPressed
-        if (tfMes.getText().isEmpty() != true) 
+        if (tfMes.getText().isEmpty() != true)
         {
             Validaciones.enter(this, evt, tfAño);
         }
@@ -737,9 +827,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfMesKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfMesKeyTyped
     {//GEN-HEADEREND:event_tfMesKeyTyped
-        if (tfMes.getText().length() == 2) {
+        if (tfMes.getText().length() == 2)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfMesKeyTyped
@@ -754,31 +846,14 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfAñoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfAñoKeyTyped
     {//GEN-HEADEREND:event_tfAñoKeyTyped
-        if (tfAño.getText().length() != 4 ) {
+        if (tfAño.getText().length() != 4)
+        {
             Validaciones.validaEntero(evt);
-        } else {
+        } else
+        {
             evt.consume();
         }
     }//GEN-LAST:event_tfAñoKeyTyped
-
-    private void tfEdadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyPressed
-    {//GEN-HEADEREND:event_tfEdadKeyPressed
-        if (tfEdad.getText().isEmpty() != true)
-        {
-            Validaciones.enter(this, evt, btnCurp);
-            Validaciones.enter(this, evt, tfCurp);
-            btnCurp.setEnabled(true);
-        }
-    }//GEN-LAST:event_tfEdadKeyPressed
-
-    private void tfEdadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyTyped
-    {//GEN-HEADEREND:event_tfEdadKeyTyped
-        if (tfEdad.getText().length() == 2) {
-            evt.consume();
-        } else {
-            Validaciones.validaEntero(evt);
-        }
-    }//GEN-LAST:event_tfEdadKeyTyped
 
     private void tfCurpKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfCurpKeyPressed
     {//GEN-HEADEREND:event_tfCurpKeyPressed
@@ -786,7 +861,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
         {
             Validaciones.enter(this, evt, rbMujer);
             Validaciones.enter(this, evt, rbHombre);
-            
+
             rbHombre.setEnabled(true);
             rbMujer.setEnabled(true);
         }
@@ -833,9 +908,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfGradoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGradoKeyTyped
     {//GEN-HEADEREND:event_tfGradoKeyTyped
-        if (tfGrado.getText().length() == 1 ) {
+        if (tfGrado.getText().length() == 1)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfGradoKeyTyped
@@ -850,9 +927,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfGrupoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfGrupoKeyTyped
     {//GEN-HEADEREND:event_tfGrupoKeyTyped
-        if (tfGrupo.getText().length() == 1 ) {
+        if (tfGrupo.getText().length() == 1)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaAlfabeticos(evt);
         }
     }//GEN-LAST:event_tfGrupoKeyTyped
@@ -867,9 +946,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfTelKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfTelKeyTyped
     {//GEN-HEADEREND:event_tfTelKeyTyped
-        if (tfTel.getText().length() == 5 ) {
+        if (tfTel.getText().length() == 5)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfTelKeyTyped
@@ -910,9 +991,11 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfFolioKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfFolioKeyTyped
     {//GEN-HEADEREND:event_tfFolioKeyTyped
-        if (tfFolio.getText().length() == 7 ) {
+        if (tfFolio.getText().length() == 7)
+        {
             evt.consume();
-        } else {
+        } else
+        {
             Validaciones.validaEntero(evt);
         }
     }//GEN-LAST:event_tfFolioKeyTyped
@@ -944,14 +1027,36 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 
     private void tfContraseñaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfContraseñaKeyTyped
     {//GEN-HEADEREND:event_tfContraseñaKeyTyped
-        if (tfContraseña.getText().length() == 10 ) {
+        if (tfContraseña.getText().length() == 10)
+        {
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_tfContraseñaKeyTyped
 
     private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void tfEdadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyTyped
+    {//GEN-HEADEREND:event_tfEdadKeyTyped
+        if (tfEdad.getText().length() == 2)
+        {
+            evt.consume();
+        } else
+        {
+            Validaciones.validaEntero(evt);
+        }
+    }//GEN-LAST:event_tfEdadKeyTyped
+
+    private void tfEdadKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_tfEdadKeyPressed
+    {//GEN-HEADEREND:event_tfEdadKeyPressed
+        if (tfEdad.getText().isEmpty() != true)
+        {
+            Validaciones.enter(this, evt, btnCurp);
+            Validaciones.enter(this, evt, tfCurp);
+            btnCurp.setEnabled(true);
+        }
+    }//GEN-LAST:event_tfEdadKeyPressed
 
     //VALIDACION PARA QUE INSERTE UN EMAIL COREECTO CON @ Y EL .COM 
     public boolean validaEmail(String cad)
@@ -970,7 +1075,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //VALIDA QUE SEA UNA CURP REAL
     public boolean validaCURP(String cad)
     {
@@ -988,7 +1093,7 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //VALIDACION PARA EL TELEFONO
     public static boolean validaNumero(String cad, int nums)
     {
@@ -1007,11 +1112,14 @@ public class RegistrarAlumnos extends javax.swing.JFrame
             return false;
         }
     }
-    
+
     //METODO PARA PREGUNTAR SI DESEA SALIR O NO
     public void Cerrar()
     {
-        String botones[] = {"Salir", "Cancelar"};
+        String botones[] =
+        {
+            "Salir", "Cancelar"
+        };
         int eleccion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "SALIDA", 0, 0, null, botones, this);
         if (eleccion == JOptionPane.YES_OPTION)
         {
@@ -1019,13 +1127,12 @@ public class RegistrarAlumnos extends javax.swing.JFrame
 //            System.exit(eleccion);
             new InicioUsuarios().setVisible(true);
             this.setVisible(false);
-        } else 
-        if(eleccion == JOptionPane.NO_OPTION)
+        } else if (eleccion == JOptionPane.NO_OPTION)
         {
             System.out.println("Se cancelo la salida");
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */

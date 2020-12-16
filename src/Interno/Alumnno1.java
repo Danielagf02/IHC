@@ -27,7 +27,9 @@ public class Alumnno1
     {
     }
 
-    public Alumnno1(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre, String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno, String Correo, String Contraseña)
+    public Alumnno1(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre,
+            String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre,
+            int FolioAlumno, String Correo, String Contraseña)
     {
         this.id = id;
         this.Grado = Grado;
@@ -285,5 +287,5 @@ public class Alumnno1
     {
         this.Contraseña = Contraseña;
     }
-    
+
 }

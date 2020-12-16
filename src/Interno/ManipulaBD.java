@@ -17,7 +17,7 @@ public class ManipulaBD
     {
         try
         {
-            return con.Conecta("localhost:3306", "controlecolar", "root", "", 2);
+            return con.Conecta("localhost:3306", "controlescolar", "root", "", 2);
         } catch (Exception ex)
         {
             System.out.println("Error al conectar en metodo conecta");
@@ -602,8 +602,8 @@ public class ManipulaBD
      * @param Contraseña Tipo String
      */
     public static void AltasAlumnos(int id, int Grado, String Grupo, String ApellidoP, String ApellidoM, String Nombre,
-            String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre, int FolioAlumno,
-            String Correo, String Contraseña)
+            String fechaNacimiento, String CURP, String sexo, int Telefono, String NomMadre, String NomPadre,
+            int FolioAlumno, String Correo, String Contraseña)
     {
         Connection con = ManipulaBD.conecta();
         if (con != null)
